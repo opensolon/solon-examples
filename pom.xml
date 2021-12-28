@@ -20,5 +20,6 @@
     </properties>
 
     <modules>
+        <module>1.Solon/solon-demo</module>
     </modules>
 </project>
