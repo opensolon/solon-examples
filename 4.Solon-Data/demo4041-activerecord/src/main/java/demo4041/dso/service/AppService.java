@@ -1,4 +1,4 @@
-package demo4041.service;
+package demo4041.dso.service;
 
 import com.jfinal.plugin.activerecord.Db;
 import org.noear.solon.data.annotation.Cache;

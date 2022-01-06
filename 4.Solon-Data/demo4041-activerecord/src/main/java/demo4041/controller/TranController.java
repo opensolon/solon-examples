@@ -1,6 +1,6 @@
 package demo4041.controller;
 
-import demo4041.service.AppService;
+import demo4041.dso.service.AppService;
 import org.noear.solon.annotation.Controller;
 import org.noear.solon.annotation.Inject;
 import org.noear.solon.annotation.Mapping;
