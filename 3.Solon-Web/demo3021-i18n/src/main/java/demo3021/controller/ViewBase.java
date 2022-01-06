@@ -1,4 +1,4 @@
-package demo3031.controller;
+package demo3021.controller;
 
 import org.noear.solon.i18n.annotation.I18n;
 
