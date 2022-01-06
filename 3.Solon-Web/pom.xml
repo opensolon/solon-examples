@@ -24,5 +24,6 @@
         <module>demo3021-i18n</module>
         <module>demo3031-auth</module>
         <module>demo3041-gateway</module>
+        <module>demo3051-websocket</module>
     </modules>
 </project>
