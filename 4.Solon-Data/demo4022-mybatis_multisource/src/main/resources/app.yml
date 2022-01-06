@@ -18,16 +18,16 @@ test.db2:
 #默认
 mybatis.db1:
     typeAliases:    #支持包名 或 类名（.class 结尾）
-        - "webapp.model"
+        - "demo4022.model"
     mappers:        #支持包名 或 类名（.class 结尾）或 xml（.xml结尾）
-        - "webapp.dso.mapper.AppxMapper.class"
+        - "demo4022.dso.mapper.AppxMapper.class"
 
 #再定义个新配置
 mybatis.db2:
     typeAliases:
-        - "webapp.model"
+        - "demo4022.model"
     mappers:
-        - "webapp.dso.mapper.Appx2Mapper.class"
+        - "demo4022.dso.mapper.Appx2Mapper.class"
 
 #分页组件的配置
 sqlhelper:
