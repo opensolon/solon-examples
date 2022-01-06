@@ -10,9 +10,9 @@ test.db1:
 #默认
 mybatis.db1:
     typeAliases:    #支持包名 或 类名（.class 结尾）
-        - "webapp.model"
+        - "demo4031.model"
     mappers:        #支持包名 或 类名（.class 结尾）或 xml（.xml结尾）
-        - "webapp.dso.mapper"
+        - "demo4031.dso.mapper"
 
 #mybatis.plugin:
 #    - pagehelper:

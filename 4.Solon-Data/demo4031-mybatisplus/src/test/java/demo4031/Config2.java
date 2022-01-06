@@ -1,4 +1,4 @@
-package webapp;
+package demo4031;
 
 import com.zaxxer.hikari.HikariDataSource;
 import org.noear.solon.annotation.Bean;

@@ -1,7 +1,7 @@
 package demo4023.controller;
 
 import com.github.pagehelper.PageHelper;
-import demo4023.mapper.AppxMapper;
+import demo4023.dso.mapper.AppxMapper;
 import org.apache.ibatis.ext.solon.Db;
 import org.noear.solon.annotation.Controller;
 import org.noear.solon.annotation.Mapping;

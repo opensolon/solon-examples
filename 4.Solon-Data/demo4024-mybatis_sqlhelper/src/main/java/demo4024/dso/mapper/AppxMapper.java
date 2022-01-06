@@ -1,4 +1,4 @@
-package demo4024.mapper;
+package demo4024.dso.mapper;
 
 import demo4024.model.AppxModel;
 import org.apache.ibatis.annotations.Mapper;
