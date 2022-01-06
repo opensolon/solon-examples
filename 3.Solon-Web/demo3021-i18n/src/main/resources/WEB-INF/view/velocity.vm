@@ -1,0 +1,8 @@
+<html>
+<head>
+    <title>${title}</title>
+</head>
+<body>
+velocity::${msg}；i18n::${i18n.get("app.name")}
+</body>
+</html>
