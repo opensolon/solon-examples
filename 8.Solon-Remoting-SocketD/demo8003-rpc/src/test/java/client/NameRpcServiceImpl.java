@@ -1,4 +1,4 @@
-package demo8003.client;
+package client;
 
 import demo8003.service.NameRpcService;
 import org.noear.solon.annotation.Mapping;

@@ -1,5 +1,6 @@
-package demo8003.client;
+package client;
 
+import demo8003.server.ServerDemo;
 import demo8003.service.HelloRpcService;
 import demo8003.utils.EncryptUtils;
 import org.noear.solon.Solon;
@@ -7,7 +8,11 @@ import org.noear.solon.socketd.SocketD;
 import org.noear.solon.socketd.protocol.MessageProtocolSecret;
 
 public class ClientDemo {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception{
+        //启动服务端
+        //请先手动启动：ServerDemo
+
+        //启动客户端
         Solon.start(ClientDemo.class, args, app->{
 
             //使用压缩协议；启用压缩协议（默认超过1k才进行压缩）::要与服务端配套启用
