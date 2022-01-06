@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.noear.solon.examples</groupId>
-    <artifactId>demo4051-beetlsql</artifactId>
+    <artifactId>demo5021-cron4j</artifactId>
     <version>demo</version>
     <packaging>jar</packaging>
 
@@ -22,50 +22,19 @@
     <dependencies>
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>solon-web</artifactId>
+            <artifactId>solon-lib</artifactId>
         </dependency>
 
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>beetlsql-solon-plugin</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.zaxxer</groupId>
-            <artifactId>HikariCP</artifactId>
-            <version>4.0.3</version>
-        </dependency>
-
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.18</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.18.12</version>
-            <scope>provided</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.noear</groupId>
-            <artifactId>solon-test</artifactId>
-            <scope>provided</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.noear</groupId>
-            <artifactId>weed3</artifactId>
-            <version>${weed3.ver}</version>
-            <scope>test</scope>
+            <artifactId>cron4j-solon-plugin</artifactId>
         </dependency>
     </dependencies>
 
     <build>
         <finalName>${project.artifactId}</finalName>
         <plugins>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -77,6 +46,7 @@
                     <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>
+
         </plugins>
     </build>
 
