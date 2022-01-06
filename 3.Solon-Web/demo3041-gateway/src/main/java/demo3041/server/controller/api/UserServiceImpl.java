@@ -1,10 +1,9 @@
-package demo3041.server.dso.service;
+package demo3041.server.controller.api;
 
 import demo3041.common.UserModel;
 import demo3041.common.UserService;
 import org.noear.solon.annotation.Component;
 import org.noear.solon.annotation.Inject;
-import org.noear.solon.core.handle.Result;
 import demo3041.server.dso.dao.UserDao;
 
 /**
@@ -16,9 +15,9 @@ public class UserServiceImpl implements UserService {
     UserDao userDao;
 
     @Override
-    public Result<UserModel> getUser() {
+    public UserModel getUser() {
         UserModel user = userDao.getUser();
 
-        return Result.succeed(user);
+        return user;
     }
 }

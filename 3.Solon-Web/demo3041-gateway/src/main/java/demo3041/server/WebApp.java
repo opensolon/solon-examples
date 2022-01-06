@@ -12,8 +12,8 @@ public class WebApp {
         /**
          * 测试1：运行后可在浏览器打开这两地址，试效果：
          *
-         * http://localhost:8080/api/rpc/user/getUser
-         * http://localhost:8080/api/rest/user/getUser
+         * http://localhost:8080/rpc/v1/user/getUser
+         * http://localhost:8080/api/v1/user/getUser
          *
          * 测试2：运行后，再启动 ClientApp 看效果
          *

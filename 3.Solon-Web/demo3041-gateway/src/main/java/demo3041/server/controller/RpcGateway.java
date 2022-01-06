@@ -3,14 +3,14 @@ package demo3041.server.controller;
 import org.noear.solon.annotation.Component;
 import org.noear.solon.annotation.Mapping;
 import org.noear.solon.core.handle.Gateway;
-import demo3041.server.dso.service.UserServiceImpl;
+import demo3041.server.controller.api.UserServiceImpl;
 
 /**
  * 内部RPC调用模式
  *
  * @author noear 2021/4/22 created
  */
-@Mapping("/api/rpc/**")
+@Mapping("/rpc/v1/**")
 @Component
 public class RpcGateway extends Gateway {
     @Override

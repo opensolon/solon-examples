@@ -1,5 +1,6 @@
 package client;
 
+import demo3041.common.UserModel;
 import demo3041.common.UserService;
 import demo3041.server.WebApp;
 import org.junit.Test;
@@ -15,12 +16,14 @@ import org.noear.solon.test.SolonTest;
 @RunWith(SolonJUnit4ClassRunner.class)
 @SolonTest(WebApp.class)
 public class ClientApp {
-    @NamiClient(upstream = "http://localhost:8080/", path = "/api/rpc/user/")
+    @NamiClient(upstream = "http://localhost:8080/", path = "/rpc/v1/user/")
     UserService userService;
 
     @Test
     public void test1() {
-        Object user = userService.getUser();
+        UserModel user = userService.getUser();
         System.out.println(ONode.stringify(user));
+
+        assert user.getUserId() > 0;
     }
 }
