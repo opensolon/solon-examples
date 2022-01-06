@@ -25,7 +25,7 @@
             <artifactId>solon-web</artifactId>
         </dependency>
 
-        <!-- 或者使用其它支持 servelt 的插件 -->
+        <!-- undertow 启动器（也可以换成 jetty 相关插件） -->
         <dependency>
             <groupId>org.noear</groupId>
             <artifactId>solon.boot.undertow</artifactId>
