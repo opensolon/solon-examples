@@ -1,7 +1,7 @@
 package client;
 
-import demo3014.common.UserService;
-import demo3014.server.WebApp;
+import demo3041.common.UserService;
+import demo3041.server.WebApp;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.noear.nami.annotation.NamiClient;

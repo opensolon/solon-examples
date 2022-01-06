@@ -1,6 +1,6 @@
-package demo3014.server.dso.dao;
+package demo3041.server.dso.dao;
 
-import demo3014.common.UserModel;
+import demo3041.common.UserModel;
 import org.noear.solon.annotation.Component;
 
 /**

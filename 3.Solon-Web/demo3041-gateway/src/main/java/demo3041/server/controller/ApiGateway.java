@@ -1,9 +1,9 @@
-package demo3014.server.controller;
+package demo3041.server.controller;
 
 import org.noear.solon.annotation.Component;
 import org.noear.solon.annotation.Mapping;
 import org.noear.solon.core.handle.Gateway;
-import demo3014.server.dso.service.UserServiceImpl;
+import demo3041.server.dso.service.UserServiceImpl;
 
 /**
  * 对第三方提供服务

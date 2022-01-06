@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.noear.solon.examples</groupId>
-    <artifactId>demo3014-web_gateway</artifactId>
+    <artifactId>demo3041-gateway</artifactId>
     <version>demo</version>
     <packaging>jar</packaging>
 

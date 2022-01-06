@@ -1,11 +1,11 @@
-package demo3014.server.dso.service;
+package demo3041.server.dso.service;
 
-import demo3014.common.UserModel;
-import demo3014.common.UserService;
+import demo3041.common.UserModel;
+import demo3041.common.UserService;
 import org.noear.solon.annotation.Component;
 import org.noear.solon.annotation.Inject;
 import org.noear.solon.core.handle.Result;
-import demo3014.server.dso.dao.UserDao;
+import demo3041.server.dso.dao.UserDao;
 
 /**
  * @author noear 2021/4/22 created

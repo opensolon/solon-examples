@@ -1,4 +1,4 @@
-package demo3014.common;
+package demo3041.common;
 
 import lombok.Getter;
 import lombok.Setter;
