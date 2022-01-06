@@ -5,12 +5,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.noear.solon.examples</groupId>
-    <artifactId>solon-examples</artifactId>
+    <artifactId>8.Solon-Remoting-SocketD</artifactId>
     <version>demo</version>
     <packaging>pom</packaging>
-
-    <name>_root</name>
-    <description>Java project for solon examples</description>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -20,12 +17,9 @@
     </properties>
 
     <modules>
-        <module>1.Solon</module>
-        <module>3.Solon-Web</module>
-        <module>4.Solon-Data</module>
-        <module>5.Solon-Job</module>
-        <module>6.Solon-Api</module>
-        <module>7.Solon-Remoting-Rpc</module>
-        <module>8.Solon-Remoting-SocketD</module>
+        <module>demo8001-message</module>
+        <module>demo8002-message_ws</module>
+        <module>demo8003-rpc</module>
+        <module>demo8004-rpc_ws</module>
     </modules>
 </project>
