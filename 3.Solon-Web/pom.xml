@@ -18,5 +18,6 @@
 
     <modules>
         <module>demo3001-helloworld</module>
+        <module>demo3011-mvc</module>
     </modules>
 </project>
