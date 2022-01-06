@@ -25,21 +25,11 @@
             <artifactId>solon-web</artifactId>
         </dependency>
 
+        <!-- 或者使用其它支持 servelt 的插件 -->
         <dependency>
             <groupId>org.noear</groupId>
             <artifactId>solon.boot.undertow</artifactId>
         </dependency>
-
-        <!-- 或者 使用 jetty -->
-        <!--        <dependency>-->
-        <!--            <groupId>org.noear</groupId>-->
-        <!--            <artifactId>solon.boot.jetty</artifactId>-->
-        <!--        </dependency>-->
-
-        <!--        <dependency>-->
-        <!--            <groupId>org.noear</groupId>-->
-        <!--            <artifactId>solon.boot.jetty.add.jsp</artifactId>-->
-        <!--        </dependency>-->
 
         <dependency>
             <groupId>org.noear</groupId>
