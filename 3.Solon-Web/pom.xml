@@ -19,6 +19,6 @@
     <modules>
         <module>demo3001-helloworld</module>
         <module>demo3011-web</module>
-        <module>demo3021-i18n</module>
+        <module>demo3031-i18n</module>
     </modules>
 </project>
