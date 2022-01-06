@@ -21,5 +21,9 @@
         <module>demo8002-message_ws</module>
         <module>demo8003-rpc</module>
         <module>demo8004-rpc_ws</module>
+
+        <module>demo8011-send</module>
+        <module>demo8012-send_auth</module>
+        <module>demo8013-send_encrypt</module>
     </modules>
 </project>
