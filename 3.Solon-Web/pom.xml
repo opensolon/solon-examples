@@ -21,5 +21,6 @@
         <module>demo3011-web</module>
         <module>demo3012-web_servlet</module>
         <module>demo3021-i18n</module>
+        <module>demo3031-auth</module>
     </modules>
 </project>
