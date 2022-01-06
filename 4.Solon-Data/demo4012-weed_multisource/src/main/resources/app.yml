@@ -1,3 +1,9 @@
+solon.app:
+  name: demoapp
+  group: demo
+
+solon.output.meta: 1
+
 test:
   db1:
     schema: rock
@@ -11,5 +17,3 @@ test:
     driverClassName: com.mysql.cj.jdbc.Driver
     username: root
     password: 123456
-
-solon.output.meta: 1
