@@ -1,4 +1,4 @@
-package demo8002.client;
+package client;
 
 import org.noear.solon.core.message.Listener;
 import org.noear.solon.core.message.Message;

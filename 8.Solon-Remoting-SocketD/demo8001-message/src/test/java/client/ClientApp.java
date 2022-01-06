@@ -1,6 +1,6 @@
-package demo8002.client;
+package client;
 
-import demo8002.Constants;
+import demo8001.server.ServerApp;
 import org.noear.solon.Solon;
 import org.noear.solon.core.message.Listener;
 import org.noear.solon.core.message.Message;
@@ -9,10 +9,19 @@ import org.noear.solon.socketd.SocketD;
 
 public class ClientApp {
     public static void main(String[] args) throws Throwable {
-        Solon.start(ClientApp.class, args, app -> {
-            app.enableHttp(false)
-                    .enableWebSocketD(Constants.enableWebSocketD);
-        });
+        //启动服务端
+        new Thread(()->{
+            try {
+                ServerApp.main(args);
+            }catch (Throwable e){
+                throw new RuntimeException(e);
+            }
+        }).start();
+
+        Thread.sleep(1000 * 3);
+
+        //启动客户端
+        Solon.start(ClientApp.class, args);
 
         //
         //手动模式：适用于服务端不固定的
@@ -21,7 +30,7 @@ public class ClientApp {
         //wss://
         //tcp://
         //
-        Session session = SocketD.createSession("ws://localhost:8080");
+        Session session = SocketD.createSession("tcp://localhost:28080");
         session.listener(new Listener() {
             @Override
             public void onOpen(Session session) {
@@ -33,17 +42,15 @@ public class ClientApp {
                 //
                 // message.body 要自己解码一下；如果是字符串，可以：message.toString();
                 //
-                System.out.println("客户端1：我收到了：" + message+message.bodyAsString());
+                System.out.println("客户端1：我收到了：" + message);
             }
         });
 
         //可以先发个握手包
-        session.sendHandshake(Message.wrapHandshake("Token=12&Sn=s6"));
+        //session.sendHandshake("Token=12&Sn=s6");
 
         //启用自动心跳包
         session.sendHeartbeatAuto(30);
-
-
 
         //示例：有session后，可以：
         //

@@ -1,4 +1,4 @@
-package demo8001.client;
+package client;
 
 import org.noear.solon.core.message.Message;
 import org.noear.solon.core.message.Session;
