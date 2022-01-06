@@ -1,4 +1,4 @@
-package webapp.client;
+package demo7001.client;
 
 import org.noear.solon.annotation.Component;
 import org.noear.solon.core.LoadBalance;

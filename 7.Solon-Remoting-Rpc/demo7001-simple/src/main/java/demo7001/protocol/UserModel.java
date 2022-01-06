@@ -1,4 +1,4 @@
-package webapp.protocol;
+package demo7001.protocol;
 
 import lombok.Data;
 

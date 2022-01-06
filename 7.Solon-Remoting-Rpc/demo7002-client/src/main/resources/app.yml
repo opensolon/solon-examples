@@ -1,0 +1,11 @@
+server.port: 8080
+
+solon.app:
+  name: demoapp
+  group: demo
+
+solon.cloud.local:
+  discovery:
+    service:
+      local:
+        - "http://localhost:8081"
