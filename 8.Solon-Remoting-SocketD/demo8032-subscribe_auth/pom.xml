@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.noear.solon.examples</groupId>
+    <artifactId>demo8032-subscribe_auth</artifactId>
+    <version>demo</version>
+    <packaging>jar</packaging>
+
+    <name>${project.artifactId}</name>
+    <description>java project for solon demo</description>
+
+    <parent>
+        <groupId>org.noear</groupId>
+        <artifactId>solon-parent</artifactId>
+        <version>1.6.13-m2</version>
+        <relativePath />
+    </parent>
+
+    <dependencies>
+        <!-- for server -->
+        <dependency>
+            <groupId>org.noear</groupId>
+            <artifactId>solon.boot.socketd.smartsocket</artifactId>
+        </dependency>
+
+        <!-- for client -->
+        <dependency>
+            <groupId>org.noear</groupId>
+            <artifactId>solon.socketd.client.smartsocket</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.noear</groupId>
+            <artifactId>nami</artifactId>
+        </dependency>
+    </dependencies>
+
+</project>
