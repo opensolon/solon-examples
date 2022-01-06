@@ -5,12 +5,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.noear.solon.examples</groupId>
-    <artifactId>solon-examples</artifactId>
+    <artifactId>4.Solon-Data</artifactId>
     <version>demo</version>
     <packaging>pom</packaging>
-
-    <name>_root</name>
-    <description>Java project for solon examples</description>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -20,7 +17,15 @@
     </properties>
 
     <modules>
-        <module>1.Solon</module>
-        <module>4.Solon-Data</module>
+        <module>demo4011-weed</module>
+        <module>demo4012-weed_multisource</module>
+        <module>demo4021-mybatis</module>
+        <module>demo4022-mybatis_multisource</module>
+        <module>demo4023-mybatis_pagehelper</module>
+        <module>demo4024-mybatis_sqlhelper</module>
+        <module>demo4031-mybatisplus</module>
+        <module>demo4041-activerecord</module>
+        <module>demo4051-beetlsql</module>
+        <module>demo4052-beetlsql_multisource</module>
     </modules>
 </project>
