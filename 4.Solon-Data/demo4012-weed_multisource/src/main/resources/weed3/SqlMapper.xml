@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<mapper namespace="webapp.dso.mapper"
-        import="webapp.model.*"
+<mapper namespace="demo4012.dso.mapper"
+        import="demo4012.model.*"
         db="db1">
     <sql id="appx_get" return="int" remarks="随便取条数据的ID">
         select app_id from appx limit 1

@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Set;
 
 @Db("db1")
-@Namespace("webapp.dso.mapper.SqlMapper")
+@Namespace("demo4011.dso.mapper.SqlMapper")
 public interface SqlMapper{
     //随便取条数据的ID
     int appx_get() ;
