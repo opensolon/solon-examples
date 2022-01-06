@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.noear.solon.examples</groupId>
-    <artifactId>demo3011-mvc</artifactId>
+    <artifactId>demo3011-web</artifactId>
     <version>demo</version>
     <packaging>jar</packaging>
 
