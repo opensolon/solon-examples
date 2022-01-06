@@ -20,6 +20,6 @@
     </properties>
 
     <modules>
-        <module>1.Solon/solon-demo</module>
+        <module>1.Solon/demo1001-solon</module>
     </modules>
 </project>
