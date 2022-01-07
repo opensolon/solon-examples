@@ -38,7 +38,6 @@ public class ApiGateway extends Gateway {
     public void render(Object obj, Context c) throws Throwable {
         if (obj instanceof Throwable) {
             c.render(Result.failure("unknown error"));
-            return;
         } else {
             c.render(obj);
         }
