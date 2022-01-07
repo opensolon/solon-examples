@@ -101,7 +101,7 @@
                     </descriptorRefs>
                     <archive>
                         <manifest>
-                            <mainClass>demo7002.client.WebApp</mainClass>
+                            <mainClass>demo6014.ApiApp</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
