@@ -15,7 +15,7 @@ public class ApiGateway extends ApiGatewayBase {
     @Override
     protected void register() {
 
-        //添加个拦截器
+        //添加个前置处理
         before(new TokenInterceptor());
 
         //添加Bean

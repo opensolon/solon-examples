@@ -17,7 +17,7 @@ public class ApiGateway extends Gateway {
     @Override
     protected void register() {
 
-        //添加个拦截器
+        //添加个前置处理
         before(c -> {
             //检测有没有token（用 param 替代；方便手浏览器测试）
             if (c.param("t") == null) {

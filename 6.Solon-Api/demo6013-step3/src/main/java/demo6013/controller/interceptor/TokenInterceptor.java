@@ -5,7 +5,7 @@ import org.noear.solon.core.handle.Context;
 import org.noear.solon.core.handle.Handler;
 
 /**
- * 将拦截器独立为类，可以在不同的网关里组装式使用；
+ * 将处理独立为类，可以在不同的网关里组装式使用；
  *
  * @author noear 2021/6/11 created
  */

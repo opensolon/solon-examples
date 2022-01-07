@@ -56,7 +56,7 @@ public abstract class ApiGatewayBase extends Gateway {
         }
 
 
-        //如果想对输出时间点做控制，可以不在这里渲染（由后置拦截器进行渲染）
+        //如果想对输出时间点做控制，可以不在这里渲染（由后置处理进行渲染）
         c.render(c.result);
     }
 }
