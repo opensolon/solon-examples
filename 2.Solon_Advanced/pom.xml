@@ -18,5 +18,6 @@
 
     <modules>
         <module>demo2002-external_ext</module>
+        <module>demo2005-unhandled_exception</module>
     </modules>
 </project>
