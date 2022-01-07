@@ -17,5 +17,6 @@
     </properties>
 
     <modules>
+        <module>demo2002-external_ext</module>
     </modules>
 </project>

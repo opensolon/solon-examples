@@ -1,0 +1,9 @@
+server.port: 8080
+
+solon.app:
+  name: demoapp
+  group: demo
+
+solon.extend: "!demo_ext"
+
+demo_name: noear

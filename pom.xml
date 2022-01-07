@@ -21,7 +21,7 @@
 
     <modules>
         <module>1.Solon</module>
-        <module>2.Solon Advanced</module>
+        <module>2.Solon_Advanced</module>
         <module>3.Solon-Web</module>
         <module>4.Solon-Data</module>
         <module>5.Solon-Job</module>
