@@ -17,5 +17,9 @@
     </properties>
 
     <modules>
+        <module>demo6011-step1</module>
+        <module>demo6012-step2</module>
+        <module>demo6013-step3</module>
+        <module>demo6014-step4</module>
     </modules>
 </project>

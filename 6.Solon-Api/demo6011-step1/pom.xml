@@ -5,12 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.noear.solon.examples</groupId>
-    <artifactId>demo7002-api.impl</artifactId>
+    <artifactId>demo6011-step1</artifactId>
     <version>demo</version>
     <packaging>jar</packaging>
 
-    <name>${project.artifactId}</name>
-    <description>java project for solon demo</description>
+    <description>Java project for solon-api demo</description>
 
     <parent>
         <groupId>org.noear</groupId>
@@ -22,20 +21,13 @@
     <dependencies>
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>solon-rpc</artifactId>
+            <artifactId>solon-api</artifactId>
         </dependency>
 
         <dependency>
-            <groupId>org.noear.solon.examples</groupId>
-            <artifactId>demo7002-api</artifactId>
-            <version>demo</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.18.12</version>
-            <scope>provided</scope>
+            <groupId>org.noear</groupId>
+            <artifactId>solon-test</artifactId>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
@@ -68,7 +60,7 @@
                     </descriptorRefs>
                     <archive>
                         <manifest>
-                            <mainClass>demo7002.impl.RpcApp</mainClass>
+                            <mainClass>demo7002.client.WebApp</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
