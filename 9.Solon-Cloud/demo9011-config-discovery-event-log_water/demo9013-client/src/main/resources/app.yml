@@ -1,0 +1,17 @@
+solon.app:
+  group: demo       #配置服务使用的默认组
+  name: helloapp    #发现服务使用的应用名
+
+solon.cloud.water:
+  server: "waterapi:9371"   #water服务地址
+  config:
+    load: "test.properties" #默认加载一个配置
+  discovery:
+    enable: true  #设为 false 时，solon.cloud.local 会生效（一般用于本地调试）
+
+
+solon.cloud.local:
+  discovery:
+    service:
+      helloapi:
+        - "http://localhost:7112"  #本地服务配置
