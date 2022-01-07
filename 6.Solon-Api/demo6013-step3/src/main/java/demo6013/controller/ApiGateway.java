@@ -1,6 +1,6 @@
 package demo6013.controller;
 
-import demo6013.controller.interceptor.TokenInterceptor;
+import demo6013.controller.interceptor.TokenHandler;
 import org.noear.solon.annotation.Component;
 import org.noear.solon.annotation.Mapping;
 
@@ -16,7 +16,7 @@ public class ApiGateway extends ApiGatewayBase {
     protected void register() {
 
         //添加个前置处理
-        before(new TokenInterceptor());
+        before(new TokenHandler());
 
         //添加Bean
         addBeans(bw -> "api".equals(bw.tag()));

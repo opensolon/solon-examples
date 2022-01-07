@@ -9,7 +9,7 @@ import org.noear.solon.core.handle.Handler;
  *
  * @author noear 2021/6/11 created
  */
-public class TokenInterceptor implements Handler {
+public class TokenHandler implements Handler {
     @Override
     public void handle(Context ctx) throws Throwable {
         //
