@@ -1,6 +1,8 @@
 package demo4011;
 
+import org.noear.snack.ONode;
 import org.noear.solon.Solon;
+import org.noear.weed.WeedConfig;
 
 /**
  *
@@ -25,11 +27,12 @@ import org.noear.solon.Solon;
 public class DemoApp {
     public static void main(String[] args) {
         Solon.start(DemoApp.class, args, (app) -> {
-//            //可以在调试模式下关闭缓存
-//            //
-//            if (app.prop().isDebugMode()) {
-//                app.enableCaching = false;
-//            }
+            if (Solon.cfg().isDebugMode() || Solon.cfg().isFilesMode()) {
+                //执行后打印sql
+                WeedConfig.onExecuteAft(cmd -> {
+                    System.out.println("[Weed3]" + cmd.text + "\r\n" + cmd.paramMap());
+                });
+            }
         });
     }
 }
