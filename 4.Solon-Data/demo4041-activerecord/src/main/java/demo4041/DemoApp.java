@@ -9,8 +9,9 @@ import org.noear.solon.Solon;
 public class DemoApp {
     public static void main(String[] args) {
         Solon.start(DemoApp.class, args, app -> {
+            //订阅事件，后以定制
             app.onEvent(ActiveRecordPlugin.class, arp -> {
-                //启用开发模式
+                //启用开发或调试模式（可以打印sql）
                 if (Solon.cfg().isDebugMode() || Solon.cfg().isFilesMode()) {
                     arp.setDevMode(true);
                 }
