@@ -7,4 +7,4 @@ datasource:
   jdbcUrl: jdbc:h2:mem:activiti;DB_CLOSE_DELAY=1000
 sqltoy:
   # 多个路径用逗号分隔(请务必看仔细)
-  sqlResourcesDir: classpath:mapper
+  sqlResourcesDir: classpath:sqltoy
