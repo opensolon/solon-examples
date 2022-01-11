@@ -1,0 +1,10 @@
+server:
+  port: 6969
+datasource:
+  driver-class-name: org.h2.Driver
+  username: sa
+  password:
+  jdbcUrl: jdbc:h2:mem:activiti;DB_CLOSE_DELAY=1000
+sqltoy:
+  # 多个路径用逗号分隔(请务必看仔细)
+  sqlResourcesDir: classpath:mapper
