@@ -1,12 +1,10 @@
 package demo4061.controller;
 
-import demo4061.domain.User;
-import demo4061.domain.UserVo;
-import demo4061.mapper.UserMapper;
+import demo4061.model.UserVo;
+import demo4061.dso.mapper.UserMapper;
 import org.noear.solon.annotation.Controller;
 import org.noear.solon.annotation.Inject;
 import org.noear.solon.annotation.Mapping;
-import org.noear.solon.core.handle.Result;
 import org.sagacity.sqltoy.dao.SqlToyLazyDao;
 import org.sagacity.sqltoy.model.Page;
 

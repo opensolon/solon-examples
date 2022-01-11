@@ -1,4 +1,4 @@
-package demo4061.domain;
+package demo4061.model;
 
 import org.sagacity.sqltoy.config.annotation.SqlToyEntity;
 import org.sagacity.sqltoy.config.annotation.Translate;

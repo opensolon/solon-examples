@@ -1,7 +1,6 @@
-package demo4061.mapper;
+package demo4061.dso.mapper;
 
-import demo4061.domain.UserVo;
-import org.noear.solon.core.Aop;
+import demo4061.model.UserVo;
 import org.noear.solon.extend.sqltoy.annotation.Mapper;
 import org.noear.solon.extend.sqltoy.annotation.Param;
 import org.noear.solon.extend.sqltoy.annotation.Sql;

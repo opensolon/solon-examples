@@ -1,8 +1,8 @@
 package demo4061;
 
 import com.zaxxer.hikari.HikariDataSource;
-import demo4061.domain.Dictionary;
-import demo4061.domain.User;
+import demo4061.model.Dictionary;
+import demo4061.model.User;
 import org.noear.solon.Solon;
 import org.noear.solon.annotation.Bean;
 import org.noear.solon.annotation.Configuration;
