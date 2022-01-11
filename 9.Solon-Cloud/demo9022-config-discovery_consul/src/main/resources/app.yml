@@ -1,0 +1,8 @@
+server.port: 7112
+
+solon.app:
+  group: demo
+  name: helloapi    #发现服务使用的应用名（在Demo，将被NimaClient引用）
+
+solon.cloud.consul:
+  server: 127.0.0.1   #consul服务地址
