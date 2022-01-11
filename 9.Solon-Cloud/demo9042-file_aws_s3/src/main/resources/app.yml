@@ -1,0 +1,17 @@
+solon.app:
+  group: demo       #配置服务使用的默认组
+  name: demoapp    #发现服务使用的应用名
+
+
+solon.cloud.aws.s3:
+  file:
+    bucket: aaa
+    regionId: bbb
+    accessKey: ccc
+    secretKey: ddd
+
+#以上配置，可通过配置服务加载
+#solon.cloud.water:
+#  server: water
+#  config:
+#    load: "cfs_cfg"

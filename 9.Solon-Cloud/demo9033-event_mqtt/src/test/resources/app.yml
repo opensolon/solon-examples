@@ -1,0 +1,7 @@
+solon.app:
+  group: demo       #配置服务使用的默认组
+  name: helloconsumer    #发现服务使用的应用名
+
+solon.cloud.mqtt:
+  server: "tcp://localhost:41883"   #mqtt服务地址
+

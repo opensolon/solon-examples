@@ -1,0 +1,10 @@
+server.port: 7112
+
+solon.app:
+  group: demo
+  name: helloapi    #发现服务使用的应用名（在Demo，将被NimaClient引用）
+
+solon.cloud.nacos:
+  server: 172.168.0.48:8848   #nacos服务地址
+  username: nacos             #nacos链接账号
+  password: nacos             #nacos链接密码

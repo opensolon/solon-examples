@@ -6,7 +6,6 @@ import org.noear.solon.Solon;
 import org.noear.solon.core.Aop;
 import org.sagacity.sqltoy.dao.SqlToyLazyDao;
 
-import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -30,5 +29,4 @@ public class DemoApp {
 //        SqlToyLazyDao dao2= Aop.get("dao2");
 //        initData(dao2,"dao2");
     }
-
 }
