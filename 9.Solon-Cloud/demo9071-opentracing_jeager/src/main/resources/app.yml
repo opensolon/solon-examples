@@ -1,0 +1,22 @@
+
+solon.app:
+  name: demoapp
+  group: demo
+
+solon.cloud.local:
+  discovery:
+    service:
+      hellorpc:
+        - tcp://localhost:28081
+
+io:
+  opentracing:
+    trace:
+      host: localhost
+      port: 6831
+
+#solon.logging.logger:
+#  "io.jaegertracing.*":
+#    level: WARN
+#  "org.noear.*":
+#    level: INFO
