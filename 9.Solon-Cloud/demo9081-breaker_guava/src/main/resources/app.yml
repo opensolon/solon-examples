@@ -1,0 +1,3 @@
+solon.cloud.local:
+  breaker:
+    hello: 1
