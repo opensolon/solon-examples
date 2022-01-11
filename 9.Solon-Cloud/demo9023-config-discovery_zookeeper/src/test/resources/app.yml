@@ -1,0 +1,12 @@
+solon.app:
+  group: demo      #配置服务使用的默认组
+  name: helloapp    #发现服务使用的应用名
+
+solon.cloud.zookeeper:
+  server: "localhost:2181"
+  config:
+    load: "test.properties"
+
+solon.logging.logger:
+  "org.apache.zookeeper.*":
+    level: "WARN"
