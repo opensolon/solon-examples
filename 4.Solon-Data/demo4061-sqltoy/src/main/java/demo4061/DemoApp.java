@@ -6,6 +6,7 @@ import org.noear.solon.Solon;
 import org.noear.solon.core.Aop;
 import org.sagacity.sqltoy.dao.SqlToyLazyDao;
 
+import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -21,12 +22,5 @@ public class DemoApp {
             new File("./test.db.trace.db").delete();
         }
         Solon.start(DemoApp.class,args);
-
-        //初始化测试数据
-
-//        SqlToyLazyDao dao=Aop.get("sqlToyLazyDao");
-//        initData(dao,"default");
-//        SqlToyLazyDao dao2= Aop.get("dao2");
-//        initData(dao2,"dao2");
     }
 }
