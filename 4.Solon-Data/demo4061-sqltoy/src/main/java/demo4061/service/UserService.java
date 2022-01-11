@@ -17,6 +17,7 @@ public class UserService {
     //使用名字调用对应数据源
     @Db("db2")
     SqlToyLazyDao dao2;
+
     @Init
     public void init(){
         //初始化数据
@@ -24,6 +25,7 @@ public class UserService {
         //多数据源的初始化
         initData(dao2,"db2");
     }
+
     private static void initData(SqlToyLazyDao dao, String flag){
         Map params=new HashMap();
         //init for T_USER

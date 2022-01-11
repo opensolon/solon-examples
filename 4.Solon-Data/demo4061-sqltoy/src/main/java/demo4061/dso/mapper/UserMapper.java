@@ -22,8 +22,10 @@ public interface UserMapper {
     // 查询单个User,getByUserName这个名字不重要，以@sql注解中内容为准
     @Sql("userList")
     UserVo getByUserName(@Param String username);
+
     //不用@Sql注解的时候,就匹配方法名(userList)
     List<UserVo> userList(@Param String username);
+
     // 也可直接写sql
     @Sql("  SELECT * FROM T_USER WHERE WHERE USER_NAME=:username #[and GENDER=:gender]")
     UserVo getByUserName2(@Param String username,@Param Integer gender);
@@ -44,15 +46,19 @@ public interface UserMapper {
         // Aop.get(XX.class) 获取其他bean来处理业务
         return count()+1;
     }
+
     //下面操作建议直接调使用dao接口调用，比如:insert操作，调用dao.save(user)还以返回user的主键(主键自增时比较有用)
     //但是使用mapper的语句时，返回的时影响数据的条数
     //更新返回影响数据条数
     @Sql("INSERT INTO T_USER(USER_NAME,GENDER) VALUES(:username,:gender)")
     long saveUser(User user);
+
     @Sql("UPDATE T_USER set gender=:gender where USER_NAME=:username")
     long updateUser(User user);
+
     @Sql("DELETE FROM T_USER WHERE USER_NAME=:username")
     long deleteUser(User user);
+
     @Sql("DELETE FROM T_USER WHERE USER_NAME=:username")
     long deleteUser1(@Param String username);
 

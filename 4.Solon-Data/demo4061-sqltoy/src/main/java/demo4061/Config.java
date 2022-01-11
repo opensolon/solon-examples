@@ -18,15 +18,15 @@ public class Config {
     /**
      * 配置数据源
      * @param dataSource
-     * @return
      */
     @Bean
-    DataSource db1(@Inject("${datasource}") HikariDataSource dataSource){
-        return dataSource;
+    DataSource db1(@Inject("${datasource}") HikariDataSource ds){
+        return ds;
     }
+
     //多数据源
     @Bean("db2")
-    DataSource db2(@Inject("${datasource2}") HikariDataSource dataSource){
-        return dataSource;
+    DataSource db2(@Inject("${datasource2}") HikariDataSource ds){
+        return ds;
     }
 }
