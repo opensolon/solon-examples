@@ -20,5 +20,24 @@
         <module>demo9011-config-discovery-event-log_water/demo9012-interface</module>
         <module>demo9011-config-discovery-event-log_water/demo9012-server</module>
         <module>demo9011-config-discovery-event-log_water/demo9013-client</module>
+        <module>demo9021-config-discovery_nacos</module>
+        <module>demo9022-config-discovery_consul</module>
+        <module>demo9023-config-discovery_zookeeper</module>
+        <module>demo9031-event_rabbitmq</module>
+        <module>demo9032-event_rocketmq</module>
+        <module>demo9033-event_mqtt</module>
+        <module>demo9034-event_kafka</module>
+        <module>demo9035-event_pulsar</module>
+        <module>demo9039-event_multi_channel</module>
+        <module>demo9041-file_aliyun_oss</module>
+        <module>demo9042-file_aws_s3</module>
+        <module>demo9043-file_qiniu_kodo</module>
+        <module>demo9051-id_snowflake</module>
+        <module>demo9061-job_water</module>
+        <module>demo9062-job_xxl_job</module>
+        <module>demo9071-opentracing_jeager</module>
+        <module>demo9081-breaker_guava</module>
+        <module>demo9082-breaker_sentinel</module>
+        <module>demo9083-breaker_semaphore</module>
     </modules>
 </project>
