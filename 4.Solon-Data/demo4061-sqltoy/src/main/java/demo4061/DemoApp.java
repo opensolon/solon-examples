@@ -1,23 +1,17 @@
 package demo4061;
 
-import com.zaxxer.hikari.HikariDataSource;
 import demo4061.model.Dictionary;
 import demo4061.model.User;
 import org.noear.solon.Solon;
-import org.noear.solon.annotation.Bean;
-import org.noear.solon.annotation.Configuration;
-import org.noear.solon.annotation.Inject;
 import org.noear.solon.core.Aop;
 import org.sagacity.sqltoy.dao.SqlToyLazyDao;
 
-import javax.sql.DataSource;
 import java.util.HashMap;
 import java.util.Map;
 
 /**
  * @author noear 2022/1/10 created
  */
-@Configuration
 public class DemoApp {
     public static void main(String[] args) {
         Solon.start(DemoApp.class,args);
@@ -45,14 +39,5 @@ public class DemoApp {
             dao.save(gender_0);
             dao.save(gender_1);
         });
-    }
-    /**
-     * 配置数据源
-     * @param dataSource
-     * @return
-     */
-    @Bean
-    DataSource db1(@Inject("${datasource}")HikariDataSource dataSource){
-        return dataSource;
     }
 }
