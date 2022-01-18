@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.noear.solon.examples</groupId>
-    <artifactId>demo3061-session_jwt</artifactId>
+    <artifactId>demo3063-session_jwt</artifactId>
     <version>demo</version>
     <packaging>jar</packaging>
 
@@ -24,6 +24,11 @@
         <dependency>
             <groupId>org.noear</groupId>
             <artifactId>solon-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.noear</groupId>
+            <artifactId>solon.extend.sessionstate.jwt</artifactId>
         </dependency>
 
         <dependency>

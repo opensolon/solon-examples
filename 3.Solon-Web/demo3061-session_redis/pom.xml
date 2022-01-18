@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.noear.solon.examples</groupId>
-    <artifactId>demo3062-session_redis</artifactId>
+    <artifactId>demo3061-session_redis</artifactId>
     <version>demo</version>
     <packaging>jar</packaging>
 
