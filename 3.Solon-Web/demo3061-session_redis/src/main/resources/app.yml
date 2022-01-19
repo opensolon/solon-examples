@@ -1,0 +1,17 @@
+
+
+# 基于 cookies 传（适合用于管理后台）//默认只需要设置个超时
+
+
+server.session:
+  timeout: 7200
+  state:
+    redis:
+      server: "localhost:6379"
+      password: 123456
+      db: 1
+      maxTotal: 200
+
+solon.app:
+  name: demoapp
+  group: demo
