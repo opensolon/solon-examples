@@ -28,7 +28,8 @@
         <module>demo9033-event_mqtt</module>
         <module>demo9034-event_kafka</module>
         <module>demo9035-event_pulsar</module>
-        <module>demo9039-event_multi_channel</module>
+        <module>demo9038-event_multi_channel</module>
+        <module>demo9039-event_multi_channel2</module>
         <module>demo9041-file_aliyun_oss</module>
         <module>demo9042-file_aws_s3</module>
         <module>demo9043-file_qiniu_kodo</module>
