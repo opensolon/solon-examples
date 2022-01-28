@@ -21,10 +21,13 @@ public class ProducerApp {
     public static class EventPlugin implements Plugin {
         @Override
         public void start(SolonApp app) {
+            //获取配置块
             CloudProps cloudProps = new CloudProps("rabbitmq_biz");
+            //初始化服务
             CloudEventServiceRabbitmqImp eventServiceImp = new CloudEventServiceRabbitmqImp(cloudProps);
+            //注册
             CloudManager.register(eventServiceImp);
-
+            //触发订阅动作
             Aop.beanOnloaded(eventServiceImp::subscribe);
         }
     }
