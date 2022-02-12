@@ -9,10 +9,10 @@ import java.util.Date;
  * @author noear 2021/12/28 created
  */
 @Slf4j
-@Scheduled(cron = "0/1 * * * * ? *")
+@Scheduled(cron = "0/10 * * * * ? *")
 public class Job2 implements Runnable {
     @Override
     public void run() {
-        log.info(new Date() + ": 0/1 * * * * ? *");
+        log.info(new Date() + ": 0/10 * * * * ? *");
     }
 }
