@@ -1,0 +1,4 @@
+{
+  "outPath": "src/main/resources/static/doc",
+  "framework": "solon"
+}

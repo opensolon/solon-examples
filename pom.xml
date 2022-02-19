@@ -29,5 +29,6 @@
         <module>7.Solon-Remoting-Rpc</module>
         <module>8.Solon-Remoting-SocketD</module>
         <module>9.Solon-Cloud</module>
+        <module>a.Doc</module>
     </modules>
 </project>
