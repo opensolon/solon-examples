@@ -17,6 +17,6 @@
     </properties>
 
     <modules>
-        <module>demoa001-smartdoc</module>
+        <module>demoA001-smartdoc</module>
     </modules>
 </project>

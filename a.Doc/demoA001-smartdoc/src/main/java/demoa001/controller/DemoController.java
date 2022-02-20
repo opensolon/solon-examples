@@ -42,7 +42,7 @@ public class DemoController {
      * @return
      */
     @Post
-    @Mapping(value = "/add", produces = "text/json")
+    @Mapping(value = "/add")
     public Msg add(String appname, String nick) {
         Map m = new HashMap();
         m.put("appname", appname);
@@ -60,8 +60,8 @@ public class DemoController {
      * @return
      */
     @Post
-    @Mapping(value = "/add", produces = "text/json")
-    public Msg add(@Body Model model) {
+    @Mapping(value = "/add2", produces = "text/json")
+    public Msg add2(@Body Model model) {
         Msg m = new Msg();
         return m;
     }
@@ -88,7 +88,7 @@ public class DemoController {
      * @return
      */
     @Mapping("/get/{appname}")
-    public Msg get(String appname) {
+    public Msg get(@PathVar String appname) {
         Msg m = new Msg();
         return m;
     }

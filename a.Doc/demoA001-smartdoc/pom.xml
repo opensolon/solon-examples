@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.noear.solon.examples</groupId>
-    <artifactId>demoa001-smartdoc</artifactId>
+    <artifactId>demoA001-smartdoc</artifactId>
     <version>demo</version>
     <packaging>jar</packaging>
 
@@ -24,6 +24,20 @@
             <groupId>org.noear</groupId>
             <artifactId>solon-web</artifactId>
             <version>${solon.ver}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.shalousun</groupId>
+            <artifactId>smart-doc</artifactId>
+            <version>2.3.8</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.noear</groupId>
+            <artifactId>solon-test</artifactId>
+            <version>${solon.ver}</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
