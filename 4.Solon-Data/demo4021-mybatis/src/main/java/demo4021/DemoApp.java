@@ -32,6 +32,7 @@ public class DemoApp {
         Solon.start(DemoApp.class, args, app -> {
             //订阅事件，后以定制
             app.onEvent(Configuration.class, e -> {
+                //e.setCacheEnabled(false);
                 //e.setMapUnderscoreToCamelCase(true);
                 //e.addInterceptor();
             });
