@@ -23,6 +23,9 @@
         <module>demo3013-web_jsp</module>
         <module>demo3021-i18n</module>
         <module>demo3031-auth</module>
+        <module>demo3032-auth_sa_token</module>
+        <module>demo3033-auth_jap</module>
+        <module>demo3034-auth_jap_ids</module>
         <module>demo3041-gateway</module>
         <module>demo3051-websocket</module>
         <module>demo3061-session_redis</module>
