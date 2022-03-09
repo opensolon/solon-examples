@@ -11,7 +11,7 @@ test.db1:
     username: root
     password: 123456
 
-#默认
+#映射配置
 mybatis.db1:
     typeAliases:    #支持包名 或 类名（.class 结尾）
         - "demo4023.model"
@@ -26,7 +26,6 @@ mybatis.db1:
 
 
 #分页组件的配置
-# pagehelper properties
 pagehelper:
     offsetAsPageNum: true
     rowBoundsWithCount: true

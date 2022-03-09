@@ -17,10 +17,9 @@ public class PageController {
     AppxMapper appxMapper;
 
     @Mapping("test")
-    public Object test() throws Throwable{
-        SqlPaginations.preparePagination(2,2);
+    public Object test() throws Throwable {
+        SqlPaginations.preparePagination(2, 2);
 
-       return appxMapper.appx_get_page();
-
+        return appxMapper.appx_get_page();
     }
 }
