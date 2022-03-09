@@ -7,6 +7,7 @@ import java.util.List;
 
 @Mapper
 public interface AppxMapper {
+    AppxModel appx_get();
     List<AppxModel> appx_get_page();
 }
 
