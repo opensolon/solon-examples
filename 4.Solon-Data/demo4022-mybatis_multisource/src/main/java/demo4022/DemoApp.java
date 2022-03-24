@@ -1,7 +1,6 @@
 package demo4022;
 
-import org.apache.ibatis.session.Configuration;
-import org.noear.solon.SolonBuilder;
+import org.noear.solon.Solon;
 
 /**
  *
@@ -23,15 +22,8 @@ import org.noear.solon.SolonBuilder;
  *   UNIQUE KEY `IX_akey` (`akey`) USING BTREE
  * ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='应用表';
  * */
-//@EnableTransaction(false) //关掉事务
 public class DemoApp {
     public static void main(String[] args) {
-        new SolonBuilder()
-                .onEvent(Configuration.class, c -> {
-                    //添加拦截插件
-                    //c.addInterceptor();
-                })
-                .onError((err) -> err.printStackTrace())
-                .start(DemoApp.class, args);
+        Solon.start(DemoApp.class, args);
     }
 }

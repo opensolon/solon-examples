@@ -25,6 +25,17 @@ mybatis.db1:
         - "demo4022.model"
     mappers:        #支持包名 或 类名（.class 结尾）或 xml（.xml结尾）
         - "demo4022.dso.mapper.AppxMapper.class"
+    configuration:
+        cacheEnabled: false
+        mapUnderscoreToCamelCase: true
+
+
+#mybatis.plugin:
+#    - pagehelper:
+#        class: com.github.pagehelper.PageHelper
+#        dialect: mysql
+#        rowBoundsWithCount: true
+
 
 #再定义个新配置
 mybatis.db2:

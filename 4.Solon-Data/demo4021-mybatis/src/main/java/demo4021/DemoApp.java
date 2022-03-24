@@ -40,9 +40,7 @@ public class DemoApp {
 //                e.addInterceptor();
 //            });
 //        });
-    }
 
-//    public static void main2(String[] args) {
 //        new SolonBuilder()
 //                .onEvent(Configuration.class, e -> {
 //                    //e.addInterceptor();
@@ -55,5 +53,5 @@ public class DemoApp {
 //                    //app.beanMake(MybatisConfiguration.class);
 //                });
 //
-//    }
+    }
 }

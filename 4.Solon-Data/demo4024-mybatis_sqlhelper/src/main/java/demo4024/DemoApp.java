@@ -24,9 +24,6 @@ import org.noear.solon.Solon;
  * */
 public class DemoApp {
     public static void main(String[] args) {
-
-        Solon.start(DemoApp.class, args, (app)->{
-           //app.beanMake(MybatisConfiguration.class);
-        });
+        Solon.start(DemoApp.class, args);
     }
 }

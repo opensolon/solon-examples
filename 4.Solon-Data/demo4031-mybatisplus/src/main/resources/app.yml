@@ -21,11 +21,14 @@ mybatis.db1:
         cacheEnabled: false
         mapUnderscoreToCamelCase: true
 
+
+
 #mybatis.plugin:
 #    - pagehelper:
 #        class: com.github.pagehelper.PageHelper
 #        dialect: mysql
 #        rowBoundsWithCount: true
+
 
 
 #分页组件的配置
