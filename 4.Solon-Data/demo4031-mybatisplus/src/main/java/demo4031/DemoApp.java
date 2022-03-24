@@ -6,6 +6,7 @@ import com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.inner.PaginationInnerInterceptor;
 import demo4031.dso.MybatisSqlSessionFactoryBuilderImpl;
 import org.apache.ibatis.session.Configuration;
+import org.noear.solon.Solon;
 import org.noear.solon.SolonBuilder;
 import org.noear.solon.core.Aop;
 
@@ -31,21 +32,18 @@ import org.noear.solon.core.Aop;
  * */
 public class DemoApp {
     public static void main(String[] args) {
+        Solon.start(DemoApp.class, args);
 
-        new SolonBuilder()
-                .onEvent(Configuration.class, e -> {
-                    MybatisPlusInterceptor plusInterceptor = new MybatisPlusInterceptor();
-
-                    plusInterceptor.addInnerInterceptor(new PaginationInnerInterceptor(DbType.MYSQL));
-
-                    e.addInterceptor(plusInterceptor);
-                })
-                .onPluginLoadEnd(e -> {
-                    //重新定义 SqlSessionFactoryBuilder（没事儿，别用它）
-                    Aop.wrapAndPut(MybatisSqlSessionFactoryBuilder.class, new MybatisSqlSessionFactoryBuilderImpl());
-                })
-                .start(DemoApp.class, args, (app) -> {
-                    //app.beanMake(MybatisConfiguration.class);
-                });
+//        new SolonBuilder()
+//                .onEvent(Configuration.class, e -> {
+//                    //e.setCacheEnabled(false);
+//                })
+//                .onPluginLoadEnd(e -> {
+//                    //重新定义 SqlSessionFactoryBuilder（没事儿，别用它）
+//                    Aop.wrapAndPut(MybatisSqlSessionFactoryBuilder.class, new MybatisSqlSessionFactoryBuilderImpl());
+//                })
+//                .start(DemoApp.class, args, (app) -> {
+//                    //app.beanMake(MybatisConfiguration.class);
+//                });
     }
 }

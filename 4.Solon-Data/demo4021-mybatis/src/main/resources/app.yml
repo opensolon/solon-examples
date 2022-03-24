@@ -24,6 +24,9 @@ mybatis.db1:
         - "demo4021.model"
     mappers:        #支持包名 或 类名（.class 结尾）或 xml（.xml结尾）
         - "demo4021.dso.mapper"
+    configuration:
+        cacheEnabled: false
+        mapUnderscoreToCamelCase: true
 
 #mybatis.plugin:
 #    - pagehelper:

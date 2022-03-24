@@ -29,14 +29,17 @@ import org.noear.solon.core.Aop;
  * */
 public class DemoApp {
     public static void main(String[] args) {
-        Solon.start(DemoApp.class, args, app -> {
-            //订阅事件，后以定制
-            app.onEvent(Configuration.class, e -> {
-                //e.setCacheEnabled(false);
-                //e.setMapUnderscoreToCamelCase(true);
-                //e.addInterceptor();
-            });
-        });
+        Solon.start(DemoApp.class, args);
+
+
+//        Solon.start(DemoApp.class, args, app -> {
+//            //订阅事件，后以定制
+//            app.onEvent(Configuration.class, e -> {
+//                e.setCacheEnabled(false);
+//                e.setMapUnderscoreToCamelCase(true);
+//                e.addInterceptor();
+//            });
+//        });
     }
 
 //    public static void main2(String[] args) {
