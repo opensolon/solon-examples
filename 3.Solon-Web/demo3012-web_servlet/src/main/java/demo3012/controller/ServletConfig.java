@@ -11,6 +11,6 @@ import java.util.Set;
 public class ServletConfig implements ServletContainerInitializer {
     @Override
     public void onStartup(Set<Class<?>> set, ServletContext sc) throws ServletException {
-
+        //sc.addServlet("/hello/*", HelloServlet.class);
     }
 }
