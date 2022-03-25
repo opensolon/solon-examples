@@ -1,6 +1,7 @@
 package demo4021.dso.service;
 
 import demo4021.dso.mapper.AppxMapper;
+import org.apache.ibatis.ext.solon.Db;
 import org.noear.solon.annotation.Inject;
 import org.noear.solon.data.annotation.Tran;
 import org.noear.solon.data.tran.TranPolicy;
@@ -8,7 +9,7 @@ import org.noear.solon.extend.aspect.annotation.Service;
 
 @Service
 public class AppService {
-    @Inject
+    @Db
     AppxMapper sqlMapper1;
 
     public Object getApp(int app_id) throws Exception {

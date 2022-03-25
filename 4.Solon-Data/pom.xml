@@ -17,6 +17,7 @@
     </properties>
 
     <modules>
+        <module>demo4001-cache</module>
         <module>demo4011-weed</module>
         <module>demo4012-weed_multisource</module>
         <module>demo4021-mybatis</module>
