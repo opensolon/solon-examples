@@ -2,6 +2,7 @@ package demo4021;
 
 import com.zaxxer.hikari.HikariDataSource;
 import org.apache.ibatis.ext.solon.Db;
+import org.apache.ibatis.plugin.Interceptor;
 import org.noear.solon.annotation.Bean;
 import org.noear.solon.annotation.Configuration;
 import org.noear.solon.annotation.Inject;
@@ -19,10 +20,16 @@ public class Config {
         return ds;
     }
 
-    @Bean
-    public void db1Adapter(@Db("db1") MybatisAdapter adapter) {
-        if(adapter == null){
-            return;
-        }
-    }
+//    @Bean
+//    public void db1Adapter(@Db("db1") MybatisAdapter adapter) {
+//        if(adapter == null){
+//            return;
+//        }
+//    }
+
+//    @Bean
+//    public Interceptor addInterceptor() {
+//        //构建一个Mybatis拦截器
+//       return null;
+//    }
 }
