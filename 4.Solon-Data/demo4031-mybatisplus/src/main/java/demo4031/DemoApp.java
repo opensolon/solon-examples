@@ -2,8 +2,8 @@ package demo4031;
 
 import com.baomidou.mybatisplus.annotation.DbType;
 import com.baomidou.mybatisplus.core.MybatisSqlSessionFactoryBuilder;
-import com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor;
-import com.baomidou.mybatisplus.extension.plugins.inner.PaginationInnerInterceptor;
+import com.baomidou.mybatisplus.solon.plugins.MybatisPlusInterceptor;
+import com.baomidou.mybatisplus.solon.plugins.inner.PaginationInnerInterceptor;
 import demo4031.dso.MybatisSqlSessionFactoryBuilderImpl;
 import org.apache.ibatis.session.Configuration;
 import org.noear.solon.Solon;
