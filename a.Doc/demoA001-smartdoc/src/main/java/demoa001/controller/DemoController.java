@@ -10,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 测试
+ * 控制器测试
+ *
+ * @author noear
  */
 @Controller
 @Mapping("/demo")
