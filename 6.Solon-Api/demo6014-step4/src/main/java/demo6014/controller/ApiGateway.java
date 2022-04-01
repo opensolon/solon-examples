@@ -5,7 +5,7 @@ import org.noear.solon.annotation.Component;
 import org.noear.solon.annotation.Mapping;
 
 /**
- * 一个简单的接口网关
+ * 一个简单的接口网关（本地网关）
  *
  * @author noear 2021/6/11 created
  */

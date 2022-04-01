@@ -1,0 +1,9 @@
+server.port: 8011
+
+dubbo:
+  application:
+    name: hello
+    owner: noear
+  registry:
+    address: nacos://localhost:8848
+#    port default = ${server.port + 20000}

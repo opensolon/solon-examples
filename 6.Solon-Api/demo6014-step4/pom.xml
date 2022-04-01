@@ -42,6 +42,11 @@
 
         <dependency>
             <groupId>org.noear</groupId>
+            <artifactId>httputils-solon-plugin</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.noear</groupId>
             <artifactId>redisx</artifactId>
             <version>1.2</version>
         </dependency>
