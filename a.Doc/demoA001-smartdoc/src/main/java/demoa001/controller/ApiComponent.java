@@ -8,7 +8,6 @@ import org.noear.solon.annotation.Mapping;
  *
  * @author noear 2022/4/1 created
  */
-@Mapping
 @Component(tag = "api")
 public class ApiComponent {
     /**
