@@ -21,5 +21,11 @@
         <module>demo7002-api</module>
         <module>demo7002-api.impl</module>
         <module>demo7002-client</module>
+
+
+        <module>demo7011-rpc_dubbo_sml</module>
+        <module>demo7012-rpc_dubbo_consume</module>
+        <module>demo7012-rpc_dubbo_interface</module>
+        <module>demo7012-rpc_dubbo_provider</module>
     </modules>
 </project>
