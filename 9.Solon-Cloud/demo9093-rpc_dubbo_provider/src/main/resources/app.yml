@@ -1,0 +1,8 @@
+server.port: 8011
+
+dubbo:
+  application:
+    name: hello-provider
+    owner: noear
+  registry:
+    address: nacos://localhost:8848

@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.noear.solon.examples</groupId>
-    <artifactId>demo9092-rpc_dubbo_sml</artifactId>
+    <artifactId>demo9093-rpc_dubbo_interface</artifactId>
     <version>demo</version>
     <packaging>jar</packaging>
 
@@ -19,28 +19,6 @@
         <relativePath />
     </parent>
 
-    <properties>
-        <dubbo.ver>2.7.5</dubbo.ver>
-    </properties>
-
-    <dependencies>
-        <dependency>
-            <groupId>org.noear</groupId>
-            <artifactId>dubbo-solon-plugin</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.apache.dubbo</groupId>
-            <artifactId>dubbo-registry-nacos</artifactId>
-            <version>${dubbo.ver}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.alibaba.nacos</groupId>
-            <artifactId>nacos-client</artifactId>
-            <version>1.3.1</version>
-        </dependency>
-    </dependencies>
 
 
 </project>

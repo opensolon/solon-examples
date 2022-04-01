@@ -1,0 +1,7 @@
+
+dubbo:
+  application:
+    name: hello-consume
+    owner: noear
+  registry:
+    address: nacos://localhost:8848

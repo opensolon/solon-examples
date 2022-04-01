@@ -41,5 +41,8 @@
         <module>demo9082-breaker_sentinel</module>
         <module>demo9083-breaker_semaphore</module>
         <module>demo9092-rpc_dubbo_sml</module>
+        <module>demo9093-rpc_dubbo_consume</module>
+        <module>demo9093-rpc_dubbo_interface</module>
+        <module>demo9093-rpc_dubbo_provider</module>
     </modules>
 </project>
