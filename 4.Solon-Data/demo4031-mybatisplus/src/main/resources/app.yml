@@ -20,6 +20,8 @@ mybatis.db1:
     configuration:
         cacheEnabled: false
         mapUnderscoreToCamelCase: true
+    globalConfig:
+        banner: false
 
 
 
