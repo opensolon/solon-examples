@@ -2,6 +2,9 @@ package demo4031;
 
 import com.baomidou.mybatisplus.annotation.DbType;
 import com.baomidou.mybatisplus.core.config.GlobalConfig;
+import com.baomidou.mybatisplus.core.incrementer.DefaultIdentifierGenerator;
+import com.baomidou.mybatisplus.core.injector.DefaultSqlInjector;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.mybatisplus.solon.plugins.MybatisPlusInterceptor;
 import com.baomidou.mybatisplus.solon.plugins.inner.PaginationInnerInterceptor;
 import com.zaxxer.hikari.HikariDataSource;
@@ -30,6 +33,11 @@ public class Config {
 
     @Bean
     public void db1_globalConfig(@Db("db1") GlobalConfig globalConfig) {
-        globalConfig.setBanner(false);
+        //此参数会自动生成实现baseMapper的基础方法映射
+        globalConfig.setSqlInjector(new DefaultSqlInjector());
+        //设置id生成器
+        globalConfig.setIdentifierGenerator(new DefaultIdentifierGenerator());
+        //设置超类mapper
+        globalConfig.setSuperMapperClass(BaseMapper.class);
     }
 }
