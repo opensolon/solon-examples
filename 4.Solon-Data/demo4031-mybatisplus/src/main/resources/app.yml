@@ -22,6 +22,8 @@ mybatis.db1:
         mapUnderscoreToCamelCase: true
     globalConfig:
         banner: false
+        dbConfig:
+            logicDeleteField: "deleted"
 
 
 
