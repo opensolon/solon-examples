@@ -18,13 +18,14 @@ public class ClientApp {
         });
 
         Session session = SocketD.createSession("ws://localhost:8080/ws/demo/12");
-        session.listener(new Listener() {
-            @Override
-            public void onMessage(Session session, Message message) throws IOException {
-                System.out.println(message);
-            }
-        });
-
+        session.listener(new ListenerImpl());
         session.send("test");
+    }
+
+    public static class ListenerImpl implements Listener {
+        @Override
+        public void onMessage(Session session, Message message) throws IOException {
+            System.out.println(message);
+        }
     }
 }
