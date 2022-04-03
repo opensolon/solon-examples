@@ -24,6 +24,7 @@ public class Config {
         MybatisPlusInterceptor plusInterceptor = new MybatisPlusInterceptor();
         plusInterceptor.addInnerInterceptor(new PaginationInnerInterceptor(DbType.MYSQL));
 
+        cfg.setCacheEnabled(false);
         cfg.addInterceptor(plusInterceptor);
     }
 
