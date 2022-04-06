@@ -20,10 +20,12 @@ mybatis.db1:
     configuration:
         cacheEnabled: false
         mapUnderscoreToCamelCase: true
+        logImpl: org.apache.ibatis.logging.nologging.NoLoggingImpl
     globalConfig:
         banner: false
         dbConfig:
             logicDeleteField: "deleted"
+            logicDeleteValue: "2"
 
 
 
