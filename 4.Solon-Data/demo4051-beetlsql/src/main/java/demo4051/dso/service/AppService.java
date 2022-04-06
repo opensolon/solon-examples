@@ -1,7 +1,7 @@
 package demo4051.dso.service;
 
 import demo4051.dso.mapper.SqlMapper;
-import org.beetl.sql.ext.solon.Db;
+import org.beetl.sql.solon.annotation.Db;
 import org.noear.solon.data.annotation.Cache;
 import org.noear.solon.data.annotation.Tran;
 import org.noear.solon.data.tran.TranPolicy;

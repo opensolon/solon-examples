@@ -3,7 +3,7 @@ package demo4051.controller;
 import demo4051.dso.dao.AppxDao;
 import demo4051.dso.mapper.SqlMapper;
 import org.beetl.sql.core.SQLManager;
-import org.beetl.sql.ext.solon.Db;
+import org.beetl.sql.solon.annotation.Db;
 import org.noear.solon.annotation.Controller;
 import org.noear.solon.annotation.Mapping;
 
