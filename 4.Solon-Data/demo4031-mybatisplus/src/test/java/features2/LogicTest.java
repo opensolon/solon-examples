@@ -29,9 +29,9 @@ public class LogicTest {
         userModel.setPassword("test");
         userModel.setDeleted(0);
 
-//        if(userMapper.selectById(1L) == null) {
-//            userMapper.insert(userModel);
-//        }
+        if(userMapper.selectById(1L) == null) {
+            userMapper.insert(userModel);
+        }
 
         userMapper.deleteById(1L);
     }
