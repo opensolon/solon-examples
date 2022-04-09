@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="demo4021.dso.mapper.AppxMapper">
-    <select id="appx_get" resultType="AppxModel">
+    <select id="appx_get" resultType="demo4071.model.Appx">
         select * from appx limit 1;
     </select>
 
-    <select id="appx_get_page" resultType="AppxModel">
+    <select id="appx_get_page" resultType="demo4071.model.Appx">
         select * from appx
     </select>
 
-    <select id="appx_get2" resultType="AppxModel">
+    <select id="appx_get2" resultType="demo4071.model.Appx">
         select * from appx where app_id=#{app_id} limit 1;
     </select>
 

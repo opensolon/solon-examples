@@ -1,7 +1,7 @@
 package demo4071.controller;
 
 import demo4071.dso.mapper.AppxMapper;
-import demo4071.model.AppxModel;
+import demo4071.model.Appx;
 import net.hasor.db.solon.Db;
 import org.noear.solon.annotation.Controller;
 import org.noear.solon.annotation.Mapping;
@@ -16,7 +16,7 @@ public class DemoController {
     AppxMapper appxMapper;
 
     @Mapping("test")
-    public AppxModel test(){
+    public Appx test(){
         return appxMapper.appx_get();
     }
 
