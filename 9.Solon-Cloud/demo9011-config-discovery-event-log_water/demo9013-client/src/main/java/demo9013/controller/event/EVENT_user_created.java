@@ -13,7 +13,7 @@ import org.noear.solon.cloud.model.Event;
 public class EVENT_user_created implements CloudEventHandler {
 
     @Override
-    public boolean handler(Event event) throws Throwable {
+    public boolean handle(Event event) throws Throwable {
         //日志会自动进入 solon cloud log service
         //
         log.info("有个用户建了...");
