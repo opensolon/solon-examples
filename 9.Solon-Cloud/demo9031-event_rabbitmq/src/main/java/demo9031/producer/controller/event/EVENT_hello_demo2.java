@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 @CloudEvent(topic="hello.demo2", group = "test")
 public class EVENT_hello_demo2 implements CloudEventHandler {
     @Override
-    public boolean handler(Event event) throws Throwable {
+    public boolean handle(Event event) throws Throwable {
         System.out.println(LocalDateTime.now() + ONode.stringify(event));
         return true;
     }

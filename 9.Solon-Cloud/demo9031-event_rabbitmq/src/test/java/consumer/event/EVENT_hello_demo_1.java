@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 @CloudEvent(value = "hello.demo")
 public class EVENT_hello_demo_1 implements CloudEventHandler {
     @Override
-    public boolean handler(Event event) throws Throwable {
+    public boolean handle(Event event) throws Throwable {
         //
         //学示处理成功效果
         //

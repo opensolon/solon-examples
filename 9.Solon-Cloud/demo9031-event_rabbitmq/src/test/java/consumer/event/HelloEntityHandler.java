@@ -10,7 +10,7 @@ import org.noear.solon.cloud.extend.cloudeventplus.CloudEventSubscribe;
 public class HelloEntityHandler implements CloudEventHandlerPlus<HelloEntity> {
 
     @Override
-    public boolean handler(HelloEntity event) throws Throwable {
+    public boolean handle(HelloEntity event) throws Throwable {
         System.out.println("HelloEntityHandler:: " + event.name);
         return true;
     }
