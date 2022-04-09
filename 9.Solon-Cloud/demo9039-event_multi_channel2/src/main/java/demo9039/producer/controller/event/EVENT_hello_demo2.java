@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 @CloudEvent(value = "hello.demo2", channel = "biz")
 public class EVENT_hello_demo2 implements CloudEventHandler {
     @Override
-    public boolean handler(Event event) throws Throwable {
+    public boolean handle(Event event) throws Throwable {
         System.out.println(LocalDateTime.now() + ONode.stringify(event));
 
         return event.times() > 2;
