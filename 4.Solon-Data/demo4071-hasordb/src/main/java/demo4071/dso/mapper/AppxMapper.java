@@ -6,13 +6,14 @@ import net.hasor.db.dal.repository.Param;
 import net.hasor.db.dal.repository.Query;
 import net.hasor.db.dal.repository.RefMapper;
 import net.hasor.db.dal.session.BaseMapper;
+import net.hasor.db.page.Page;
 
 import java.util.List;
 
 @RefMapper("/demo4071/dso/mapper/AppxMapper.xml")
 public interface AppxMapper {
     Appx appx_get();
-    List<Appx> appx_get_page();
+    List<Appx> appx_get_page(Page pageInfo);
     Appx appx_get2(@Param("app_id") int app_id);
     void appx_add();
     Integer appx_add2(@Param("v1") int v1);
