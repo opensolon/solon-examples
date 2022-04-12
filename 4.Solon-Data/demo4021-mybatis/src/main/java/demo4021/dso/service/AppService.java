@@ -1,8 +1,7 @@
 package demo4021.dso.service;
 
 import demo4021.dso.mapper.AppxMapper;
-import org.apache.ibatis.ext.solon.Db;
-import org.noear.solon.annotation.Inject;
+import org.apache.ibatis.solon.annotation.Db;
 import org.noear.solon.data.annotation.Tran;
 import org.noear.solon.data.tran.TranPolicy;
 import org.noear.solon.extend.aspect.annotation.Service;

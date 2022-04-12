@@ -3,7 +3,7 @@ package demo4022.controller;
 import demo4022.dso.mapper.Appx2Mapper;
 import demo4022.dso.mapper.AppxMapper;
 import demo4022.model.AppxModel;
-import org.apache.ibatis.ext.solon.Db;
+import org.apache.ibatis.solon.annotation.Db;
 import org.noear.solon.annotation.Controller;
 import org.noear.solon.annotation.Mapping;
 
