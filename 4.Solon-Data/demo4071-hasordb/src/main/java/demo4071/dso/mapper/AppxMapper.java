@@ -5,7 +5,6 @@ import demo4071.model.DbTable;
 import net.hasor.db.dal.repository.Param;
 import net.hasor.db.dal.repository.Query;
 import net.hasor.db.dal.repository.RefMapper;
-import net.hasor.db.dal.session.BaseMapper;
 import net.hasor.db.page.Page;
 
 import java.util.List;
