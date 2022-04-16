@@ -13,9 +13,9 @@ import java.util.List;
 public interface AppxMapper {
     Appx appx_get();
     List<Appx> appx_get_page(Page pageInfo);
-    Appx appx_get2(@Param("app_id") int app_id);
+    Appx appx_get2(int app_id);
     void appx_add();
-    Integer appx_add2(@Param("v1") int v1);
+    Integer appx_add2(int v1);
 
     @Query("SELECT * FROM INFORMATION_SCHEMA.TABLES")
     List<DbTable> listTables();
