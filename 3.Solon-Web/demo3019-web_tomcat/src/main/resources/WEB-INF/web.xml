@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+	<display-name>hashrate-admin-webapp</display-name>
+	<context-param>
+		<param-name>log4jExposeWebAppRoot</param-name>
+		<param-value>false</param-value>
+	</context-param>
+	
+	<listener>
+		<listener-class>demo3019.App</listener-class>
+	</listener>
+
+	<filter>
+		<filter-name>solon</filter-name>
+		<filter-class>org.noear.solon.extend.servlet.SolonServletFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>solon</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+</web-app>

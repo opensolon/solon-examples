@@ -23,6 +23,7 @@ mybatis.db1:
         logImpl: org.apache.ibatis.logging.nologging.NoLoggingImpl
     globalConfig:
         banner: false
+        metaObjectHandler: "demo4031.dso.MetaObjectHandlerImpl"
         dbConfig:
             logicDeleteField: "deleted"
             logicDeleteValue: "2"

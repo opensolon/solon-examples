@@ -1,0 +1,10 @@
+
+solon.app:
+  name: demoadmin
+  group: demo
+
+solon.logging.logger:
+  "com.zaxxer.*":
+    level: INFO
+  "org.nutz.*":
+    level: INFO

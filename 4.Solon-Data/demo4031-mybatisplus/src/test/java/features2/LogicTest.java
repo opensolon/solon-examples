@@ -1,13 +1,11 @@
 package features2;
 
-import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import demo4031.DemoApp;
 import demo4031.dso.mapper.UserMapper;
 import demo4031.model.UserModel;
-import org.apache.ibatis.ext.solon.Db;
+import org.apache.ibatis.solon.annotation.Db;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.noear.solon.annotation.Bean;
 import org.noear.solon.test.SolonJUnit4ClassRunner;
 import org.noear.solon.test.SolonTest;
 
