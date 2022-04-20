@@ -102,6 +102,7 @@
                                         <include>*.xml</include>
                                         <include>images/</include>
                                         <include>sql/</include>
+                                        <exclude>webapp/</exclude>
                                         <include>xml/</include>
                                     </includes>
                                     <filtering>true</filtering>
@@ -117,7 +118,7 @@
                 <version>2.6</version>
                 <configuration>
                     <archiveClasses>false</archiveClasses>
-                    <warSourceDirectory>src/main/resources</warSourceDirectory>
+                    <warSourceDirectory>src/main/webapp</warSourceDirectory>
                     <warName>${project.artifactId}</warName>
                     <packagingExcludes>WEB-INF/web.xml,META-INF/context.xml</packagingExcludes>
                 </configuration>
@@ -147,6 +148,7 @@
                         <exclude>*.xml</exclude>
                         <exclude>images/</exclude>
                         <exclude>sql/</exclude>
+                        <exclude>webapp/</exclude>
                         <exclude>xml/</exclude>
                     </excludes>
                 </configuration>
