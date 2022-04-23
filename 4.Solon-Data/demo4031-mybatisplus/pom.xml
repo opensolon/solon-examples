@@ -15,17 +15,11 @@
     <parent>
         <groupId>org.noear</groupId>
         <artifactId>solon-parent</artifactId>
-        <version>1.7.2</version>
+        <version>1.7.3</version>
         <relativePath />
     </parent>
 
     <dependencies>
-        <dependency>
-            <groupId>org.noear</groupId>
-            <artifactId>snack3</artifactId>
-            <version>3.2.21</version>
-        </dependency>
-
         <dependency>
             <groupId>org.noear</groupId>
             <artifactId>solon-web</artifactId>

@@ -24,6 +24,10 @@ public class Config {
             WeedConfig.onExecuteAft(cmd -> {
                 System.out.println(cmd.text + "\r\n" + ONode.stringify(cmd.paramMap()));
             });
+
+            WeedConfig.onException((cmd,err)->{
+                System.out.println(cmd.text + "\r\n" + ONode.stringify(cmd.paramMap()));
+            });
         }
     }
 }
