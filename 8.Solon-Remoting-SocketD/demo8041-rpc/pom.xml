@@ -34,7 +34,7 @@
         <!-- for client -->
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>solon.socketd.client.smartsocket</artifactId>
+            <artifactId>nami.channel.socketd.smartsocket</artifactId>
         </dependency>
 
         <dependency>
