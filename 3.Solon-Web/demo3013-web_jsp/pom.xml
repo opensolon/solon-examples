@@ -28,13 +28,13 @@
         <!-- jetty 启动器（也可以换成 undertow 相关插件） -->
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>solon.boot.jetty</artifactId>
+            <artifactId>solon.boot.undertow</artifactId>
         </dependency>
 
         <!-- jetty 的 jsp 支持扩展包 -->
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>solon.boot.jetty.add.jsp</artifactId>
+            <artifactId>solon.boot.undertow.add.jsp</artifactId>
         </dependency>
 
         <!-- jsp 视图渲染器
