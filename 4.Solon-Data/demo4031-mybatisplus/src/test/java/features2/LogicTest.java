@@ -1,11 +1,16 @@
 package features2;
 
 import demo4031.DemoApp;
+import demo4031.dso.mapper.AppxMapper;
 import demo4031.dso.mapper.UserMapper;
+import demo4031.dso.service.TestService;
+import demo4031.model.AppxModel;
 import demo4031.model.UserModel;
 import org.apache.ibatis.solon.annotation.Db;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.noear.solon.annotation.Inject;
+import org.noear.solon.extend.aspect.annotation.Service;
 import org.noear.solon.test.SolonJUnit4ClassRunner;
 import org.noear.solon.test.SolonTest;
 
@@ -17,6 +22,7 @@ import org.noear.solon.test.SolonTest;
 public class LogicTest {
     @Db
     UserMapper userMapper;
+
 
     @Test
     public void test(){
@@ -32,5 +38,14 @@ public class LogicTest {
         }
 
         userMapper.deleteById(1L);
+    }
+
+
+    @Inject
+    TestService testService;
+
+    @Test
+    public void test2() throws Exception{
+       assert  testService.getApp(1).getAppId() == 1;
     }
 }
