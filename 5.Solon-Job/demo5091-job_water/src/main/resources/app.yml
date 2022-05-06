@@ -1,0 +1,8 @@
+server.port: 8082
+
+solon.app:
+  name: demojob
+  group: demo
+
+solon.cloud.water:
+  server: water
