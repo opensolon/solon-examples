@@ -10,6 +10,7 @@ import org.noear.solon.extend.aspect.annotation.Service;
 public class UserService {
     @Tracing(name = "获取用户", tags = "用户=${name}")
     public String getUser(String name) {
+        System.out.println("获取用户...");
         return name;
     }
 }
