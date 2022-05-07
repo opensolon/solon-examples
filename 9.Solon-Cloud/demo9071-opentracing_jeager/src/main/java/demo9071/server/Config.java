@@ -8,15 +8,12 @@ import io.jaegertracing.internal.reporters.LoggingReporter;
 import io.jaegertracing.internal.reporters.RemoteReporter;
 import io.jaegertracing.internal.samplers.ConstSampler;
 import io.jaegertracing.spi.Sender;
-import io.jaegertracing.thrift.internal.senders.HttpSender;
 import io.jaegertracing.thrift.internal.senders.UdpSender;
 import io.opentracing.Tracer;
 import org.apache.thrift.transport.TTransportException;
 import org.noear.solon.Solon;
-import org.noear.solon.Utils;
 import org.noear.solon.annotation.Bean;
 import org.noear.solon.annotation.Configuration;
-import org.noear.solon.annotation.Inject;
 import org.noear.solon.cloud.CloudProps;
 import org.noear.solon.cloud.extend.opentracing.OpentracingProps;
 
@@ -32,24 +29,7 @@ public class Config {
         CloudProps cloudProps = OpentracingProps.instance;
 
         URI serverUri = URI.create(cloudProps.getServer());
-
-        Sender sender;
-
-        if ("http".equals(serverUri.getScheme())) {
-            HttpSender.Builder builder = new HttpSender.Builder(cloudProps.getServer());
-
-            if (Utils.isNotEmpty(cloudProps.getToken())) {
-                builder.withAuth(cloudProps.getToken());
-            }
-
-            if (Utils.isNotEmpty(cloudProps.getUsername())) {
-                builder.withAuth(cloudProps.getUsername(), cloudProps.getPassword());
-            }
-
-            sender = builder.build();
-        } else {
-            sender = new UdpSender(serverUri.getHost(), serverUri.getPort(), 0);
-        }
+        Sender sender = new UdpSender(serverUri.getHost(), serverUri.getPort(), 0);
 
         final CompositeReporter compositeReporter = new CompositeReporter(
                 new RemoteReporter.Builder().withSender(sender).build(),
