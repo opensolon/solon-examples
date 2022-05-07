@@ -1,8 +1,10 @@
 package demo9071.client.controller;
 
+import demo9071.client.dso.service.OrderService;
 import demo9071.protocol.HelloService;
 import org.noear.nami.annotation.NamiClient;
 import org.noear.solon.annotation.Controller;
+import org.noear.solon.annotation.Inject;
 import org.noear.solon.annotation.Mapping;
 
 /**
@@ -13,9 +15,14 @@ public class TestController {
     @NamiClient
     HelloService helloService;
 
+    @Inject
+    OrderService orderCreate;
+
     @Mapping("/")
     public String hello(String name) {
         helloService.hello(name);
+
+        orderCreate.orderCreate("11111");
 
         return "Rpc: " + helloService.hello(name);
     }
