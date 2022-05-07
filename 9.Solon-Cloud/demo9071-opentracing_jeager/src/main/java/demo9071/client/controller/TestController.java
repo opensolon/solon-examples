@@ -20,6 +20,10 @@ public class TestController {
 
     @Mapping("/")
     public String hello(String name) {
+        if(name == null){
+            name = "world";
+        }
+
         helloService.hello(name);
 
         orderCreate.orderCreate("11111");

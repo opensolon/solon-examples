@@ -1,7 +1,6 @@
 package demo9071.client;
 
 import org.noear.solon.Solon;
-import org.noear.solon.cloud.extend.opentracing.annotation.EnableOpentracing;
 import org.noear.solon.cloud.extend.opentracing.annotation.EnableTracing;
 
 /**

@@ -1,7 +1,6 @@
 package demo9071.server;
 
 import org.noear.solon.Solon;
-import org.noear.solon.cloud.extend.opentracing.annotation.EnableOpentracing;
 import org.noear.solon.cloud.extend.opentracing.annotation.EnableTracing;
 
 /**
@@ -10,6 +9,9 @@ import org.noear.solon.cloud.extend.opentracing.annotation.EnableTracing;
 @EnableTracing
 public class DemoRpc {
     public static void main(String[] args) {
-        Solon.start(DemoRpc.class, args, app-> app.enableSocketD(true)).onError(e->e.printStackTrace());
+        Solon.start(DemoRpc.class, args, app -> {
+            app.enableHttp(false);
+            app.enableSocketD(true);
+        });
     }
 }

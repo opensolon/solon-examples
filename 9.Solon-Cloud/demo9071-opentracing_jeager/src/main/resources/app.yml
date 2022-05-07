@@ -1,4 +1,6 @@
 
+server.port: 8081
+
 solon.app:
   name: demoapp
   group: demo

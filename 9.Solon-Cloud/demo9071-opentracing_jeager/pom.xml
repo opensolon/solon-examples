@@ -31,6 +31,16 @@
         </dependency>
 
         <dependency>
+            <groupId>org.noear</groupId>
+            <artifactId>solon.boot.socketd.smartsocket</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.noear</groupId>
+            <artifactId>nami.channel.socketd.smartsocket</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>io.jaegertracing</groupId>
             <artifactId>jaeger-client</artifactId>
             <version>1.6.0</version>
