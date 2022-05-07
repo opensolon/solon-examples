@@ -9,11 +9,9 @@ solon.cloud.local:
       hellorpc:
         - tcp://localhost:28081
 
-io:
-  opentracing:
-    trace:
-      host: localhost
-      port: 6831
+solon.cloud.opentracing:
+  server: "localhost:6831"
+
 
 #solon.logging.logger:
 #  "io.jaegertracing.*":
