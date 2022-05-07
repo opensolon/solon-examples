@@ -14,23 +14,22 @@ import org.noear.solon.Solon;
 import org.noear.solon.annotation.Bean;
 import org.noear.solon.annotation.Configuration;
 import org.noear.solon.annotation.Inject;
+import org.noear.solon.cloud.extend.opentracing.OpentracingProps;
 
 /**
  * @author noear 2021/6/6 created
  */
 @Configuration
 public class Config {
-    @Inject("${io.opentracing.trace.host}")
-    private String AGENT_HOST;
-
-    @Inject("${io.opentracing.trace.port}")
-    private Integer AGENT_PORT;
-
     @Bean
     public Tracer tracer() throws TTransportException {
+        String[] serverPort = OpentracingProps.instance.getServer().split(":");
+
+        String server = serverPort[0];
+        int port = Integer.parseInt(serverPort[1]);
 
         final CompositeReporter compositeReporter = new CompositeReporter(
-                new RemoteReporter.Builder().withSender(new UdpSender(AGENT_HOST, AGENT_PORT, 0)).withFlushInterval(10).build(),
+                new RemoteReporter.Builder().withSender(new UdpSender(server, port, 0)).withFlushInterval(10).build(),
                 new LoggingReporter()
         );
 
