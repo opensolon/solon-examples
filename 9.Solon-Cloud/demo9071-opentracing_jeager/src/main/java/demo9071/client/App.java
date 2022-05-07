@@ -9,6 +9,6 @@ import org.noear.solon.cloud.extend.opentracing.annotation.EnableOpentracing;
 @EnableOpentracing
 public class App {
     public static void main(String[] args) {
-        Solon.start(App.class, args ).onError(e -> e.printStackTrace());
+        Solon.start(App.class, args);
     }
 }
