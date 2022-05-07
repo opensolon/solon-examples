@@ -1,5 +1,5 @@
 
-server.port: 8081
+server.port: 8082
 
 solon.app:
   name: demoapp2
@@ -9,17 +9,10 @@ solon.cloud.local:
   discovery:
     service:
       hellorpc:
-        - tcp://localhost:28081
+        - tcp://localhost:28082
 
 solon.cloud.jaeger:
   server: "localhost:6831"
   trace:
     enable: true                    #是否启用（默认：true）
     exclude: "/health,/_run/check/" #排除路径
-
-
-#solon.logging.logger:
-#  "io.jaegertracing.*":
-#    level: WARN
-#  "org.noear.*":
-#    level: INFO
