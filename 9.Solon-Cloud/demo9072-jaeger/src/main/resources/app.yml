@@ -1,0 +1,25 @@
+
+server.port: 8081
+
+solon.app:
+  name: demoapp2
+  group: demo
+
+solon.cloud.local:
+  discovery:
+    service:
+      hellorpc:
+        - tcp://localhost:28081
+
+solon.cloud.jaeger:
+  server: "localhost:6831"
+  trace:
+    enable: true                    #是否启用（默认：true）
+    exclude: "/health,/_run/check/" #排除路径
+
+
+#solon.logging.logger:
+#  "io.jaegertracing.*":
+#    level: WARN
+#  "org.noear.*":
+#    level: INFO

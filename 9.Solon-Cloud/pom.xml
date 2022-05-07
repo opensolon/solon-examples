@@ -37,6 +37,7 @@
         <module>demo9061-job_water</module>
         <module>demo9062-job_xxl_job</module>
         <module>demo9071-opentracing_jeager</module>
+        <module>demo9072-jaeger</module>
         <module>demo9081-breaker_guava</module>
         <module>demo9082-breaker_sentinel</module>
         <module>demo9083-breaker_semaphore</module>
