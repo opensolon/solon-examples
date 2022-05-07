@@ -7,14 +7,20 @@ import io.jaegertracing.internal.reporters.CompositeReporter;
 import io.jaegertracing.internal.reporters.LoggingReporter;
 import io.jaegertracing.internal.reporters.RemoteReporter;
 import io.jaegertracing.internal.samplers.ConstSampler;
+import io.jaegertracing.spi.Sender;
+import io.jaegertracing.thrift.internal.senders.HttpSender;
 import io.jaegertracing.thrift.internal.senders.UdpSender;
 import io.opentracing.Tracer;
 import org.apache.thrift.transport.TTransportException;
 import org.noear.solon.Solon;
+import org.noear.solon.Utils;
 import org.noear.solon.annotation.Bean;
 import org.noear.solon.annotation.Configuration;
 import org.noear.solon.annotation.Inject;
+import org.noear.solon.cloud.CloudProps;
 import org.noear.solon.cloud.extend.opentracing.OpentracingProps;
+
+import java.net.URI;
 
 /**
  * @author noear 2021/6/6 created
@@ -24,13 +30,30 @@ public class Config {
 
     @Bean
     public Tracer tracer() throws TTransportException {
-        String[] serverPort = OpentracingProps.instance.getServer().split(":");
+        CloudProps cloudProps = OpentracingProps.instance;
 
-        String server = serverPort[0];
-        int port = Integer.parseInt(serverPort[1]);
+        URI serverUri = URI.create(cloudProps.getServer());
+
+        Sender sender;
+
+        if ("http".equals(serverUri.getScheme())) {
+            HttpSender.Builder builder = new HttpSender.Builder(cloudProps.getServer());
+
+            if (Utils.isNotEmpty(cloudProps.getToken())) {
+                builder.withAuth(cloudProps.getToken());
+            }
+
+            if (Utils.isNotEmpty(cloudProps.getUsername())) {
+                builder.withAuth(cloudProps.getUsername(), cloudProps.getPassword());
+            }
+
+            sender = builder.build();
+        } else {
+            sender = new UdpSender(serverUri.getHost(), serverUri.getPort(), 0);
+        }
 
         final CompositeReporter compositeReporter = new CompositeReporter(
-                new RemoteReporter.Builder().withSender(new UdpSender(server, port, 0)).withFlushInterval(10).build(),
+                new RemoteReporter.Builder().withSender(sender).build(),
                 new LoggingReporter()
         );
 
