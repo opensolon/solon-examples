@@ -20,6 +20,13 @@ public class HelloServiceImpl implements HelloService {
     public String hello(String name) {
         String name2 = userService.getUser(name);
 
+        userService.updateUser(name);
+
         return "Hello " + name2;
+    }
+
+    @Override
+    public String hello2(String name) {
+        return "Hello " + name;
     }
 }

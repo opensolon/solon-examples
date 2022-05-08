@@ -28,6 +28,6 @@ public class TestController {
 
         orderCreate.orderCreate("11111");
 
-        return "Rpc: " + helloService.hello(name);
+        return "Rpc: " + helloService.hello2(name);
     }
 }
