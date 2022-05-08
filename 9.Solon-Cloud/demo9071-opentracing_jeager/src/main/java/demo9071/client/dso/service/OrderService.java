@@ -1,7 +1,7 @@
 package demo9071.client.dso.service;
 
-import org.noear.solon.cloud.opentracing.Spans;
-import org.noear.solon.cloud.opentracing.annotation.Tracing;
+import org.noear.solon.cloud.tracing.Spans;
+import org.noear.solon.cloud.tracing.annotation.Tracing;
 import org.noear.solon.extend.aspect.annotation.Service;
 
 /**
