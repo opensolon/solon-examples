@@ -12,6 +12,7 @@ import io.jaegertracing.thrift.internal.senders.UdpSender;
 import io.opentracing.Tracer;
 import org.apache.thrift.transport.TTransportException;
 import org.noear.solon.Solon;
+import org.noear.solon.Utils;
 import org.noear.solon.annotation.Bean;
 import org.noear.solon.annotation.Configuration;
 import org.noear.solon.cloud.CloudProps;
@@ -27,6 +28,10 @@ public class Config {
     @Bean
     public Tracer tracer() throws TTransportException {
         CloudProps cloudProps = OpentracingProps.instance;
+
+        if(Utils.isEmpty(cloudProps.getServer())){
+            return null;
+        }
 
         URI serverUri = URI.create(cloudProps.getServer());
         Sender sender = new UdpSender(serverUri.getHost(), serverUri.getPort(), 0);
