@@ -30,11 +30,8 @@ public class Config {
     public Tracer tracer() throws TTransportException {
         CloudProps cloudProps = OpentracingProps.instance;
 
-        if(cloudProps.getTraceEnable() == false){
-            return null;
-        }
-
-        if(Utils.isEmpty(cloudProps.getServer())){
+        //为了可自由配置，这行代码重要
+        if(cloudProps.getTraceEnable() == false || Utils.isEmpty(cloudProps.getServer())){
             return null;
         }
 
