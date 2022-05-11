@@ -19,21 +19,11 @@ public class Config {
     }
 
     @Bean
-    public void db1_interceptor(@Db("db1") org.apache.ibatis.session.Configuration cfg) {
+    public void db1_cfg(@Db("db1") org.apache.ibatis.session.Configuration cfg) {
         MybatisPlusInterceptor plusInterceptor = new MybatisPlusInterceptor();
         plusInterceptor.addInnerInterceptor(new PaginationInnerInterceptor(DbType.MYSQL));
 
         cfg.setCacheEnabled(false);
         cfg.addInterceptor(plusInterceptor);
     }
-
-//    @Bean
-//    public void db1_globalConfig(@Db("db1") GlobalConfig globalConfig) {
-//        //此参数会自动生成实现baseMapper的基础方法映射
-//        globalConfig.setSqlInjector(new DefaultSqlInjector());
-//        //设置id生成器
-//        globalConfig.setIdentifierGenerator(new DefaultIdentifierGenerator());
-//        //设置超类mapper
-//        globalConfig.setSuperMapperClass(BaseMapper.class);
-//    }
 }
