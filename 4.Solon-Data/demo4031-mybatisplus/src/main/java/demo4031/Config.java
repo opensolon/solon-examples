@@ -1,14 +1,10 @@
 package demo4031;
 
 import com.baomidou.mybatisplus.annotation.DbType;
-import com.baomidou.mybatisplus.core.config.GlobalConfig;
-import com.baomidou.mybatisplus.core.incrementer.DefaultIdentifierGenerator;
-import com.baomidou.mybatisplus.core.injector.DefaultSqlInjector;
-import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.mybatisplus.solon.plugins.MybatisPlusInterceptor;
 import com.baomidou.mybatisplus.solon.plugins.inner.PaginationInnerInterceptor;
 import com.zaxxer.hikari.HikariDataSource;
-import org.apache.ibatis.ext.solon.Db;
+import org.apache.ibatis.solon.annotation.Db;
 import org.noear.solon.annotation.Bean;
 import org.noear.solon.annotation.Configuration;
 import org.noear.solon.annotation.Inject;
