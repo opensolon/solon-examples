@@ -22,7 +22,7 @@ test.db1:
 mybatis.db1:
     typeAliases:    #支持包名 或 类名（.class 结尾）
         - "demo4021.model"
-    mappers:        #支持包名 或 类名（.class 结尾）或 xml（.xml结尾）
+    mappers:        #支持包名 或 类名（.class 结尾）或 xml（.xml结尾 或 *.xml 结尾）
         - "demo4021.dso.mapper"
     configuration:
         cacheEnabled: false
