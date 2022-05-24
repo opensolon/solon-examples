@@ -6,4 +6,4 @@ solon.app:
   group: demo
 
 solon.hotplug:
-  add1: "/Users/noear/Downloads/hotplug_demo/plugin1/target/plugin1.jar"
+  add1: "/Users/noear/WORK/work_github/noear/solon-examples/1.Solon/demo1011-hotplug_plugin1/target/demo1011-hotplug_plugin1.jar"
