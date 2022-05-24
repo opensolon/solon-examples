@@ -8,7 +8,7 @@
 
 演示：
 
-* 打包 demo1011-hotplug_plugin1 (找到 demo1011-hotplug_plugin1.jar 的地址，去做第2步；目前只有7k)
+* 打包 demo1011-hotplug_plugin1 (找到 demo1011-hotplug_plugin1.jar 的地址，去做第2步；目前只有 7kb )
 * 替换掉 app.yml 里的 solon.hotplug.add1 的地址
 * 启动主程序的 demo1011.App
 * 控制台会打印定时任务的执行信息（也可能启动不成，插件里有数据库连接）
