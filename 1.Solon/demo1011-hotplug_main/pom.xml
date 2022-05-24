@@ -38,11 +38,17 @@
             <artifactId>solon-web</artifactId>
         </dependency>
 
-        <!--        <dependency>-->
-        <!--            <groupId>com.zaxxer</groupId>-->
-        <!--            <artifactId>HikariCP</artifactId>-->
-        <!--            <version>4.0.3</version>-->
-        <!--        </dependency>-->
+        <dependency>
+            <groupId>org.noear</groupId>
+            <artifactId>weed3-solon-plugin</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.zaxxer</groupId>
+            <artifactId>HikariCP</artifactId>
+            <version>4.0.3</version>
+        </dependency>
+
 
         <dependency>
             <groupId>mysql</groupId>
