@@ -18,5 +18,7 @@
 
     <modules>
         <module>demo1001-solon</module>
+        <module>demo1011-hotplug_main</module>
+        <module>demo1011-hotplug_plugin1</module>
     </modules>
 </project>

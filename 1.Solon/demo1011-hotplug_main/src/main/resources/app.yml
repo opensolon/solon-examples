@@ -1,0 +1,9 @@
+server:
+  port: 8000
+
+solon.app:
+  name: demoapp
+  group: demo
+
+solon.hotplug:
+  add1: "/Users/noear/Downloads/hotplug_demo/plugin1/target/plugin1.jar"
