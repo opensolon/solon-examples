@@ -11,4 +11,4 @@
 * 打包 demo1011-hotplug_plugin1
 * 替换掉 app.yml 里的 solon.hotplug.add1 的地址
 * 启动 demo1011.App
-* 控制台会打印定时任务的执行信息
+* 控制台会打印定时任务的执行信息（也可能启动不成，插件里有数据库连接）
