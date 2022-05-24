@@ -7,6 +7,8 @@ import org.noear.solon.annotation.Mapping;
 import org.noear.solon.cloud.CloudClient;
 import org.noear.solon.cloud.model.Event;
 
+import java.util.Date;
+
 /**
  * @author noear 2021/1/27 created
  */
@@ -28,7 +30,9 @@ public class TestController {
             msg = "demo2";
         }
 
-        Event event = new Event("hello.demo2", msg).group("test");
+        long time = System.currentTimeMillis() + 10 * 1000;
+
+        Event event = new Event("hello.demo2", msg).group("test").scheduled(new Date(time));
         return CloudClient.event().publish(event);
     }
 
