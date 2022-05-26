@@ -18,14 +18,14 @@ public class Plugin1Impl implements Plugin {
     StaticRepository staticRepository;
 
     @Override
-    public void start(AopContext context) {
-        this.context = context;
+    public void start(AopContext ctx) {
+        context = ctx;
 
         //扫描bean
         context.beanScan(Plugin1Impl.class);
 
         //添加静态文件仓库
-        staticRepository = new ClassPathStaticRepository(context.getClassLoader(),"static");
+        staticRepository = new ClassPathStaticRepository(ctx.getClassLoader(),"static");
         StaticMappings.add("/", staticRepository);
 
         System.out.println("插件开启");
