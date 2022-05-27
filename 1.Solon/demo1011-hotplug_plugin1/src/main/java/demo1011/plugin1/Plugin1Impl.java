@@ -25,7 +25,7 @@ public class Plugin1Impl implements Plugin {
         context.beanScan(Plugin1Impl.class);
 
         //添加静态文件仓库
-        staticRepository = new ClassPathStaticRepository(ctx.getClassLoader(),"static");
+        staticRepository = new ClassPathStaticRepository(ctx.getClassLoader(), "plugin1_static");
         StaticMappings.add("/", staticRepository);
 
         System.out.println("插件开启");
