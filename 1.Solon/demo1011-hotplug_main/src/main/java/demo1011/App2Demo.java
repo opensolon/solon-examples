@@ -1,6 +1,7 @@
 package demo1011;
 
 import org.noear.solon.Solon;
+import org.noear.solon.SolonApp;
 import org.noear.solon.extend.hotplug.PluginManager;
 import org.noear.solon.extend.hotplug.PluginPackage;
 
@@ -17,16 +18,16 @@ public class App2Demo {
      * */
     public static void main1(String[] args) {
 
-        Solon.start(App.class, args);
+        Solon.start(App.class, args, app->{
+            //移除插件
+            app.get("del", ctx -> {
+                PluginManager.unload("add1");
+                ctx.output("OK");
+            });
+        });
 
         //加载插件，并启动
         PluginManager.load("add1").start();
-
-        //移除插件
-        Solon.global().get("del", ctx -> {
-            PluginManager.unload("add1");
-            ctx.output("OK");
-        });
     }
 
     /**
@@ -42,7 +43,7 @@ public class App2Demo {
         PluginPackage pluginPackage = PluginManager.loadJar(file).start();
 
         //移除插件
-        Solon.global().get("del", ctx -> {
+        Solon.app().get("del", ctx -> {
             PluginManager.unloadJar(pluginPackage);
             ctx.output("OK");
         });
