@@ -4,6 +4,7 @@ import demo1001.demo3.dso.service.UserService;
 import demo1001.demo3.dso.service.impl.UserServiceImpl;
 import org.noear.solon.SolonApp;
 import org.noear.solon.core.Aop;
+import org.noear.solon.core.AopContext;
 import org.noear.solon.core.Plugin;
 
 /**
@@ -13,14 +14,14 @@ import org.noear.solon.core.Plugin;
  */
 public class InitPlugin implements Plugin {
     @Override
-    public void start(SolonApp app) {
+    public void start(AopContext context) {
         //生成普通的Bean
-        Aop.wrapAndPut(UserService.class, new UserServiceImpl());
+        context.wrapAndPut(UserService.class, new UserServiceImpl());
 
         //生成带注解的Bean（比如：@Controller）
-        Aop.context().beanMake(UserServiceImpl.class);
+        context.beanMake(UserServiceImpl.class);
 
         //获取Bean（如果不确定是否存在，可改用异步订阅获取）
-        Aop.get(UserService.class);
+        context.getBean(UserService.class);
     }
 }

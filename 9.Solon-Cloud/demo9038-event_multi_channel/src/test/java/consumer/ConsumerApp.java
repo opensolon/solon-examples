@@ -6,6 +6,7 @@ import org.noear.solon.cloud.CloudManager;
 import org.noear.solon.cloud.CloudProps;
 import org.noear.solon.cloud.extend.rabbitmq.service.CloudEventServiceRabbitmqImp;
 import org.noear.solon.core.Aop;
+import org.noear.solon.core.AopContext;
 import org.noear.solon.core.Plugin;
 
 /**
@@ -20,7 +21,7 @@ public class ConsumerApp {
 
     public static class EventPlugin implements Plugin {
         @Override
-        public void start(SolonApp app) {
+        public void start(AopContext context) {
             //获取配置块
             CloudProps cloudProps = new CloudProps("rabbitmq_biz");
             //初始化服务
@@ -28,7 +29,7 @@ public class ConsumerApp {
             //注册
             CloudManager.register(eventServiceImp);
             //触发订阅动作
-            Aop.beanOnloaded(eventServiceImp::subscribe);
+            context.beanOnloaded(ctx -> eventServiceImp.subscribe());
         }
     }
 }
