@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="demo4021.dso.mapper.AppxMapper">
+<mapper namespace="demo4071.dso.mapper.AppxMapper">
     <select id="appx_get" resultType="demo4071.model.Appx">
         select * from appx limit 1;
     </select>
