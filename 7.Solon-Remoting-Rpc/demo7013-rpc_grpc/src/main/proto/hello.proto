@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package hello;
+
+import "google/api/annotations.proto";
+
+option go_package = "/service/hello";
+option java_package = "demo7013.service.hello";
+option java_multiple_files = true;
+
+message HelloHttpRequest {
+    string msg = 1;
+}
+
+message HelloHttpResponse {
+    string msg = 1;
+}
+
+service HelloHttp {
+    rpc SayHello(HelloHttpRequest) returns (HelloHttpResponse) {
+        option (google.api.http) = {
+            post: "/demo"
+            body: "*"
+        };
+    }
+}
+/*
+protoc --go_out=. --go-grpc_out=. ./google/hello.proto
+protoc -I . --grpc-gateway_out ./ ./google/hello.proto
+ */

@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package sub;
+
+import "google/api/annotations.proto";
+
+option go_package = "/service/sub";
+
+message SubParams {
+    int64 v1 = 1;
+    int64 v2 = 2;
+}
+
+message SubResult {
+    int64 v = 1;
+}
+
+service SubService {
+    rpc Sub(SubParams) returns (SubResult) {
+        option (google.api.http) = {
+            post: "/sub";
+            body: "*"
+        };
+    }
+}
+// python -m grpc_tools.protoc -I . --python_out=. --grpc_python_out=. ./proto/sub/sub.proto
+/*
+protoc -I . --go_out=. --go-grpc_out=. ./google/sub.proto
+protoc -I . --grpc-gateway_out ./ ./google/sub.proto
+ */

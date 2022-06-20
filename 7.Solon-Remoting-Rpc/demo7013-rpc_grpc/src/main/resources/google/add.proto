@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package add;
+
+import "google/api/annotations.proto";
+
+option go_package = "/service/add";
+
+message AddParams {
+    int64 v1 = 1;
+    int64 v2 = 2;
+}
+
+message AddResult {
+    int64 v = 1;
+}
+
+service AddService {
+    rpc Add(AddParams) returns (AddResult) {
+        option (google.api.http) = {
+            post: "/add";
+            body: "*"
+        };
+    }
+}
+
+/*
+protoc --go_out=. --go-grpc_out=. ./google/add.proto
+protoc -I . --grpc-gateway_out ./ ./google/add.proto
+ */

@@ -1,0 +1,13 @@
+
+server.grpc:
+  port: 9081
+  name: demo-grpc
+
+solon.app:
+  name: demoapp
+
+solon.cloud.local:
+  discovery:
+    service:
+      demo-grpc:
+        - "grpc://localhost:9081"
