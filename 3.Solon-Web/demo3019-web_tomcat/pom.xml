@@ -34,7 +34,7 @@
         <!-- servlet 支持扩展包 -->
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>solon.extend.servlet</artifactId>
+            <artifactId>solon.web.servlet</artifactId>
         </dependency>
 
         <dependency>

@@ -29,6 +29,6 @@
         <module>demo7012-rpc_dubbo_provider</module>
 
 
-        <module>demo7013-rpc_grpc</module>
+<!--        <module>demo7013-rpc_grpc</module>-->
     </modules>
 </project>

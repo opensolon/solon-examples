@@ -1,7 +1,7 @@
 package demo4031.dso.service;
 
 import demo4031.model.AppxModel;
-import org.noear.solon.extend.aspect.annotation.Service;
+import org.noear.solon.aspect.annotation.Service;
 
 /**
  * @author noear 2022/4/26 created

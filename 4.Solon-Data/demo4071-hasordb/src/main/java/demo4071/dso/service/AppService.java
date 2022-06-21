@@ -4,7 +4,7 @@ import demo4071.dso.mapper.AppxMapper;
 import net.hasor.db.solon.Db;
 import org.noear.solon.data.annotation.Tran;
 import org.noear.solon.data.tran.TranPolicy;
-import org.noear.solon.extend.aspect.annotation.Service;
+import org.noear.solon.aspect.annotation.Service;
 
 @Service
 public class AppService {

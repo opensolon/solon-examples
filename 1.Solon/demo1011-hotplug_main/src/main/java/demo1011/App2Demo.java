@@ -1,9 +1,8 @@
 package demo1011;
 
 import org.noear.solon.Solon;
-import org.noear.solon.SolonApp;
-import org.noear.solon.extend.hotplug.PluginManager;
-import org.noear.solon.extend.hotplug.PluginPackage;
+import org.noear.solon.hotplug.PluginManager;
+import org.noear.solon.hotplug.PluginPackage;
 
 import java.io.File;
 

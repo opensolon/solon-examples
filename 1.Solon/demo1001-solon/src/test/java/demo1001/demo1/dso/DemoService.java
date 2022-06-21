@@ -3,7 +3,7 @@ package demo1001.demo1.dso;
 import com.zaxxer.hikari.HikariDataSource;
 import org.noear.solon.annotation.Init;
 import org.noear.solon.annotation.Inject;
-import org.noear.solon.extend.aspect.annotation.Service;
+import org.noear.solon.aspect.annotation.Service;
 
 import java.util.Properties;
 

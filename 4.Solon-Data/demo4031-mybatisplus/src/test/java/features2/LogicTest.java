@@ -10,7 +10,6 @@ import org.apache.ibatis.solon.annotation.Db;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.noear.solon.annotation.Inject;
-import org.noear.solon.extend.aspect.annotation.Service;
 import org.noear.solon.test.SolonJUnit4ClassRunner;
 import org.noear.solon.test.SolonTest;
 

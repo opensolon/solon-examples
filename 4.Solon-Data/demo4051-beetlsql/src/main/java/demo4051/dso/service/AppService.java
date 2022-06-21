@@ -5,7 +5,7 @@ import org.beetl.sql.solon.annotation.Db;
 import org.noear.solon.data.annotation.Cache;
 import org.noear.solon.data.annotation.Tran;
 import org.noear.solon.data.tran.TranPolicy;
-import org.noear.solon.extend.aspect.annotation.Service;
+import org.noear.solon.aspect.annotation.Service;
 
 @Service
 public class AppService {

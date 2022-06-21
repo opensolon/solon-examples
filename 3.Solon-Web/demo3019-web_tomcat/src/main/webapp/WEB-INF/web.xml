@@ -14,7 +14,7 @@
 
 	<filter>
 		<filter-name>solon</filter-name>
-		<filter-class>org.noear.solon.extend.servlet.SolonServletFilter</filter-class>
+		<filter-class>org.noear.solon.web.servlet.SolonServletFilter</filter-class>
 	</filter>
 	<filter-mapping>
 		<filter-name>solon</filter-name>
