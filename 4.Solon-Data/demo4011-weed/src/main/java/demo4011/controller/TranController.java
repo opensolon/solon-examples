@@ -161,6 +161,15 @@ public class TranController {
 
     }
 
+    @Mapping("test71_2")
+    public void test71_2() throws Throwable {
+        //会成功
+        //
+        TranUtils.execute(new TranAnno(), () -> {
+            appService.addApp6();
+        });
+    }
+
     @Mapping("test73")
     public void test73() throws Exception {
         //会失败
