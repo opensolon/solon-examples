@@ -218,6 +218,18 @@ public class TranTest extends HttpTestBase {
     }
 
     @Test
+    public void test74_2() throws Exception {
+        clear(db);
+        path("/tran/test74_2").get();
+        path("/tran/test74_2").get();
+        path("/tran/test74_2").get();
+
+        long count = db.table("test").selectCount();
+        System.out.println(count);
+        assert count == 0;
+    }
+
+    @Test
     public void test75() throws Exception {
         clear(db);
         path("/tran/test75").get();

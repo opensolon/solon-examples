@@ -6,6 +6,8 @@ import org.noear.solon.annotation.Inject;
 import org.noear.solon.annotation.Mapping;
 import org.noear.solon.data.annotation.Cache;
 import org.noear.solon.data.annotation.Tran;
+import org.noear.solon.data.annotation.TranAnno;
+import org.noear.solon.data.tran.TranUtils;
 import org.noear.weed.DbContext;
 import org.noear.weed.annotation.Db;
 
@@ -172,6 +174,16 @@ public class TranController {
         //会失败
         //
         appService.addApp();
+    }
+
+    @Mapping("test74_2")
+    public void test74_2() throws Throwable {
+        //会失败
+        //
+        TranUtils.execute(new TranAnno().readOnly(true), () -> {
+            appService.addApp();
+        });
+
     }
 
     @Tran(readOnly = true)
