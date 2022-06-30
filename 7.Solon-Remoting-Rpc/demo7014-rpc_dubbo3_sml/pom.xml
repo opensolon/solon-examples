@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.noear.solon.examples</groupId>
-    <artifactId>demo7011-rpc_dubbo_sml</artifactId>
+    <artifactId>demo7014-rpc_dubbo3_sml</artifactId>
     <version>demo</version>
     <packaging>jar</packaging>
 
@@ -19,9 +19,6 @@
         <relativePath />
     </parent>
 
-    <properties>
-        <dubbo2.ver>2.7.5</dubbo2.ver>
-    </properties>
 
     <dependencies>
         <dependency>
@@ -36,13 +33,13 @@
 
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>dubbo-solon-plugin</artifactId>
+            <artifactId>dubbo3-solon-plugin</artifactId>
         </dependency>
 
         <dependency>
             <groupId>org.apache.dubbo</groupId>
             <artifactId>dubbo-registry-nacos</artifactId>
-            <version>${dubbo2.ver}</version>
+            <version>${dubbo3.ver}</version>
         </dependency>
     </dependencies>
 

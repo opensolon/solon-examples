@@ -30,5 +30,8 @@
 
 
 <!--        <module>demo7013-rpc_grpc</module>-->
+
+
+        <module>demo7014-rpc_dubbo3_sml</module>
     </modules>
 </project>
