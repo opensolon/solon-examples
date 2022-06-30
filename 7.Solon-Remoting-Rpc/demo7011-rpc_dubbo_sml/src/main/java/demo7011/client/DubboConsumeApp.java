@@ -19,7 +19,7 @@ public class DubboConsumeApp {
         System.out.println(tmp.home());
     }
 
-    @Reference(group = "hello")
+    @Reference(group = "demo")
     HelloService helloService;
 
     @Mapping("/")

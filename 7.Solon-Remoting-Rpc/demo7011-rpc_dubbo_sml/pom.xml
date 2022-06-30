@@ -20,10 +20,15 @@
     </parent>
 
     <properties>
-        <dubbo.ver>2.7.5</dubbo.ver>
+        <dubbo2.ver>2.7.5</dubbo2.ver>
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>org.noear</groupId>
+            <artifactId>solon-lib</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>org.noear</groupId>
             <artifactId>dubbo-solon-plugin</artifactId>
@@ -32,7 +37,7 @@
         <dependency>
             <groupId>org.apache.dubbo</groupId>
             <artifactId>dubbo-registry-nacos</artifactId>
-            <version>${dubbo.ver}</version>
+            <version>${dubbo2.ver}</version>
         </dependency>
 
         <dependency>
