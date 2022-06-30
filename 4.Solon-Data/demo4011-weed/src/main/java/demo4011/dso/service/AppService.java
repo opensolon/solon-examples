@@ -12,6 +12,7 @@ public interface AppService {
     void addApp3();
     boolean addApp4();
     boolean addApp52();
+    boolean addApp75();
     void addApp5();
     void addApp6();
 }

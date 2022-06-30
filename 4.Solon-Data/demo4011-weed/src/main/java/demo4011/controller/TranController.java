@@ -179,7 +179,7 @@ public class TranController {
     public void test75() throws Exception {
         //会成功
         //
-        appService.addApp52();
+        appService.addApp75();
         //会失败
         //
         appService.addApp();

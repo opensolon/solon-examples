@@ -54,6 +54,13 @@ public class AppServiceImpl implements AppService {
         return true;
     }
 
+    @Cache(seconds = 10)
+    @Tran(policy = TranPolicy.requires_new)
+    public boolean addApp75(){
+        sqlMapper1.appx_add();
+        return true;
+    }
+
     @Tran(policy = TranPolicy.never)
     public void addApp5(){
         sqlMapper1.appx_add();
