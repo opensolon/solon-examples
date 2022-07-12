@@ -7,7 +7,6 @@ public class FooterTag extends TagSupport {
     @Override
     public int doStartTag() throws JspException {
         try {
-            //当前视图path
             StringBuffer sb = new StringBuffer();
             sb.append("<footer>");
             sb.append("我是自定义标签，FooterTag");
