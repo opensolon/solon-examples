@@ -1,0 +1,55 @@
+<html>
+<head>
+    <title>#(title)</title>
+</head>
+<body>
+enjoy::#(message)
+
+
+<table>
+    <tr>
+        <td>权限（user:add）</td>
+        <td>
+            #authPermissions("user:add")
+            有
+            #end
+        </td>
+    </tr>
+    <tr>
+        <td>权限（user:del）</td><td>
+        #authPermissions("user:del")
+        有
+        #end
+        </td>
+    </tr>
+    <tr>
+        <td>权限（user:clear）</td><td>
+        #authPermissions("user:clear")
+        有
+        #end
+        </td>
+    </tr>
+    <tr>
+        <td>角色（admin1）</td><td>
+        #authRoles("admin1")
+        有
+        #end
+        </td>
+    </tr>
+    <tr>
+        <td>角色（admin2）</td><td>
+        #authRoles("admin2")
+        有
+        #end
+        </td>
+    </tr>
+    <tr>
+        <td>角色（admin3）</td><td>
+        #authRoles("admin3")
+        有
+        #end
+        </td>
+    </tr>
+</table>
+</body>
+</html>
