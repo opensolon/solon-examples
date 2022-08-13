@@ -1,7 +1,7 @@
 package demo6014.controller;
 
 import org.noear.solon.core.handle.Result;
-import org.noear.solon.ext.DataThrowable;
+import org.noear.solon.core.util.DataThrowable;
 
 /**
  * 接口状态码
