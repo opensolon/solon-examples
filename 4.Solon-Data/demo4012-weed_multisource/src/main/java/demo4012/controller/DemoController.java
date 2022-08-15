@@ -12,7 +12,7 @@ public class DemoController {
     /**
      * 使用SqlMapper默认的数据库注入
      * */
-    @Inject
+    @Db
     SqlMapper sqlMapper1;
 
     /**

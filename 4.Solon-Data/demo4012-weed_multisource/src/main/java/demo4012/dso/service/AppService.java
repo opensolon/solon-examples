@@ -4,10 +4,11 @@ import demo4012.dso.mapper.SqlMapper;
 import org.noear.solon.annotation.Inject;
 import org.noear.solon.data.annotation.Tran;
 import org.noear.solon.aspect.annotation.Service;
+import org.noear.weed.annotation.Db;
 
 @Service
 public class AppService {
-    @Inject
+    @Db
     SqlMapper sqlMapper1;
 
     @Tran
