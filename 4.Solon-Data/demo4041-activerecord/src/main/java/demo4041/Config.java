@@ -16,4 +16,9 @@ public class Config {
     public DataSource db1(@Inject("${test.db1}") HikariDataSource dataSource) {
         return dataSource;
     }
+
+    @Bean("db2")
+    public DataSource db2(@Inject("${test.db2}") HikariDataSource dataSource) {
+        return dataSource;
+    }
 }
