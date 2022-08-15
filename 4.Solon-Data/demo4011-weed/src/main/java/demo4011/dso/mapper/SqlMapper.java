@@ -1,13 +1,11 @@
 package demo4011.dso.mapper;
 
 import demo4011.model.AppxModel;
-import org.noear.weed.annotation.Db;
 import org.noear.weed.xml.Namespace;
 
 import java.util.List;
 import java.util.Set;
 
-@Db("db1")
 @Namespace("demo4011.dso.mapper.SqlMapper")
 public interface SqlMapper{
     //随便取条数据的ID
