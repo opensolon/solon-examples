@@ -14,6 +14,7 @@ import javax.sql.DataSource;
 public class Config {
     @Bean
     public DataSource db1(@Inject("${test.db1}") HikariDataSource ds) {
+        System.out.println(Thread.currentThread().getName());
         return ds;
     }
 
