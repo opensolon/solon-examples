@@ -12,14 +12,14 @@ import javax.sql.DataSource;
 
 @Configuration
 public class Config {
-    @Bean(concurrent = true)
+    @Bean
     public DataSource db1(@Inject("${test.db1}") HikariDataSource ds) throws Exception{
         System.out.println(Thread.currentThread().getName());
         Thread.sleep(1000);
         return ds;
     }
 
-    @Bean
+    @Bean(concurrent = true)
     public void initWeed() {
         if (Solon.cfg().isDebugMode()) {
             //执行后打印下sql
