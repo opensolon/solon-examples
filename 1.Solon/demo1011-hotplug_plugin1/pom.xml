@@ -11,7 +11,7 @@
     <parent>
         <groupId>org.noear</groupId>
         <artifactId>solon-parent</artifactId>
-        <version>1.10.0</version>
+        <version>1.10.1</version>
         <relativePath />
     </parent>
 
@@ -56,11 +56,11 @@
         </dependency>
 
         <!-- 用于插件自动行调试用 -->
-        <dependency>
-            <groupId>org.noear</groupId>
-            <artifactId>solon-web</artifactId>
-            <scope>test</scope>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.noear</groupId>-->
+<!--            <artifactId>solon-web</artifactId>-->
+<!--            <scope>test</scope>-->
+<!--        </dependency>-->
 
     </dependencies>
 

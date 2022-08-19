@@ -12,9 +12,10 @@ import javax.sql.DataSource;
 
 @Configuration
 public class Config {
-    @Bean
-    public DataSource db1(@Inject("${test.db1}") HikariDataSource ds) {
+    @Bean(concurrent = true)
+    public DataSource db1(@Inject("${test.db1}") HikariDataSource ds) throws Exception{
         System.out.println(Thread.currentThread().getName());
+        Thread.sleep(1000);
         return ds;
     }
 
