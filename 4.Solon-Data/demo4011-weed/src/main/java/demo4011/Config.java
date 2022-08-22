@@ -19,7 +19,6 @@ public class Config {
         return ds;
     }
 
-    @Bean(concurrent = true)
     public void initWeed() {
         if (Solon.cfg().isDebugMode()) {
             //执行后打印下sql
