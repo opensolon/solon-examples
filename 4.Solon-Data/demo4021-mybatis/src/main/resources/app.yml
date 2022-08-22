@@ -27,13 +27,9 @@ mybatis.db1:
     configuration:
         cacheEnabled: false
         mapUnderscoreToCamelCase: true
-
-
-#mybatis.plugin:
-#    - pagehelper:
-#        class: com.github.pagehelper.PageHelper
-#        dialect: mysql
-#        rowBoundsWithCount: true
+    plugins:
+        - test:
+            class: "demo4021.dso.MybatisInterceptorImpl"
 
 #分页组件的配置
 sqlhelper:
