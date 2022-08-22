@@ -29,7 +29,7 @@ mybatis.db1:
         mapUnderscoreToCamelCase: true
     plugins:
         - test:
-            class: "demo4021.dso.MybatisInterceptorImpl"
+            class: "demo4021.dso.TestInterceptorImpl"
 
 #分页组件的配置
 sqlhelper:

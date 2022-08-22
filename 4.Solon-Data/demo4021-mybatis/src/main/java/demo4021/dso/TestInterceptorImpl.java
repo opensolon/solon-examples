@@ -38,8 +38,8 @@ import java.sql.Connection;
         method = "query",
         args = {MappedStatement.class, Object.class, RowBounds.class, ResultHandler.class, CacheKey.class, BoundSql.class}
 )})
-public class MybatisInterceptorImpl implements Interceptor {
-    public MybatisInterceptorImpl(){
+public class TestInterceptorImpl implements Interceptor {
+    public TestInterceptorImpl(){
         System.out.println("来了！！！");
     }
 
