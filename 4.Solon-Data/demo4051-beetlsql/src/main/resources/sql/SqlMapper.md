@@ -16,6 +16,16 @@ appx_getlist
 select * from appx where app_id > #{app_id} order by app_id asc limit 4
 ```
 
+appx_getlist_page
+===
+```sql
+select
+    -- @pageTag(){
+    app_id
+    -- @} 
+from appx where app_id > #{app_id}
+```
+
 
 appx_getids
 ===

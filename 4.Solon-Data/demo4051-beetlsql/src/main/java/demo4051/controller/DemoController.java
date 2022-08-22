@@ -2,7 +2,6 @@ package demo4051.controller;
 
 import demo4051.dso.dao.AppxDao;
 import demo4051.dso.mapper.SqlMapper;
-import org.beetl.sql.core.SQLManager;
 import org.beetl.sql.solon.annotation.Db;
 import org.noear.solon.annotation.Controller;
 import org.noear.solon.annotation.Mapping;
@@ -14,10 +13,7 @@ public class DemoController {
      * 使用SqlMapper默认的数据库注入
      * */
     @Db
-    SqlMapper sqlMapper1;
-
-    @Db
-    SQLManager sqlManager;
+    SqlMapper sqlMapper;
 
     @Db
     AppxDao appxDao;
@@ -33,6 +29,6 @@ public class DemoController {
 
     @Mapping("/test2")
     public Object test2() throws Exception{
-        return sqlMapper1.appx_getlist(1);
+        return sqlMapper.appx_getlist(1);
     }
 }
