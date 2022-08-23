@@ -29,15 +29,6 @@ mybatis.db1:
             logicDeleteValue: "2"
 
 
-
-#mybatis.plugin:
-#    - pagehelper:
-#        class: com.github.pagehelper.PageHelper
-#        dialect: mysql
-#        rowBoundsWithCount: true
-
-
-
 #分页组件的配置
 sqlhelper:
     mybatis:
