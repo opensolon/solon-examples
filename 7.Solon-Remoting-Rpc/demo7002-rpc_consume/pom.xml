@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.noear.solon.examples</groupId>
-    <artifactId>demo7002-client</artifactId>
+    <artifactId>demo7002-rpc_consume</artifactId>
     <version>demo</version>
     <packaging>jar</packaging>
 
@@ -32,7 +32,7 @@
 
         <dependency>
             <groupId>org.noear.solon.examples</groupId>
-            <artifactId>demo7002-api</artifactId>
+            <artifactId>demo7002-rpc_interface</artifactId>
             <version>demo</version>
         </dependency>
 

@@ -18,10 +18,12 @@
 
     <modules>
         <module>demo7001-simple</module>
-        <module>demo7002-api</module>
-        <module>demo7002-api.impl</module>
-        <module>demo7002-client</module>
+        <module>demo7002-rpc_interface</module>
+        <module>demo7002-rpc_provider</module>
+        <module>demo7002-rpc_consume</module>
 
+        <module>demo7003_rpc_sml_nacos</module>
+        <module>demo7004-rpc_sml_zk</module>
 
         <module>demo7011-rpc_dubbo_sml</module>
         <module>demo7011-rpc_dubbo_sml_zk</module>
