@@ -1,0 +1,9 @@
+server.port: 8081
+
+solon.app:
+  name: democlient
+  group: demo
+
+
+solon.cloud.nacos:
+  server: "localhost:8848"   

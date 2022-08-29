@@ -1,0 +1,9 @@
+server.port: 8081
+
+solon.app:
+  name: demorpc
+  group: demo
+
+
+solon.cloud.zookeeper:
+  server: "localhost:2181"
