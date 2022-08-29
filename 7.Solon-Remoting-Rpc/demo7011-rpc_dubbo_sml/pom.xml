@@ -44,6 +44,12 @@
             <artifactId>dubbo-registry-nacos</artifactId>
             <version>${dubbo2.ver}</version>
         </dependency>
+
+<!--        <dependency>-->
+<!--            <groupId>org.apache.dubbo</groupId>-->
+<!--            <artifactId>dubbo-registry-zookeeper</artifactId>-->
+<!--            <version>${dubbo2.ver}</version>-->
+<!--        </dependency>-->
     </dependencies>
 
 
