@@ -1,0 +1,8 @@
+server.port: 8011
+
+dubbo:
+  application:
+    name: hello
+    owner: noear
+  registry:
+    address: zookeeper://localhost:2181

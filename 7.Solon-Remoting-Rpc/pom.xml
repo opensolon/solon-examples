@@ -24,6 +24,8 @@
 
 
         <module>demo7011-rpc_dubbo_sml</module>
+        <module>demo7011-rpc_dubbo_sml_zk</module>
+
         <module>demo7012-rpc_dubbo_consume</module>
         <module>demo7012-rpc_dubbo_interface</module>
         <module>demo7012-rpc_dubbo_provider</module>
@@ -33,5 +35,6 @@
 
 
         <module>demo7014-rpc_dubbo3_sml</module>
+        <module>demo7014-rpc_dubbo3_sml_zk</module>
     </modules>
 </project>
