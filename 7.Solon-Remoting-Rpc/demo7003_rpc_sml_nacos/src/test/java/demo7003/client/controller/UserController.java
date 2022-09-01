@@ -1,7 +1,7 @@
 package demo7003.client.controller;
 
-import demo7002.protocol.UserModel;
-import demo7002.protocol.UserService;
+import demo7003.protocol.UserModel;
+import demo7003.protocol.UserService;
 import org.noear.nami.annotation.NamiClient;
 import org.noear.solon.annotation.Controller;
 import org.noear.solon.annotation.Mapping;

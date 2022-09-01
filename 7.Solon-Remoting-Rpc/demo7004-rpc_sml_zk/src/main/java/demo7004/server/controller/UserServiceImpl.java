@@ -1,7 +1,7 @@
 package demo7004.server.controller;
 
-import demo7002.protocol.UserModel;
-import demo7002.protocol.UserService;
+import demo7004.protocol.UserModel;
+import demo7004.protocol.UserService;
 import org.noear.solon.annotation.Mapping;
 import org.noear.solon.annotation.Remoting;
 
