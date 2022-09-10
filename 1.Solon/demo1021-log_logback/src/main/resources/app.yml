@@ -1,0 +1,15 @@
+
+solon.app:
+  name: demoapp
+  group: demo
+
+
+
+solon.logging.appender:
+  console:
+    level: TRACE
+  file:
+    name: "logs/demo2"
+    level: INFO
+    maxFileSize: "10 MB"
+    maxHistory: "7"

@@ -21,5 +21,6 @@
         <module>demo1011-hotplug_common</module>
         <module>demo1011-hotplug_main</module>
         <module>demo1011-hotplug_plugin1</module>
+        <module>demo1021-log_logback</module>
     </modules>
 </project>
