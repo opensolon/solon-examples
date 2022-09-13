@@ -31,7 +31,9 @@ public class DemoApp {
             app.onEvent(SQLManagerBuilder.class, c -> {
                 //启用开发或调试模式（可以打印sql）
                 if (Solon.cfg().isDebugMode() || Solon.cfg().isFilesMode()) {
-                    c.addInterDebug();
+                    if (c.getName().contains("db1")) {
+                        c.addInterDebug();
+                    }
                 }
             });
         });
