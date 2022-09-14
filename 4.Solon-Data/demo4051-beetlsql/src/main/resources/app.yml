@@ -18,6 +18,14 @@ test:
     username: root
     password: 123456
 
+beetlsql.db1:
+  interceptorList:
+    - "org.beetl.sql.ext.DebugInterceptor"
+
+beetlsql.db2:
+  interceptorList:
+    - "org.beetl.sql.ext.DebugInterceptor"
+
 #下面这些，不需要
 #beetlsql: sqlManager1
 #beetlsql.sqlManager1.ds: ds1
