@@ -17,7 +17,7 @@ public class HttpMethodTest extends HttpTestBase {
 
     @Test
     public void test21() throws IOException {
-        assert path("/demo2/method/post").exec3("GET") == 404;
+        assert path("/demo2/method/post").execAsCode("GET") == 404;
     }
 
     @Test
@@ -30,7 +30,7 @@ public class HttpMethodTest extends HttpTestBase {
 
     @Test
     public void test23_head() throws IOException {
-        assert path("/demo2/method/post_get").exec3("HEAD") == 200;
+        assert path("/demo2/method/post_get").execAsCode("HEAD") == 200;
     }
 
     @Test

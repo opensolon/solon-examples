@@ -14,7 +14,7 @@ public class RpcClient {
         Solon.start(RpcClient.class, args, app -> app.enableHttp(false));
 
         //Aop获取一个bean
-        RpcClient client = Aop.get(RpcClient.class);
+        RpcClient client = Solon.context().getBean(RpcClient.class);
         client.test();
     }
 

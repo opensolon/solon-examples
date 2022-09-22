@@ -21,7 +21,7 @@ public class TranCacheTest extends HttpTestBase {
         path("/tran/test0").get();
         path("/tran/test0").get();
         path("/tran/test0").get();
-        assert db.table("test").count() == 2;
+        assert db.table("test").selectCount() == 2;
     }
 
     private void clear(DbContext db) throws Exception {

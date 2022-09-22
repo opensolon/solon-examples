@@ -1,6 +1,6 @@
 package features;
 
-import org.apache.ibatis.ext.solon.Db;
+import org.apache.ibatis.solon.annotation.Db;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.noear.solon.test.SolonJUnit4ClassRunner;

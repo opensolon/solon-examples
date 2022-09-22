@@ -2,7 +2,7 @@ package demo4024.controller;
 
 import com.jn.sqlhelper.dialect.pagination.SqlPaginations;
 import demo4024.dso.mapper.AppxMapper;
-import org.apache.ibatis.ext.solon.Db;
+import org.apache.ibatis.solon.annotation.Db;
 import org.noear.solon.annotation.Controller;
 import org.noear.solon.annotation.Mapping;
 

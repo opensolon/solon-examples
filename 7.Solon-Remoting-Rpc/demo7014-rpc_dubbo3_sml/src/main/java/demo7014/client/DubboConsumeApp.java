@@ -15,7 +15,7 @@ public class DubboConsumeApp {
         Solon.start(DubboConsumeApp.class, args, app -> app.enableHttp(false));
 
         //通过手动模式直接拉取bean
-        DubboConsumeApp tmp = Aop.get(DubboConsumeApp.class);
+        DubboConsumeApp tmp = Solon.context().getBean(DubboConsumeApp.class);
         System.out.println(tmp.home());
     }
 

@@ -9,7 +9,7 @@ public class DemoDubboConsumeApp {
     public static void main(String[] args) {
         Solon.start(DemoDubboConsumeApp.class, args);
 
-        HelloConsume tmp = Aop.get(HelloConsume.class);
+        HelloConsume tmp = Solon.context().getBean(HelloConsume.class);
         System.out.println(tmp.home());
     }
 }

@@ -18,7 +18,7 @@ public class LimiterTest extends HttpTestBase {
     public void test() throws Exception{
         CountDownLatch  count = new CountDownLatch(1);
         for (int i = 0; i < 100; i++) {
-            Utils.pools.submit(()->{
+            Utils.async(()->{
                 try{
                     path("/").get();
                 }catch (Exception e){
