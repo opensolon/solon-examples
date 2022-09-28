@@ -16,8 +16,8 @@ public class EVENT_hello_demo2 implements CloudEventHandler {
     public boolean handle(Event event) throws Throwable {
         System.out.println(LocalDateTime.now() + ONode.stringify(event));
 
-        throw new RuntimeException("xxx");
+        //throw new RuntimeException("xxx");
 
-        //return event.times() > 2;
+        return event.times() > 2;
     }
 }
