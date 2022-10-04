@@ -19,7 +19,7 @@ public class PageController {
 
     @Mapping("test")
     public Object test() throws Throwable {
-        Page<AppxModel> page = new Page<>(2, 3);
+        Page<AppxModel> page = new Page<>(2, 2);
 
         return appxMapper.appx_get_page(page);
     }

@@ -14,6 +14,6 @@ public class PageTest extends HttpTestBase {
     @Test
     public void test() throws Exception {
         String json = path("/page/test").get();
-        assert ONode.loadStr(json).count() == 2;
+        assert ONode.loadStr(json).get("records").count() == 2;
     }
 }
