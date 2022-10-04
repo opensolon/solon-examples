@@ -2,6 +2,7 @@ package demo4051.dso.mapper;
 
 import demo4051.model.AppxModel;
 import org.beetl.sql.core.page.PageRequest;
+import org.beetl.sql.core.page.PageResult;
 import org.beetl.sql.mapper.annotation.SqlResource;
 import org.beetl.sql.mapper.annotation.Update;
 
@@ -17,7 +18,7 @@ public interface SqlMapper {
 
     List<AppxModel> appx_getlist(int app_id) throws Exception;
 
-    PageRequest<AppxModel> appx_getlist_page(PageRequest pageRequest, int app_id) throws Exception;
+    PageResult<AppxModel> appx_getlist_page(PageRequest pageRequest, int app_id) throws Exception;
 
     List<Integer> appx_getids() throws Exception;
 

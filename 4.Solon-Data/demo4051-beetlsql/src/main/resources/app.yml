@@ -30,9 +30,4 @@ beetlsql.db2:
 #  interceptorList:
 #    - "org.beetl.sql.ext.DebugInterceptor"
 
-#下面这些，不需要
-#beetlsql: sqlManager1
-#beetlsql.sqlManager1.ds: ds1
-#beetlsql.sqlManager1.basePackage: org.beetl.sql.springboot.simple
-#beetlsql.sqlManager1.dbStyle: org.beetl.sql.core.db.MySqlStyle
 

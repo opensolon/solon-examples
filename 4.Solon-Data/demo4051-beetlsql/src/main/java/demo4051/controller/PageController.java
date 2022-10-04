@@ -15,13 +15,13 @@ import org.noear.solon.annotation.Mapping;
 public class PageController {
     /**
      * 使用SqlMapper默认的数据库注入
-     * */
+     */
     @Db
     SqlMapper sqlMapper;
 
     @Mapping("/list")
-    public Object list() throws Exception{
-        PageRequest pageRequest = DefaultPageRequest.of(1,10);
+    public Object list() throws Exception {
+        PageRequest pageRequest = DefaultPageRequest.of(1, 2);
 
         return sqlMapper.appx_getlist_page(pageRequest, 1);
     }
