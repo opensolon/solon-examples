@@ -27,7 +27,7 @@
 
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>rocketmq-solon-plugin</artifactId>
+            <artifactId>rocketmq-solon-cloud-plugin</artifactId>
         </dependency>
 
         <dependency>

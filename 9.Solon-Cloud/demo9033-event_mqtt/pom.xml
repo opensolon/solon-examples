@@ -27,7 +27,7 @@
 
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>mqtt-solon-plugin</artifactId>
+            <artifactId>mqtt-solon-cloud-plugin</artifactId>
         </dependency>
 
         <dependency>

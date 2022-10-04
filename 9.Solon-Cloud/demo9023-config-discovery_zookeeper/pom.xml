@@ -27,7 +27,7 @@
 
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>zookeeper-solon-plugin</artifactId>
+            <artifactId>zookeeper-solon-cloud-plugin</artifactId>
         </dependency>
 
         <dependency>

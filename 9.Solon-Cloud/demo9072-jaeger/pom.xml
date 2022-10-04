@@ -27,7 +27,7 @@
 
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>jaeger-solon-plugin</artifactId>
+            <artifactId>jaeger-solon-cloud-plugin</artifactId>
         </dependency>
 
         <dependency>

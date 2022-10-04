@@ -27,7 +27,7 @@
 
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>pulsar-solon-plugin</artifactId>
+            <artifactId>pulsar-solon-cloud-plugin</artifactId>
         </dependency>
 
         <dependency>

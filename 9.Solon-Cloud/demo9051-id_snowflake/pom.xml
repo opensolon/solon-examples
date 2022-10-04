@@ -27,7 +27,7 @@
 
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>snowflake-id-solon-plugin</artifactId>
+            <artifactId>snowflake-id-solon-cloud-plugin</artifactId>
         </dependency>
 
         <dependency>

@@ -27,12 +27,12 @@
 
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>mqtt-solon-plugin</artifactId>
+            <artifactId>mqtt-solon-cloud-plugin</artifactId>
         </dependency>
 
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>rabbitmq-solon-plugin</artifactId>
+            <artifactId>rabbitmq-solon-cloud-plugin</artifactId>
         </dependency>
 
         <dependency>

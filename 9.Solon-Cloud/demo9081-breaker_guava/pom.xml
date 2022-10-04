@@ -28,7 +28,7 @@
 
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>guava-solon-plugin</artifactId>
+            <artifactId>guava-solon-cloud-plugin</artifactId>
         </dependency>
 
         <dependency>

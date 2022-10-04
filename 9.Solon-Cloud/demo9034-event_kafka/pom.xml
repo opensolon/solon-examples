@@ -27,7 +27,7 @@
 
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>kafka-solon-plugin</artifactId>
+            <artifactId>kafka-solon-cloud-plugin</artifactId>
         </dependency>
 
         <dependency>

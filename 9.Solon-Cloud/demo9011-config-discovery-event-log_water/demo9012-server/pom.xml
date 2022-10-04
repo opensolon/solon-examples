@@ -33,7 +33,7 @@
 
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>water-solon-plugin</artifactId>
+            <artifactId>water-solon-cloud-plugin</artifactId>
         </dependency>
 
 
