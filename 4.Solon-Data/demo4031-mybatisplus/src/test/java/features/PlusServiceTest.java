@@ -4,8 +4,11 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.solon.plugins.pagination.Page;
 import demo4031.DemoApp;
+import demo4031.dso.mapper.AppxMapperPlus;
+import demo4031.dso.mapper.AppxMapperPlusEx;
 import demo4031.dso.service.AppServicePlus;
 import demo4031.model.AppxModel;
+import org.apache.ibatis.solon.annotation.Db;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.noear.solon.annotation.Inject;
@@ -22,10 +25,33 @@ public class PlusServiceTest {
     @Inject
     AppServicePlus appServicePlus;
 
+    @Db
+    AppxMapperPlus appxMapperPlus;
+
+    @Db
+    AppxMapperPlusEx appxMapperPlusEx;
 
     @Test
     public void selectById() {
         AppxModel app = appServicePlus.getById(2);
+        System.out.println(app);
+
+        assert app != null;
+        assert app.getAppId() == 2;
+    }
+
+    @Test
+    public void selectById1() {
+        AppxModel app = appxMapperPlus.selectById(2);
+        System.out.println(app);
+
+        assert app != null;
+        assert app.getAppId() == 2;
+    }
+
+    @Test
+    public void selectById2() {
+        AppxModel app = appxMapperPlusEx.selectById(2);
         System.out.println(app);
 
         assert app != null;
