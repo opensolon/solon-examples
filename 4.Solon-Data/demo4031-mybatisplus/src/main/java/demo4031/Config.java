@@ -6,6 +6,7 @@ import com.baomidou.mybatisplus.core.config.GlobalConfig;
 import com.baomidou.mybatisplus.solon.plugins.MybatisPlusInterceptor;
 import com.baomidou.mybatisplus.solon.plugins.inner.PaginationInnerInterceptor;
 import com.zaxxer.hikari.HikariDataSource;
+import demo4031.dso.mybatisplus_ext.MyLogicSqlInjector;
 import org.apache.ibatis.solon.annotation.Db;
 import org.noear.solon.annotation.Bean;
 import org.noear.solon.annotation.Configuration;
@@ -29,6 +30,6 @@ public class Config {
         cfg.setCacheEnabled(false);
         cfg.addInterceptor(plusInterceptor);
 
-        //globalConfig.setIdentifierGenerator(null);
+        globalConfig.setSqlInjector(new MyLogicSqlInjector());
     }
 }
