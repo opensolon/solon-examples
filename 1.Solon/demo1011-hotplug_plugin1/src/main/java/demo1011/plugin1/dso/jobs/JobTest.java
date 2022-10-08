@@ -1,4 +1,4 @@
-package demo1011.plugin1.controller;
+package demo1011.plugin1.dso.jobs;
 
 import org.noear.solon.schedule.annotation.Scheduled;
 

@@ -1,7 +1,7 @@
 package consumer.event;
 
-import org.noear.solon.cloud.extend.cloudeventplus.CloudEventHandlerPlus;
-import org.noear.solon.cloud.extend.cloudeventplus.CloudEventSubscribe;
+import org.noear.solon.cloud.eventplus.CloudEventHandlerPlus;
+import org.noear.solon.cloud.eventplus.CloudEventSubscribe;
 
 /**
  * @author noear 2021/11/5 created

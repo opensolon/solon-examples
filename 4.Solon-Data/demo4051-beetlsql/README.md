@@ -19,7 +19,7 @@ demo.db1:
   username: root
   password: 123456
 
-# 配置印射的是 SQLManagerBuilder 字段（1.10.5 开始支持）
+# 配置印射的是 SQLManagerBuilder 字段（1.10.6 开始支持）
 beetlsql.db1:
   dialect: "mysql" #快捷配置：方言
   debug: true  #快捷配置：是否调试模式
