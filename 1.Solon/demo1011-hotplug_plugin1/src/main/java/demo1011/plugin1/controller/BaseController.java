@@ -13,6 +13,10 @@ public class BaseController implements Render {
 
     @Override
     public void render(Object data, Context ctx) throws Throwable {
+        if(data instanceof Throwable){
+            throw (Throwable)data;
+        }
+
         if(data instanceof ModelAndView){
             viewRender.render(data, ctx);
         }else{
