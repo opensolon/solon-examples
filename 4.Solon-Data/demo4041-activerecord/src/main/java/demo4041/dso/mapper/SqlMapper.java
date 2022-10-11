@@ -7,7 +7,7 @@ import org.noear.solon.extend.activerecord.annotation.Sql;
 /**
  * @author noear 2022/10/11 created
  */
-@Namespace("SqlMapper")
+//@Namespace("SqlMapper")
 public interface SqlMapper {
     @Sql("appx_get")
     AppxModel appx_get();

@@ -11,13 +11,13 @@ import org.noear.solon.test.SolonTest;
 
 @RunWith(SolonJUnit4ClassRunner.class)
 @SolonTest(DemoApp.class)
-public class MapperTest extends HttpTestBase {
+public class DemoTest extends HttpTestBase {
 
 
     @Test
     public void test() throws Exception {
 
-        String json = path("/mapper/").get();
+        String json = path("/demo/").get();
 
         assert Utils.isNotEmpty(json);
 
@@ -26,7 +26,7 @@ public class MapperTest extends HttpTestBase {
 
     @Test
     public void test2() throws Exception {
-        String json2 =path("/mapper/test2").get();
+        String json2 =path("/demo/test2").get();
 
         assert Utils.isNotEmpty(json2);
 
