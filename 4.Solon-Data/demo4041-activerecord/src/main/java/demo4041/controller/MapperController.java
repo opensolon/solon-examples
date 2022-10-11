@@ -12,7 +12,7 @@ import org.noear.solon.extend.activerecord.annotation.Db;
 @Mapping("/mapper/")
 @Controller
 public class MapperController {
-    @Db("db2")
+    @Db
     SqlMapper sqlMapper;
 
     @Mapping("")
