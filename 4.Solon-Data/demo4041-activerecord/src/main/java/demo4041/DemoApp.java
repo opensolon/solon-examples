@@ -2,6 +2,8 @@ package demo4041;
 
 import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
 import org.noear.solon.Solon;
+import org.noear.solon.core.event.PluginLoadEndEvent;
+import org.noear.solon.core.handle.RenderManager;
 
 /**
  * @author noear 2021/5/24 created

@@ -1,3 +1,5 @@
+#namespace("SqlMapper")
+
 #sql("appx_get")
 select app_id from appx limit 1
 #end
@@ -18,4 +20,6 @@ select app_id from appx limit 4
 
 #sql("appx_add")
 insert into test (v1) values (1024);
+#end
+
 #end
