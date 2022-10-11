@@ -1,6 +1,8 @@
 package demo4041;
 
 import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
+import org.noear.snack.ONode;
+import org.noear.snack.core.Feature;
 import org.noear.solon.Solon;
 import org.noear.solon.core.event.PluginLoadEndEvent;
 import org.noear.solon.core.handle.RenderManager;
