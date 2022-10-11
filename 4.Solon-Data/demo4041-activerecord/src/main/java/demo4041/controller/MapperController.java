@@ -1,7 +1,6 @@
 package demo4041.controller;
 
 import demo4041.dso.mapper.SqlMapper;
-import demo4041.model.AppxModel;
 import org.noear.solon.annotation.Controller;
 import org.noear.solon.annotation.Mapping;
 import org.noear.solon.extend.activerecord.annotation.Db;
