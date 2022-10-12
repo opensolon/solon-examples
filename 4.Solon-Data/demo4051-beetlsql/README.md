@@ -26,7 +26,7 @@ beetlsql.db1:
   slaves: "db2,db3"  #快捷配置：从库配置
   nc: "org.wisecloud.common.db.beetlsql.JPANameConversion" #字段映射
   dbStyle: "org.beetl.sql.core.db.MySqlStyle" #字段映射：与 dialect 效果相同
-  interceptorList: #字段映射
+  inters: #字段映射
     - "org.beetl.sql.ext.DebugInterceptor" #与 debug 效果相同
     - "org.beetl.sql.ext.Slf4JLogInterceptor"
 ```

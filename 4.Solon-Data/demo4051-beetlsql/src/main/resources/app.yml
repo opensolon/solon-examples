@@ -20,14 +20,14 @@ test:
 
 beetlsql.db1:
   dialect: mysql
-  dev: true
-#  interceptorList:
-#    - "org.beetl.sql.ext.DebugInterceptor"
+#  dev: true
+  interceptorList:
+    - "org.beetl.sql.ext.DebugInterceptor"
 
 beetlsql.db2:
   dialect: mysql
-  dev: true
-#  interceptorList:
-#    - "org.beetl.sql.ext.DebugInterceptor"
+#  dev: true
+  interceptorList:
+    - "org.beetl.sql.ext.DebugInterceptor"
 
 
