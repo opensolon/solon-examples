@@ -24,6 +24,7 @@
         <module>demo3019-web_tomcat</module>
         <module>demo3021-i18n</module>
         <module>demo3031-auth</module>
+        <module>demo3031-auth2</module>
         <module>demo3032-auth_sa_token</module>
         <module>demo3033-auth_jap</module>
         <module>demo3034-auth_jap_ids</module>
