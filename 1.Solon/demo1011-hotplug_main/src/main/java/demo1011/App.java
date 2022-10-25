@@ -19,6 +19,12 @@ public class App {
                 PluginManager.stop("add1");
                 ctx.output("OK");
             });
+
+            //卸载插件
+            app.get("unload", ctx -> {
+                PluginManager.unload("add1");
+                ctx.output("OK");
+            });
         });
 
         //加载插件

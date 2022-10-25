@@ -28,9 +28,9 @@ public class UserController extends BaseController {
 
     @Mapping("/t")
     public String t() throws Exception {
-        Map tmp = db.table("appx")
-                .limit(1)
-                .selectMap("*");
+        Object tmp = db.table("appx")
+                .limit(2)
+                .selectMapList("*");
 
         return userName + "-" + ONode.stringify(tmp);
     }
