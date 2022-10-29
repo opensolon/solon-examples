@@ -1,16 +1,12 @@
 package demo1011.plugin1.controller;
 
-import demo1011.plugin1.controller.BaseController;
+import demo1011.plugin1.dso.service.AppxService;
 import org.noear.snack.ONode;
 import org.noear.solon.annotation.Controller;
 import org.noear.solon.annotation.Inject;
 import org.noear.solon.annotation.Mapping;
 import org.noear.solon.core.handle.Context;
 import org.noear.solon.core.handle.ModelAndView;
-import org.noear.weed.DbContext;
-import org.noear.weed.annotation.Db;
-
-import java.util.Map;
 
 /**
  * @Author: 李涵祥
@@ -23,14 +19,12 @@ public class UserController extends BaseController {
     @Inject("${user.name}")
     String userName = "111";
 
-    @Db
-    DbContext db;
+    @Inject
+    AppxService appxService;
 
     @Mapping("/t")
     public String t() throws Exception {
-        Object tmp = db.table("appx")
-                .limit(2)
-                .selectMapList("*");
+        Object tmp = appxService.findAppx();
 
         return userName + "-" + ONode.stringify(tmp);
     }

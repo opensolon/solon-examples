@@ -14,18 +14,20 @@ import org.noear.solon.schedule.JobManager;
  * @Date: 2022/5/15 12:38
  */
 public class Plugin1Impl implements Plugin {
-    AopContext context;
+    AopContext aopContext;
     StaticRepository staticRepository;
 
     @Override
-    public void start(AopContext ctx) {
-        context = ctx;
+    public void start(AopContext context) {
+        context.getProps().loadAdd("demo1011.plugin1.yml");
+
+        aopContext = context;
 
         //扫描bean
-        context.beanScan(Plugin1Impl.class);
+        aopContext.beanScan(Plugin1Impl.class);
 
         //添加静态文件仓库
-        staticRepository = new ClassPathStaticRepository(ctx.getClassLoader(), "plugin1_static");
+        staticRepository = new ClassPathStaticRepository(context.getClassLoader(), "plugin1_static");
         StaticMappings.add("/", staticRepository);
 
         System.out.println("插件开启");
@@ -40,7 +42,7 @@ public class Plugin1Impl implements Plugin {
         JobManager.remove("job1");
 
         //移除事件订阅
-        context.beanForeach(bw -> {
+        aopContext.beanForeach(bw -> {
             if (bw.raw() instanceof EventListener) {
                 EventBus.unsubscribe(bw.raw());
             }

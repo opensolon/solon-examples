@@ -1,5 +1,3 @@
-solon.plugin: demo1011.plugin1.Plugin1Impl
-
 user.name: test
 
 test.db1:
