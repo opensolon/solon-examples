@@ -38,5 +38,6 @@
 
         <module>demo7014-rpc_dubbo3_sml</module>
         <module>demo7014-rpc_dubbo3_sml_zk</module>
+        <module>demo7021-feign</module>
     </modules>
 </project>
