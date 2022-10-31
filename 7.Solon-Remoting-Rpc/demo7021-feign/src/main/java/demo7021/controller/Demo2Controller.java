@@ -3,7 +3,7 @@ package demo7021.controller;
 import org.noear.solon.annotation.Controller;
 import org.noear.solon.annotation.Inject;
 import org.noear.solon.annotation.Mapping;
-import org.noear.solon.extend.feign.FeignClient;
+import feign.solon.FeignClient;
 import demo7021.dso.api.RemoteService2;
 import demo7021.model.User;
 

@@ -3,8 +3,8 @@ package demo7021.config;
 import feign.Feign;
 import feign.jackson.JacksonDecoder;
 import feign.jackson.JacksonEncoder;
-import org.noear.solon.extend.feign.FeignClient;
-import org.noear.solon.extend.feign.FeignConfiguration;
+import feign.solon.FeignClient;
+import feign.solon.FeignConfiguration;
 
 public class JacksonConfig implements FeignConfiguration {
     @Override

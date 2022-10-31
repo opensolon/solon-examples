@@ -3,7 +3,7 @@ package demo7021.dso.api;
 import demo7021.config.JacksonConfig;
 import feign.Param;
 import feign.RequestLine;
-import org.noear.solon.extend.feign.FeignClient;
+import feign.solon.FeignClient;
 import demo7021.model.User;
 
 @FeignClient(name = "user-service", path = "/users/", configuration = JacksonConfig.class)
