@@ -14,22 +14,7 @@ import javax.sql.DataSource;
 public class Config {
     @Bean
     public DataSource db1(@Inject("${test.db1}") HikariDataSource ds) throws Exception{
-        System.out.println(Thread.currentThread().getName());
-        Thread.sleep(1000);
         return ds;
-    }
-
-    public void initWeed() {
-        if (Solon.cfg().isDebugMode()) {
-            //执行后打印下sql
-            WeedConfig.onExecuteAft(cmd -> {
-                System.out.println(cmd.text + "\r\n" + ONode.stringify(cmd.paramMap()));
-            });
-
-            WeedConfig.onException((cmd,err)->{
-                System.out.println(cmd.text + "\r\n" + ONode.stringify(cmd.paramMap()));
-            });
-        }
     }
 }
 

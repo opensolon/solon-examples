@@ -27,10 +27,14 @@ import org.noear.weed.WeedConfig;
 public class DemoApp {
     public static void main(String[] args) {
         Solon.start(DemoApp.class, args, (app) -> {
-            if (Solon.cfg().isDebugMode() || Solon.cfg().isFilesMode()) {
-                //执行后打印sql
+            if (Solon.cfg().isDebugMode()) {
+                //执行后打印下sql
                 WeedConfig.onExecuteAft(cmd -> {
-                    System.out.println("[Weed3]" + cmd.text + "\r\n" + cmd.paramMap());
+                    System.out.println(cmd.text + "\r\n" + ONode.stringify(cmd.paramMap()));
+                });
+
+                WeedConfig.onException((cmd,err)->{
+                    System.out.println(cmd.text + "\r\n" + ONode.stringify(cmd.paramMap()));
                 });
             }
         });
