@@ -15,7 +15,7 @@
     <parent>
         <groupId>org.noear</groupId>
         <artifactId>solon-parent</artifactId>
-        <version>1.11.0</version>
+        <version>1.11.1-M2</version>
         <relativePath />
     </parent>
 
@@ -46,7 +46,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.12</version>
+
             <scope>provided</scope>
         </dependency>
 
