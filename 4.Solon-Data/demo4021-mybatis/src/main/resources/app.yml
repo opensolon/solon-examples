@@ -17,6 +17,7 @@ test.db1:
     driverClassName: com.mysql.cj.jdbc.Driver
     username: root
     password: 123456
+    url: ${test.db1.jdbcUrl}
 
 #默认
 mybatis.db1:

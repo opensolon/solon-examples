@@ -27,9 +27,9 @@ public class Tran2Controller {
     @Mapping("test")
     public void test() throws Throwable {
         //内部申明了用db2的事务
-        app2Service.add();
+        app2Service.addApp();
 
         //内部申明了用db1的事务
-        appService.add();
+        appService.addApp();
     }
 }

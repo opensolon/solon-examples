@@ -1,13 +1,13 @@
 package features;
 
+import demo4022.DemoApp;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.noear.solon.Solon;
 import org.noear.solon.test.HttpTestBase;
-import org.noear.solon.test.SolonTest;
 import org.noear.solon.test.SolonJUnit4ClassRunner;
+import org.noear.solon.test.SolonTest;
 import org.noear.weed.DbContext;
-import demo4021.DemoApp;
 
 @RunWith(SolonJUnit4ClassRunner.class)
 @SolonTest(DemoApp.class)
