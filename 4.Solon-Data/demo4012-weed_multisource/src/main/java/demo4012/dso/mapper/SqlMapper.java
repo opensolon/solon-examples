@@ -1,13 +1,12 @@
 package demo4012.dso.mapper;
 
 import demo4012.model.AppxModel;
-import org.noear.weed.annotation.Db;
 import org.noear.weed.xml.Namespace;
 
 import java.util.List;
 import java.util.Set;
 
-@Namespace("demo4012.dso.mapper")
+@Namespace("demo4012.dso.mapper.SqlMapper")
 public interface SqlMapper{
     //随便取条数据的ID
     int appx_get() ;
