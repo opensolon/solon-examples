@@ -8,8 +8,8 @@ import org.noear.solon.data.tran.TranPolicy;
 import org.noear.wood.annotation.Db;
 
 @Service
-public class AppService {
-    @Db
+public class AppService2 {
+    @Db("db2")
     SqlMapper sqlMapper1;
 
     public Object getApp(int app_id) throws Exception {

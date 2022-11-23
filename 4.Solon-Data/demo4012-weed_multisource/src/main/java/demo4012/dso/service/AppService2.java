@@ -1,15 +1,15 @@
-package demo4014.dso.service;
+package demo4012.dso.service;
 
-import demo4014.dso.mapper.SqlMapper;
+import demo4012.dso.mapper.SqlMapper;
 import org.noear.solon.aspect.annotation.Service;
 import org.noear.solon.data.annotation.Cache;
 import org.noear.solon.data.annotation.Tran;
 import org.noear.solon.data.tran.TranPolicy;
-import org.noear.wood.annotation.Db;
+import org.noear.weed.annotation.Db;
 
 @Service
-public class AppService {
-    @Db
+public class AppService2 {
+    @Db("db2")
     SqlMapper sqlMapper1;
 
     public Object getApp(int app_id) throws Exception {

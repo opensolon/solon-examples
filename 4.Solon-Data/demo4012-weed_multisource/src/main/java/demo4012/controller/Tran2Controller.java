@@ -1,6 +1,6 @@
-package demo4014.controller;
+package demo4012.controller;
 
-import demo4014.dso.service.AppService;
+import demo4012.dso.service.AppService2;
 import org.noear.solon.annotation.Controller;
 import org.noear.solon.annotation.Inject;
 import org.noear.solon.annotation.Mapping;
@@ -8,14 +8,14 @@ import org.noear.solon.data.annotation.Cache;
 import org.noear.solon.data.annotation.Tran;
 import org.noear.solon.data.annotation.TranAnno;
 import org.noear.solon.data.tran.TranUtils;
-import org.noear.wood.DbContext;
-import org.noear.wood.annotation.Db;
+import org.noear.weed.DbContext;
+import org.noear.weed.annotation.Db;
 
-@Mapping("/tran/")
+@Mapping("/tran2/")
 @Controller
-public class TranController {
+public class Tran2Controller {
     @Inject
-    AppService appService;
+    AppService2 appService;
 
     @Cache
     @Tran

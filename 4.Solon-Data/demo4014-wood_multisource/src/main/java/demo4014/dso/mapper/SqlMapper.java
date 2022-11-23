@@ -4,18 +4,24 @@ import demo4014.model.AppxModel;
 import org.noear.wood.xml.Namespace;
 
 import java.util.List;
+import java.util.Set;
 
-@Namespace("demo4012.dso.mapper")
+@Namespace("demo4014.dso.mapper.SqlMapper")
 public interface SqlMapper{
     //随便取条数据的ID
-    int appx_get() throws Exception;
+    int appx_get() ;
+
+    //随便取条数据的ID
+    Integer appx_get0() ;
 
     //根据id取条数据
-    AppxModel appx_get2(int app_id) throws Exception;
+    AppxModel appx_get2(int app_id) ;
 
-    List<AppxModel> appx_getlist(int app_id) throws Exception;
+    List<AppxModel> appx_getlist(int app_id) ;
 
-    List<Integer> appx_getids() throws Exception;
+    List<Integer> appx_getids() ;
 
-    void appx_add();
+    Set<Integer> appx_getids2() ;
+
+    void appx_add() ;
 }
