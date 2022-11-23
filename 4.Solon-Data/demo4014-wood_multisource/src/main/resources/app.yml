@@ -4,14 +4,31 @@ solon.app:
 
 solon.output.meta: 1
 
-test:
-  db1:
+
+test.db1:
+  schema: rock
+  jdbcUrl: jdbc:mysql://localhost:3306/rock?useUnicode=true&characterEncoding=utf8&autoReconnect=true&rewriteBatchedStatements=true
+  driverClassName: com.mysql.cj.jdbc.Driver
+  username: root
+  password: 123456
+
+# db2 用动态数据源演示
+test.db2:
+  type: "com.zaxxer.hikari.HikariDataSource"
+  strict: true
+  default:
     schema: rock
     jdbcUrl: jdbc:mysql://localhost:3306/rock?useUnicode=true&characterEncoding=utf8&autoReconnect=true&rewriteBatchedStatements=true
     driverClassName: com.mysql.cj.jdbc.Driver
     username: root
     password: 123456
-  db2:
+  db_rock1:
+    schema: rock
+    jdbcUrl: jdbc:mysql://localhost:3306/rock?useUnicode=true&characterEncoding=utf8&autoReconnect=true&rewriteBatchedStatements=true
+    driverClassName: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123456
+  db_rock2:
     schema: rock
     jdbcUrl: jdbc:mysql://localhost:3306/rock?useUnicode=true&characterEncoding=utf8&autoReconnect=true&rewriteBatchedStatements=true
     driverClassName: com.mysql.cj.jdbc.Driver

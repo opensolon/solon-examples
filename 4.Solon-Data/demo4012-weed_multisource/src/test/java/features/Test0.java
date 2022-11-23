@@ -1,14 +1,14 @@
 package features;
 
+import demo4012.DemoApp;
+import demo4012.dso.mapper.SqlMapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.noear.solon.test.SolonJUnit4ClassRunner;
 import org.noear.solon.test.SolonTest;
 import org.noear.weed.annotation.Db;
-import demo4011.DemoApp;
-import demo4011.dso.mapper.SqlMapper;
 
-import java.util.Set;
+import java.util.List;
 
 /**
  * @author noear 2021/2/3 created
@@ -21,7 +21,7 @@ public class Test0 {
 
     @Test
     public void test0() throws Exception{
-        Integer tmp = sqlMapper.appx_get0();
+        Integer tmp = sqlMapper.appx_get();
         assert  tmp == null;
 
         assert  sqlMapper.appx_get() > 0;
@@ -29,7 +29,7 @@ public class Test0 {
 
     @Test
     public void test1() throws Exception{
-        Set<Integer> sets = sqlMapper.appx_getids2();
+        List<Integer> sets = sqlMapper.appx_getids();
 
         System.out.println(sets);
 
