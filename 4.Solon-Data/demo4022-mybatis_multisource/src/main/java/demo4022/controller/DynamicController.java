@@ -5,7 +5,7 @@ import demo4022.model.AppxModel;
 import org.apache.ibatis.solon.annotation.Db;
 import org.noear.solon.annotation.Controller;
 import org.noear.solon.annotation.Mapping;
-import org.noear.solon.data.datasource.dynamic.DynamicDsUtils;
+import org.noear.solon.data.datasource.dynamic.annotation.DynamicDsHolder;
 import org.noear.solon.data.datasource.dynamic.annotation.DynamicDs;
 
 /**
@@ -25,7 +25,7 @@ public class DynamicController {
     @DynamicDs("db_rock1")
     @Mapping("/test1")
     public AppxModel test1() throws Exception{
-        System.out.println("ds===" + DynamicDsUtils.getCurrent());
+        System.out.println("ds===" + DynamicDsHolder.get());
 
         return sqlMapper1.appx_get2(1);
     }
@@ -34,7 +34,7 @@ public class DynamicController {
     @DynamicDs("db_rock2")
     @Mapping("/test2")
     public AppxModel test2() throws Exception{
-        System.out.println("ds===" + DynamicDsUtils.getCurrent());
+        System.out.println("ds===" + DynamicDsHolder.get());
 
         return sqlMapper1.appx_get2(2);
     }
@@ -43,7 +43,7 @@ public class DynamicController {
     @DynamicDs
     @Mapping("/test3")
     public AppxModel test3() throws Exception{
-        System.out.println("ds===" + DynamicDsUtils.getCurrent());
+        System.out.println("ds===" + DynamicDsHolder.get());
 
         return sqlMapper1.appx_get2(3);
     }
