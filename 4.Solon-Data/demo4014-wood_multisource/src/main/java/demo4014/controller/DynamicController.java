@@ -4,8 +4,8 @@ import demo4014.dso.mapper.SqlMapper;
 import demo4014.model.AppxModel;
 import org.noear.solon.annotation.Controller;
 import org.noear.solon.annotation.Mapping;
-import org.noear.solon.data.datasource.dynamic.annotation.DynamicDsHolder;
-import org.noear.solon.data.datasource.dynamic.annotation.DynamicDs;
+import org.noear.solon.data.dynamicds.DynamicDsHolder;
+import org.noear.solon.data.dynamicds.DynamicDs;
 import org.noear.wood.annotation.Db;
 
 /**

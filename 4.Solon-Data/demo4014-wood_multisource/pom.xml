@@ -25,15 +25,15 @@
             <artifactId>solon-web</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>org.noear</groupId>
+            <artifactId>solon.data.dynamicds</artifactId>
+        </dependency>
+
         <!-- wood-solon-plugin 相对于 wood；增加了 @Db 的注入支持 -->
         <dependency>
             <groupId>org.noear</groupId>
             <artifactId>wood-solon-plugin</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.noear</groupId>
-            <artifactId>dynamic-datasource-solon-plugin</artifactId>
         </dependency>
 
         <dependency>
@@ -45,7 +45,7 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.18</version>
+            <version>8.0.31</version>
         </dependency>
 
         <dependency>

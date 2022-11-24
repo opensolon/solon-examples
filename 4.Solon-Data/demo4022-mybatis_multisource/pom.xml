@@ -27,12 +27,12 @@
 
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>mybatis-solon-plugin</artifactId>
+            <artifactId>solon.data.dynamicds</artifactId>
         </dependency>
 
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>dynamic-datasource-solon-plugin</artifactId>
+            <artifactId>mybatis-solon-plugin</artifactId>
         </dependency>
 
         <dependency>
@@ -49,7 +49,7 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.18</version>
+            <version>8.0.31</version>
         </dependency>
 
         <dependency>
