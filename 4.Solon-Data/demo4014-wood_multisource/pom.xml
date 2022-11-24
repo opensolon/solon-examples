@@ -15,7 +15,7 @@
     <parent>
         <groupId>org.noear</groupId>
         <artifactId>solon-parent</artifactId>
-        <version>1.11.1-M3</version>
+        <version>1.11.1-M4</version>
         <relativePath />
     </parent>
 
@@ -29,6 +29,11 @@
         <dependency>
             <groupId>org.noear</groupId>
             <artifactId>wood-solon-plugin</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.noear</groupId>
+            <artifactId>dynamic-datasource-solon-plugin</artifactId>
         </dependency>
 
         <dependency>

@@ -5,8 +5,8 @@ import demo4022.model.AppxModel;
 import org.apache.ibatis.solon.annotation.Db;
 import org.noear.solon.annotation.Controller;
 import org.noear.solon.annotation.Mapping;
-import org.noear.solon.data.datasource.DynamicDsUtils;
-import org.noear.solon.data.datasource.annotation.DynamicDs;
+import org.noear.solon.data.datasource.dynamic.DynamicDsUtils;
+import org.noear.solon.data.datasource.dynamic.annotation.DynamicDs;
 
 /**
  * @author noear 2022/11/23 created
