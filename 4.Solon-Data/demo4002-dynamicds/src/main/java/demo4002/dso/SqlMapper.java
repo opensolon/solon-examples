@@ -6,7 +6,7 @@ import org.noear.wood.xml.Namespace;
 import java.util.List;
 import java.util.Set;
 
-@Namespace("demo4002.dso.mapper.SqlMapper")
+@Namespace("demo4002.dso.SqlMapper")
 public interface SqlMapper{
     //随便取条数据的ID
     int appx_get() ;
