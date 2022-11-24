@@ -18,6 +18,7 @@
 
     <modules>
         <module>demo4001-cache</module>
+        <module>demo4002-dynamicds</module>
         <module>demo4011-weed</module>
         <module>demo4012-weed_multisource</module>
         <module>demo4013-wood</module>
