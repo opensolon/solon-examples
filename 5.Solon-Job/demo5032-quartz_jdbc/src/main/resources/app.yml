@@ -1,0 +1,13 @@
+solon.app:
+  name: demoapp
+  group: demo
+
+#solon.quartz.job1.cron7x=10s
+#solon.quartz.job1.enable=true
+
+# ??????????
+solon.logging.logger:
+  "root":  #???????
+    level: INFO
+  "org.quartz":
+    level: WARN

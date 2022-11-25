@@ -21,6 +21,7 @@
         <module>demo5012-ext_schedule</module>
         <module>demo5021-cron4j</module>
         <module>demo5031-quartz</module>
+        <module>demo5032-quartz_jdbc</module>
 
         <module>demo5091-job_water</module>
         <module>demo5092-job_xxl_job</module>
