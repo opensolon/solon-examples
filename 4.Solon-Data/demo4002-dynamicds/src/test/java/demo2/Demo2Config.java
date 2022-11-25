@@ -29,4 +29,23 @@ public class Demo2Config {
             aopContext.putWrap(kv.getKey(), dsWrap);
         }
     }
+
+
+    //@Bean
+    public void dsInit2(@Inject("${test.datasources}") Properties props) {
+        Map<String, DataSource> dsMap = DsUtils.buildDsMap(props, HikariDataSource.class);
+
+        for (Map.Entry<String, DataSource> kv : dsMap.entrySet()) {
+            BeanWrap dsWrap;
+
+            if ("db1".equals(kv.getValue())) {
+                dsWrap = aopContext.wrap(kv.getKey(), kv.getValue());
+                aopContext.putWrap(kv.getKey(), dsWrap);
+                aopContext.putWrap(DataSource.class, dsWrap);
+            } else {
+                dsWrap = aopContext.wrap(kv.getKey(), kv.getValue());
+                aopContext.putWrap(kv.getKey(), dsWrap);
+            }
+        }
+    }
 }
