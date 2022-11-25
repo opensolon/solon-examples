@@ -27,6 +27,7 @@ public class Demo2Config {
         for (Map.Entry<String, DataSource> kv : dsMap.entrySet()) {
             BeanWrap dsWrap = aopContext.wrap(kv.getKey(), kv.getValue());
             aopContext.putWrap(kv.getKey(), dsWrap);
+
         }
     }
 
