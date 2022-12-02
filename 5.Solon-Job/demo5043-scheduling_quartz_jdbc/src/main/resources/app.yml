@@ -2,3 +2,9 @@
 solon.app:
   name: demoapp
   group: demo
+
+solon.logging.logger:
+  "root":
+    level: INFO
+  "org.quartz":
+    level: WARN
