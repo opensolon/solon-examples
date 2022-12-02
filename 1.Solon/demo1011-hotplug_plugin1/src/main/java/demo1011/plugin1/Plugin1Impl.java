@@ -28,7 +28,7 @@ public class Plugin1Impl implements Plugin {
 
         //添加静态文件仓库
         staticRepository = new ClassPathStaticRepository(context.getClassLoader(), "plugin1_static");
-        StaticMappings.add("/", staticRepository);
+        StaticMappings.add("/html/",false, staticRepository);
 
         System.out.println("插件开启");
     }
