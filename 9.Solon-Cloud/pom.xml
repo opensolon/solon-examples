@@ -30,6 +30,7 @@
         <module>demo9034-event_kafka</module>
         <module>demo9035-event_pulsar</module>
         <module>demo9036-event_jedis</module>
+        <module>demo9037-event_aliyun_ons</module>
         <module>demo9038-event_multi_channel</module>
         <module>demo9039-event_multi_channel2</module>
         <module>demo9041-file_aliyun_oss</module>
