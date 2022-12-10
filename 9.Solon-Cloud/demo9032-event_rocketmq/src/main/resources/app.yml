@@ -1,5 +1,4 @@
 solon.app:
-  namespace: test
   group: demo       #配置服务使用的默认组
   name: helloproducer    #发现服务使用的应用名
 
