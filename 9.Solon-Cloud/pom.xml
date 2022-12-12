@@ -26,6 +26,7 @@
         <module>demo9023-config-discovery_zookeeper</module>
         <module>demo9031-event_rabbitmq</module>
         <module>demo9032-event_rocketmq</module>
+        <module>demo9032-event_rocketmq_tag</module>
         <module>demo9033-event_mqtt</module>
         <module>demo9034-event_kafka</module>
         <module>demo9035-event_pulsar</module>

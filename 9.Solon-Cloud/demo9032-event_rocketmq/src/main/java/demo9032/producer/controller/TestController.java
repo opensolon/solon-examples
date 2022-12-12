@@ -27,28 +27,15 @@ public class TestController {
         return CloudClient.event().publish(event);
     }
 
-    @Mapping("/test1")
-    public Object test1(String msg) {
-        if (Utils.isEmpty(msg)) {
-            msg = "demo";
-        }
-
-        LocalDateTime localDateTime = LocalDateTime.now();
-        localDateTime.plusSeconds(3);
-        Date scheduled = Date.from(localDateTime.atZone(ZoneId.systemDefault()).toInstant());
-
-        System.out.println(LocalDateTime.now());
-        Event event = new Event("hello.demo", msg).scheduled(scheduled);
-        return CloudClient.event().publish(event);
-    }
-
     @Mapping("/test2")
     public Object test2(String msg) {
-        if(Utils.isEmpty(msg)){
+        if (Utils.isEmpty(msg)) {
             msg = "demo2";
         }
 
-        Event event = new Event("hello.demo2", msg).group("test");
+        long time = System.currentTimeMillis() + 10 * 1000;
+
+        Event event = new Event("hello.demo2", msg).group("test").scheduled(new Date(time));
         return CloudClient.event().publish(event);
     }
 }

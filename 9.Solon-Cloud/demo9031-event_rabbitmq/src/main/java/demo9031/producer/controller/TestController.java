@@ -26,20 +26,6 @@ public class TestController {
         return CloudClient.event().publish(event);
     }
 
-    @Mapping("/test1")
-    public Object test1(String msg) {
-        if (Utils.isEmpty(msg)) {
-            msg = "demo";
-        }
-
-        LocalDateTime localDateTime = LocalDateTime.now();
-        localDateTime.plusSeconds(3);
-        Date scheduled = Date.from(localDateTime.atZone(ZoneId.systemDefault()).toInstant());
-
-        Event event = new Event("hello.demo", msg).scheduled(scheduled);
-        return CloudClient.event().publish(event);
-    }
-
     @Mapping("/test2")
     public Object test2(String msg) {
         if (Utils.isEmpty(msg)) {

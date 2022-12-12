@@ -1,4 +1,4 @@
-package demo9037.producer.controller;
+package demo9032_tag.producer.controller;
 
 import org.noear.solon.Utils;
 import org.noear.solon.annotation.Controller;
@@ -21,7 +21,7 @@ public class TestController {
             msg = "demo";
         }
 
-        Event event = new Event("hello.demo", msg);
+        Event event = new Event("demo9032_tag.demo", msg);
         return CloudClient.event().publish(event);
     }
 
