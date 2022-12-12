@@ -1,4 +1,4 @@
-package demo9061.controller;
+package demo9063.controller;
 
 import org.noear.solon.cloud.CloudJobHandler;
 import org.noear.solon.cloud.annotation.CloudJob;
@@ -9,7 +9,7 @@ import org.slf4j.LoggerFactory;
 /**
  * @author noear 2021/5/25 created
  */
-@CloudJob(name = "JobHandlerDemo1", cron7x = "0/1 * * * * ? *")
+@CloudJob(name = "JobHandlerDemo1", cron7x = "0/10 * * * * ? *")
 public class JobHandlerDemo1 implements CloudJobHandler {
     static final Logger log = LoggerFactory.getLogger(JobBeanDemo2.class);
 

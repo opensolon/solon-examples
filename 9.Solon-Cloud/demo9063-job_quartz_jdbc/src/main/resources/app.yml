@@ -4,5 +4,6 @@ solon.app:
   name: demojob
   group: demo
 
-solon.cloud.water:
-  server: "waterapi:9371"
+solon.logging.logger:
+  root:
+    level: INFO
