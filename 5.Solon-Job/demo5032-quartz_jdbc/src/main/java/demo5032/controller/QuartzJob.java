@@ -13,8 +13,8 @@ import java.util.Date;
 public class QuartzJob implements Job {
     @Override
     public void execute(JobExecutionContext ctx) throws JobExecutionException {
-        log.trace("我是定时任务: QuartzJob(0 0/1 * * * ? *) -- " + new Date().toString());
+        log.warn("我是定时任务: QuartzJob(0 0/1 * * * ? *) -- " + new Date().toString());
 
-        log.trace("如果间隔太短，我可能被配置给控制了");
+        log.warn("如果间隔太短，我可能被配置给控制了");
     }
 }

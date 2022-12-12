@@ -10,7 +10,7 @@ import java.util.Date;
 public class QuartzRun1 implements Runnable {
     @Override
     public void run() {
-        log.trace("我是定时任务: QuartzRun1(2s) -- " + new Date().toString());
+        log.warn("我是定时任务: QuartzRun1(2s) -- " + new Date().toString());
         //throw new RuntimeException("异常");
     }
 }

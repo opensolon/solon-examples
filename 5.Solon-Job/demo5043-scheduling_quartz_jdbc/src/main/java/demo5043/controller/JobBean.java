@@ -14,21 +14,21 @@ import java.util.Date;
 public class JobBean {
     @Scheduled(fixedRate = 1000 * 3)
     public void job11(){
-        log.trace(new Date() + ": 1000*3");
+        log.warn(new Date() + ": 1000*3");
     }
 
     @Scheduled(cron = "0/10 * * * * ? *", zone = "+00")
     public void job12(){
-        log.trace(new Date() + ": 0/10 * * * * ? *");
+        log.warn(new Date() + ": 0/10 * * * * ? *");
     }
 
     @Scheduled(cron = "0/10 * * * * ? *", zone = "CET")
     public void job13(){
-        log.trace(new Date() + ": 0/10 * * * * ? *");
+        log.warn(new Date() + ": 0/10 * * * * ? *");
     }
 
     @Scheduled(cron = "0/10 * * * * ? *", zone = "Asia/Shanghai")
     public void job14(){
-        log.trace(new Date() + ": 0/10 * * * * ? *");
+        log.warn(new Date() + ": 0/10 * * * * ? *");
     }
 }
