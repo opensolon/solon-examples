@@ -2,7 +2,7 @@ server.port: 8081
 
 solon.app:
   group: demo       #配置服务使用的默认组
-  name: helloconsumer    #发现服务使用的应用名
+  name: helloconsumer2    #发现服务使用的应用名
 
 
 solon.cloud.aliyun.ons:
