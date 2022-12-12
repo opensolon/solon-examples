@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 /**
  * @author noear 2021/1/27 created
  */
-@CloudEvent("hello.demo")
+@CloudEvent(topic = "hello2.demo", tag = "test")
 public class EVENT_hello_demo implements CloudEventHandler {
     @Override
     public boolean handle(Event event) throws Throwable {
