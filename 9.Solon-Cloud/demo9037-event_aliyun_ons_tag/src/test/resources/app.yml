@@ -7,6 +7,5 @@ solon.app:
 
 solon.cloud.aliyun.ons:
   server: "xxx.cn-hangzhou.rmq.aliyuncs.com:8080"   #rocketmq服务地址
-  event:
-    accessKey: LTAI5tQTngx***
-    secretKey: S7Sqo88j7Jc6qk7pZ***
+  accessKey: LTAI5tQTngx***
+  secretKey: S7Sqo88j7Jc6qk7pZ***
