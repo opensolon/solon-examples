@@ -9,3 +9,9 @@ solon.cloud.aliyun.ons:
   server: "xxx.cn-hangzhou.rmq.aliyuncs.com:8080"   #rocketmq服务地址
   accessKey: LTAI5tQTngx***
   secretKey: S7Sqo88j7Jc6qk7pZ***
+#  event:
+#    producerGroup: DEFAULT  #默认 DEFAULT，生产组
+#    consumerGroup: demo_helloconsumer  #默认 {slon.app.group}_{solon.app.name}，消费组
+#    publishTimeout: 3000     #默认 3000 事件发布超时/毫秒
+#    consumeThreadNums: 20    #默认 20 实例的消费线程数
+#    maxReconsumeTimes: 16    #默认 16 设置消息消费失败的最大重试次数
