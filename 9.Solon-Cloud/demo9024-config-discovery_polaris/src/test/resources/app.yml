@@ -1,0 +1,13 @@
+server.port: 7111
+
+solon.app:
+  namespace: test
+  group: demo       #配置服务使用的默认组
+  name: helloapp    #发现服务使用的应用名
+
+solon.cloud.polaris:
+  server: localhost:8091        #polaris服务地址
+  username: polaris             #polaris链接账号
+  password: polaris             #polaris链接密码
+  config:
+    load: "test.properties"

@@ -1,0 +1,11 @@
+server.port: 7112
+
+solon.app:
+  namespace: test
+  group: demo
+  name: helloapi    #发现服务使用的应用名（在Demo，将被NimaClient引用）
+
+solon.cloud.polaris:
+  server: localhost:8091   #polaris服务地址
+  username: polaris        #polaris链接账号
+  password: polaris        #polaris链接密码
