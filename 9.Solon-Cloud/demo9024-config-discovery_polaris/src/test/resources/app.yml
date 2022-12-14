@@ -9,7 +9,7 @@ solon.cloud.polaris:
   username: polaris        #polaris链接账号
   password: polaris        #polaris链接密码
   config:
-    server: localhost:8091   #polaris配置服务地址
+    server: localhost:8093   #polaris配置服务地址
     load: "test.properties"
   discovery:
     server: localhost:8091   #polaris发现服务地址

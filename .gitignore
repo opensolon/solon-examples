@@ -24,6 +24,7 @@ nbbuild/
 dist/
 nbdist/
 .nb-gradle/
+polaris/backup/
 
 ### Mac files ###
 *.DS_Store
