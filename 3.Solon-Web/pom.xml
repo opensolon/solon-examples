@@ -31,6 +31,7 @@
         <module>demo3035-auth_view_beetl</module>
         <module>demo3036-auth_view_enjoy</module>
         <module>demo3037-auth_view_freemarker</module>
+        <module>demo3038-auth_captcha</module>
         <module>demo3041-gateway</module>
         <module>demo3051-websocket</module>
         <module>demo3061-session_redis</module>
