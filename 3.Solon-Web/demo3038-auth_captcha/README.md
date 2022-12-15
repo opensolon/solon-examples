@@ -3,7 +3,7 @@
 
 文档参数： https://captcha.anji-plus.com/#/doc
 
-配置示例
+配置参考
 
 ```properties
 
