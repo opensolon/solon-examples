@@ -1,0 +1,19 @@
+
+solon.app:
+  name: captcha-service
+
+server.port: 8080
+
+aj.captcha.cache-type: local
+aj.captcha.cache-number: 1000
+aj.captcha.timing-clear: 3600
+
+aj.captcha.jigsaw: classpath:images/jigsaw
+aj.captcha.pic-click: classpath:images/pic-click
+aj.captcha.type: default
+aj.captcha.water-mark: \u6211\u7684\u6c34\u5370
+aj.captcha.water-font: \u5b8b\u4f53
+aj.captcha.font-type: \u5b8b\u4f53
+aj.captcha.slip-offset: 5
+aj.captcha.aes-status: true
+aj.captcha.interference-options: 1
