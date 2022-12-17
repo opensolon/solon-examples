@@ -9,6 +9,7 @@ import org.noear.solon.core.handle.MethodType;
 @Mapping(value = "/demoe/rpc", method = MethodType.SOCKET)
 @Remoting
 public class HelloServiceImpl implements HelloService {
+    //@Socket
     public String hello(String name) {
         return "name=" + name;
     }
