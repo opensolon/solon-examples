@@ -3,10 +3,10 @@ package features;
 import demo4011.DemoApp;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.noear.solon.data.annotation.Rollback;
 import org.noear.solon.test.HttpTestBase;
 import org.noear.solon.test.SolonJUnit4ClassRunner;
 import org.noear.solon.test.SolonTest;
+import org.noear.solon.test.annotation.TestRollback;
 import org.noear.weed.DbContext;
 import org.noear.weed.annotation.Db;
 
@@ -17,7 +17,7 @@ public class RollbackTest extends HttpTestBase {
     @Db
     DbContext db;
 
-    @Rollback
+    @TestRollback
     @Test
     public void test1() throws Exception {
         clear(db);

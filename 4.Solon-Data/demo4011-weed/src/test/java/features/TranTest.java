@@ -2,8 +2,6 @@ package features;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.noear.solon.core.Aop;
-import org.noear.solon.data.annotation.Rollback;
 import org.noear.solon.test.HttpTestBase;
 import org.noear.solon.test.SolonJUnit4ClassRunner;
 import org.noear.solon.test.SolonTest;
