@@ -7,9 +7,6 @@ import org.noear.solon.extend.sqltoy.annotation.Db;
 import org.sagacity.sqltoy.dao.SqlToyLazyDao;
 import org.sagacity.sqltoy.model.Page;
 
-import java.util.List;
-
-
 @Controller
 @Mapping("user")
 public class UserController {
