@@ -8,8 +8,8 @@ datasource:
   jdbcUrl: jdbc:h2:mem:activiti;DB_CLOSE_DELAY=1000
 
 datasource2:
-    driver-class-name: org.h2.Driver
-    username: sa
-    password:
-    jdbcUrl: jdbc:h2:file:./test.db;DB_CLOSE_DELAY=1000
+  driver-class-name: org.h2.Driver
+  username: sa
+  password:
+  jdbcUrl: jdbc:h2:file:./test.db;DB_CLOSE_DELAY=1000
 

@@ -35,17 +35,6 @@
             <artifactId>HikariCP</artifactId>
             <version>4.0.3</version>
         </dependency>
-        <dependency>
-            <groupId>com.sagframe</groupId>
-            <artifactId>sagacity-sqltoy</artifactId>
-            <version>5.1.23</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.springframework</groupId>
-                    <artifactId>*</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
 <!--        <dependency>-->
 <!--            <groupId>mysql</groupId>-->
 <!--            <artifactId>mysql-connector-java</artifactId>-->
@@ -56,29 +45,24 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-
             <scope>provided</scope>
         </dependency>
+
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
             <version>2.0.202</version>
         </dependency>
+
         <dependency>
             <groupId>cn.hutool</groupId>
             <artifactId>hutool-core</artifactId>
             <version>5.7.17</version>
         </dependency>
-        <dependency>
-            <groupId>org.noear</groupId>
-            <artifactId>solon-test</artifactId>
-            <scope>provided</scope>
-        </dependency>
 
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>weed3</artifactId>
-            <version>${weed3.ver}</version>
+            <artifactId>solon-test</artifactId>
             <scope>test</scope>
         </dependency>
     </dependencies>
