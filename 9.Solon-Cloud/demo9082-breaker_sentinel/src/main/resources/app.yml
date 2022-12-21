@@ -1,4 +1,10 @@
 
+solon.app:
+  name: demoapp2
+  group: demo
+
+csp.sentinel.dashboard.server: localhost:8858
+project.name: ${solon.app.name}
 
 solon.cloud.local:
   breaker:
