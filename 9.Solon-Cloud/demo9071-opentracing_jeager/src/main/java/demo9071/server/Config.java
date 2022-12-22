@@ -15,8 +15,9 @@ import org.noear.solon.Solon;
 import org.noear.solon.Utils;
 import org.noear.solon.annotation.Bean;
 import org.noear.solon.annotation.Configuration;
+import org.noear.solon.annotation.Inject;
 import org.noear.solon.cloud.CloudProps;
-import org.noear.solon.cloud.extend.opentracing.OpentracingProps;
+import org.noear.solon.core.AopContext;
 
 import java.net.URI;
 
@@ -25,9 +26,13 @@ import java.net.URI;
  */
 @Configuration
 public class Config {
+    @Inject
+    AopContext aopContext;
+
     @Bean
     public Tracer tracer() throws TTransportException {
-        CloudProps cloudProps = OpentracingProps.instance;
+        CloudProps cloudProps = new CloudProps(aopContext,"opentracing");
+
 
         if(cloudProps.getTraceEnable() == false){
             return null;
