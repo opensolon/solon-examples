@@ -19,7 +19,7 @@ public class Plugin1Impl implements Plugin {
 
     @Override
     public void start(AopContext context) {
-        context.getProps().loadAdd("demo1011.plugin1.yml");
+        context.cfg().loadAdd("demo1011.plugin1.yml");
 
         aopContext = context;
 
