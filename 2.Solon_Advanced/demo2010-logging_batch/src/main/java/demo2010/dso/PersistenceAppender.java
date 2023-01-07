@@ -15,15 +15,16 @@ import java.util.List;
  * @author noear 2023/1/7 created
  */
 public class PersistenceAppender extends AppenderBase implements PackagingWorkHandler<LogEvent> {
-    PackagingQueue<LogEvent> batchingQueue = new PackagingQueueImpl<LogEvent>();
+    //打包队列
+    PackagingQueue<LogEvent> packagingQueue = new PackagingQueueImpl<LogEvent>();
 
     public PersistenceAppender() {
-        batchingQueue.setWorkHandler(this);
+        packagingQueue.setWorkHandler(this);
     }
 
     @Override
     public void append(LogEvent logEvent) {
-        batchingQueue.add(logEvent);
+        packagingQueue.add(logEvent);
     }
 
     @Override
