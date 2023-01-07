@@ -19,5 +19,6 @@
     <modules>
         <module>demo2002-external_ext</module>
         <module>demo2005-unhandled_exception</module>
+        <module>demo2010-logging_batch</module>
     </modules>
 </project>

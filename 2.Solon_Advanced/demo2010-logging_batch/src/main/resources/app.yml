@@ -1,0 +1,12 @@
+
+
+
+
+solon.logging.appender:
+  console:
+    level: TRACE #可根据需要调整级别
+  file:
+    level: INFO
+  persistence:
+    level: TRACE
+    class: demo2010.dso.PersistenceAppender
