@@ -25,7 +25,7 @@
             <artifactId>solon-api</artifactId>
         </dependency>
 
-        <!-- 如果不想要文件打印，可以改成： -->
+        <!-- 如果不想要文件打印，可以改成：solon.logging.simple -->
         <dependency>
             <groupId>org.noear</groupId>
             <artifactId>logback-solon-plugin</artifactId>

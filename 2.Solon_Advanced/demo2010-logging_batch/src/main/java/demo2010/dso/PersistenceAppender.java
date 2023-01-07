@@ -17,7 +17,6 @@ import java.util.List;
 public class PersistenceAppender extends AppenderBase implements PackagingWorkHandler<LogEvent> {
     PackagingQueue<LogEvent> batchingQueue = new PackagingQueueImpl<LogEvent>();
 
-
     public PersistenceAppender() {
         batchingQueue.setWorkHandler(this);
     }
