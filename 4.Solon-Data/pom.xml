@@ -28,6 +28,7 @@
         <module>demo4023-mybatis_pagehelper</module>
         <module>demo4024-mybatis_sqlhelper</module>
         <module>demo4031-mybatisplus</module>
+        <module>demo4032-mybatisplus_generator</module>
         <module>demo4041-activerecord</module>
         <module>demo4051-beetlsql</module>
         <module>demo4061-sqltoy</module>
