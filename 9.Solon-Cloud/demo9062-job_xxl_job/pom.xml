@@ -60,6 +60,11 @@
                     <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>
+
+            <plugin>
+                <groupId>org.noear</groupId>
+                <artifactId>solon-maven-plugin</artifactId>
+            </plugin>
         </plugins>
 
     </build>
