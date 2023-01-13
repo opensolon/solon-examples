@@ -17,11 +17,14 @@ public class RollbackTest extends HttpTestBase {
     @Db
     DbContext db;
 
-    @TestRollback
     @Test
     public void test1() throws Exception {
         clear(db);
+    }
 
+    @TestRollback
+    @Test
+    public void test2() throws Exception {
         db.table("test").set("v1", "1111").insert();
         db.table("test").set("v1", "1111").insert();
         db.table("test").set("v1", "1111").insert();
@@ -30,7 +33,7 @@ public class RollbackTest extends HttpTestBase {
     }
 
     @Test
-    public void test2() throws Exception {
+    public void test3() throws Exception {
         assert db.table("test").selectCount() == 0;
     }
 
