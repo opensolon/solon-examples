@@ -7,7 +7,7 @@ import java.util.Collection;
  *
  * @author noear 2023/1/7 created
  */
-public interface PackagingQueue<Event> {
+public interface PackagingQueueTask<Event> {
     /**
      * 设置工作处理
      * */

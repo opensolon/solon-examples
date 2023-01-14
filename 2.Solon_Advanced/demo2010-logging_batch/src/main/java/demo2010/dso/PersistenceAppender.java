@@ -1,7 +1,7 @@
 package demo2010.dso;
 
-import demo2010.dso.queue.PackagingQueue;
-import demo2010.dso.queue.PackagingQueueImpl;
+import demo2010.dso.queue.PackagingQueueTask;
+import demo2010.dso.queue.PackagingQueueTaskImpl;
 import demo2010.dso.queue.PackagingWorkHandler;
 import org.noear.snack.ONode;
 import org.noear.solon.logging.event.AppenderBase;
@@ -16,15 +16,15 @@ import java.util.List;
  */
 public class PersistenceAppender extends AppenderBase implements PackagingWorkHandler<LogEvent> {
     //打包队列
-    PackagingQueue<LogEvent> packagingQueue = new PackagingQueueImpl<LogEvent>();
+    PackagingQueueTask<LogEvent> packagingQueueTask = new PackagingQueueTaskImpl<LogEvent>();
 
     public PersistenceAppender() {
-        packagingQueue.setWorkHandler(this);
+        packagingQueueTask.setWorkHandler(this);
     }
 
     @Override
     public void append(LogEvent logEvent) {
-        packagingQueue.add(logEvent);
+        packagingQueueTask.add(logEvent);
     }
 
     @Override

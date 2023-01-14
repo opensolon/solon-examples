@@ -15,7 +15,7 @@ import java.util.concurrent.LinkedBlockingQueue;
  * @author noear
  * @since 2.0
  * */
-public class PackagingQueueImpl<Event> implements PackagingQueue<Event>, Closeable {
+public class PackagingQueueTaskImpl<Event> implements PackagingQueueTask<Event>, Closeable {
     /**
      * 休息时间
      * */
@@ -32,7 +32,7 @@ public class PackagingQueueImpl<Event> implements PackagingQueue<Event>, Closeab
 
     private PackagingWorkHandler<Event> workHandler;
 
-    public PackagingQueueImpl() {
+    public PackagingQueueTaskImpl() {
         workThread = new Thread(() -> {
             workStartDo();
         }, "Simple task");
