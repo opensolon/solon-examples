@@ -24,14 +24,14 @@ public class DemoService {
         userService = Solon.context().getBean("userService");
 
         //异步订阅方式，根据bean type获取Bean（已存在或产生时，会通知回调；否则，一直不回调）
-        Solon.context().getWrapAsyn(TrackService.class, bw-> {
+        Solon.context().getWrapAsync(TrackService.class, bw-> {
             trackService = bw.get();
 
             //bean 获取后，可以做些后续处理。。。
         });
 
         //异步订阅方式，根据bean name获取Bean
-        Solon.context().getWrapAsyn("userService", bw-> {
+        Solon.context().getWrapAsync("userService", bw-> {
             userService = bw.get();
         });
     }

@@ -7,7 +7,6 @@ import org.noear.solon.annotation.Controller;
 import org.noear.solon.annotation.Inject;
 import org.noear.solon.annotation.Mapping;
 import org.noear.solon.annotation.Post;
-import org.noear.solon.extend.cors.annotation.CrossOrigin;
 
 /**
  * 后端二次校验接口示例

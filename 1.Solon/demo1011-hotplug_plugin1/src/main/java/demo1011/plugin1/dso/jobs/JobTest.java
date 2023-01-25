@@ -1,6 +1,7 @@
 package demo1011.plugin1.dso.jobs;
 
-import org.noear.solon.schedule.annotation.Scheduled;
+
+import org.noear.solon.scheduling.annotation.Scheduled;
 
 import java.util.Date;
 

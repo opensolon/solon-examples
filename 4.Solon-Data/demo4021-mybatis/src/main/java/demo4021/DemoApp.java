@@ -5,7 +5,6 @@ import org.apache.ibatis.session.Configuration;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.noear.solon.Solon;
 import org.noear.solon.SolonBuilder;
-import org.noear.solon.core.Aop;
 
 /**
  *
@@ -30,28 +29,5 @@ import org.noear.solon.core.Aop;
 public class DemoApp {
     public static void main(String[] args) {
         Solon.start(DemoApp.class, args);
-
-
-//        Solon.start(DemoApp.class, args, app -> {
-//            //订阅事件，后以定制
-//            app.onEvent(Configuration.class, e -> {
-//                e.setCacheEnabled(false);
-//                e.setMapUnderscoreToCamelCase(true);
-//                e.addInterceptor();
-//            });
-//        });
-
-//        new SolonBuilder()
-//                .onEvent(Configuration.class, e -> {
-//                    //e.addInterceptor();
-//                })
-//                .onPluginLoadEnd(e -> {
-//                    //重新定义 SqlSessionFactoryBuilder（没事儿，别用它）
-//                    Aop.wrapAndPut(SqlSessionFactoryBuilder.class, new SqlSessionFactoryBuilderImpl());
-//                })
-//                .start(DemoApp.class, args, (app) -> {
-//                    //app.beanMake(MybatisConfiguration.class);
-//                });
-//
     }
 }

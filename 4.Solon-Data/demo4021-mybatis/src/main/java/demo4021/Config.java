@@ -23,4 +23,9 @@ public class Config {
     public void db1_cfg(@Db("db1") org.apache.ibatis.session.Configuration cfg) {
         cfg.setCacheEnabled(false);
     }
+
+//    @Bean
+//    public MybatisSqlSessionFactoryBuilder factoryBuilderNew(){
+//        return new MybatisSqlSessionFactoryBuilderImpl();
+//    }
 }

@@ -2,8 +2,6 @@ package demo1001.demo3.dso;
 
 import demo1001.demo3.dso.service.UserService;
 import demo1001.demo3.dso.service.impl.UserServiceImpl;
-import org.noear.solon.SolonApp;
-import org.noear.solon.core.Aop;
 import org.noear.solon.core.AopContext;
 import org.noear.solon.core.Plugin;
 

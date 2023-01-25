@@ -1,14 +1,8 @@
 package demo4061;
 
-import demo4061.model.Dictionary;
-import demo4061.model.User;
 import org.noear.solon.Solon;
-import org.noear.solon.core.Aop;
-import org.sagacity.sqltoy.dao.SqlToyLazyDao;
 
 import java.io.File;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * @author noear 2022/1/10 created

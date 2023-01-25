@@ -3,8 +3,8 @@ package demo1021;
 import lombok.extern.slf4j.Slf4j;
 import org.noear.solon.Solon;
 import org.noear.solon.annotation.Component;
-import org.noear.solon.schedule.annotation.EnableScheduling;
-import org.noear.solon.schedule.annotation.Scheduled;
+import org.noear.solon.scheduling.annotation.EnableScheduling;
+import org.noear.solon.scheduling.annotation.Scheduled;
 
 import java.util.Date;
 

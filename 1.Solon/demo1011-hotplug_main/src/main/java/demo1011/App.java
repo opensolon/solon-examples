@@ -2,7 +2,7 @@ package demo1011;
 
 import org.noear.solon.Solon;
 import org.noear.solon.hotplug.PluginManager;
-import org.noear.solon.schedule.annotation.EnableScheduling;
+import org.noear.solon.scheduling.annotation.EnableScheduling;
 
 @EnableScheduling
 public class App {

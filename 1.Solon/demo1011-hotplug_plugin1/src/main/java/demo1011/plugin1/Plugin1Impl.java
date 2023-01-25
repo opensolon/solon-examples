@@ -5,10 +5,10 @@ import org.noear.solon.core.AopContext;
 import org.noear.solon.core.Plugin;
 import org.noear.solon.core.event.EventBus;
 import org.noear.solon.core.event.EventListener;
+import org.noear.solon.scheduling.simple.JobManager;
 import org.noear.solon.web.staticfiles.StaticMappings;
 import org.noear.solon.web.staticfiles.StaticRepository;
 import org.noear.solon.web.staticfiles.repository.ClassPathStaticRepository;
-import org.noear.solon.schedule.JobManager;
 
 /**
  * @Date: 2022/5/15 12:38
