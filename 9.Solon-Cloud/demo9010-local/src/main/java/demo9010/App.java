@@ -2,7 +2,7 @@ package demo9010;
 
 import org.noear.solon.Solon;
 import org.noear.solon.core.event.AppLoadEndEvent;
-import org.noear.solon.core.event.PluginLoadEndEvent;
+import org.noear.solon.core.event.AppPluginLoadEndEvent;
 import org.noear.solon.i18n.I18nUtil;
 
 import java.util.Locale;
@@ -14,7 +14,7 @@ public class App {
     public static void main(String[] args) throws Exception {
         Solon.start(App.class, args, app -> {
             //插件加载完之后
-            app.onEvent(PluginLoadEndEvent.class, e -> {
+            app.onEvent(AppPluginLoadEndEvent.class, e -> {
                 System.out.println("云端配置服务通过配置load的：" + Solon.cfg().get("demo.db1.url"));
             });
 

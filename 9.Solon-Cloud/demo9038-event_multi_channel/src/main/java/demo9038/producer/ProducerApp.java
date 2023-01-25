@@ -21,7 +21,7 @@ public class ProducerApp {
         @Override
         public void start(AopContext context) {
             //获取配置块
-            CloudProps cloudProps = new CloudProps("rabbitmq_biz");
+            CloudProps cloudProps = new CloudProps(context, "rabbitmq_biz");
             //初始化服务
             CloudEventServiceRabbitmqImp eventServiceImp = new CloudEventServiceRabbitmqImp(cloudProps);
             //注册
