@@ -28,5 +28,6 @@
 
         <module>demo5091-job_water</module>
         <module>demo5092-job_xxl_job</module>
+        <module>demo5051-powerjob</module>
     </modules>
 </project>
