@@ -6,7 +6,7 @@ cd PowerJob
 docker-compose up
 ```
 
-2.add job: 
+2.add job: (添加 job 时，可以使用全类名，或job名)
 
 ![image](https://user-images.githubusercontent.com/65269574/215262918-61c08b2b-d570-4fb2-bf94-7efc6f0d93b6.png)
 
