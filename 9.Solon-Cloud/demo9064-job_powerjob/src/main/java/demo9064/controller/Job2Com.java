@@ -1,5 +1,6 @@
 package demo9064.controller;
 
+import org.noear.snack.ONode;
 import org.noear.solon.annotation.Component;
 import org.noear.solon.cloud.annotation.CloudJob;
 import tech.powerjob.worker.core.processor.TaskContext;
@@ -14,6 +15,7 @@ public class Job2Com {
      * */
     @CloudJob("job2")
     public void job2(TaskContext taskContext){
+        System.out.println(ONode.stringify(taskContext));
         System.out.println("xxxxx - job2");
     }
 }
