@@ -1,8 +1,10 @@
 package demo5043.controller;
 
 import lombok.extern.slf4j.Slf4j;
+import org.noear.snack.ONode;
 import org.noear.solon.annotation.Component;
 import org.noear.solon.scheduling.annotation.Scheduled;
+import org.quartz.JobExecutionContext;
 
 import java.util.Date;
 
@@ -17,8 +19,9 @@ public class JobBean {
         log.warn(new Date() + ": 1000*3");
     }
 
-    @Scheduled(cron = "0/10 * * * * ? *", zone = "+00")
-    public void job12(){
+    @Scheduled(cron = "0/10 * * * * ? *", zone = "+02")
+    public void job12(JobExecutionContext jobContext){
+        System.out.println(ONode.stringify(jobContext));
         log.warn(new Date() + ": 0/10 * * * * ? *");
     }
 
