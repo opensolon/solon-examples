@@ -1,8 +1,10 @@
 <h1 align="center" style="text-align:center;">
-  Solon
+<img src="solon_icon.png" width="128" />
+<br />
+Solon v2.0.0
 </h1>
 <p align="center">
-	<strong>更现代感的，轻量级应用开发框架</strong>
+	<strong>一个高效的 Java 应用开发框架，更小、更快、更简单！</strong>
 </p>
 <p align="center">
 	<a href="https://solon.noear.org/">https://solon.noear.org</a>
@@ -12,7 +14,7 @@
     <a target="_blank" href="https://search.maven.org/search?q=org.noear%20solon">
         <img src="https://img.shields.io/maven-central/v/org.noear/solon.svg?label=Maven%20Central" alt="Maven" />
     </a>
-    <a target="_blank" href="https://license.coscl.org.cn/Apache2/">
+    <a target="_blank" href="https://www.apache.org/licenses/LICENSE-2.0.txt">
 		<img src="https://img.shields.io/:license-Apache2-blue.svg" alt="Apache 2" />
 	</a>
     <a target="_blank" href="https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html">
@@ -45,6 +47,9 @@
 
 <hr />
 
+启动快 5 ～ 10 倍；qps 高 2～ 3 倍；运行时内存节省 1/3 ~ 1/2；打包可以缩到 1/2 ~ 1/10
+
+<hr />
 
 # Solon Examples
 
