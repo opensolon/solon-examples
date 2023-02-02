@@ -31,6 +31,11 @@ public class UserController extends BaseController {
 
     @Mapping("/v")
     public ModelAndView v(Context ctx){
-       return new ModelAndView("hello.ftl");
+       return new ModelAndView("hello.html");
+    }
+
+    @Mapping("/v2")
+    public ModelAndView v2(Context ctx){
+        return new ModelAndView("hello.ftl");
     }
 }
