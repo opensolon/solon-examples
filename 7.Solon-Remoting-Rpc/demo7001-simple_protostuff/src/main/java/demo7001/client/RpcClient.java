@@ -1,6 +1,7 @@
 package demo7001.client;
 
 import org.noear.nami.annotation.NamiClient;
+import org.noear.nami.common.ContentTypes;
 import org.noear.solon.Solon;
 import org.noear.solon.annotation.Component;
 import demo7001.protocol.UserModel;
