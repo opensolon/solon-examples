@@ -18,6 +18,8 @@
 
     <modules>
         <module>demo7001-simple</module>
+        <module>demo7001-simple_protostuff</module>
+
         <module>demo7002-rpc_interface</module>
         <module>demo7002-rpc_provider</module>
         <module>demo7002-rpc_consume</module>
