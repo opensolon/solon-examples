@@ -25,6 +25,7 @@
         <module>demo9022-config-discovery_consul</module>
         <module>demo9023-config-discovery_zookeeper</module>
         <module>demo9024-config-discovery_polaris</module>
+        <module>demo9030-event_activemq</module>
         <module>demo9031-event_rabbitmq</module>
         <module>demo9032-event_rocketmq</module>
         <module>demo9032-event_rocketmq_tag</module>
