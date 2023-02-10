@@ -15,9 +15,11 @@ test.db1:
 mybatis.db1:
     typeAliases:    #支持包名 或 类名（.class 结尾）
         - "demo4031.model"
+#        - "demo4031.*.AppxModel.class"
     mappers:        #支持包名 或 类名（.class 结尾）或 xml（.xml结尾 或 *.xml 结尾）
         - "demo4031.dso.mapper"
-#        - "demo4031/dso/*.xml"
+#        - "demo4031.**.mapper"
+#        - "demo4031/dso/mapper/*.xml"
     configuration:
         cacheEnabled: false
         mapUnderscoreToCamelCase: true
