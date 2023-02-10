@@ -5,10 +5,10 @@ mybatis 配置示例：
 mybatis.db1:
     typeAliases:    #支持包名 或 类名（.class 结尾）
         - "demo4031.model"
-#        - "demo4031.*.AppxModel.class"
+#        - "demo4031.*.AppxModel.class" #v2.1.1 后支持
     mappers:        #支持包名 或 类名（.class 结尾）或 xml（.xml结尾）
         - "demo4031.dso.mapper"
-#        - "demo4031.**.mapper"
+#        - "demo4031.**.mapper" #v2.1.1 后支持
 #        - "demo4031/dso/mapper/*.xml"
     configuration:
         cacheEnabled: false
