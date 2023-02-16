@@ -13,9 +13,9 @@ test.db1:
 
 #默认
 mybatis.db1:
-    typeAliases:    #支持包名 或 类名（.class 结尾）
+    typeAliases:    #支持包名 或 类名 //支持 ** 和 *
         - "demo4024.model"
-    mappers:        #支持包名 或 类名（.class 结尾）或 xml（.xml结尾 或 *.xml 结尾）
+    mappers:        #支持包名 或 类名 或 xml（.xml结尾） //支持 ** 和 *
         - "demo4024.dso.mapper"
     configuration:
         cacheEnabled: false

@@ -13,12 +13,11 @@ test.db1:
 
 #默认
 mybatis.db1:
-    typeAliases:    #支持包名 或 类名（.class 结尾）
+    typeAliases:    #支持包名 或 类名 //支持 ** 和 *
         - "demo4031.model"
-#        - "demo4031.*.AppxModel.class"
-    mappers:        #支持包名 或 类名（.class 结尾）或 xml（.xml结尾）
+#        - "demo4031.*.AppxModel"
+    mappers:        #支持包名 或 类名 或 xml（.xml结尾）//支持 ** 和 *
         - "demo4031.dso.mapper"
-#        - "demo4031.**.mapper"
 #        - "demo4031/dso/mapper/*.xml"
     configuration:
         cacheEnabled: false
