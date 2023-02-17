@@ -2,12 +2,8 @@ package demo4041.model;
 
 import com.jfinal.plugin.activerecord.IBean;
 import com.jfinal.plugin.activerecord.Model;
-import lombok.Getter;
-import lombok.Setter;
 import org.noear.solon.extend.activerecord.annotation.Table;
 
-@Getter
-@Setter
 @Table(name = "appx", primaryKey = "app_id")
 public class AppxModel extends Model<AppxModel> implements IBean {
     public int getAgroup_id() {

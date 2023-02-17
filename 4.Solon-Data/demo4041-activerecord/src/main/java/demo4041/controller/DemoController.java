@@ -1,9 +1,10 @@
 package demo4041.controller;
 
-import com.jfinal.plugin.activerecord.Db;
+import com.jfinal.plugin.activerecord.DbPro;
 import demo4041.model.AppxModel;
 import org.noear.solon.annotation.Controller;
 import org.noear.solon.annotation.Mapping;
+import org.noear.solon.extend.activerecord.annotation.Db;
 
 /**
  * @author noear 2021/5/24 created
@@ -11,9 +12,12 @@ import org.noear.solon.annotation.Mapping;
 @Mapping("/demo/")
 @Controller
 public class DemoController {
+    @Db
+    DbPro db1;
+
     @Mapping("")
     public Object test(){
-        return Db.template("appx_get").findFirst();
+        return db1.template("appx_get").findFirst();
     }
 
     @Mapping("/test2")
