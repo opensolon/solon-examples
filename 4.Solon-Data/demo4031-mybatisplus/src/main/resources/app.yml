@@ -18,7 +18,7 @@ mybatis.db1:
 #        - "demo4031.*.AppxModel"
     mappers:        #支持包名 或 类名 或 xml（.xml结尾）//支持 ** 和 *
         - "demo4031.dso.mapper"
-#        - "demo4031/dso/mapper/*.xml"
+#        - "classpath:demo4031/dso/mapper/*.xml"
     configuration:
         cacheEnabled: false
         mapUnderscoreToCamelCase: true
