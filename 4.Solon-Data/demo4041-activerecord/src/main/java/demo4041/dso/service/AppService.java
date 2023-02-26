@@ -4,11 +4,11 @@ import com.jfinal.plugin.activerecord.DbPro;
 import org.noear.solon.data.annotation.Cache;
 import org.noear.solon.data.annotation.Tran;
 import org.noear.solon.data.tran.TranPolicy;
-import org.noear.solon.aspect.annotation.Service;
 import org.noear.solon.extend.activerecord.annotation.Db;
+import org.noear.solon.proxy.annotation.ProxyComponent;
 
 
-@Service
+@ProxyComponent
 public class AppService {
     //测试注入
     @Db

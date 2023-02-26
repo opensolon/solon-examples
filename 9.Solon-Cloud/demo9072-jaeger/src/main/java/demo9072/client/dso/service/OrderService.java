@@ -2,12 +2,12 @@ package demo9072.client.dso.service;
 
 import org.noear.solon.cloud.tracing.Spans;
 import org.noear.solon.cloud.tracing.annotation.Tracing;
-import org.noear.solon.aspect.annotation.Service;
+import org.noear.solon.proxy.annotation.ProxyComponent;
 
 /**
  * @author noear 2022/5/7 created
  */
-@Service
+@ProxyComponent
 public class OrderService {
     @Tracing(name = "创建订单", tags = "订单=${orderId}")
     public void orderCreate(String orderId) {

@@ -2,7 +2,7 @@ package demo6013.dso.service;
 
 import demo6013.model.AppxModel;
 import org.noear.solon.data.annotation.Cache;
-import org.noear.solon.aspect.annotation.Service;
+import org.noear.solon.proxy.annotation.ProxyComponent;
 import org.noear.weed.DbContext;
 import org.noear.weed.annotation.Db;
 
@@ -11,7 +11,7 @@ import java.sql.SQLException;
 /**
  * @author noear 2021/6/11 created
  */
-@Service
+@ProxyComponent
 public class AppxService {
 
     //Db 是 weed3 的注解；可将数据源注入为 weed3 上下文，或者 Mapper

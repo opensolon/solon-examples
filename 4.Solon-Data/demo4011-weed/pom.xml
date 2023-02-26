@@ -19,10 +19,20 @@
         <relativePath />
     </parent>
 
+    <properties>
+        <java.ver>11</java.ver>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.noear</groupId>
             <artifactId>solon-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.noear</groupId>
+            <artifactId>solon.proxy.apt</artifactId>
+            <scope>provided</scope>
         </dependency>
 
         <!-- weed3-solon-plugin 相对于 weed3；增加了 @Db 的注入支持 -->

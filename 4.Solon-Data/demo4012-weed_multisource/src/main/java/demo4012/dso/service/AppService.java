@@ -3,11 +3,11 @@ package demo4012.dso.service;
 import demo4012.dso.mapper.SqlMapper;
 import org.noear.solon.data.annotation.Cache;
 import org.noear.solon.data.annotation.Tran;
-import org.noear.solon.aspect.annotation.Service;
+import org.noear.solon.proxy.annotation.ProxyComponent;
 import org.noear.solon.data.tran.TranPolicy;
 import org.noear.weed.annotation.Db;
 
-@Service
+@ProxyComponent
 public class AppService {
     @Db
     SqlMapper sqlMapper1;

@@ -3,14 +3,14 @@ package demo4061.service;
 import demo4061.model.Dictionary;
 import demo4061.model.User;
 import org.noear.solon.annotation.Init;
-import org.noear.solon.aspect.annotation.Service;
+import org.noear.solon.proxy.annotation.ProxyComponent;
 import org.noear.solon.extend.sqltoy.annotation.Db;
 import org.sagacity.sqltoy.dao.SqlToyLazyDao;
 
 import java.util.HashMap;
 import java.util.Map;
 
-@Service
+@ProxyComponent
 public class UserService {
     @Db
     SqlToyLazyDao dao;

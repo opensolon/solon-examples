@@ -4,9 +4,9 @@ import demo4031.dso.mapper.AppxMapper;
 import org.apache.ibatis.solon.annotation.Db;
 import org.noear.solon.data.annotation.Tran;
 import org.noear.solon.data.tran.TranPolicy;
-import org.noear.solon.aspect.annotation.Service;
+import org.noear.solon.proxy.annotation.ProxyComponent;
 
-@Service
+@ProxyComponent
 public class AppService {
     @Db
     AppxMapper sqlMapper1;
