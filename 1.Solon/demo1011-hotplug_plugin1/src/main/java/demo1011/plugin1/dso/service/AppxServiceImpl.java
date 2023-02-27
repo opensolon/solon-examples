@@ -1,6 +1,6 @@
 package demo1011.plugin1.dso.service;
 
-import org.noear.solon.proxy.annotation.ProxyComponent;
+import org.noear.solon.annotation.ProxyComponent;
 import org.noear.weed.DbContext;
 import org.noear.weed.annotation.Db;
 

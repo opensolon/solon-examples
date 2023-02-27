@@ -2,7 +2,7 @@ package demo1001.demo2.dso;
 
 import org.noear.solon.annotation.Init;
 import org.noear.solon.annotation.Inject;
-import org.noear.solon.proxy.annotation.ProxyComponent;
+import org.noear.solon.annotation.ProxyComponent;
 
 /**
  * 如何注入Bean？

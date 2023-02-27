@@ -1,7 +1,7 @@
 package demo4031.dso.service;
 
 import demo4031.model.AppxModel;
-import org.noear.solon.proxy.annotation.ProxyComponent;
+import org.noear.solon.annotation.ProxyComponent;
 
 /**
  * @author noear 2022/4/26 created

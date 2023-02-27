@@ -2,7 +2,7 @@ package demo9071.client.dso.service;
 
 import org.noear.solon.cloud.tracing.Spans;
 import org.noear.solon.cloud.tracing.annotation.Tracing;
-import org.noear.solon.proxy.annotation.ProxyComponent;
+import org.noear.solon.annotation.ProxyComponent;
 
 /**
  * @author noear 2022/5/7 created

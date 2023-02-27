@@ -4,7 +4,7 @@ import demo4021.dso.mapper.AppxMapper;
 import org.apache.ibatis.solon.annotation.Db;
 import org.noear.solon.data.annotation.Tran;
 import org.noear.solon.data.tran.TranPolicy;
-import org.noear.solon.proxy.annotation.ProxyComponent;
+import org.noear.solon.annotation.ProxyComponent;
 
 @ProxyComponent
 public class AppService {

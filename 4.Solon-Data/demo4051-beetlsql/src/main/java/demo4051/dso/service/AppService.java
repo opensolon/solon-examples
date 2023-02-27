@@ -5,7 +5,7 @@ import org.beetl.sql.solon.annotation.Db;
 import org.noear.solon.data.annotation.Cache;
 import org.noear.solon.data.annotation.Tran;
 import org.noear.solon.data.tran.TranPolicy;
-import org.noear.solon.proxy.annotation.ProxyComponent;
+import org.noear.solon.annotation.ProxyComponent;
 
 @ProxyComponent
 public class AppService {

@@ -3,7 +3,7 @@ package demo4061.service;
 import demo4061.model.Dictionary;
 import demo4061.model.User;
 import org.noear.solon.annotation.Init;
-import org.noear.solon.proxy.annotation.ProxyComponent;
+import org.noear.solon.annotation.ProxyComponent;
 import org.noear.solon.extend.sqltoy.annotation.Db;
 import org.sagacity.sqltoy.dao.SqlToyLazyDao;
 
