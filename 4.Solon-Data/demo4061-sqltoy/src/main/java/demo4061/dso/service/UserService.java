@@ -1,4 +1,4 @@
-package demo4061.service;
+package demo4061.dso.service;
 
 import demo4061.model.Dictionary;
 import demo4061.model.User;
