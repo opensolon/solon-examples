@@ -4,5 +4,6 @@ solon.app:
   name: demoapp
 
 solon.cloud.local:
+  server: "classpath:META-INF/solon-cloud/"
   config:
     load: "demoapp.yml"
