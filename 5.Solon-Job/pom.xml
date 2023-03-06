@@ -17,7 +17,6 @@
     </properties>
 
     <modules>
-        <module>demo5011-schedule</module>
         <module>demo5012-ext_schedule</module>
         <module>demo5021-cron4j</module>
         <module>demo5031-quartz</module>
