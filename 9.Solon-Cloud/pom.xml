@@ -18,6 +18,7 @@
 
     <modules>
         <module>demo9010-local</module>
+        <module>demo9010-local_or_water</module>
         <module>demo9011-config-discovery-event-log_water/demo9012-interface</module>
         <module>demo9011-config-discovery-event-log_water/demo9012-server</module>
         <module>demo9011-config-discovery-event-log_water/demo9013-client</module>
