@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.noear.solon.examples</groupId>
-    <artifactId>demo1021-log_logback</artifactId>
+    <artifactId>demo1022-log_log4j2</artifactId>
     <version>demo</version>
 
     <parent>
@@ -33,7 +33,7 @@
 
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>logback-solon-plugin</artifactId>
+            <artifactId>log4j2-solon-plugin</artifactId>
         </dependency>
 
         <dependency>
@@ -58,6 +58,5 @@
                 <artifactId>solon-maven-plugin</artifactId>
             </plugin>
         </plugins>
-
     </build>
 </project>

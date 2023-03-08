@@ -8,5 +8,3 @@ solon.logging.appender:
   file:
     name: "logs/demo2"
     level: INFO
-    maxFileSize: "10 MB"
-    maxHistory: "7"
