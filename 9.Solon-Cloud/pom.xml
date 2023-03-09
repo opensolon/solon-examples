@@ -29,6 +29,7 @@
         <module>demo9030-event_activemq</module>
         <module>demo9031-event_rabbitmq</module>
         <module>demo9032-event_rocketmq</module>
+        <module>demo9032-event_rocketmq5</module>
         <module>demo9032-event_rocketmq_tag</module>
         <module>demo9033-event_mqtt</module>
         <module>demo9034-event_kafka</module>
