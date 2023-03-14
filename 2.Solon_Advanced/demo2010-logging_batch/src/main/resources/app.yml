@@ -7,6 +7,6 @@ solon.logging.appender:
     level: TRACE #可根据需要调整级别
   file:
     level: INFO
-  persistence:
+  persistent:
     level: TRACE
-    class: demo2010.dso.PersistenceAppender
+    class: demo2010.dso.PersistentAppender
