@@ -6,4 +6,9 @@ solon.app:
 
 solon.extend: "!demo_ext"
 
+solon.staticfiles.mappings:
+  - path: "/"
+    repository: ":extend"
+
+
 demo_name: noear
