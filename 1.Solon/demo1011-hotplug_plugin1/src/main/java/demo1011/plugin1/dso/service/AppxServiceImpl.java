@@ -1,8 +1,8 @@
 package demo1011.plugin1.dso.service;
 
-import org.noear.solon.annotation.ProxyComponent;
-import org.noear.weed.DbContext;
-import org.noear.weed.annotation.Db;
+import org.noear.solon.aspect.annotation.Service;
+import org.noear.wood.DbContext;
+import org.noear.wood.annotation.Db;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * @author noear 2022/10/29 created
  */
-@ProxyComponent
+@Service
 public class AppxServiceImpl implements AppxService {
     @Db
     DbContext db;

@@ -5,7 +5,7 @@ import org.noear.snack.ONode;
 import org.noear.solon.annotation.Bean;
 import org.noear.solon.annotation.Configuration;
 import org.noear.solon.annotation.Inject;
-import org.noear.weed.WeedConfig;
+import org.noear.wood.WoodConfig;
 
 import javax.sql.DataSource;
 
@@ -22,7 +22,7 @@ public class Config {
     @Bean
     public void initWeed() {
         //执行后打印下sql
-        WeedConfig.onExecuteAft(cmd -> {
+        WoodConfig.onExecuteAft(cmd -> {
             System.out.println(cmd.text + "\r\n" + ONode.stringify(cmd.paramMap()));
         });
     }

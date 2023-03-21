@@ -52,7 +52,7 @@
 
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>weed3-solon-plugin</artifactId>
+            <artifactId>wood-solon-plugin</artifactId>
         </dependency>
 
         <dependency>
