@@ -11,7 +11,7 @@ import org.noear.solon.scheduling.annotation.Scheduled;
 public class JobApp {
     public static void main(String[] args) {
         Solon.start(JobApp.class, args, app->{
-            //如果需要别的什么处理？可以加个拦截器
+            //如果需要别的什么处理？可以加个拦截器 //只对注解在函数上有效
             app.context().beanAroundAdd(Scheduled.class, inv->{
                 Thread.currentThread().setName(inv.method().getMethod().getName());
                 return inv.invoke();
