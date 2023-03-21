@@ -13,7 +13,6 @@ import java.util.Date;
 public class Job2 implements Runnable {
     @Override
     public void run() {
-        Thread.currentThread().setName("job2");
         log.trace(new Date() + ": 0/10 * * * * ? *");
     }
 }

@@ -14,7 +14,6 @@ import java.util.Date;
 public class JobBean {
     @Scheduled(fixedRate = 1000 * 3)
     public void job11(){
-        Thread.currentThread().setName("job11");
         log.trace(new Date() + ": 1000*3");
     }
 

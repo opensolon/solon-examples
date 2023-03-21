@@ -2,6 +2,7 @@ package demo5041;
 
 import org.noear.solon.Solon;
 import org.noear.solon.scheduling.annotation.EnableScheduling;
+import org.noear.solon.scheduling.annotation.Scheduled;
 
 /**
  * @author noear 2022/1/6 created
@@ -9,6 +10,11 @@ import org.noear.solon.scheduling.annotation.EnableScheduling;
 @EnableScheduling
 public class JobApp {
     public static void main(String[] args) {
-        Solon.start(JobApp.class, args);
+        Solon.start(JobApp.class, args, app->{
+            app.context().beanAroundAdd(Scheduled.class, inv->{
+                Thread.currentThread().setName(inv.method().getMethod().getName());
+                return inv.invoke();
+            });
+        });
     }
 }
