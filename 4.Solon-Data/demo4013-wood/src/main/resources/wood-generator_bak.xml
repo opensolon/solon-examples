@@ -5,7 +5,7 @@
             url="jdbc:mysql://localdb:3306/rock?useUnicode=true&amp;characterEncoding=utf8&amp;autoReconnect=true&amp;rewriteBatchedStatements=true"
             username="demo"
             password="UL0hHlg0Ybq60xyb"
-            driverClassName="com.mysql.cj.jdbc.Driver"
+            driverClassName="com.mysql.jdbc.Driver"
             namingStyle="camel">
         <!-- 支持变量
         ${tableName}

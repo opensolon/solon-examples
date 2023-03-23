@@ -5,7 +5,7 @@
             url="jdbc:mysql://localhost:3306/water?useUnicode=true&amp;characterEncoding=utf8&amp;autoReconnect=true&amp;rewriteBatchedStatements=true"
             username="root"
             password="123456"
-            driverClassName="com.mysql.cj.jdbc.Driver"
+            driverClassName="com.mysql.jdbc.Driver"
             namingStyle="original">
         <!-- 支持变量
         ${tableName}
