@@ -30,7 +30,7 @@ public class ${entityName}{
 
         <entityGenerator targetPackage="demo4013_lab.dso.mapper" entityName="${domainName}Mapper">
             <![CDATA[
-import wooddemo2.model2.*;
+import demo4013_lab.model.data.*;
 
 @Db("db1")
 public interface ${entityName} extends BaseMapper<${domainName}Model>{
