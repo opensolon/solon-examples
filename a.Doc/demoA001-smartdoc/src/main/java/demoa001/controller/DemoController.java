@@ -26,7 +26,7 @@ public class DemoController {
      */
     @Get
     @Mapping("/hello/{username}")
-    public Result<Msg> hello(@PathVar String username) {
+    public Result<Msg> hello(@Path String username) {
         Map m = new HashMap();
 
         m.put("uu", username);
@@ -90,7 +90,7 @@ public class DemoController {
      * @return
      */
     @Mapping("/get/{appname}")
-    public Msg get(@PathVar String appname) {
+    public Msg get(@Path String appname) {
         Msg m = new Msg();
         return m;
     }
