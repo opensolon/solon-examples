@@ -8,10 +8,6 @@ import org.noear.solon.annotation.Mapping;
 import org.noear.solon.core.handle.Context;
 import org.noear.solon.core.handle.ModelAndView;
 
-/**
- * @Author: 李涵祥
- * @Date: 2022/5/15 12:39
- */
 @Mapping("user")
 @Controller
 public class UserController extends BaseController {

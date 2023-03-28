@@ -39,13 +39,13 @@
 <!--        <dependency>-->
 <!--            <groupId>org.apache.dubbo</groupId>-->
 <!--            <artifactId>dubbo-registry-nacos</artifactId>-->
-<!--            <version>${dubbo3.ver}</version>-->
+<!--            <version>${dubbo3.version}</version>-->
 <!--        </dependency>-->
 
         <dependency>
             <groupId>org.apache.dubbo</groupId>
             <artifactId>dubbo-registry-zookeeper</artifactId>
-            <version>${dubbo3.ver}</version>
+            <version>${dubbo3.version}</version>
         </dependency>
     </dependencies>
 
