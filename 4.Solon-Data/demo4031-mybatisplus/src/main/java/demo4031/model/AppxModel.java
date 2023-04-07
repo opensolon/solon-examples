@@ -5,11 +5,11 @@ import com.baomidou.mybatisplus.annotation.TableName;
 
 @TableName("appx")
 public class AppxModel {
+    @TableId("app_id")
+    private Integer appId;
     private Integer agroupId;
     private String note;
     private String appKey;
-    @TableId("app_id")
-    private Integer appId;
     private Integer arIsExamine;
 
     public Integer getAgroupId() {

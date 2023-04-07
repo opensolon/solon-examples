@@ -1,6 +1,7 @@
 package demo4035.controller;
 
 import com.jn.sqlhelper.dialect.pagination.SqlPaginations;
+import com.mybatisflex.core.query.QueryWrapper;
 import demo4035.dso.mapper.AppxMapper;
 import org.apache.ibatis.solon.annotation.Db;
 import org.noear.solon.annotation.Controller;
@@ -23,4 +24,5 @@ public class PageController {
        return appxMapper.appx_get_page();
 
     }
+
 }

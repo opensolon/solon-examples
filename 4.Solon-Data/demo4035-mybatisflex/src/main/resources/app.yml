@@ -13,7 +13,7 @@ solon.logging.logger:
 
 test.db1:
     schema: rock
-    jdbcUrl: jdbc:mysql://localhost:3306/rock?useUnicode=true&characterEncoding=utf8&autoReconnect=true&rewriteBatchedStatements=true
+    jdbcUrl: jdbc:mysql://localhost:3306/rock?useSSL=false&useUnicode=true&characterEncoding=utf8&autoReconnect=true&rewriteBatchedStatements=true
     driverClassName: com.mysql.jdbc.Driver
     username: root
     password: 123456
@@ -30,7 +30,7 @@ mybatis.db1:
         mapUnderscoreToCamelCase: true
     plugins:
         - test:
-            class: "demo4021.dso.TestInterceptorImpl"
+            class: "demo4035.dso.TestInterceptorImpl"
 
 #分页组件的配置
 sqlhelper:
