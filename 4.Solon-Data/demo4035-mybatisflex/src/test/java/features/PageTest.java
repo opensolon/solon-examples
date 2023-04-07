@@ -6,7 +6,7 @@ import org.noear.snack.ONode;
 import org.noear.solon.test.HttpTestBase;
 import org.noear.solon.test.SolonJUnit4ClassRunner;
 import org.noear.solon.test.SolonTest;
-import demo4021.DemoApp;
+import demo4035.DemoApp;
 
 @RunWith(SolonJUnit4ClassRunner.class)
 @SolonTest(DemoApp.class)

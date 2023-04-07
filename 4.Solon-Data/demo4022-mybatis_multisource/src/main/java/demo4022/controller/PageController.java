@@ -5,7 +5,8 @@ import demo4022.dso.mapper.AppxMapper;
 import org.noear.solon.annotation.Controller;
 import org.noear.solon.annotation.Inject;
 import org.noear.solon.annotation.Mapping;
-import org.noear.solon.extend.mybatis.Mybatis;
+import org.apache.ibatis.solon.Mybatis;
+
 
 /**
  * 分面演示（使用sqlhelper组件）

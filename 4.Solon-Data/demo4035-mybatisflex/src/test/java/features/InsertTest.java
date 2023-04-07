@@ -5,8 +5,8 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.noear.solon.test.SolonJUnit4ClassRunner;
 import org.noear.solon.test.SolonTest;
-import demo4021.DemoApp;
-import demo4021.dso.mapper.AppxMapper;
+import demo4035.DemoApp;
+import demo4035.dso.mapper.AppxMapper;
 
 /**
  * @author noear 2021/5/16 created
