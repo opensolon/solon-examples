@@ -54,8 +54,8 @@
 
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>weed3</artifactId>
-            <version>${weed3.version}</version>
+            <artifactId>wood</artifactId>
+            <version>${wood.version}</version>
             <scope>test</scope>
         </dependency>
 

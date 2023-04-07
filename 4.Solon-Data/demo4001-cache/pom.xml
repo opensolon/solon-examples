@@ -56,8 +56,8 @@
         <plugins>
             <plugin>
                 <groupId>org.noear</groupId>
-                <artifactId>weed3-maven-plugin</artifactId>
-                <version>${weed3.version}</version>
+                <artifactId>wood-maven-plugin</artifactId>
+                <version>${wood.version}</version>
             </plugin>
 
             <plugin>

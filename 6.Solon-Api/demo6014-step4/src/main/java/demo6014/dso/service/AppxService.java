@@ -14,7 +14,7 @@ import java.sql.SQLException;
 @ProxyComponent
 public class AppxService {
 
-    //Db 是 weed3 的注解；可将数据源注入为 weed3 上下文，或者 Mapper
+    //Db 是 wood 的注解；可将数据源注入为 wood 上下文，或者 Mapper
     @Db
     DbContext db;
 
