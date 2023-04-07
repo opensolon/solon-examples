@@ -1,0 +1,47 @@
+solon.app:
+    name: demoapp
+    group: demo
+
+solon.output.meta: 1
+
+solon.logging.logger:
+    "org.eclipse.jetty.*":
+        level: "WARN"
+    "com.zaxxer.hikari.*":
+        level: "WARN"
+
+
+test.db1:
+    schema: rock
+    jdbcUrl: jdbc:mysql://localhost:3306/rock?useUnicode=true&characterEncoding=utf8&autoReconnect=true&rewriteBatchedStatements=true
+    driverClassName: com.mysql.jdbc.Driver
+    username: root
+    password: 123456
+    url: ${test.db1.jdbcUrl}
+
+#默认
+mybatis.db1:
+    typeAliases:    #支持包名 或 类名
+        - "demo4035.model"
+    mappers:        #支持包名 或 类名 或 xml（.xml结尾 或 *.xml 结尾）
+        - "demo4035.dso.mapper"
+    configuration:
+        cacheEnabled: false
+        mapUnderscoreToCamelCase: true
+    plugins:
+        - test:
+            class: "demo4021.dso.TestInterceptorImpl"
+
+#分页组件的配置
+sqlhelper:
+    mybatis:
+        instrumentor:
+            dialect: "mysql"
+            cache-instrumented-sql: true
+            subquery-paging-start-flag: "[PAGING_StART]"
+            subquery-paging-end-flag: "[PAGING_END]"
+        pagination:
+            count: true
+            default-page-size: 10
+            use-last-page-if-page-no-out: true
+            count-suffix: _COUNT
