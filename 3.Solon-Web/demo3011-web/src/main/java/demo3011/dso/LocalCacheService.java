@@ -1,7 +1,7 @@
 package demo3011.dso;
 
 import org.noear.solon.data.cache.CacheService;
-import org.noear.weed.cache.LocalCache;
+import org.noear.wood.cache.LocalCache;
 
 public class LocalCacheService implements CacheService {
     LocalCache cache;

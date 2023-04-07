@@ -5,8 +5,8 @@ import org.junit.runner.RunWith;
 import org.noear.solon.test.HttpTestBase;
 import org.noear.solon.test.SolonJUnit4ClassRunner;
 import org.noear.solon.test.SolonTest;
-import org.noear.weed.DbContext;
-import org.noear.weed.annotation.Db;
+import org.noear.wood.DbContext;
+import org.noear.wood.annotation.Db;
 import demo4041.DemoApp;
 
 @RunWith(SolonJUnit4ClassRunner.class)

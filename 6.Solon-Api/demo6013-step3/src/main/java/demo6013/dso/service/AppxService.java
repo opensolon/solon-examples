@@ -3,8 +3,8 @@ package demo6013.dso.service;
 import demo6013.model.AppxModel;
 import org.noear.solon.data.annotation.Cache;
 import org.noear.solon.annotation.ProxyComponent;
-import org.noear.weed.DbContext;
-import org.noear.weed.annotation.Db;
+import org.noear.wood.DbContext;
+import org.noear.wood.annotation.Db;
 
 import java.sql.SQLException;
 

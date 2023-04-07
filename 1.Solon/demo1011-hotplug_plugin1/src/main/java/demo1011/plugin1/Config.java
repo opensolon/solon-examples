@@ -20,7 +20,7 @@ public class Config {
     }
 
     @Bean
-    public void initWeed() {
+    public void initWood() {
         //执行后打印下sql
         WoodConfig.onExecuteAft(cmd -> {
             System.out.println(cmd.text + "\r\n" + ONode.stringify(cmd.paramMap()));

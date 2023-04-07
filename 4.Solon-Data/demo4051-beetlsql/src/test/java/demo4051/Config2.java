@@ -4,7 +4,7 @@ import com.zaxxer.hikari.HikariDataSource;
 import org.noear.solon.annotation.Bean;
 import org.noear.solon.annotation.Configuration;
 import org.noear.solon.annotation.Inject;
-import org.noear.weed.DbContext;
+import org.noear.wood.DbContext;
 
 @Configuration
 public class Config2 {

@@ -1,7 +1,7 @@
 package demo3011.dso;
 
 import org.noear.solon.data.cache.CacheService;
-import org.noear.weed.cache.memcached.MemCache;
+import org.noear.wood.cache.memcached.MemCache;
 
 import java.util.Properties;
 
