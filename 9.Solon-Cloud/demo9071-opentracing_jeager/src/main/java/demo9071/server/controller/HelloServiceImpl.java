@@ -3,6 +3,8 @@ package demo9071.server.controller;
 import demo9071.protocol.HelloService;
 import demo9071.server.dso.service.UserService;
 import org.noear.solon.annotation.*;
+import org.noear.solon.cloud.tracing.slf4j.TracingMDC;
+import org.slf4j.MDC;
 
 /**
  * @author noear 2021/6/7 created
@@ -18,6 +20,10 @@ public class HelloServiceImpl implements HelloService {
 
     @Override
     public String hello(String name) {
+
+        System.out.println(TracingMDC.TRACE_ID_NAME + ": " + MDC.get(TracingMDC.TRACE_ID_NAME));
+
+
         String name2 = userService.getUser(name);
 
         userService.updateUser(name);
