@@ -27,8 +27,6 @@
         <module>demo7003_rpc_sml_nacos</module>
         <module>demo7004-rpc_sml_zk</module>
 
-        <module>demo7006-hessian</module>
-
         <module>demo7011-rpc_dubbo_sml</module>
         <module>demo7011-rpc_dubbo_sml_zk</module>
 
