@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.noear.solon.examples</groupId>
-    <artifactId>demo3025-sso</artifactId>
+    <artifactId>demo3025-sdl</artifactId>
     <version>demo</version>
     <packaging>jar</packaging>
 
@@ -15,7 +15,7 @@
     <parent>
         <groupId>org.noear</groupId>
         <artifactId>solon-parent</artifactId>
-        <version>2.2.10</version>
+        <version>2.2.11</version>
         <relativePath />
     </parent>
 
@@ -41,7 +41,7 @@
 
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>solon.web.sso</artifactId>
+            <artifactId>solon.web.sdl</artifactId>
         </dependency>
 
         <dependency>
