@@ -11,6 +11,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
+ * 如果有需要？可以根据业务需要增加缓存控制
+ *
  * @author noear 2023/4/13 created
  */
 public class CloudConfigServiceOfDbImpl implements CloudConfigService {
