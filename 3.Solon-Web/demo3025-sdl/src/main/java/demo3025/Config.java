@@ -5,9 +5,9 @@ import org.noear.solon.annotation.Bean;
 import org.noear.solon.annotation.Configuration;
 import org.noear.solon.annotation.Inject;
 import org.noear.solon.validation.annotation.LoginedChecker;
-import org.noear.solon.web.sso.SsoLoginedChecker;
-import org.noear.solon.web.sso.SsoStorage;
-import org.noear.solon.web.sso.impl.SsoStorageOfRedis;
+import org.noear.solon.web.sdl.SdlLoginedChecker;
+import org.noear.solon.web.sdl.SdlStorage;
+import org.noear.solon.web.sdl.impl.SdlStorageOfRedis;
 
 /**
  * 主要是为了构建： SsoService 和 SsoLoginedChecker
@@ -17,14 +17,14 @@ import org.noear.solon.web.sso.impl.SsoStorageOfRedis;
 @Configuration
 public class Config {
     @Bean
-    public SsoStorage ssoService(@Inject("${demo.redis}") RedisClient redisClient) {
+    public SdlStorage ssoService(@Inject("${demo.redis}") RedisClient redisClient) {
         // RedisClient 可以通过配置自己构建
         // 如果使用的是别的Redis框架，可以自己实现SsoService（只有两个接口）
-        return new SsoStorageOfRedis(redisClient);
+        return new SdlStorageOfRedis(redisClient);
     }
 
     @Bean
     public LoginedChecker ssoLoginedChecker() {
-        return new SsoLoginedChecker();
+        return new SdlLoginedChecker();
     }
 }

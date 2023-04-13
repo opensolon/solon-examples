@@ -1,10 +1,9 @@
 package demo3025.controller;
 
 import org.noear.solon.annotation.Controller;
-import org.noear.solon.annotation.Inject;
 import org.noear.solon.annotation.Mapping;
 import org.noear.solon.core.handle.Context;
-import org.noear.solon.web.sso.SsoUtil;
+import org.noear.solon.web.sdl.SdlUtil;
 
 /**
  * @author noear 2023/4/5 created
@@ -19,7 +18,7 @@ public class LoginController {
             long userId = 1001;
 
             //更新用户的单点登录标识
-            SsoUtil.login(userId);
+            SdlUtil.login(userId);
         }
     }
 

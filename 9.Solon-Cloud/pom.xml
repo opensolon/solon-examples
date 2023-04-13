@@ -52,5 +52,6 @@
         <module>demo9081-breaker_guava</module>
         <module>demo9082-breaker_sentinel</module>
         <module>demo9083-breaker_semaphore</module>
+        <module>demo9099-custom</module>
     </modules>
 </project>
