@@ -38,7 +38,7 @@
         </dependency>
 
         <!-- jsp 视图渲染器
-        视图目录：/resources/WEB-INF/view/
+        视图目录：/resources/WEB-INF/templates/
         -->
         <dependency>
             <groupId>org.noear</groupId>

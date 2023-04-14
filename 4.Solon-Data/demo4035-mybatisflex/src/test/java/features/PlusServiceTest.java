@@ -68,8 +68,8 @@ public class PlusServiceTest {
 
         assert iPage != null;
 
-        System.out.println("iPage.getList().size(): " + iPage.getList().size());
-        assert iPage.getList().size() > 0;
+        System.out.println("iPage.getList().size(): " + iPage.getRecords().size());
+        assert iPage.getRecords().size() > 0;
 
         System.out.println("iPage.getTotal(): " + iPage.getTotalRow());
         assert iPage.getTotalRow() > 0;

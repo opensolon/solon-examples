@@ -81,7 +81,7 @@ public class HelloController {
 
 ```
 
-#### 5.再添加个模板文件 `/src/main/resources/WEB-INF/view/hello.ftl`
+#### 5.再添加个模板文件 `/src/main/resources/WEB-INF/templates/hello.ftl`
 ```html
 <html>
     <body>
