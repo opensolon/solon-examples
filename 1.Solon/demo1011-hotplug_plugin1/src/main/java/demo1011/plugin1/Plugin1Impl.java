@@ -39,7 +39,7 @@ public class Plugin1Impl implements Plugin {
         Solon.app().router().remove("/user");
 
         //移除定时任务
-        JobManager.remove("job1");
+        JobManager.getInstance().jobRemove("job1");
 
         //移除事件订阅
         aopContext.beanForeach(bw -> {
