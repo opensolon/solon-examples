@@ -60,9 +60,13 @@
         </dependency>
 
         <dependency>
+            <groupId>org.noear</groupId>
+            <artifactId>solon.aot</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-
             <scope>provided</scope>
         </dependency>
 
@@ -87,15 +91,8 @@
             </plugin>
 
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.1</version>
-                <configuration>
-                    <compilerArgument>-parameters</compilerArgument>
-                    <source>11</source>
-                    <target>11</target>
-                    <encoding>UTF-8</encoding>
-                </configuration>
+                <groupId>org.noear</groupId>
+                <artifactId>solon-maven-plugin</artifactId>
             </plugin>
         </plugins>
     </build>

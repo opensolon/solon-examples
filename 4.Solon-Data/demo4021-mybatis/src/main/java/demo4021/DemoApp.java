@@ -5,6 +5,7 @@ import org.apache.ibatis.session.Configuration;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.noear.solon.Solon;
 import org.noear.solon.SolonBuilder;
+import org.noear.solon.annotation.SolonMain;
 
 /**
  *
@@ -26,6 +27,7 @@ import org.noear.solon.SolonBuilder;
  *   UNIQUE KEY `IX_akey` (`akey`) USING BTREE
  * ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='应用表';
  * */
+@SolonMain
 public class DemoApp {
     public static void main(String[] args) {
         Solon.start(DemoApp.class, args);
