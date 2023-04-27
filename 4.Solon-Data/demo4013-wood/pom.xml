@@ -15,7 +15,7 @@
     <parent>
         <groupId>org.noear</groupId>
         <artifactId>solon-parent</artifactId>
-        <version>2.2.13</version>
+        <version>2.2.14</version>
         <relativePath />
     </parent>
 
@@ -23,12 +23,6 @@
         <dependency>
             <groupId>org.noear</groupId>
             <artifactId>solon-web</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.noear</groupId>
-            <artifactId>solon.proxy.apt</artifactId>
-            <scope>provided</scope>
         </dependency>
 
         <!-- wood-solon-plugin 相对于 wood；增加了 @Db 的注入支持 -->
