@@ -18,8 +18,6 @@ public class RuntimeNativeRegistrarImpl implements RuntimeNativeRegistrar {
     @Override
     public void register(AopContext context, RuntimeNativeMetadata nativeMetadata) {
         nativeMetadata.registerSerialization(AppxModel.class);
-        nativeMetadata.registerSerialization(HikariDataSource.class);
-        nativeMetadata.registerSerialization(HikariConfig.class);
 
         BeanNativeProcessor bnp = nativeMetadata.beanNativeProcessor();
 

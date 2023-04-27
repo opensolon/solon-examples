@@ -19,8 +19,6 @@ public class RuntimeNativeRegistrarImpl implements RuntimeNativeRegistrar {
         nativeMetadata.registerResourceInclude("demo4021/dso/mapper/.*\\.xml");
 
         nativeMetadata.registerSerialization(AppxModel.class);
-        nativeMetadata.registerSerialization(HikariDataSource.class);
-        nativeMetadata.registerSerialization(HikariConfig.class);
 
         BeanNativeProcessor bnp = nativeMetadata.beanNativeProcessor();
 
