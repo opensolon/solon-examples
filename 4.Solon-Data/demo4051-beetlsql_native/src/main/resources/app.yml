@@ -1,0 +1,33 @@
+solon.app:
+  name: demoapp
+  group: demo
+
+solon.output.meta: 1
+
+test:
+  db1:
+    schema: rock
+    jdbcUrl: jdbc:mysql://localhost:3306/rock?useSSL=false&useUnicode=true&characterEncoding=utf8&autoReconnect=true&rewriteBatchedStatements=true
+    driverClassName: com.mysql.jdbc.Driver
+    username: root
+    password: 123456
+  db2:
+    schema: rock
+    jdbcUrl: jdbc:mysql://localhost:3306/rock?useSSL=false&useUnicode=true&characterEncoding=utf8&autoReconnect=true&rewriteBatchedStatements=true
+    driverClassName: com.mysql.jdbc.Driver
+    username: root
+    password: 123456
+
+beetlsql.db1:
+  dialect: mysql
+#  dev: true
+  interceptorList:
+    - "org.beetl.sql.ext.DebugInterceptor"
+
+beetlsql.db2:
+  dialect: mysql
+#  dev: true
+  interceptorList:
+    - "org.beetl.sql.ext.DebugInterceptor"
+
+

@@ -32,6 +32,7 @@
         <module>demo4035-mybatisflex</module>
         <module>demo4041-activerecord</module>
         <module>demo4051-beetlsql</module>
+        <module>demo4051-beetlsql_native</module>
         <module>demo4061-sqltoy</module>
         <module>demo4071-hasordb</module>
         <module>demo4072-dbvisitor</module>
