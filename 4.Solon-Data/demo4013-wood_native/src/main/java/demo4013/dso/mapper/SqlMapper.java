@@ -17,10 +17,10 @@ public interface SqlMapper{
     Integer appx_get0() ;
 
     //根据id取条数据
-    @Sql("select * from appx where app_id = @{app_id:int} limit 1")
+    @Sql("select * from appx where app_id = @{app_id} limit 1")
     AppxModel appx_get2(int app_id) ;
 
-    @Sql("select * from appx where app_id > @{app_id:int} order by app_id asc limit 4")
+    @Sql("select * from appx where app_id > @{app_id} order by app_id asc limit 4")
     List<AppxModel> appx_getlist(int app_id) ;
 
     @Sql("select app_id from appx limit 4")
