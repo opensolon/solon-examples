@@ -22,6 +22,7 @@
         <module>demo5031-quartz</module>
         <module>demo5032-quartz_jdbc</module>
         <module>demo5041-scheduling_simple</module>
+        <module>demo5041-scheduling_simple_native</module>
         <module>demo5042-scheduling_quartz</module>
         <module>demo5043-scheduling_quartz_jdbc</module>
 
