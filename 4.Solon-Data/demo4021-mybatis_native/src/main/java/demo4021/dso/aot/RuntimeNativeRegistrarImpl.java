@@ -20,9 +20,5 @@ public class RuntimeNativeRegistrarImpl implements RuntimeNativeRegistrar {
     public void register(AopContext context, RuntimeNativeMetadata metadata) {
         metadata.registerResourceInclude("com.mysql.jdbc.LocalizedErrorMessages.properties");
         metadata.registerResourceInclude("demo4021/dso/mapper/.*");
-
-        metadata.registerJdkProxy(AppxMapper.class);
-
-        metadata.registerReflection(Driver.class, MemberCategory.INVOKE_DECLARED_CONSTRUCTORS);
     }
 }

@@ -17,15 +17,5 @@ public class RuntimeNativeRegistrarImpl implements RuntimeNativeRegistrar {
     @Override
     public void register(AopContext context, RuntimeNativeMetadata nativeMetadata) {
         nativeMetadata.registerResourceInclude("com.mysql.jdbc.LocalizedErrorMessages.properties");
-
-
-
-        nativeMetadata.registerReflection(Driver.class, MemberCategory.INVOKE_DECLARED_CONSTRUCTORS);
-
-        nativeMetadata.registerReflection(HikariConfig.class, MemberCategory.INVOKE_DECLARED_CONSTRUCTORS,
-                MemberCategory.INVOKE_PUBLIC_METHODS);
-        nativeMetadata.registerReflection(HikariDataSource.class, MemberCategory.INVOKE_DECLARED_CONSTRUCTORS,
-                MemberCategory.INVOKE_PUBLIC_METHODS);
-
     }
 }

@@ -20,10 +20,6 @@ public class RuntimeNativeRegistrarImpl implements RuntimeNativeRegistrar {
         metadata.registerResourceInclude("com.mysql.jdbc.LocalizedErrorMessages.properties");
         metadata.registerResourceInclude("sql/.*");
 
-        metadata.registerJdkProxy(SqlMapper.class);
-        metadata.registerJdkProxy(AppxDao.class);
-
         metadata.registerReflection(DebugInterceptor.class, MemberCategory.INVOKE_DECLARED_CONSTRUCTORS);
-        metadata.registerReflection(Driver.class, MemberCategory.INVOKE_DECLARED_CONSTRUCTORS);
     }
 }
