@@ -17,4 +17,9 @@ public class Config {
     public DataSource db1(@Inject("${test.db1}") HikariDataSource dataSource) {
         return dataSource;
     }
+
+    @Bean
+    public void db1m(@Db("db1") SQLManager sqlManager) {
+        //sqlManager.setNc(new DefaultNameConversion());
+    }
 }

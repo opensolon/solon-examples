@@ -26,16 +26,6 @@ import org.noear.solon.SolonBuilder;
  * */
 public class DemoApp {
     public static void main(String[] args) {
-        Solon.start(DemoApp.class, args, app -> {
-            //订阅事件，后以定制
-//            app.onEvent(SQLManagerBuilder.class, c -> {
-                //启用开发或调试模式（可以打印sql）
-//                if (Solon.cfg().isDebugMode() || Solon.cfg().isFilesMode()) {
-//                    if (c.getName().contains("db1")) {
-//                        c.addInterDebug();
-//                    }
-//                }
-//            });
-        });
+        Solon.start(DemoApp.class, args);
     }
 }
