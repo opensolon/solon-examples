@@ -2,7 +2,10 @@ package demo4013;
 
 import org.noear.snack.ONode;
 import org.noear.solon.Solon;
+import org.noear.solon.core.NativeDetector;
 import org.noear.wood.WoodConfig;
+
+import static org.noear.solon.core.NativeDetector.AOT_PROCESSING;
 
 /**
  *
@@ -26,6 +29,8 @@ import org.noear.wood.WoodConfig;
  * */
 public class DemoApp {
     public static void main(String[] args) {
+        //System.setProperty(AOT_PROCESSING, "true");
+
         Solon.start(DemoApp.class, args, (app) -> {
             if (Solon.cfg().isDebugMode()) {
                 //执行后打印下sql
@@ -33,10 +38,14 @@ public class DemoApp {
                     System.out.println(cmd.text + "\r\n" + ONode.stringify(cmd.paramMap()));
                 });
 
-                WoodConfig.onException((cmd,err)->{
+                WoodConfig.onException((cmd, err) -> {
                     System.out.println(cmd.text + "\r\n" + ONode.stringify(cmd.paramMap()));
                 });
             }
         });
+
+//        Solon.context().entityForeach(clz -> {
+//            System.out.println("Entity: " + clz.getName());
+//        });
     }
 }

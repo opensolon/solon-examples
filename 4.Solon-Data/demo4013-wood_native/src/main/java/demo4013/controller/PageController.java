@@ -6,6 +6,7 @@ import org.noear.solon.annotation.Mapping;
 import org.noear.wood.DataItem;
 import org.noear.wood.DataList;
 import org.noear.wood.DbContext;
+import org.noear.wood.IPage;
 import org.noear.wood.annotation.Db;
 
 /**
@@ -19,7 +20,7 @@ public class PageController {
     DbContext db;
 
     @Mapping("test")
-    public Object test() throws Throwable {
+    public IPage<AppxModel> test() throws Throwable {
         //只有 .table 接口和 .mapperBase 接口，有便捷分页功能
         return db.table("appx")
                 .limit(0, 2)

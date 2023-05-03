@@ -1,8 +1,10 @@
 package demo4051.controller;
 
 import demo4051.dso.mapper.SqlMapper;
+import demo4051.model.AppxModel;
 import org.beetl.sql.core.page.DefaultPageRequest;
 import org.beetl.sql.core.page.PageRequest;
+import org.beetl.sql.core.page.PageResult;
 import org.beetl.sql.solon.annotation.Db;
 import org.noear.solon.annotation.Controller;
 import org.noear.solon.annotation.Mapping;
@@ -20,7 +22,7 @@ public class PageController {
     SqlMapper sqlMapper;
 
     @Mapping("/list")
-    public Object list() throws Exception {
+    public PageResult<AppxModel> list() throws Exception {
         PageRequest pageRequest = DefaultPageRequest.of(1, 2);
 
         return sqlMapper.appx_getlist_page(pageRequest, 1);

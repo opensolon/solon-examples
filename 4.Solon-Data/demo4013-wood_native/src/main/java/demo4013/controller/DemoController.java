@@ -1,6 +1,7 @@
 package demo4013.controller;
 
 import demo4013.dso.mapper.SqlMapper;
+import demo4013.model.AppxModel;
 import org.noear.solon.annotation.Controller;
 import org.noear.solon.annotation.Mapping;
 import org.noear.wood.annotation.Db;
@@ -16,7 +17,7 @@ public class DemoController {
 
 
     @Mapping("/test")
-    public Object db1() throws Exception{
+    public AppxModel db1() throws Exception{
         return sqlMapper1.appx_get2(1);
     }
 }

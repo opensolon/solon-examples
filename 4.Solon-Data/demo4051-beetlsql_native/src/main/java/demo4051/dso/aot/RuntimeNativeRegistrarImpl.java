@@ -1,11 +1,8 @@
 package demo4051.dso.aot;
 
 import com.mysql.jdbc.Driver;
-import com.zaxxer.hikari.HikariConfig;
-import com.zaxxer.hikari.HikariDataSource;
 import demo4051.dso.dao.AppxDao;
-import demo4051.model.AppxModel;
-import org.beetl.sql.core.SQLManager;
+import demo4051.dso.mapper.SqlMapper;
 import org.beetl.sql.ext.DebugInterceptor;
 import org.noear.solon.annotation.Component;
 import org.noear.solon.aot.RuntimeNativeMetadata;
@@ -19,21 +16,14 @@ import org.noear.solon.core.AopContext;
 @Component
 public class RuntimeNativeRegistrarImpl implements RuntimeNativeRegistrar {
     @Override
-    public void register(AopContext context, RuntimeNativeMetadata nativeMetadata) {
-        nativeMetadata.registerResourceInclude("com.mysql.jdbc.LocalizedErrorMessages.properties");
-        nativeMetadata.registerResourceInclude("sql/SqlMapper.md");
+    public void register(AopContext context, RuntimeNativeMetadata metadata) {
+        metadata.registerResourceInclude("com.mysql.jdbc.LocalizedErrorMessages.properties");
+        metadata.registerResourceInclude("sql/.*");
 
-        nativeMetadata.registerSerialization(AppxModel.class);
+        metadata.registerJdkProxy(SqlMapper.class);
+        metadata.registerJdkProxy(AppxDao.class);
 
-        nativeMetadata.registerReflection(DebugInterceptor.class, MemberCategory.INVOKE_DECLARED_CONSTRUCTORS);
-        nativeMetadata.registerReflection(Driver.class, MemberCategory.INVOKE_DECLARED_CONSTRUCTORS);
-        nativeMetadata.registerReflection(SQLManager.class, MemberCategory.INVOKE_DECLARED_METHODS);
-        nativeMetadata.registerReflection(AppxDao.class, MemberCategory.INVOKE_DECLARED_METHODS);
-
-        nativeMetadata.registerReflection(HikariConfig.class, MemberCategory.INVOKE_DECLARED_CONSTRUCTORS,
-                MemberCategory.INVOKE_PUBLIC_METHODS);
-        nativeMetadata.registerReflection(HikariDataSource.class, MemberCategory.INVOKE_DECLARED_CONSTRUCTORS,
-                MemberCategory.INVOKE_PUBLIC_METHODS);
-
+        metadata.registerReflection(DebugInterceptor.class, MemberCategory.INVOKE_DECLARED_CONSTRUCTORS);
+        metadata.registerReflection(Driver.class, MemberCategory.INVOKE_DECLARED_CONSTRUCTORS);
     }
 }

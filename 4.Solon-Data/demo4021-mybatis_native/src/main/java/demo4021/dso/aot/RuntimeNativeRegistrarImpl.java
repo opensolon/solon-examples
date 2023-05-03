@@ -17,19 +17,12 @@ import org.noear.solon.core.AopContext;
 @Component
 public class RuntimeNativeRegistrarImpl implements RuntimeNativeRegistrar {
     @Override
-    public void register(AopContext context, RuntimeNativeMetadata nativeMetadata) {
-        nativeMetadata.registerResourceInclude("com.mysql.jdbc.LocalizedErrorMessages.properties");
+    public void register(AopContext context, RuntimeNativeMetadata metadata) {
+        metadata.registerResourceInclude("com.mysql.jdbc.LocalizedErrorMessages.properties");
+        metadata.registerResourceInclude("demo4021/dso/mapper/.*");
 
-        nativeMetadata.registerSerialization(AppxModel.class);
+        metadata.registerJdkProxy(AppxMapper.class);
 
-
-        nativeMetadata.registerReflection(Driver.class, MemberCategory.INVOKE_DECLARED_CONSTRUCTORS);
-        nativeMetadata.registerReflection(AppxMapper.class, MemberCategory.INVOKE_DECLARED_METHODS);
-
-        nativeMetadata.registerReflection(HikariConfig.class, MemberCategory.INVOKE_DECLARED_CONSTRUCTORS,
-                MemberCategory.INVOKE_PUBLIC_METHODS);
-        nativeMetadata.registerReflection(HikariDataSource.class, MemberCategory.INVOKE_DECLARED_CONSTRUCTORS,
-                MemberCategory.INVOKE_PUBLIC_METHODS);
-
+        metadata.registerReflection(Driver.class, MemberCategory.INVOKE_DECLARED_CONSTRUCTORS);
     }
 }

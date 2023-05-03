@@ -2,9 +2,12 @@ package demo4051.controller;
 
 import demo4051.dso.dao.AppxDao;
 import demo4051.dso.mapper.SqlMapper;
+import demo4051.model.AppxModel;
 import org.beetl.sql.solon.annotation.Db;
 import org.noear.solon.annotation.Controller;
 import org.noear.solon.annotation.Mapping;
+
+import java.util.List;
 
 @Mapping("/demo/")
 @Controller
@@ -20,7 +23,7 @@ public class DemoController {
 
 
     @Mapping("/test")
-    public Object test() throws Exception{
+    public AppxModel test() throws Exception{
 
         return appxDao.single(1);
 
@@ -28,7 +31,7 @@ public class DemoController {
     }
 
     @Mapping("/test2")
-    public Object test2() throws Exception{
+    public List<AppxModel> test2() throws Exception{
         return sqlMapper.appx_getlist(1);
     }
 }
