@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>org.noear.solon.examples</groupId>
-  <artifactId>demo9025-config-etcd</artifactId>
+  <artifactId>demo9025-config-discovery_etcd</artifactId>
   <version>demo</version>
   <packaging>jar</packaging>
 
