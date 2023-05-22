@@ -1,0 +1,18 @@
+
+server.port: 8082
+
+solon.app:
+  name: demoapp2
+  group: demo
+
+solon.cloud.local:
+  discovery:
+    service:
+      hellorpc:
+        - tcp://localhost:28082
+
+solon.cloud.zipkin:
+  server: "http://81.68.212.127:9411"
+  trace:
+    enable: true                    #是否启用（默认：true）
+    exclude: "/health,/_run/check/" #排除路径
