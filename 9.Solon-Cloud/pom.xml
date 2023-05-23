@@ -51,6 +51,7 @@
         <module>demo9063-job_quartz_jdbc</module>
         <module>demo9064-job_powerjob</module>
         <module>demo9071-opentracing_jeager</module>
+        <module>demo9071-opentracing_zipkin</module>
         <module>demo9072-jaeger</module>
         <module>demo9073-zipkin</module>
         <module>demo9081-breaker_guava</module>

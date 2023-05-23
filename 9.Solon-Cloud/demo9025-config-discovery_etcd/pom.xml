@@ -33,7 +33,6 @@
     <dependency>
       <groupId>org.noear</groupId>
       <artifactId>etcd-solon-cloud-plugin</artifactId>
-      <version>2.3.0-SNAPSHOT</version>
     </dependency>
 
     <dependency>

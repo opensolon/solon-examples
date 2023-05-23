@@ -18,7 +18,7 @@ ddd
 * 增加配置：demo/test.properties
 ```
 db1.url=jdbc
-db1.username=luke
+db1.username=solon
 db1.password=xxx
 db1.jdbcUrl=${db1.url}
 ```

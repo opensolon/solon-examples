@@ -10,9 +10,11 @@ public class ServerApp {
     public static void main(String[] args) {
         Solon.start(ServerApp.class, args);
 
-        CloudClient.config().push(Solon.cfg().appGroup(),"test.properties","db1.url=jdbc111\n" +
-                "db1.username=luke0125\n" +
+        CloudClient.config().push("test.properties", "db1.url=jdbc111\n" +
+                "db1.username=solon\n" +
                 "db1.password=123456\n" +
                 "db1.jdbcUrl=${db1.url}");
+
+        CloudClient.config().pull("water_cache_header", "ddd");
     }
 }
