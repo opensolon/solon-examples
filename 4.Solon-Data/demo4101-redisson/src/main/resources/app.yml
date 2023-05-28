@@ -1,0 +1,8 @@
+
+
+test.redis1:
+  config: |
+    singleServerConfig:
+      address: "redis://localhost:6379"
+      database: 0
+    codec: !<org.redisson.codec.Kryo5Codec> { }
