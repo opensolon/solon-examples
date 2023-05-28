@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.noear.solon.examples</groupId>
-    <artifactId>demo4003-shardingsphere</artifactId>
+    <artifactId>demo4003-shardingds</artifactId>
     <version>demo</version>
     <packaging>jar</packaging>
 
@@ -15,7 +15,7 @@
     <parent>
         <groupId>org.noear</groupId>
         <artifactId>solon-parent</artifactId>
-        <version>2.3.1-M1</version>
+        <version>2.3.1-SNAPSHOT</version>
         <relativePath />
     </parent>
 
@@ -27,7 +27,7 @@
 
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>shardingsphere-solon-plugin</artifactId>
+            <artifactId>solon.data.shardingds</artifactId>
         </dependency>
 
         <!-- wood-solon-plugin 相对于 wood；增加了 @Db 的注入支持 -->

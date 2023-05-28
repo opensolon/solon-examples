@@ -19,7 +19,7 @@
     <modules>
         <module>demo4001-cache</module>
         <module>demo4002-dynamicds</module>
-        <module>demo4003-shardingsphere</module>
+        <module>demo4003-shardingds</module>
         <module>demo4013-wood</module>
         <module>demo4013-wood_native</module>
         <module>demo4014-wood_multisource</module>
