@@ -4,18 +4,18 @@
 Solon v2.3.1
 </h1>
 <p align="center">
-	<strong>一个高效的 Java 应用开发框架，更小、更快、更简单！</strong>
+	<strong>Java 新的生态型应用开发框架，更小、更快、更简单！</strong>
 </p>
 <p align="center">
 	<a href="https://solon.noear.org/">https://solon.noear.org</a>
 </p>
 
 <p align="center">
-    <a target="_blank" href="https://search.maven.org/search?q=org.noear%20solon">
+    <a target="_blank" href="https://central.sonatype.com/search?q=org.noear%2520solon-parent">
         <img src="https://img.shields.io/maven-central/v/org.noear/solon.svg?label=Maven%20Central" alt="Maven" />
     </a>
     <a target="_blank" href="https://www.apache.org/licenses/LICENSE-2.0.txt">
-		<img src="https://img.shields.io/:license-Apache2-blue.svg" alt="Apache 2" />
+		<img src="https://img.shields.io/:License-Apache2-blue.svg" alt="Apache 2" />
 	</a>
     <a target="_blank" href="https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html">
 		<img src="https://img.shields.io/badge/JDK-8-green.svg" alt="jdk-8" />
@@ -26,8 +26,8 @@ Solon v2.3.1
     <a target="_blank" href="https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html">
 		<img src="https://img.shields.io/badge/JDK-17-green.svg" alt="jdk-17" />
 	</a>
-    <a target="_blank" href="https://www.oracle.com/java/technologies/javase/jdk19-archive-downloads.html">
-		<img src="https://img.shields.io/badge/JDK-19-green.svg" alt="jdk-19" />
+    <a target="_blank" href="https://www.oracle.com/java/technologies/javase/jdk20-archive-downloads.html">
+		<img src="https://img.shields.io/badge/JDK-20-green.svg" alt="jdk-20" />
 	</a>
     <br />
     <a target="_blank" href='https://gitee.com/noear/solon/stargazers'>
@@ -43,7 +43,6 @@ Solon v2.3.1
 	<a href="https://jq.qq.com/?_wv=1027&k=kjB5JNiC">
 	<img src="https://img.shields.io/badge/QQ交流群-22200020-orange"/></a>
 </p>
-
 
 <hr />
 
