@@ -1,0 +1,8 @@
+
+
+test.redis1:
+  config: |
+    singleServerConfig:
+      password: "123456"
+      address: "redis://localhost:6379"
+      database: 0
