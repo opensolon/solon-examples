@@ -21,6 +21,7 @@ mybatis.db1:
 #        - "classpath:demo4031/dso/mapper/*.xml"
     configuration:
         cacheEnabled: false
+        mapperVerifyEnabled: false
         mapUnderscoreToCamelCase: true
         logImpl: org.apache.ibatis.logging.nologging.NoLoggingImpl
     globalConfig:
