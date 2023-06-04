@@ -2,10 +2,10 @@ package features;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.solon.plugins.pagination.Page;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.noear.solon.annotation.Inject;
-import org.noear.solon.test.SolonJUnit4ClassRunner;
+import org.noear.solon.test.SolonJUnit5Extension;
 import org.noear.solon.test.SolonTest;
 import demo4031.DemoApp;
 import demo4031.dso.mapper.AppxMapper2;
@@ -16,7 +16,7 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 /**
  * @author noear 2021/9/3 created
  */
-@RunWith(SolonJUnit4ClassRunner.class)
+@ExtendWith(SolonJUnit5Extension.class)
 @SolonTest(DemoApp.class)
 public class PlusTest {
 

@@ -9,16 +9,16 @@ import demo4031.dso.mapper.AppxMapperPlusEx;
 import demo4031.dso.service.AppServicePlus;
 import demo4031.model.AppxModel;
 import org.apache.ibatis.solon.annotation.Db;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.noear.solon.annotation.Inject;
-import org.noear.solon.test.SolonJUnit4ClassRunner;
+import org.noear.solon.test.SolonJUnit5Extension;
 import org.noear.solon.test.SolonTest;
 
 /**
  * @author noear 2022/3/28 created
  */
-@RunWith(SolonJUnit4ClassRunner.class)
+@ExtendWith(SolonJUnit5Extension.class)
 @SolonTest(DemoApp.class)
 public class PlusServiceTest {
 
