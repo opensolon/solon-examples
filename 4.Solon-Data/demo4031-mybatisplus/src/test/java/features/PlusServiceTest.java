@@ -24,12 +24,18 @@ public class PlusServiceTest {
 
     @Inject
     AppServicePlus appServicePlus;
+    @Inject
+    AppServicePlus appServicePlus2;
 
     @Db
     AppxMapperPlus appxMapperPlus;
+    @Db
+    AppxMapperPlus appxMapperPlus2;
 
     @Db
     AppxMapperPlusEx appxMapperPlusEx;
+    @Db
+    AppxMapperPlusEx appxMapperPlusEx2;
 
     @Test
     public void selectById() {
