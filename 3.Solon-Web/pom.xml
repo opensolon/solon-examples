@@ -38,5 +38,8 @@
         <module>demo3061-session_redis</module>
         <module>demo3062-session_jwt</module>
         <module>demo3063-session_jwt</module>
+
+        <module>demo3071-sse</module>
+        <module>demo3072-flux</module>
     </modules>
 </project>
