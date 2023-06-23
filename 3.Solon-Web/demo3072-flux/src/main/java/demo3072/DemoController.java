@@ -20,6 +20,11 @@ public class DemoController implements Render {
         });
     }
 
+    @Mapping("/hello3")
+    public Mono<Void> hello3(Context ctx,String name) {
+        return Mono.empty();
+    }
+
     @Override
     public void render(Object data, Context ctx) throws Throwable {
         if (data instanceof Throwable) {
