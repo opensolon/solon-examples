@@ -10,6 +10,7 @@ import org.noear.solon.Solon;
 import org.noear.solon.Utils;
 import org.noear.solon.annotation.Component;
 import org.noear.solon.core.ExtendLoader;
+import org.noear.solon.core.Props;
 import webapp.dso.DsHelper;
 
 import javax.sql.DataSource;
@@ -39,11 +40,11 @@ public class StartModule implements WebModule {
 
     private DataSource buildH2Ds() {
         //1.替换H2的持久化路径（路径要变，所以不做自动注入处理）
-        Properties props = Solon.cfg().getProp("db1");
+        Props props = Solon.cfg().getProp("db1");
         props.setProperty("jdbcUrl", props.getProperty("jdbcUrl").replace("~/", ExtendLoader.path()));
 
         //2.生成DataSource
-        DataSource ds = Utils.injectProperties(new HikariDataSource(), props);
+        DataSource ds = props.getBean(HikariDataSource.class);
 
         try {
             //3.需要初始化schame（第一次会成功；之后会失败；不用管...）

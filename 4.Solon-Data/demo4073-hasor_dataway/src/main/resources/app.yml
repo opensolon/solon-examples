@@ -13,6 +13,21 @@ db1.username: sa
 db1.password: Ca78XJDFawZ5jaOL
 
 
+solon.logging:
+  appender:
+    console:
+      level: INFO
+  logger:
+    "net.hasor":
+      level: WARN
+    "org.eclipse":
+      level: WARN
+    "com.zaxxer.hikari":
+      level: WARN
+
+
+solon.extend: "!dway_ext"
+
 #hasor
 HASOR_DATAQL_DATAWAY: true
 HASOR_DATAQL_DATAWAY_ADMIN: true
