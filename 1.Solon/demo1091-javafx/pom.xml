@@ -32,6 +32,7 @@
             <artifactId>solon.logging.simple</artifactId>
         </dependency>
 
+        <!-- 这个版本号，可以与编译的 java 版本号相同 -->
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
