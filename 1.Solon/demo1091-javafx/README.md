@@ -1,4 +1,4 @@
-### 一、在maven增加JavaFX依赖
+### 1、在maven增加JavaFX依赖
 
 ```xml
 <dependencies>
@@ -17,7 +17,7 @@
 </dependencies>
 ```
  
-### 二、solon与JavaFX启动顺序
+### 2、solon与JavaFX启动顺序
 Solon优先于JavaFX启动。相当于Solon启动完成后，所有的Bean都已经被Solon管理了，接着JavaFX再来启动时，就可以通过依赖注入的方式往Controller里注入Bean了。
 
 例子： LicenseApp.java
@@ -44,7 +44,7 @@ public class LicenseApp extends Application implements EventListener<AppBeanLoad
 }
 ```
 
-### 三、solon管理JavaFX的Controller
+### 3、solon管理JavaFX的Controller
 
 JavaFX的Controller相当于MVC模式中的C，而V可以理解为UI部分，此处指FXML文件。一般情况下，我们会在FXML中的里指定：fx:controller，例如：
 
