@@ -9,22 +9,11 @@ import org.noear.solon.annotation.Inject;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
 
 
 @Component
 public class LicenseController implements Initializable {
-    @FXML
-    private TextField authMacs;
-
-    @FXML
-    private TextField cretInfo;
-
-    @FXML
-    private DatePicker expirationDate;
-
     @FXML
     private TextArea license;
 
@@ -33,6 +22,7 @@ public class LicenseController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        //测试 service 是否正常
         licenseService.hello();
     }
 }

@@ -1,4 +1,4 @@
-### 1、在maven增加JavaFX依赖
+### 1、在 maven 增加 JavaFX 依赖
 
 ```xml
 <dependencies>
@@ -17,10 +17,11 @@
 </dependencies>
 ```
  
-### 2、solon与JavaFX启动顺序
-Solon优先于JavaFX启动。相当于Solon启动完成后，所有的Bean都已经被Solon管理了，接着JavaFX再来启动时，就可以通过依赖注入的方式往Controller里注入Bean了。
+### 2、定义 JavaFX 应用启动组件，并对接 Solon 容器
 
-例子： LicenseApp.java
+通过 solon 的生命周期事件，在 bean 扫描完成后，启动 JavaFX Application。启动时，按需要加载 fxml
+
+* 定义 JavaFX 应用： LicenseApp.java
 
 ```java
 @Component
@@ -34,7 +35,7 @@ public class LicenseApp extends Application implements EventListener<AppBeanLoad
     @Override
     public void start(Stage primaryStage) throws Exception {
         FXMLLoader loader = new FXMLLoader(ResourceUtil.getResource("javafx/license.fxml"));
-        loader.setControllerFactory(new ControllerFactory());
+        loader.setControllerFactory(new ControllerFactoryImpl());
 
         Scene scene = new Scene(loader.load());
         primaryStage.setTitle("License UI v1.0");
@@ -44,9 +45,42 @@ public class LicenseApp extends Application implements EventListener<AppBeanLoad
 }
 ```
 
-### 3、solon管理JavaFX的Controller
+* 与 Solon 容器的对接工厂：ControllerFactoryImpl.java
 
-JavaFX的Controller相当于MVC模式中的C，而V可以理解为UI部分，此处指FXML文件。一般情况下，我们会在FXML中的里指定：fx:controller，例如：
+JavaFx 对 Controller 的默认加载，是根据类路径 + 反射的方式。但也提供了配置 ControllerFactory 的工厂模式开放给用户自定义 Controller 的加载方式。 为了让 Solon 代为托管 Controller 类，我们可以创建一个 ControllerFactoryImpl 来实现 Callback 接口。如下所示：
+
+```java
+public class ControllerFactory implements Callback<Class<?>, Object> {
+    @Override
+    public Object call(Class<?> aClass) {
+        //从 solon 容器获取
+        return Solon.context().getBeanOrNew(aClass);
+    }
+}
+```
+
+### 3、用 Solon 管理 JavaFX 控制器
+
+* 控制器：LicenseController.java
+
+```java
+@Component
+public class LicenseController implements Initializable {
+    @FXML
+    private TextArea license;
+
+    @Inject
+    private LicenseService licenseService;
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        //测试 service 是否正常
+        licenseService.hello();
+    }
+}
+```
+
+* 视图： fxml文件（通过 fx:controller 关联 java 控制器）
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -65,22 +99,4 @@ JavaFX的Controller相当于MVC模式中的C，而V可以理解为UI部分，此
 </VBox>
 ```
 
-而JavaFx对Controller的默认加载，是根据类路径+反射的方式。但也提供了配置ControllerFactory的工厂模式开放给用户自定义Controller的加载方式。
-
-为了让Solon对Controller代为托管，我们可以创建一个SolonControllerFactory来实现Callback接口。如下所示：
-
-```java
-public class ControllerFactory implements Callback<Class<?>, Object> {
-    @Override
-    public Object call(Class<?> aClass) {
-        return Solon.context().getBeanOrNew(aClass);
-    }
-}
-```
-
-使用方法：
-
-```java
-FXMLLoader loader = new FXMLLoader(ResourceUtil.getResource("javafx/license.fxml"));
-loader.setControllerFactory(new ControllerFactory());
-```
+### 4、说见示例源码

@@ -20,7 +20,7 @@ public class LicenseApp extends Application implements EventListener<AppBeanLoad
     @Override
     public void start(Stage primaryStage) throws Exception {
         FXMLLoader loader = new FXMLLoader(ResourceUtil.getResource("javafx/license.fxml"));
-        loader.setControllerFactory(new ControllerFactory());
+        loader.setControllerFactory(new ControllerFactoryImpl());
 
         Scene scene = new Scene(loader.load());
         primaryStage.setTitle("License UI v1.0");
