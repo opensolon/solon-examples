@@ -28,4 +28,17 @@ public class WebSocket implements Listener {
 
         session.send("你发了：" + message.bodyAsString());
     }
+
+    @Override
+    public void onClose(Session session) {
+        System.out.println("onClose");
+    }
+
+    @Override
+    public void onError(Session session, Throwable error) {
+        System.out.println("onError");
+        if (error != null) {
+            error.printStackTrace();
+        }
+    }
 }

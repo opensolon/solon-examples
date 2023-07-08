@@ -22,7 +22,7 @@
     <dependencies>
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>solon-web</artifactId>
+            <artifactId>solon-lib</artifactId>
         </dependency>
 
         <!-- 添加 undertow 插件；同时支持 http 与 websocket 服务（或者换成 jetty 相关的插件） -->
