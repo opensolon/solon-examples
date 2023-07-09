@@ -14,7 +14,7 @@ public class DemoController implements Render {
     }
 
     @Mapping("/hello2")
-    public Mono<String> hello2(String name) {
+    public Mono hello2(String name) {
         return Mono.create(call -> {
             throw new IllegalStateException("dddd");
         });
@@ -23,6 +23,11 @@ public class DemoController implements Render {
     @Mapping("/hello3")
     public Mono<Void> hello3(Context ctx,String name) {
         return Mono.empty();
+    }
+
+    @Mapping("/hello4")
+    public Mono<String> hello4(String name) {
+        return Mono.fromSupplier(() -> "Hello " + name);
     }
 
     @Override
