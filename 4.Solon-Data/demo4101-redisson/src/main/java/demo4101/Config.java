@@ -10,6 +10,7 @@ import org.redisson.solon.RedissonSupplier;
 public class Config {
     @Bean
     public RedissonClient redis(@Inject("${test.redis1}")RedissonSupplier supplier){
+        System.out.println("config - redis");
         return supplier.get();
     }
 }
