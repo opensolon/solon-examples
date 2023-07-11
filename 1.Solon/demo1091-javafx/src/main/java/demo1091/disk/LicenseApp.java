@@ -14,7 +14,9 @@ public class LicenseApp extends Application implements EventListener<AppBeanLoad
 
     @Override
     public void onEvent(AppBeanLoadEndEvent appBeanLoadEndEvent) throws Throwable {
-        launch(LicenseApp.class);
+        new Thread(() -> {
+            launch(LicenseApp.class);
+        }).start();
     }
 
     @Override
