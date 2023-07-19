@@ -15,7 +15,7 @@
     <parent>
         <groupId>org.noear</groupId>
         <artifactId>solon-parent</artifactId>
-        <version>2.3.8</version>
+        <version>2.4.0-RC</version>
         <relativePath />
     </parent>
 
@@ -31,6 +31,11 @@
         </dependency>
 
         <dependency>
+            <groupId>org.noear</groupId>
+            <artifactId>solon.logging.simple</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>org.noear.solon.examples</groupId>
             <artifactId>demo7002-rpc_interface</artifactId>
             <version>demo</version>
@@ -39,7 +44,6 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-
             <scope>provided</scope>
         </dependency>
     </dependencies>
