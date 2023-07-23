@@ -5,6 +5,7 @@ import org.noear.solon.Utils;
 import org.noear.solon.cloud.CloudClient;
 import org.noear.solon.cloud.model.Media;
 import org.noear.solon.core.handle.Result;
+import org.noear.solon.core.util.ResourceUtil;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -47,7 +48,7 @@ public class DemoApp {
 
         // test_id/xxx.png
         String key = "test/" + Utils.guid() + ".png";
-        File val = new File(Utils.getResource("test.png").getFile());
+        File val = new File(ResourceUtil.getResource("test.png").getFile());
 
         //file url like : http://xx.xx.xx/test/xxx.png
 

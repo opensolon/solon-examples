@@ -3,7 +3,7 @@ package features;
 import demo3011.WebApp;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.noear.solon.test.HttpTestBase;
+import org.noear.solon.test.HttpTester;
 import org.noear.solon.test.SolonJUnit4ClassRunner;
 import org.noear.solon.test.SolonTest;
 
@@ -13,7 +13,7 @@ import java.util.Map;
 
 @RunWith(SolonJUnit4ClassRunner.class)
 @SolonTest(WebApp.class)
-public class HttpMethodTest extends HttpTestBase {
+public class HttpMethodTest extends HttpTester {
 
     @Test
     public void test21() throws IOException {

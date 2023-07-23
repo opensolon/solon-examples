@@ -3,7 +3,7 @@ package features;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.noear.solon.Solon;
-import org.noear.solon.test.HttpTestBase;
+import org.noear.solon.test.HttpTester;
 import org.noear.solon.test.SolonJUnit5Extension;
 import org.noear.solon.test.SolonTest;
 import org.noear.wood.DbContext;
@@ -11,7 +11,7 @@ import demo4031.DemoApp;
 
 @ExtendWith(SolonJUnit5Extension.class)
 @SolonTest(DemoApp.class)
-public class TranTest extends HttpTestBase {
+public class TranTest extends HttpTester {
     @Test
     public void test() throws Exception {
         DbContext db = Solon.context().getBean(DbContext.class);

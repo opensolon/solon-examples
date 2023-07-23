@@ -4,7 +4,7 @@ import demo4013.DemoApp;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.noear.solon.test.annotation.TestRollback;
-import org.noear.solon.test.HttpTestBase;
+import org.noear.solon.test.HttpTester;
 import org.noear.solon.test.SolonJUnit4ClassRunner;
 import org.noear.solon.test.SolonTest;
 import org.noear.wood.DbContext;
@@ -12,7 +12,7 @@ import org.noear.wood.annotation.Db;
 
 @RunWith(SolonJUnit4ClassRunner.class)
 @SolonTest(DemoApp.class)
-public class RollbackTest extends HttpTestBase {
+public class RollbackTest extends HttpTester {
 
     @Db
     DbContext db;

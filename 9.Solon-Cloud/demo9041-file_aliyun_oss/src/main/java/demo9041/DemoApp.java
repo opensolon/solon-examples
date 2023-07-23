@@ -5,6 +5,7 @@ import org.noear.solon.Utils;
 import org.noear.solon.cloud.CloudClient;
 import org.noear.solon.cloud.model.Media;
 import org.noear.solon.core.handle.Result;
+import org.noear.solon.core.util.ResourceUtil;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -46,7 +47,7 @@ public class DemoApp {
         }
 
         String key = "test/" + Utils.guid() + ".png";
-        File val = new File(Utils.getResource("test.png").getFile());
+        File val = new File(ResourceUtil.getResource("test.png").getFile());
 
         //上传文件
         Result result = CloudClient.file().put(key, new Media(new FileInputStream(val), Utils.mime(val.getName())));

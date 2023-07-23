@@ -2,7 +2,7 @@ package features;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.noear.solon.test.HttpTestBase;
+import org.noear.solon.test.HttpTester;
 import org.noear.solon.test.SolonJUnit4ClassRunner;
 import org.noear.solon.test.SolonTest;
 import org.noear.weed.DbContext;
@@ -11,7 +11,7 @@ import demo4011.DemoApp;
 
 @RunWith(SolonJUnit4ClassRunner.class)
 @SolonTest(DemoApp.class)
-public class TranTest extends HttpTestBase {
+public class TranTest extends HttpTester {
 
     @Db
     DbContext db;

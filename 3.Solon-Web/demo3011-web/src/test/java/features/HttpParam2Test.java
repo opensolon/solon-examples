@@ -3,7 +3,7 @@ package features;
 import demo3011.WebApp;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.noear.solon.test.HttpTestBase;
+import org.noear.solon.test.HttpTester;
 import org.noear.solon.test.SolonJUnit4ClassRunner;
 import org.noear.solon.test.SolonTest;
 
@@ -15,7 +15,7 @@ import java.io.IOException;
 
 @RunWith(SolonJUnit4ClassRunner.class)
 @SolonTest(WebApp.class)
-public class HttpParam2Test extends HttpTestBase {
+public class HttpParam2Test extends HttpTester {
     @Override
     public boolean enablePrint() {
         return true;

@@ -16,7 +16,7 @@ public class JwtInterceptor implements RouterInterceptor {
     public void doIntercept(Context ctx, Handler mainHandler, RouterInterceptorChain chain) throws Throwable {
         //如果是登录页则不处理
         if("/login".equals(ctx.path()) == false) {
-            String user_name = ctx.session("user_name", "");
+            String user_name = ctx.sessionOrDefault("user_name", "");
             if (Utils.isEmpty(user_name)) {
                 //说明未登录，则终止处理
                 ctx.status(401);

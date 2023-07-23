@@ -4,14 +4,14 @@ import demo4071.DemoApp;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.noear.solon.Solon;
-import org.noear.solon.test.HttpTestBase;
+import org.noear.solon.test.HttpTester;
 import org.noear.solon.test.SolonTest;
 import org.noear.solon.test.SolonJUnit4ClassRunner;
 import org.noear.wood.DbContext;
 
 @RunWith(SolonJUnit4ClassRunner.class)
 @SolonTest(DemoApp.class)
-public class TranTest extends HttpTestBase {
+public class TranTest extends HttpTester {
     @Test
     public void test() throws Exception {
         DbContext db = Solon.context().getBean(DbContext.class);
