@@ -14,3 +14,5 @@ solon.env: local
 ```
 java -Dsolon.env=local -jar xxx.jar
 ```
+
+solon v2.0 后都支持本方案

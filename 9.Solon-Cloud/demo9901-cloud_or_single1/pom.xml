@@ -40,6 +40,18 @@
         <dependency>
             <groupId>org.noear</groupId>
             <artifactId>water-solon-cloud-plugin</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.noear</groupId>
+                    <artifactId>solon.logging.simple</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <!-- 换掉 solon.logging.simple，同时支持本地日志和云端  -->
+        <dependency>
+            <groupId>org.noear</groupId>
+            <artifactId>logback-solon-plugin</artifactId>
         </dependency>
 
         <dependency>

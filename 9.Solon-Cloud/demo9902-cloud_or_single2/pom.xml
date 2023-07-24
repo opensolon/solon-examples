@@ -70,6 +70,11 @@
                     <groupId>org.noear</groupId>
                     <artifactId>local-solon-cloud-plugin</artifactId>
                 </dependency>
+                <!-- 增加本地日志 -->
+                <dependency>
+                    <groupId>org.noear</groupId>
+                    <artifactId>logback-solon-plugin</artifactId>
+                </dependency>
             </dependencies>
             <properties>
                 <project.env>single</project.env>
@@ -79,6 +84,7 @@
             <id>cloud</id>
             <dependencies>
                 <!-- solon cloud 接口的分布式实现，或者引入别的 cloud 插件（特性参考：https://solon.noear.org/article/family-water-solon-plugin） -->
+                <!-- 它带了云端日志 -->
                 <dependency>
                     <groupId>org.noear</groupId>
                     <artifactId>water-solon-cloud-plugin</artifactId>
