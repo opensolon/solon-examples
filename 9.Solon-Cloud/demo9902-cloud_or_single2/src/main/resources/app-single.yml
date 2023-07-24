@@ -1,0 +1,6 @@
+
+
+solon.cloud.local:
+  server: "classpath:META-INF/solon-cloud/" #"/users/demo_cloud/" #也可指定外部目录（如果有文件上传，必须要放外部）
+  config:
+    load: "demoapp.yml"

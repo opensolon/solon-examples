@@ -3,8 +3,8 @@ solon.app:
   group: demo
   name: demoapp
 
-#solon.env: water
-solon.env: local
+#solon.env: cloud
+solon.env: single
 
 solon.logging.appender:
   console:

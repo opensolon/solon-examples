@@ -1,0 +1,18 @@
+
+solon.app:
+  group: demo
+  name: demoapp
+
+#solon.env: water
+solon.env: @project.env@
+
+solon.logging.appender:
+  console:
+    level: "INFO"
+
+solon.logging.logger:
+  "org.eclipse.jetty":
+    level: "WARN"
+  "com.zaxxer.hikari":
+    level: "WARN"
+

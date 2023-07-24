@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.noear.solon.examples</groupId>
-    <artifactId>demo9010-local_or_water</artifactId>
+    <artifactId>demo9901-cloud_or_single1</artifactId>
     <version>demo</version>
     <packaging>jar</packaging>
 
@@ -30,11 +30,13 @@
             <artifactId>solon.i18n</artifactId>
         </dependency>
 
+        <!-- solon cloud 接口的本地实现（特性参考：https://solon.noear.org/article/354） -->
         <dependency>
             <groupId>org.noear</groupId>
             <artifactId>local-solon-cloud-plugin</artifactId>
         </dependency>
 
+        <!-- solon cloud 接口的分布式实现，或者引入别的 cloud 插件（特性参考：https://solon.noear.org/article/family-water-solon-plugin） -->
         <dependency>
             <groupId>org.noear</groupId>
             <artifactId>water-solon-cloud-plugin</artifactId>

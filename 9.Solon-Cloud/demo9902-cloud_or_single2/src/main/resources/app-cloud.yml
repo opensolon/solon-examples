@@ -1,0 +1,4 @@
+solon.cloud.water:
+  server: "waterapi:9371"
+  config:
+    load: "demoapp.yml"
