@@ -1,0 +1,11 @@
+
+solon.app:
+  name: "demo-admin-app"
+  group: "demo"
+
+
+solon.logging.appender:
+  console:
+    level: INFO
+  cloud:
+    level: INFO

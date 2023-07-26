@@ -1,0 +1,17 @@
+server.port: 8081
+
+solon.app:
+  name: "demo-app"
+  group: "demo"
+
+solon.health.detector: "*"
+
+solon.admin.client:
+  mode: "local"
+  serverUrl: "http://localhost:8080"
+
+solon.logging.appender:
+  console:
+    level: INFO
+  cloud:
+    level: INFO
