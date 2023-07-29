@@ -10,7 +10,7 @@ import org.noear.solon.cloud.eventplus.CloudEventSubscribe;
 public class HelloEntitySubscribe {
     @CloudEventSubscribe
     public boolean hello(HelloEntity event){
-        System.out.println("HelloEntitySubscribe:: " + event.name);
+        System.out.println("HelloEntitySubscribe....:: " + event.name);
         return true;
     }
 }

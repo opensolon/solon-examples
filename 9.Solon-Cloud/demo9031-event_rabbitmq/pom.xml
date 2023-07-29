@@ -15,7 +15,7 @@
     <parent>
         <groupId>org.noear</groupId>
         <artifactId>solon-parent</artifactId>
-        <version>2.4.1</version>
+        <version>2.4.2-SNAPSHOT</version>
         <relativePath />
     </parent>
 
@@ -33,6 +33,11 @@
         <dependency>
             <groupId>org.noear</groupId>
             <artifactId>solon.cloud.eventplus</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.noear</groupId>
+            <artifactId>solon.logging.logback</artifactId>
         </dependency>
 
         <dependency>

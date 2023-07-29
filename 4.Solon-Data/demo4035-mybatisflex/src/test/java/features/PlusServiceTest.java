@@ -5,10 +5,12 @@ import com.mybatisflex.core.query.QueryWrapper;
 import demo4035.DemoApp;
 import demo4035.dso.mapper.AppxMapperPlus;
 import demo4035.dso.mapper.AppxMapperPlusEx;
+import demo4035.dso.service.AppServicePlus;
 import demo4035.model.AppxModel;
 import org.apache.ibatis.solon.annotation.Db;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.noear.solon.annotation.Inject;
 import org.noear.solon.test.SolonJUnit4ClassRunner;
 import org.noear.solon.test.SolonTest;
 
@@ -22,11 +24,25 @@ import java.util.Map;
 @SolonTest(DemoApp.class)
 public class PlusServiceTest {
 
+    @Inject
+    AppServicePlus appServicePlus;
+    @Inject
+    AppServicePlus appServicePlus2;
+
     @Db
     AppxMapperPlus appxMapperPlus;
 
     @Db
     AppxMapperPlusEx appxMapperPlusEx;
+
+    @Test
+    public void selectById() {
+        AppxModel app = appServicePlus.getById(2);
+        System.out.println(app);
+
+        assert app != null;
+        assert app.getAppId() == 2;
+    }
 
 
     @Test
@@ -69,6 +85,31 @@ public class PlusServiceTest {
         assert iPage != null;
 
         System.out.println("iPage.getList().size(): " + iPage.getRecords().size());
+        assert iPage.getRecords().size() > 0;
+
+        System.out.println("iPage.getTotal(): " + iPage.getTotalRow());
+        assert iPage.getTotalRow() > 0;
+    }
+
+    @Test
+    public void selectOne2() {
+        AppxModel app = appServicePlus.getOne(new QueryWrapper().where("app_id=?",2));
+        System.out.println(app);
+
+        assert app != null;
+        assert app.getAppId() == 2;
+    }
+
+
+    @Test
+    public void selectPage2() {
+        Page<AppxModel> page = new Page<>(1, 10);
+        Page<AppxModel> iPage = appServicePlus.page(page, new QueryWrapper());
+
+
+        assert iPage != null;
+
+        System.out.println("iPage.getRecords().size(): " + iPage.getRecords().size());
         assert iPage.getRecords().size() > 0;
 
         System.out.println("iPage.getTotal(): " + iPage.getTotalRow());
