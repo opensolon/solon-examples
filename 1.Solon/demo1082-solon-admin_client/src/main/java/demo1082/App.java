@@ -1,7 +1,7 @@
 package demo1082;
 
 import org.noear.solon.Solon;
-import org.noear.solon.admin.client.config.EnableAdminClient;
+import org.noear.solon.admin.client.annotation.EnableAdminClient;
 import org.noear.solon.annotation.SolonMain;
 
 /**
