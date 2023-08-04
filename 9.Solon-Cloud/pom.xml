@@ -57,6 +57,9 @@
         <module>demo9082-breaker_sentinel</module>
         <module>demo9083-breaker_semaphore</module>
         <module>demo9099-custom</module>
+        <module>demo90a1-micrometer_prometheus</module>
+
+
         <module>demo9901-cloud_or_single1</module>
         <module>demo9902-cloud_or_single2</module>
     </modules>
