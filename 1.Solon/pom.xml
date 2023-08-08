@@ -25,6 +25,7 @@
         <module>demo1022-log_log4j2</module>
         <module>demo1081-solon-admin_server</module>
         <module>demo1082-solon-admin_client</module>
+        <module>demo1083-solon-admin_single</module>
         <module>demo1091-javafx</module>
     </modules>
 </project>
