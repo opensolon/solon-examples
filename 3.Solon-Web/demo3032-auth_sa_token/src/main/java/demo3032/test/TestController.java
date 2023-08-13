@@ -173,8 +173,8 @@ public class TestController {
 	// [活动时间] 续签： http://localhost:8081/test/rene
 	@Mapping("rene")
 	public AjaxJson rene() {
-		StpUtil.checkActivityTimeout();
-		StpUtil.updateLastActivityToNow();
+		//StpUtil.checkActivityTimeout();
+		//StpUtil.updateLastActivityToNow();
 		return AjaxJson.getSuccess("续签成功");
 	}
 	
