@@ -17,6 +17,8 @@ public class TestController {
             msg = "demo2";
         }
 
+        CloudClient.event().publish(new Event("msg/user/add", msg).qos(1));
+
         Event event = new Event("hello.demo", msg).qos(1).retained(true);
         return CloudClient.event().publish(event);
     }
@@ -26,6 +28,8 @@ public class TestController {
         if(Utils.isEmpty(msg)){
             msg = "demo2";
         }
+
+        CloudClient.event().publish(new Event("msg/order/add", msg).qos(1));
 
         Event event = new Event("hello.demo2", msg);
         return CloudClient.event().publish(event);
