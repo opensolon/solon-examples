@@ -7,7 +7,7 @@ solon.output.meta: 1
 # db1 为固定数据源
 test.db1:
   schema: rock
-  jdbcUrl: jdbc:mysql://localhost:3306/rock?useUnicode=true&characterEncoding=utf8&autoReconnect=true&rewriteBatchedStatements=true
+  jdbcUrl: jdbc:mysql://localhost:3306/rock?useUnicode=true&characterEncoding=utf8&autoReconnect=true&rewriteBatchedStatements=true&useSSL=false
   driverClassName: com.mysql.jdbc.Driver
   username: root
   password: 123456
@@ -15,22 +15,23 @@ test.db1:
 # db2 用动态数据源演示
 test.db2:
   type: "com.zaxxer.hikari.HikariDataSource"
+  default: "db_rock1"
   strict: true
-  default:
+  db_rock0:
     schema: rock
-    jdbcUrl: jdbc:mysql://localhost:3306/rock?useUnicode=true&characterEncoding=utf8&autoReconnect=true&rewriteBatchedStatements=true
+    jdbcUrl: jdbc:mysql://localhost:3306/rock?useUnicode=true&characterEncoding=utf8&autoReconnect=true&rewriteBatchedStatements=true&useSSL=false
     driverClassName: com.mysql.jdbc.Driver
     username: root
     password: 123456
   db_rock1:
     schema: rock
-    jdbcUrl: jdbc:mysql://localhost:3306/rock?useUnicode=true&characterEncoding=utf8&autoReconnect=true&rewriteBatchedStatements=true
+    jdbcUrl: jdbc:mysql://localhost:3306/rock?useUnicode=true&characterEncoding=utf8&autoReconnect=true&rewriteBatchedStatements=true&useSSL=false
     driverClassName: com.mysql.jdbc.Driver
     username: root
     password: 123456
   db_rock2:
     schema: rock
-    jdbcUrl: jdbc:mysql://localhost:3306/rock?useUnicode=true&characterEncoding=utf8&autoReconnect=true&rewriteBatchedStatements=true
+    jdbcUrl: jdbc:mysql://localhost:3306/rock?useUnicode=true&characterEncoding=utf8&autoReconnect=true&rewriteBatchedStatements=true&useSSL=false
     driverClassName: com.mysql.jdbc.Driver
     username: root
     password: 123456

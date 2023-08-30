@@ -14,6 +14,7 @@ public class PageTest extends HttpTester {
     @Test
     public void test() throws Exception {
         String json = path("/page/list").get();
+        System.out.println(json);
         assert ONode.loadStr(json).get("list").count() == 2;
     }
 }

@@ -8,5 +8,8 @@ solon.app:
 
 solon.cloud.nacos:
   server: 127.0.0.1:8848   #nacos服务地址
-  username: nacos             #nacos链接账号
-  password: nacos             #nacos链接密码
+
+
+solon.logging.logger:
+  "com.alibaba.nacos":
+    level: ERROR
