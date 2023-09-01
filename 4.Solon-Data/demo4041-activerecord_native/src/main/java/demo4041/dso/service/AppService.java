@@ -5,10 +5,10 @@ import org.noear.solon.data.annotation.Cache;
 import org.noear.solon.data.annotation.Tran;
 import org.noear.solon.data.tran.TranPolicy;
 import org.noear.solon.extend.activerecord.annotation.Db;
-import org.noear.solon.annotation.ProxyComponent;
+import org.noear.solon.annotation.Component;
 
 
-@ProxyComponent
+@Component
 public class AppService {
     //测试注入
     @Db

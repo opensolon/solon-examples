@@ -1,10 +1,10 @@
 package demo1001.demo2.dso;
 
-import org.noear.solon.annotation.ProxyComponent;
+import org.noear.solon.annotation.Component;
 
 /**
  * @author noear 2021/12/28 created
  */
-@ProxyComponent
+@Component
 public class UserService {
 }

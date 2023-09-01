@@ -2,11 +2,11 @@ package demo4035.dso.service;
 
 import demo4035.dso.mapper.AppxMapper;
 import org.apache.ibatis.solon.annotation.Db;
-import org.noear.solon.annotation.ProxyComponent;
+import org.noear.solon.annotation.Component;
 import org.noear.solon.data.annotation.Tran;
 import org.noear.solon.data.tran.TranPolicy;
 
-@ProxyComponent
+@Component
 public class AppService {
     @Db
     AppxMapper sqlMapper1;

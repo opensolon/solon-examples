@@ -43,11 +43,11 @@ public interface ${entityName} extends BaseMapper<${domainName}Model>{
         <entityGenerator targetPackage="demo4013_lab.dso.service" entityName="${domainName}Service">
             <![CDATA[
 import org.noear.solon.annotation.Inject;
-import org.noear.solon.annotation.ProxyComponent;
+import org.noear.solon.annotation.Component;
 
 import demo4013_lab.dso.mapper.*;
 
-@ProxyComponent
+@Component
 public class ${entityName}{
     @Inject
     ${domainName}Mapper mapper;
