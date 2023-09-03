@@ -8,7 +8,7 @@ import org.noear.solon.annotation.Component;
 import org.noear.solon.aot.RuntimeNativeMetadata;
 import org.noear.solon.aot.RuntimeNativeRegistrar;
 import org.noear.solon.aot.hint.MemberCategory;
-import org.noear.solon.core.AopContext;
+import org.noear.solon.core.AppContext;
 
 import java.lang.reflect.InvocationHandler;
 
@@ -18,7 +18,7 @@ import java.lang.reflect.InvocationHandler;
 @Component
 public class RuntimeNativeRegistrarImpl implements RuntimeNativeRegistrar {
     @Override
-    public void register(AopContext context, RuntimeNativeMetadata metadata) {
+    public void register(AppContext context, RuntimeNativeMetadata metadata) {
         metadata.registerResourceInclude("com.mysql.jdbc.LocalizedErrorMessages.properties");
 
         metadata.registerResourceInclude("btsql.properties");

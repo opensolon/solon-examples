@@ -4,7 +4,7 @@ import com.zaxxer.hikari.HikariDataSource;
 import org.noear.solon.annotation.Bean;
 import org.noear.solon.annotation.Configuration;
 import org.noear.solon.annotation.Inject;
-import org.noear.solon.core.AopContext;
+import org.noear.solon.core.AppContext;
 import org.noear.solon.data.dynamicds.DynamicDataSource;
 
 import javax.sql.DataSource;

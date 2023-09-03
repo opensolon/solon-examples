@@ -4,7 +4,7 @@ import org.noear.solon.Solon;
 import org.noear.solon.cloud.CloudManager;
 import org.noear.solon.cloud.CloudProps;
 import org.noear.solon.cloud.extend.rabbitmq.service.CloudEventServiceRabbitmqImp;
-import org.noear.solon.core.AopContext;
+import org.noear.solon.core.AppContext;
 import org.noear.solon.core.Plugin;
 
 /**
@@ -19,7 +19,7 @@ public class ProducerApp {
 
     public static class EventPlugin implements Plugin {
         @Override
-        public void start(AopContext context) {
+        public void start(AppContext context) {
             //获取配置块
             CloudProps cloudProps = new CloudProps(context, "rabbitmq_biz");
             //初始化服务

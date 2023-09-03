@@ -1,15 +1,9 @@
 package demo4021.dso.aot;
 
-import com.mysql.jdbc.Driver;
-import com.zaxxer.hikari.HikariConfig;
-import com.zaxxer.hikari.HikariDataSource;
-import demo4021.dso.mapper.AppxMapper;
-import demo4021.model.AppxModel;
 import org.noear.solon.annotation.Component;
 import org.noear.solon.aot.RuntimeNativeMetadata;
 import org.noear.solon.aot.RuntimeNativeRegistrar;
-import org.noear.solon.aot.hint.MemberCategory;
-import org.noear.solon.core.AopContext;
+import org.noear.solon.core.AppContext;
 
 /**
  * @author noear 2023/4/27 created
@@ -17,7 +11,7 @@ import org.noear.solon.core.AopContext;
 @Component
 public class RuntimeNativeRegistrarImpl implements RuntimeNativeRegistrar {
     @Override
-    public void register(AopContext context, RuntimeNativeMetadata metadata) {
+    public void register(AppContext context, RuntimeNativeMetadata metadata) {
         metadata.registerResourceInclude("com.mysql.jdbc.LocalizedErrorMessages.properties");
         metadata.registerResourceInclude("demo4021/dso/mapper/.*");
     }

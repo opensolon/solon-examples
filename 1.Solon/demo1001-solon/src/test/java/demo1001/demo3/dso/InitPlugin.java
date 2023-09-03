@@ -2,7 +2,7 @@ package demo1001.demo3.dso;
 
 import demo1001.demo3.dso.service.UserService;
 import demo1001.demo3.dso.service.impl.UserServiceImpl;
-import org.noear.solon.core.AopContext;
+import org.noear.solon.core.AppContext;
 import org.noear.solon.core.Plugin;
 
 /**
@@ -12,7 +12,7 @@ import org.noear.solon.core.Plugin;
  */
 public class InitPlugin implements Plugin {
     @Override
-    public void start(AopContext context) {
+    public void start(AppContext context) {
         //生成普通的Bean
         context.wrapAndPut(UserService.class, new UserServiceImpl());
 

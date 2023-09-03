@@ -4,7 +4,7 @@ import com.zaxxer.hikari.HikariDataSource;
 import org.noear.solon.annotation.Bean;
 import org.noear.solon.annotation.Configuration;
 import org.noear.solon.annotation.Inject;
-import org.noear.solon.core.AopContext;
+import org.noear.solon.core.AppContext;
 import org.noear.solon.core.BeanWrap;
 import org.noear.solon.data.datasource.DsUtils;
 
@@ -18,7 +18,7 @@ import java.util.Properties;
 @Configuration
 public class Demo2Config {
     @Inject
-    AopContext aopContext;
+    AppContext aopContext;
 
     @Bean
     public void dsInit(@Inject("${test.datasources}") Properties props) {

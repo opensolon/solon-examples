@@ -1,7 +1,7 @@
 package demo1011.plugin1;
 
 import org.noear.solon.Solon;
-import org.noear.solon.core.AopContext;
+import org.noear.solon.core.AppContext;
 import org.noear.solon.core.Plugin;
 import org.noear.solon.core.event.EventBus;
 import org.noear.solon.core.event.EventListener;
@@ -14,11 +14,11 @@ import org.noear.solon.web.staticfiles.repository.ClassPathStaticRepository;
  * @Date: 2022/5/15 12:38
  */
 public class Plugin1Impl implements Plugin {
-    AopContext aopContext;
+    AppContext aopContext;
     StaticRepository staticRepository;
 
     @Override
-    public void start(AopContext context) {
+    public void start(AppContext context) {
         context.cfg().loadAdd("demo1011.plugin1.yml");
 
         aopContext = context;

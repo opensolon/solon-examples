@@ -1,7 +1,7 @@
 package demo9099.dso.cloud;
 
 import org.noear.solon.cloud.CloudManager;
-import org.noear.solon.core.AopContext;
+import org.noear.solon.core.AppContext;
 import org.noear.solon.core.Plugin;
 import org.noear.wood.DbContext;
 
@@ -10,7 +10,7 @@ import org.noear.wood.DbContext;
  */
 public class XPluginImpl implements Plugin {
     @Override
-    public void start(AopContext context) throws Throwable {
+    public void start(AppContext context) throws Throwable {
         DbContext db = context.cfg().getBean("demo.db1", DbContext.class);
 
         //完成 solon cloud 规范注册

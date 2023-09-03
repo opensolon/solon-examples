@@ -9,7 +9,7 @@ import org.noear.solon.annotation.Bean;
 import org.noear.solon.annotation.Configuration;
 import org.noear.solon.annotation.Inject;
 import org.noear.solon.cloud.CloudProps;
-import org.noear.solon.core.AopContext;
+import org.noear.solon.core.AppContext;
 import zipkin2.Span;
 import zipkin2.reporter.AsyncReporter;
 import zipkin2.reporter.Reporter;
@@ -25,7 +25,7 @@ import java.net.URI;
 public class Config {
 
     @Inject
-    AopContext aopContext;
+    AppContext aopContext;
 
     @Bean
     public Tracer tracer()  {
