@@ -5,7 +5,7 @@ solon.app:
   name: helloconsumer    #发现服务使用的应用名
 
 solon.cloud.kafka:
-  server: "192.168.199.182:9092"
+  server: "localhost:9092"
 
 solon.logging.logger:
   "org.apache.kafka.*":

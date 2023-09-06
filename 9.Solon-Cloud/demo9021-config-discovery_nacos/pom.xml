@@ -15,7 +15,7 @@
     <parent>
         <groupId>org.noear</groupId>
         <artifactId>solon-parent</artifactId>
-        <version>2.5.4-M2</version>
+        <version>2.5.4</version>
         <relativePath />
     </parent>
 
@@ -32,7 +32,7 @@
 
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>nacos-solon-cloud-plugin</artifactId>
+            <artifactId>nacos2-solon-cloud-plugin</artifactId>
         </dependency>
 
         <dependency>
