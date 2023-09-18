@@ -71,7 +71,7 @@ public class TranController {
         //
         appService.addApp3();
 
-        throw new RuntimeException("不让你加，但还是成功了：（");
+        throw new RuntimeException("不让你加");
     }
 
     @Tran
