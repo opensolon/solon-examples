@@ -15,6 +15,8 @@ public class ClientDemo {
         //启动客户端
         Solon.start(ClientDemo.class, args, app->{
 
+            app.enableSocketMvc(true);
+
             //使用压缩协议；启用压缩协议（默认超过1k才进行压缩）::要与服务端配套启用
             //SocketD.setProtocol(new MessageProtocolCompress());
             //使用压缩后再加密协议；

@@ -10,6 +10,7 @@ public class DemoRpc {
         Solon.start(DemoRpc.class, args, app -> {
             app.enableHttp(false);
             app.enableSocketD(true);
+            app.enableSocketMvc(true);
         });
     }
 }

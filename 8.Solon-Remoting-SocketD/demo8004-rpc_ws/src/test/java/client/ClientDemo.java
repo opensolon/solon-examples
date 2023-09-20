@@ -11,7 +11,9 @@ public class ClientDemo {
 
         //启动客户端
         Solon.start(ClientDemo.class, args,
-                app -> app.enableHttp(false).enableWebSocketD(true));
+                app -> app.enableHttp(false)
+                        .enableWebSocketD(true)
+                        .enableWebSocketMvc(true));
 
         //[客户端] 调用 [服务端] 的 rpc
         //

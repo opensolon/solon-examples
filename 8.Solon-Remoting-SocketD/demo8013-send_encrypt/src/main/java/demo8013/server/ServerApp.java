@@ -10,6 +10,7 @@ public class ServerApp {
         //启动Solon容器（SocketD bean&plugin 由solon容器管理）
         Solon.start(ServerApp.class, args, app -> {
             app.enableSocketD(true);
+            app.enableSocketMvc(true);
 
             //设置加强协议，使用加密协议（服务端也要一同设置）
             SocketD.setProtocol(new MessageProtocolSecret() {

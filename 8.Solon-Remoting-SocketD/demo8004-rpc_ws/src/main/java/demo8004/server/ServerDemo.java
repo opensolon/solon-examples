@@ -5,6 +5,8 @@ import org.noear.solon.Solon;
 public class ServerDemo {
     public static void main(String[] args) {
         Solon.start(ServerDemo.class, args,
-                app -> app.enableWebSocket(true).enableWebSocketD(true));
+                app -> app.enableWebSocket(true)
+                        .enableWebSocketD(true)
+                        .enableWebSocketMvc(true));
     }
 }
