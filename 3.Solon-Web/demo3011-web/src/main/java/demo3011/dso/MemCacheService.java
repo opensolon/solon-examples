@@ -7,22 +7,24 @@ import java.util.Properties;
 
 public class MemCacheService implements CacheService {
     MemCache cache;
-    public MemCacheService(Properties prop){
+
+    public MemCacheService(Properties prop) {
         cache = new MemCache(prop);
     }
 
     @Override
     public void store(String key, Object obj, int seconds) {
-        cache.store(key,obj,seconds);
+        cache.store(key, obj, seconds);
     }
 
-    @Override
-    public Object get(String key) {
-        return cache.get(key);
-    }
 
     @Override
     public void remove(String key) {
         cache.remove(key);
+    }
+
+    @Override
+    public <T> T get(String key, Class<T> clz) {
+        return cache.get(key, clz);
     }
 }

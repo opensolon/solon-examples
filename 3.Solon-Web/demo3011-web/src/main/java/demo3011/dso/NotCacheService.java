@@ -10,12 +10,12 @@ public class NotCacheService implements CacheService {
     }
 
     @Override
-    public Object get(String key) {
-        return null;
+    public void remove(String key) {
+
     }
 
     @Override
-    public void remove(String key) {
-
+    public <T> T get(String key, Class<T> clz) {
+        return null;
     }
 }
