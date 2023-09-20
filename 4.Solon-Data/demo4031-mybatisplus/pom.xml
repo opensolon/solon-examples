@@ -15,7 +15,7 @@
     <parent>
         <groupId>org.noear</groupId>
         <artifactId>solon-parent</artifactId>
-        <version>2.5.5</version>
+        <version>2.5.6-SNAPSHOT</version>
         <relativePath />
     </parent>
 
@@ -77,25 +77,8 @@
             </plugin>
 
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-
-                <configuration>
-                    <compilerArgument>-parameters</compilerArgument>
-                    <source>11</source>
-                    <target>11</target>
-                    <encoding>UTF-8</encoding>
-                </configuration>
-            </plugin>
-
-            <plugin>
                 <groupId>org.noear</groupId>
                 <artifactId>solon-maven-plugin</artifactId>
-                <version>${solon.version}</version>
-                <configuration>
-                    <!-- 如果只有一个 main 函数，则不用配置 -->
-                    <mainClass>demo4031.DemoApp</mainClass>
-                </configuration>
             </plugin>
         </plugins>
     </build>
