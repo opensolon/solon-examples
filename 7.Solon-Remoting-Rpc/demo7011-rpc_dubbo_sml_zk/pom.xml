@@ -20,7 +20,7 @@
     </parent>
 
     <properties>
-        <dubbo2.ver>2.7.5</dubbo2.ver>
+        <java.version>11</java.version>
     </properties>
 
     <dependencies>

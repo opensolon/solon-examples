@@ -15,6 +15,10 @@
         <version>2.5.6-M1</version>
     </parent>
 
+    <properties>
+        <java.version>11</java.version>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.noear</groupId>

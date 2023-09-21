@@ -19,6 +19,10 @@
         <relativePath />
     </parent>
 
+    <properties>
+        <java.version>11</java.version>
+    </properties>
+
     <!--
      多模板引擎共存时，模板文件后缀默认对应关系：
      beetl:       .htm
@@ -87,23 +91,8 @@
 
         <plugins>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <compilerArgument>-parameters</compilerArgument>
-                    <source>11</source>
-                    <target>11</target>
-                    <encoding>UTF-8</encoding>
-                </configuration>
-            </plugin>
-
-            <plugin>
                 <groupId>org.noear</groupId>
                 <artifactId>solon-maven-plugin</artifactId>
-                <configuration>
-                    <!-- 如果只有一个 main 函数，则不用配置 -->
-                    <mainClass>demo3011.WebApp</mainClass>
-                </configuration>
             </plugin>
         </plugins>
 
