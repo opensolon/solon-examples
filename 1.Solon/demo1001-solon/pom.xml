@@ -50,10 +50,12 @@
         </dependency>
     </dependencies>
 
-    <plugins>
-        <plugin>
-            <groupId>org.noear</groupId>
-            <artifactId>solon-maven-plugin</artifactId>
-        </plugin>
-    </plugins>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.noear</groupId>
+                <artifactId>solon-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 </project>
