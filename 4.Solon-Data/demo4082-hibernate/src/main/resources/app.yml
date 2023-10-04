@@ -1,0 +1,11 @@
+server:
+  port: 6969
+
+datasource.db1:
+  driverClassName: org.h2.Driver
+  username: sa
+  password:
+  jdbcUrl: jdbc:h2:mem:activiti;DB_CLOSE_DELAY=1000
+
+hibernate.db1:
+  scanPackages: "demo4082.model"
