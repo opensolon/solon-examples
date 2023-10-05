@@ -40,6 +40,7 @@
         <module>demo4072-dbvisitor</module>
         <module>demo4073-hasor_dataway</module>
         <module>demo4081-eclipselink</module>
+        <module>demo4082-hibernate</module>
         <module>demo4101-redisson</module>
     </modules>
 </project>
