@@ -3,7 +3,7 @@ package features;
 import demo4013.DemoApp;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.noear.solon.test.annotation.TestRollback;
+import org.noear.solon.test.annotation.Rollback;
 import org.noear.solon.test.HttpTester;
 import org.noear.solon.test.SolonJUnit4ClassRunner;
 import org.noear.solon.test.SolonTest;
@@ -22,14 +22,15 @@ public class RollbackTest extends HttpTester {
         clear(db);
     }
 
-    @TestRollback
+    @Rollback
     @Test
     public void test2() throws Exception {
         db.table("test").set("v1", "1111").insert();
         db.table("test").set("v1", "1111").insert();
         db.table("test").set("v1", "1111").insert();
 
-        assert db.table("test").selectCount() == 3;
+        long size = db.table("test").selectCount();
+        assert size == 3;
     }
 
     @Test

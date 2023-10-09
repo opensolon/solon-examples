@@ -4,7 +4,10 @@ import demo4013.dso.mapper.SqlMapper;
 import org.noear.solon.annotation.Component;
 import org.noear.solon.data.annotation.Cache;
 import org.noear.solon.data.annotation.Tran;
+import org.noear.solon.data.tran.TranListener;
+import org.noear.solon.data.tran.TranManager;
 import org.noear.solon.data.tran.TranPolicy;
+import org.noear.solon.data.tran.TranUtils;
 import org.noear.wood.annotation.Db;
 
 @Component
@@ -33,6 +36,21 @@ public class AppServiceImpl implements AppService {
     @Override
     public void addApp2_2() {
         sqlMapper1.appx_add();
+
+        if(TranUtils.inTrans()) {
+            TranUtils.listen(new TranListener() {
+                @Override
+                public void beforeCommit(boolean readOnly) {
+                    System.err.println("---beforeCommit: " + readOnly);
+                }
+
+                @Override
+                public void afterCompletion(int status) {
+                    System.err.println("---afterCompletion: " + status);
+                }
+            });
+        }
+
         throw new RuntimeException("不让加");
     }
 
