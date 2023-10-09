@@ -7,6 +7,6 @@ import org.noear.solon.Solon;
  */
 public class ApiApp {
     public static void main(String[] args) {
-        Solon.start(ApiApp.class, args).onError(e -> e.printStackTrace());
+        Solon.start(ApiApp.class, args);
     }
 }

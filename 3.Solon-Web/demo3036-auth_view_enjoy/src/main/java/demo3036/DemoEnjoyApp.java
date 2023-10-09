@@ -7,7 +7,6 @@ import org.noear.solon.Solon;
  */
 public class DemoEnjoyApp {
     public static void main(String[] args) {
-        Solon.start(DemoEnjoyApp.class, args)
-                .onError(e->e.printStackTrace());
+        Solon.start(DemoEnjoyApp.class, args);
     }
 }

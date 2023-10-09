@@ -7,7 +7,6 @@ import org.noear.solon.Solon;
  */
 public class DemoFreemarkerApp {
     public static void main(String[] args) {
-        Solon.start(DemoFreemarkerApp.class, args)
-                .onError(e->e.printStackTrace());
+        Solon.start(DemoFreemarkerApp.class, args);
     }
 }
