@@ -8,28 +8,15 @@ import org.noear.solon.SolonBuilder;
  */
 public class App {
     public static void main(String[] args) {
-        Solon.start(App.class, args, app -> {
-            //手动禁用异常打印
-            app.enableErrorAutoprint(false);
-        });
+        Solon.start(App.class, args);
     }
 
     public static void main2(String[] args) {
-        Solon.start(App.class, args, app -> {
-            app.onError(e -> {
-                //订阅异常，会自动禁用异常打印
-                e.printStackTrace();
-            });
-        });
+        Solon.start(App.class, args);
     }
 
     public static void main3(String[] args) {
         //在 start 之前进行订阅
-        new SolonBuilder()
-                .onError(e -> {
-                    //订阅异常，会自动禁用异常打印
-                    e.printStackTrace();
-                })
-                .start(App.class, args);
+        new SolonBuilder().start(App.class, args);
     }
 }

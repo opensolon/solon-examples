@@ -7,7 +7,7 @@ import org.noear.solon.Solon;
  */
 public class WebApp {
     public static void main(String[] args) {
-        Solon.start(WebApp.class, args).onError(e->e.printStackTrace());
+        Solon.start(WebApp.class, args);
 
         /**
          * 此Demo只能看，不能运行；其中，grit-solon-plugin 需要有服务端;
