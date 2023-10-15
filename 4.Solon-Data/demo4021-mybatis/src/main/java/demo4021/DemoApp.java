@@ -1,10 +1,6 @@
 package demo4021;
 
-import demo4021.dso.SqlSessionFactoryBuilderImpl;
-import org.apache.ibatis.session.Configuration;
-import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.noear.solon.Solon;
-import org.noear.solon.SolonBuilder;
 import org.noear.solon.annotation.SolonMain;
 
 /**

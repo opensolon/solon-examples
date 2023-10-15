@@ -1,8 +1,6 @@
 package demo4051;
 
-import org.beetl.sql.core.SQLManagerBuilder;
 import org.noear.solon.Solon;
-import org.noear.solon.SolonBuilder;
 
 /**
  *
