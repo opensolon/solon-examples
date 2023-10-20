@@ -32,14 +32,15 @@ datasource.db1:
 jpa.db1:
   mappings:
     - demo4082.model.*
-  hibernate:
-    hbm2ddl:
-      auto: update
-    show_sql: true
-    format_sql: true
-    dialect: org.hibernate.dialect.MySQL8Dialect
-    connection:
-      isolaction: 4 # 事务隔离级别 4 可重复度
+  properties:
+    hibernate:
+      hbm2ddl:
+        auto: update
+      show_sql: true
+      format_sql: true
+      dialect: org.hibernate.dialect.MySQL8Dialect
+      connection:
+        isolaction: 4 # 事务隔离级别 4 可重复度
 
 
 #默认hibernate配置
