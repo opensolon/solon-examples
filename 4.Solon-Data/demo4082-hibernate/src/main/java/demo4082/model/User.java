@@ -10,8 +10,8 @@ import java.io.Serializable;
 /**
  * 用户表
  */
-@Entity(name = "USER")
-@Table(name="USER")
+@Entity(name = "user")
+@Table(name="user")
 public class User implements Serializable {
     @Id
     @Column(name = "USER_NAME")
