@@ -118,7 +118,7 @@ public class JpaTest {
     @Test
     public void manageTest() {
         User user = new User();
-        user.setUsername("test");
+        user.setUsername("test" + System.currentTimeMillis());
         user.setGender(1);
         factory.createEntityManager().persist(user);
 //        int i = 1/0;
