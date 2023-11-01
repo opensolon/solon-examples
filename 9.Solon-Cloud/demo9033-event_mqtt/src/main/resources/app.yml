@@ -3,4 +3,7 @@ solon.app:
   name: helloproducer    #发现服务使用的应用名
 
 solon.cloud.mqtt:
-  server: "tcp://localhost:41883"   #mqtt服务地址
+  server: "tcp://www.aipix.cn:1883"
+  username: angis
+  password: 123456
+  client-id: angiscn

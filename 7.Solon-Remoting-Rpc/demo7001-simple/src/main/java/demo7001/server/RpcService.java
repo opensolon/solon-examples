@@ -5,9 +5,10 @@ import org.noear.solon.annotation.Mapping;
 import org.noear.solon.annotation.Remoting;
 import demo7001.protocol.UserModel;
 import demo7001.protocol.UserService;
+import org.noear.solon.core.handle.MethodType;
 
 //开启bean的远程服务
-@Mapping("/user/")
+@Mapping(path = "/user/",method = MethodType.SOCKET)
 @Remoting
 public class RpcService implements UserService {
     public static void main(String[] args) {
