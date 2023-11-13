@@ -1,0 +1,4 @@
+
+solon.logging.logger:
+  "org.java_websocket":
+    level: DEBUG

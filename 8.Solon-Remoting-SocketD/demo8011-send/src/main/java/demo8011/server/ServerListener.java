@@ -1,14 +1,16 @@
 package demo8011.server;
 
-import org.noear.solon.annotation.ServerEndpoint;
-import org.noear.solon.core.message.Listener;
-import org.noear.solon.core.message.Message;
-import org.noear.solon.core.message.MessageFlag;
-import org.noear.solon.core.message.Session;
+
+import org.noear.socketd.transport.core.Listener;
+import org.noear.socketd.transport.core.Message;
+import org.noear.socketd.transport.core.Session;
+import org.noear.socketd.transport.core.listener.SimpleListener;
+import org.noear.solon.net.annotation.ServerEndpoint;
+
 
 //定义服务端监听
 @ServerEndpoint
-public class ServerListener implements Listener {
+public class ServerListener extends SimpleListener {
     @Override
     public void onOpen(Session session) {
         System.out.println("有客户端链上来喽...");
@@ -17,10 +19,6 @@ public class ServerListener implements Listener {
     @Override
     public void onMessage(Session session, Message message) {
         //收到消息，做业务处理
-        if(message.flag() == MessageFlag.heartbeat){
-            System.out.println("服务端：我收到心跳");
-        }else {
-            System.out.println("服务端：我收到：" + message.bodyAsString());
-        }
+        System.out.println("服务端：我收到：" + message.dataAsString());
     }
 }

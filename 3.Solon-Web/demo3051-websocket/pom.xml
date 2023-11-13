@@ -15,7 +15,7 @@
     <parent>
         <groupId>org.noear</groupId>
         <artifactId>solon-parent</artifactId>
-        <version>2.5.12</version>
+        <version>2.6.0</version>
         <relativePath />
     </parent>
 
@@ -26,7 +26,7 @@
     <dependencies>
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>solon-lib</artifactId>
+            <artifactId>solon-api</artifactId>
         </dependency>
 
         <!-- 添加 undertow 插件；同时支持 http 与 websocket 服务（或者换成 jetty 相关的插件） -->
@@ -38,11 +38,8 @@
         <!-- for client -->
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>nami</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.noear</groupId>
-            <artifactId>solon.socketd.client.websocket</artifactId>
+            <artifactId>java-websocket-ns</artifactId>
+            <version>${java-websocket-ns.version}</version>
         </dependency>
 
         <dependency>

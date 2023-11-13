@@ -23,10 +23,8 @@
         <module>demo8004-rpc_ws</module>
         <module>demo8011-send</module>
         <module>demo8012-send_auth</module>
-        <module>demo8013-send_encrypt</module>
         <module>demo8021-session</module>
         <module>demo8031-subscribe</module>
-        <module>demo8032-subscribe_auth</module>
         <module>demo8041-rpc</module>
         <module>demo8042-rpc_auth</module>
         <module>demo8051-duplex_rpc</module>

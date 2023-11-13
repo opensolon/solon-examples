@@ -1,19 +1,20 @@
 package demo.controller;
 
-import org.noear.solon.annotation.ServerEndpoint;
-import org.noear.solon.core.message.Listener;
-import org.noear.solon.core.message.Message;
-import org.noear.solon.core.message.Session;
+
+import org.noear.solon.net.annotation.ServerEndpoint;
+import org.noear.solon.net.websocket.WebSocket;
+import org.noear.solon.net.websocket.listener.SimpleWebSocketListener;
 
 import java.io.IOException;
 
 /**
  * @author noear 2021/4/22 created
+ * @since 2.6
  */
-@ServerEndpoint(value = "/ws/demo/{id}")
-public class WebSocket implements Listener {
+@ServerEndpoint("/ws/demo/{id}")
+public class WebSocketImpl extends SimpleWebSocketListener {
     @Override
-    public void onOpen(Session session) {
+    public void onOpen(WebSocket session) {
         //path var
         String id = session.param("id");
         //query var
@@ -23,19 +24,19 @@ public class WebSocket implements Listener {
     }
 
     @Override
-    public void onMessage(Session session, Message message) throws IOException {
+    public void onMessage(WebSocket session, String message) throws IOException {
         //message.setHandled(true); //设为true，则不进入mvc路由
 
-        session.send("你发了：" + message.bodyAsString());
+        session.send("你发了：" + message);
     }
 
     @Override
-    public void onClose(Session session) {
+    public void onClose(WebSocket session) {
         System.out.println("onClose");
     }
 
     @Override
-    public void onError(Session session, Throwable error) {
+    public void onError(WebSocket session, Throwable error) {
         System.out.println("onError");
         if (error != null) {
             error.printStackTrace();

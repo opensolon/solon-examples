@@ -1,11 +1,14 @@
 package client;
 
 import demo8001.server.ServerApp;
+import org.noear.socketd.SocketD;
+import org.noear.socketd.transport.core.Message;
+import org.noear.socketd.transport.core.Session;
+import org.noear.socketd.transport.core.entity.StringEntity;
+import org.noear.socketd.transport.core.listener.SimpleListener;
 import org.noear.solon.Solon;
-import org.noear.solon.core.message.Listener;
-import org.noear.solon.core.message.Message;
-import org.noear.solon.core.message.Session;
-import org.noear.solon.socketd.SocketD;
+
+import java.io.IOException;
 
 public class ClientApp {
     public static void main(String[] args) throws Throwable {
@@ -21,7 +24,6 @@ public class ClientApp {
         Thread.sleep(1000 * 3);
 
         //启动客户端
-        Solon.start(ClientApp.class, args);
 
         //
         //手动模式：适用于服务端不固定的
@@ -30,27 +32,26 @@ public class ClientApp {
         //wss://
         //tcp://
         //
-        Session session = SocketD.createSession("tcp://localhost:28080");
-        session.listener(new Listener() {
-            @Override
-            public void onOpen(Session session) {
-                System.out.println("客户端1：我要打开了...");
-            }
+        Session session = SocketD.createClient("tcp://localhost:28080")
+                .listen(new SimpleListener(){
+                    @Override
+                    public void onOpen(Session session) {
+                        System.out.println("客户端1：我要打开了...");
+                    }
 
-            @Override
-            public void onMessage(Session session, Message message) {
-                //
-                // message.body 要自己解码一下；如果是字符串，可以：message.toString();
-                //
-                System.out.println("客户端1：我收到了：" + message);
-            }
-        });
+                    @Override
+                    public void onMessage(Session session, Message message) throws IOException {
+                        //
+                        // message.body 要自己解码一下；如果是字符串，可以：message.toString();
+                        //
+                        System.out.println("客户端1：我收到了：" + message);
 
-        //可以先发个握手包
-        //session.sendHandshake("Token=12&Sn=s6");
+                        session.send("demo" ,new StringEntity("test"));
+                    }
+                })
+                .open();
 
-        //启用自动心跳包
-        session.sendHeartbeatAuto(30);
+        session.send("/demo", new StringEntity("test"));
 
         //示例：有session后，可以：
         //

@@ -1,31 +1,20 @@
 package client.demo1;
 
-import org.noear.solon.Solon;
-import org.noear.solon.core.message.Listener;
-import org.noear.solon.core.message.Message;
-import org.noear.solon.core.message.Session;
-import org.noear.solon.socketd.SocketD;
-
-import java.io.IOException;
+import org.noear.java_websocket.client.SimpleWebSocketClient;
 
 /**
  * @author noear 2022/4/2 created
  */
 public class ClientApp {
-    public static void main(String[] args) {
-        Solon.start(ClientApp.class, args, app -> {
-            app.enableHttp(false);
-        });
+    public static void main(String[] args) throws Exception{
+        SimpleWebSocketClient client = new SimpleWebSocketClient("ws://localhost:8080/ws/demo/12") {
+            @Override
+            public void onMessage(String message) {
+                System.out.println(message);
+            }
+        };
 
-        Session session = SocketD.createSession("ws://localhost:8080/ws/demo/12");
-        session.listener(new ListenerImpl());
-        session.send("test");
-    }
-
-    public static class ListenerImpl implements Listener {
-        @Override
-        public void onMessage(Session session, Message message) throws IOException {
-            System.out.println(message);
-        }
+        client.connectBlocking();
+        client.send("test");
     }
 }

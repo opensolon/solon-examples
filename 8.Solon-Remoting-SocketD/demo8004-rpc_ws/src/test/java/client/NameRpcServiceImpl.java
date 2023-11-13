@@ -8,7 +8,7 @@ import org.noear.solon.core.handle.MethodType;
 //
 //注意method的区别（也可以同时加 SOCKET 和 WEBSOCKET）
 //
-@Mapping(value = "/demoe/rpc/name", method = {MethodType.WEBSOCKET})
+@Mapping(value = "/demoe/rpc/name", method = {MethodType.SOCKET})
 @Remoting
 public class NameRpcServiceImpl implements NameRpcService {
     @Override

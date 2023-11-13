@@ -15,29 +15,22 @@
     <parent>
         <groupId>org.noear</groupId>
         <artifactId>solon-parent</artifactId>
-        <version>2.5.12</version>
+        <version>2.6.0</version>
         <relativePath />
     </parent>
 
 
     <dependencies>
-        <!-- jdksocket ok -->
-<!--        <dependency>-->
-<!--            <groupId>org.noear</groupId>-->
-<!--            <artifactId>solon.boot.socketd.jdksocket</artifactId>-->
-<!--        </dependency>-->
-
-        <!-- smartsocket ok -->
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>solon.boot.socketd.smartsocket</artifactId>
+            <artifactId>solon.boot.socketd</artifactId>
         </dependency>
 
-        <!-- netty ok -->
-<!--        <dependency>-->
-<!--            <groupId>org.noear</groupId>-->
-<!--            <artifactId>solon.boot.socketd.netty</artifactId>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>org.noear</groupId>
+            <artifactId>socketd-transport-smartsocket</artifactId>
+            <version>${socketd.version}</version>
+        </dependency>
 
         <dependency>
             <groupId>org.noear</groupId>
@@ -52,6 +45,11 @@
         <dependency>
             <groupId>org.noear</groupId>
             <artifactId>nami.coder.snack3</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.noear</groupId>
+            <artifactId>solon.logging.simple</artifactId>
         </dependency>
 
         <dependency>

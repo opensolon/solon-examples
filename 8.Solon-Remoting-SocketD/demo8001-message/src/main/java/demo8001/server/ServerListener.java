@@ -1,36 +1,57 @@
 package demo8001.server;
 
-import org.noear.solon.annotation.ServerEndpoint;
-import org.noear.solon.core.message.Listener;
-import org.noear.solon.core.message.Message;
-import org.noear.solon.core.message.Session;
+
+import org.noear.socketd.transport.core.Message;
+import org.noear.socketd.transport.core.Session;
+import org.noear.socketd.transport.core.entity.StringEntity;
+import org.noear.socketd.transport.core.listener.SimpleListener;
+import org.noear.socketd.utils.RunUtils;
+import org.noear.solon.net.annotation.ServerEndpoint;
+
+import java.io.IOException;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
 
 @ServerEndpoint
-public class ServerListener implements Listener {
+public class ServerListener extends SimpleListener {
+    public static Map<String,Session> sessionMap = new HashMap<>();
+
+    public static Collection<Session> getOpenSessions() {
+        return sessionMap.values();
+    }
+
     @Override
     public void onOpen(Session session) {
+        sessionMap.put(session.sessionId(), session);
+
         System.out.println("服务端：有人来了");
 
-        session.send("你好啊...");
+        RunUtils.asyncAndTry(()->{
+            session.send("demo", new StringEntity("你好啊..."));
+        });
 
         ServerApp.status.complete(true);
     }
 
     @Override
-    public void onMessage(Session session, Message message) {
+    public void onMessage(Session session, Message message) throws IOException {
         try {
             //打印太快，控制台会卡
             Thread.sleep(100);
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
-        if(message.flag() == -2){
-            System.out.println("服务端：我收到心跳");
-        }else {
-            System.out.println("服务端：我收到：" + message);
+        System.out.println("服务端：我收到：" + message);
 
-            session.send(Message.wrapResponse(message,"我收到了"));
+        if (message.isSubscribe() || message.isRequest()) {
+            session.replyEnd(message, new StringEntity("我收到了"));
         }
+    }
+
+    @Override
+    public void onClose(Session session) {
+        sessionMap.remove(session.sessionId());
     }
 }

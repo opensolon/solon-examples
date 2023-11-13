@@ -1,27 +1,27 @@
 package demo8021.server;
 
-import org.noear.solon.annotation.ServerEndpoint;
-import org.noear.solon.core.message.Listener;
-import org.noear.solon.core.message.Message;
-import org.noear.solon.core.message.MessageFlag;
-import org.noear.solon.core.message.Session;
+
+import org.noear.socketd.transport.core.Message;
+import org.noear.socketd.transport.core.Session;
+import org.noear.socketd.transport.core.entity.StringEntity;
+import org.noear.socketd.transport.core.listener.SimpleListener;
+import org.noear.solon.net.annotation.ServerEndpoint;
+
+import java.io.IOException;
 
 //定义服务端监听
 @ServerEndpoint
-public class ServerListener implements Listener {
+public class ServerListener extends SimpleListener {
     @Override
     public void onOpen(Session session) {
         System.out.println("有客户端链上来喽...");
     }
 
     @Override
-    public void onMessage(Session session, Message message) {
-        //收到消息，做业务处理
-        if(message.flag() == MessageFlag.heartbeat){
-            System.out.println("服务端：我收到心跳");
-        }else {
-            //发送出一个Response包
-            session.send(Message.wrapResponse(message, "你是谁？"));
+    public void onMessage(Session session, Message message) throws IOException {
+        //发送出一个Response包
+        if(message.isRequest() || message.isSubscribe()){
+            session.replyEnd(message, new StringEntity("你是谁?"));
         }
     }
 }

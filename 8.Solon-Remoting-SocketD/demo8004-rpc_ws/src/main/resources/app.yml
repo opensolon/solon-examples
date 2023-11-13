@@ -1,0 +1,5 @@
+server.websocket.port: 8080
+
+solon.logging.logger:
+  "org.java_websocket":
+    level: DEBUG

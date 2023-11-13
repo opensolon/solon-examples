@@ -1,8 +1,8 @@
 package client;
 
 import demo8042.protocol.HelloService;
+import org.noear.nami.channel.socketd.SocketdProxy;
 import org.noear.solon.Solon;
-import org.noear.solon.socketd.SocketD;
 
 //启动客户端
 public class ClientApp {
@@ -12,11 +12,9 @@ public class ClientApp {
 
         //[客户端] 调用 [服务端] 的 rpc
         //
-        HelloService rpc = SocketD.create("tcp://localhost:28080", HelloService.class);
+        HelloService rpc = SocketdProxy.create("tcp://localhost:28080?sn=1&token=1", HelloService.class);
 
-        if (rpc.auth("1", "1")) {
-            System.out.println("RPC result: " + rpc.hello("noear"));
-        }
+        System.out.println("RPC result: " + rpc.hello("noear"));
 
     }
 }
