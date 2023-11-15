@@ -21,6 +21,12 @@ public class ServerListener extends SimpleListener {
         return sessionMap.values();
     }
 
+    public static void broadcast(String text) throws IOException{
+        for(Session s1 : getOpenSessions()){
+            s1.send("/demo", new StringEntity(text));
+        }
+    }
+
     @Override
     public void onOpen(Session session) {
         sessionMap.put(session.sessionId(), session);
