@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sagacity
-        xmlns="https://www.sagframe.com/schema/sqltoy-translate"
-        xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="https://www.sagframe.com/schema/sqltoy-translate https://www.sagframe.com/schema/sqltoy/sqltoy-translate.xsd">
+        xmlns="http://www.sagframe.com/schema/sqltoy-translate"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sagframe.com/schema/sqltoy-translate http://www.sagframe.com/schema/sqltoy/sqltoy-translate.xsd">
     <!-- 缓存有默认失效时间，默认为1小时,因此只有较为频繁的缓存才需要及时检测 -->
     <cache-translates>
         <sql-translate cache="GENDER">
