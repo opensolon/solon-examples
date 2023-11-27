@@ -9,7 +9,7 @@ import org.noear.socketd.transport.core.entity.StringEntity;
 public class SessionUtil {
     public static void broadcast(Message message) throws Exception {
         for (Session session : ServerListener.getOpenSessions()) {
-            session.send(message.route(), message.entity());
+            session.send(message.event(), message.entity());
         }
     }
 
