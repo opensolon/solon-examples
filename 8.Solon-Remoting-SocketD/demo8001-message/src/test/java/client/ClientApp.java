@@ -2,6 +2,7 @@ package client;
 
 import demo8001.server.ServerApp;
 import org.noear.socketd.SocketD;
+import org.noear.socketd.transport.client.ClientSession;
 import org.noear.socketd.transport.core.Message;
 import org.noear.socketd.transport.core.Session;
 import org.noear.socketd.transport.core.entity.StringEntity;
@@ -32,7 +33,7 @@ public class ClientApp {
         //wss://
         //tcp://
         //
-        Session session = SocketD.createClient("tcp://localhost:28080")
+        ClientSession session = SocketD.createClient("tcp://localhost:28080")
                 .listen(new SimpleListener(){
                     @Override
                     public void onOpen(Session session) {

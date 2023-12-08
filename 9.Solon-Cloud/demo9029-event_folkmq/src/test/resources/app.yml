@@ -1,0 +1,13 @@
+server.port: 8081
+
+solon.app:
+  group: demo       #配置服务使用的默认组
+  name: helloconsumer    #发现服务使用的应用名
+
+solon.cloud.folkmq.event:
+  server: "folkmq://127.0.0.1:18602"   #folkmq 服务地址
+
+solon.logging.logger:
+  root:
+    level: "INFO"
+

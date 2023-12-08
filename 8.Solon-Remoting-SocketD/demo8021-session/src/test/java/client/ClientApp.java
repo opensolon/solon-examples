@@ -1,6 +1,7 @@
 package client;
 
 import org.noear.socketd.SocketD;
+import org.noear.socketd.transport.client.ClientSession;
 import org.noear.socketd.transport.core.Entity;
 import org.noear.socketd.transport.core.Message;
 import org.noear.socketd.transport.core.Session;
@@ -17,7 +18,7 @@ public class ClientApp {
         Solon.start(ClientApp.class, args);
 
         //创建会话（如果后端是WebSocekt，协议头为：ws）
-        Session session = SocketD.createClient("tcp://localhost:28080")
+        ClientSession session = SocketD.createClient("tcp://localhost:28080")
                 .listen(new SimpleListener(){
                     @Override
                     public void onOpen(Session session) {
