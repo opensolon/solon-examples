@@ -1,6 +1,6 @@
 package demo8004.server;
 
-import org.noear.socketd.transport.core.ConfigImpl;
+import org.noear.socketd.transport.core.internal.ConfigImpl;
 import org.noear.solon.net.annotation.ServerEndpoint;
 import org.noear.solon.net.socketd.handle.ToHandlerListener;
 import org.noear.solon.net.websocket.socketd.ToSocketdWebSocketListener;
