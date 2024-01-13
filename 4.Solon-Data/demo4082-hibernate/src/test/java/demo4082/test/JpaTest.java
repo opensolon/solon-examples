@@ -148,6 +148,5 @@ public class JpaTest {
         user.setGender(1);
         EntityManager session = sessionFactory.getCurrentSession();
         session.persist(user);
-        int i = 1/0;
     }
 }

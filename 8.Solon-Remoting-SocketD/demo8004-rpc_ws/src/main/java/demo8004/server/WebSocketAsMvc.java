@@ -1,6 +1,6 @@
 package demo8004.server;
 
-import org.noear.socketd.transport.core.internal.ConfigImpl;
+import org.noear.socketd.transport.core.impl.ConfigDefault;
 import org.noear.solon.net.annotation.ServerEndpoint;
 import org.noear.solon.net.socketd.handle.ToHandlerListener;
 import org.noear.solon.net.websocket.socketd.ToSocketdWebSocketListener;
@@ -12,6 +12,6 @@ import org.noear.solon.net.websocket.socketd.ToSocketdWebSocketListener;
 public class WebSocketAsMvc extends ToSocketdWebSocketListener {
 
     public WebSocketAsMvc() {
-        super(new ConfigImpl(false), new ToHandlerListener());
+        super(new ConfigDefault(false), new ToHandlerListener());
     }
 }

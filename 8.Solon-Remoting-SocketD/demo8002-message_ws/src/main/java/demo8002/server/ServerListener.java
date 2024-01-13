@@ -3,7 +3,7 @@ package demo8002.server;
 
 import org.noear.socketd.transport.core.*;
 import org.noear.socketd.transport.core.entity.StringEntity;
-import org.noear.socketd.transport.core.internal.ConfigImpl;
+import org.noear.socketd.transport.core.impl.ConfigDefault;
 import org.noear.socketd.transport.core.listener.SimpleListener;
 import org.noear.socketd.utils.RunUtils;
 import org.noear.solon.net.annotation.ServerEndpoint;
@@ -21,7 +21,7 @@ public class ServerListener extends ToSocketdWebSocketListener {
     public static Map<String, Session> sessionMap = new HashMap<>();
 
     public ServerListener() {
-        super(new ConfigImpl(false), new SimpleListenerImpl());
+        super(new ConfigDefault(false), new SimpleListenerImpl());
     }
 
     public static Collection<Session> getOpenSessions() {
