@@ -1,0 +1,12 @@
+server.port: 8080
+
+solon.app:
+  name: demo_rpc
+  group: demo
+
+solon.logging.appender:
+  console:
+    level: INFO
+
+solon.cloud.jmdns:
+  server: localhost

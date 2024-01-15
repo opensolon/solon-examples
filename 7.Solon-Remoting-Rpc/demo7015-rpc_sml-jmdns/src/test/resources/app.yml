@@ -1,0 +1,12 @@
+server.port: 8081
+
+solon.app:
+  name: demo_client
+  group: demo
+
+solon.logging.appender:
+  console:
+    level: INFO
+
+solon.cloud.jmdns:
+  server: localhost
