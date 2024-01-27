@@ -47,15 +47,4 @@
     </dependencies>
 
 
-    <build>
-        <finalName>${project.name}</finalName>
-        <plugins>
-
-            <plugin>
-                <groupId>org.noear</groupId>
-                <artifactId>solon-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
-
 </project>

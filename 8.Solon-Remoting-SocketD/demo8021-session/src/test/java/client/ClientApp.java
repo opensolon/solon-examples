@@ -34,7 +34,7 @@ public class ClientApp {
 
 
         //发消息并等结果
-        Entity message = session.sendAndRequest("demo", new StringEntity("Helloworld server!"));
+        Entity message = session.sendAndRequest("demo", new StringEntity("Helloworld server!")).await();
         System.out.println("客户端：我收到：" + message);
     }
 }

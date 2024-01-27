@@ -83,6 +83,9 @@
             <plugin>
                 <groupId>org.noear</groupId>
                 <artifactId>solon-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>demo4031.DemoApp</mainClass>
+                </configuration>
             </plugin>
         </plugins>
     </build>
