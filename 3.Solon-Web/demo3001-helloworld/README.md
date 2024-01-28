@@ -17,7 +17,7 @@
     <dependency>
         <groupId>org.noear</groupId>
         <artifactId>solon-web</artifactId>
-        <version>2.6.6</version>
+        <version>2.6.7-SNAPSHOT</version>
     </dependency>
 </dependencies>
 ```
@@ -81,7 +81,7 @@ public class HelloController {
 
 ```
 
-#### 5.再添加个模板文件 `/src/main/resources/WEB-INF/templates/hello.ftl`
+#### 5.再添加个模板文件 `/src/main/resources/templates/hello.ftl`
 ```html
 <html>
     <body>
@@ -116,7 +116,7 @@ public class HelloController {
     <dependency>
         <groupId>org.noear</groupId>
         <artifactId>solon-web</artifactId>
-        <version>2.6.6</version>
+        <version>2.6.7-SNAPSHOT</version>
     </dependency>
 </dependencies>
 

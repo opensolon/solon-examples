@@ -7,7 +7,7 @@
 </head>
 <body>
 <div>
-    context path: ${ctx.path()}
+    page path: ${ctx.path()}
 </div>
 <div>
     properties: custom.user :${user}
