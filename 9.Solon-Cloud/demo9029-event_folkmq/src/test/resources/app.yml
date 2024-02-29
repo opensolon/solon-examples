@@ -9,5 +9,5 @@ solon.cloud.folkmq.event:
 
 solon.logging.logger:
   root:
-    level: "INFO"
+    level: "DEBUG"
 
