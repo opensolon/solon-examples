@@ -43,5 +43,6 @@
         <module>demo7015-rpc_sml-jmdns</module>
         <module>demo7021-feign</module>
         <module>demo7022-forest</module>
+        <module>demo7023-nami</module>
     </modules>
 </project>
