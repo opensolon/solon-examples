@@ -8,7 +8,7 @@ import demo7001.protocol.UserService;
 import org.noear.solon.core.handle.MethodType;
 
 //开启bean的远程服务
-@Mapping(path = "/user/",method = MethodType.SOCKET)
+@Mapping(path = "/user/")
 @Remoting
 public class RpcService implements UserService {
     public static void main(String[] args) {
