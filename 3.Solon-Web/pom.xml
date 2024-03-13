@@ -43,5 +43,6 @@
         <module>demo3072-flux</module>
 
         <module>demo3081-wsdl_java</module>
+        <module>demo3082-wsdl_solon</module>
     </modules>
 </project>
