@@ -41,5 +41,7 @@
 
         <module>demo3071-sse</module>
         <module>demo3072-flux</module>
+
+        <module>demo3081-wsdl_java</module>
     </modules>
 </project>
