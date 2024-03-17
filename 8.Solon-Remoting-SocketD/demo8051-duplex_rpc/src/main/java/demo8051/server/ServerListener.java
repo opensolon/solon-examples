@@ -6,6 +6,7 @@ import org.noear.solon.net.socketd.handle.ToHandlerListener;
 /**
  * @author noear 2023/11/13 created
  */
-@ServerEndpoint
+@ServerEndpoint("/")
 public class ServerListener extends ToHandlerListener {
+
 }

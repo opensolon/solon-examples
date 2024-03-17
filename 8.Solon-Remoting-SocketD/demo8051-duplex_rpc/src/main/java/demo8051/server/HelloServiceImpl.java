@@ -5,11 +5,12 @@ import demo8051.protocol.NameService;
 import org.noear.nami.channel.socketd.SocketdProxy;
 import org.noear.solon.annotation.Mapping;
 import org.noear.solon.annotation.Remoting;
+import org.noear.solon.annotation.Socket;
 import org.noear.solon.core.handle.Context;
-import org.noear.solon.core.handle.MethodType;
 
 //定义远程服务组件
-@Mapping(value = "/demoe/rpc", method = MethodType.SOCKET)
+@Socket
+@Mapping("/demoe/rpc")
 @Remoting
 public class HelloServiceImpl implements HelloService {
     public String hello(String name) {

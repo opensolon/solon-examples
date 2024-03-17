@@ -12,7 +12,7 @@ public class ClientApp {
 
         //[客户端] 调用 [服务端] 的 rpc
         //
-        HelloService rpc = SocketdProxy.create("tcp://localhost:28080", HelloService.class);
+        HelloService rpc = SocketdProxy.create("tcp://localhost:28080/", HelloService.class);
 
         System.out.println("RPC result: " + rpc.hello("noear"));
     }
