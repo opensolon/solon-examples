@@ -11,14 +11,15 @@ import org.noear.solon.validation.annotation.Whitelist;
  * @author noear 2022/11/22 created
  */
 @Valid
+@Mapping("api")
 @Controller
 public class Api1 {
+    @Whitelist
     @Mapping("list1")
     public boolean list1(Context ctx) {
         return CloudClient.list().inListOfIp("whitelist", ctx.realIp());
     }
 
-    @Whitelist
     @Mapping("list2")
     public String list2() {
         return "ok";
