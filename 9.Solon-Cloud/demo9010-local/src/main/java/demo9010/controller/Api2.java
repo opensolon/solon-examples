@@ -11,7 +11,7 @@ import org.noear.solon.annotation.Mapping;
 @Mapping("api2")
 @Controller
 public class Api2 {
-    @NamiClient
+    @NamiClient(localFirst = true)
     Rpc1 rpc1;
 
     @Mapping("test")
