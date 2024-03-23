@@ -3,9 +3,9 @@ package demo4061.controller;
 import demo4061.model.UserVo;
 import org.noear.solon.annotation.Controller;
 import org.noear.solon.annotation.Mapping;
-import org.noear.solon.extend.sqltoy.annotation.Db;
 import org.sagacity.sqltoy.dao.SqlToyLazyDao;
 import org.sagacity.sqltoy.model.Page;
+import org.sagacity.sqltoy.solon.annotation.Db;
 
 @Controller
 @Mapping("user")

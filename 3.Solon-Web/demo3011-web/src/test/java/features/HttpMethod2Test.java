@@ -17,7 +17,7 @@ public class HttpMethod2Test extends HttpTester {
 
     @Test
     public void test21() throws IOException {
-        assert path("/demo2/method2/post").execAsCode("GET") == 404;
+        assert path("/demo2/method2/post").execAsCode("GET") == 405;
     }
 
     @Test

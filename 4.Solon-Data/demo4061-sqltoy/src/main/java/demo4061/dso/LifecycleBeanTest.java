@@ -3,7 +3,7 @@ package demo4061.dso;
 import org.noear.solon.annotation.Component;
 import org.noear.solon.core.bean.InitializingBean;
 import org.noear.solon.core.bean.LifecycleBean;
-import org.noear.solon.extend.sqltoy.annotation.Db;
+import org.sagacity.sqltoy.solon.annotation.Db;
 import org.sagacity.sqltoy.dao.SqlToyLazyDao;
 
 /**

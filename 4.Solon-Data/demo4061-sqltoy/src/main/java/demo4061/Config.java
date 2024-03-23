@@ -6,7 +6,7 @@ import demo4061.model.User;
 import org.noear.solon.annotation.Bean;
 import org.noear.solon.annotation.Configuration;
 import org.noear.solon.annotation.Inject;
-import org.noear.solon.extend.sqltoy.annotation.Db;
+import org.sagacity.sqltoy.solon.annotation.Db;
 import org.sagacity.sqltoy.dao.SqlToyLazyDao;
 
 import javax.sql.DataSource;
