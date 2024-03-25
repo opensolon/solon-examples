@@ -27,5 +27,6 @@
         <module>demo1082-solon-admin_client</module>
         <module>demo1083-solon-admin_single</module>
         <module>demo1091-javafx</module>
+        <module>demo1092-vertx</module>
     </modules>
 </project>
