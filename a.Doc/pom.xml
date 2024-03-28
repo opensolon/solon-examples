@@ -18,5 +18,6 @@
 
     <modules>
         <module>demoA001-smartdoc</module>
+        <module>demoA002-openapi2_knife4j</module>
     </modules>
 </project>
