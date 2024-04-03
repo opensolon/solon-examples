@@ -42,5 +42,6 @@
         <module>demo4081-eclipselink</module>
         <module>demo4082-hibernate</module>
         <module>demo4101-redisson</module>
+        <module>demo4102-tkmapper</module>
     </modules>
 </project>
