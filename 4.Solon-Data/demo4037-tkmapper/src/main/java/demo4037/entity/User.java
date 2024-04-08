@@ -1,4 +1,4 @@
-package demo4012.entity;
+package demo4037.entity;
 
 import lombok.Data;
 import org.noear.snack.core.utils.DateUtil;

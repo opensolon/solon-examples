@@ -1,8 +1,7 @@
-package demo4102;
+package demo4037;
 
-import demo4012.TkMapperApplication;
-import demo4012.entity.User;
-import demo4012.mapper.UserMapper;
+import demo4037.entity.User;
+import demo4037.mapper.UserMapper;
 import org.apache.ibatis.solon.annotation.Db;
 import org.junit.Test;
 import org.junit.runner.RunWith;

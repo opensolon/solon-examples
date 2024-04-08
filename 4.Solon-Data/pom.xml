@@ -31,6 +31,7 @@
         <module>demo4031-mybatisplus</module>
         <module>demo4032-mybatisplus_generator</module>
         <module>demo4035-mybatisflex</module>
+        <module>demo4037-tkmapper</module>
         <module>demo4041-activerecord</module>
         <module>demo4041-activerecord_native</module>
         <module>demo4051-beetlsql</module>
@@ -42,6 +43,5 @@
         <module>demo4081-eclipselink</module>
         <module>demo4082-hibernate</module>
         <module>demo4101-redisson</module>
-        <module>demo4102-tkmapper</module>
     </modules>
 </project>

@@ -1,4 +1,4 @@
-package demo4012.config;
+package demo4037.config;
 
 import com.zaxxer.hikari.HikariDataSource;
 import org.noear.solon.annotation.Bean;

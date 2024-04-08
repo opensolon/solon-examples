@@ -1,6 +1,6 @@
-package demo4012.mapper;
+package demo4037.mapper;
 
-import demo4012.entity.User;
+import demo4037.entity.User;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.ResultMap;
 import org.apache.ibatis.annotations.Select;

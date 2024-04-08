@@ -1,10 +1,10 @@
-package demo4012.api;
+package demo4037.api;
 
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import demo4012.entity.User;
-import demo4012.mapper.UserMapper;
+import demo4037.entity.User;
+import demo4037.mapper.UserMapper;
 import org.apache.ibatis.solon.annotation.Db;
 import org.noear.solon.annotation.Controller;
 import org.noear.solon.annotation.Get;

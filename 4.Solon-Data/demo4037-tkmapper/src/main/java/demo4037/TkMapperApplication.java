@@ -1,4 +1,4 @@
-package demo4012;
+package demo4037;
 
 import org.noear.solon.Solon;
 import org.noear.solon.annotation.SolonMain;
