@@ -1,0 +1,38 @@
+server:
+  port: 8080
+
+# 配置数据源
+test:
+  db1:
+    jdbcUrl: jdbc:h2:mem:h2DB
+    driverClassName: org.h2.Driver
+    username: root
+    password: root
+
+mybatis:
+  db1:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    typeAliases:
+      - "tk.mybatis.mapper.test.entity.*"
+    mappers:
+      - "classpath:mapper/*.xml"
+    # tk mybatis的配置
+    tk:
+      mapper:
+        style: camelhumpandlowercase
+        safe-update: true
+        safe-delete: true
+
+solon.logging.logger:
+  "root":
+    level: INFO
+  "demo4102":
+    level: DEBUG
+
+pagehelper:
+  offsetAsPageNum: true
+  rowBoundsWithCount: true
+  pageSizeZero: true
+  reasonable: true
+  params: pageNum=pageHelperStart;pageSize=pageHelperRows;
+  supportMethodsArguments: false
