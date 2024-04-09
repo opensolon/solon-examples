@@ -10,7 +10,7 @@ import java.util.List;
 
 public interface UserMapper extends Mapper<User> {
 
-    @ResultMap("demo4012.mapper.UserMapper.BaseResultMap")
+    @ResultMap("demo4037.mapper.UserMapper.BaseResultMap")
     @Select("SELECT * FROM user WHERE is_del = 0 AND age > #{age}")
     List<User> findByGTAge(@Param("age") Integer age);
 
