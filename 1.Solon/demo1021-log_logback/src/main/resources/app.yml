@@ -7,6 +7,7 @@ solon.logging.appender:
     level: TRACE
   file:
     name: "logs/demo2"
+    rolling: "logs/${solon.app.name}_%d{yyyy-MM-dd_HH_mm}/%i.log"
     level: INFO
     maxFileSize: "10 MB"
     maxHistory: "7"
