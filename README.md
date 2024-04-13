@@ -29,6 +29,9 @@ Solon Java Framework
     <a target="_blank" href="https://www.oracle.com/java/technologies/javase/jdk21-archive-downloads.html">
 		<img src="https://img.shields.io/badge/JDK-21-green.svg" alt="jdk-21" />
 	</a>
+    <a target="_blank" href="https://www.oracle.com/java/technologies/javase/jdk22-archive-downloads.html">
+		<img src="https://img.shields.io/badge/JDK-22-green.svg" alt="jdk-22" />
+	</a>
     <br />
     <a target="_blank" href='https://gitee.com/noear/solon/stargazers'>
 		<img src='https://gitee.com/noear/solon/badge/star.svg' alt='gitee star'/>
