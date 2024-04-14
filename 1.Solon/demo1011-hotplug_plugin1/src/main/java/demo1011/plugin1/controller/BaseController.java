@@ -7,8 +7,8 @@ import org.noear.solon.view.freemarker.FreemarkerRender;
 import org.noear.solon.view.thymeleaf.ThymeleafRender;
 
 public class BaseController implements Render {
-    static final FreemarkerRender viewRenderDef = new FreemarkerRender(BaseController.class.getClassLoader());
-    static final ThymeleafRender viewRender2 = new ThymeleafRender(BaseController.class.getClassLoader());
+    static final FreemarkerRender viewRenderDef = new FreemarkerRender(BaseController.class.getClassLoader(), "/plugin1_templates/");
+    static final ThymeleafRender viewRender2 = new ThymeleafRender(BaseController.class.getClassLoader(), "/plugin1_templates/");
 
     @Override
     public void render(Object data, Context ctx) throws Throwable {
