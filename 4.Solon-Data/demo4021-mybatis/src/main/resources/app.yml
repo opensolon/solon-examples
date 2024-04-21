@@ -24,7 +24,7 @@ mybatis.db1:
     typeAliases:    #支持包名 或 类名
         - "demo4021.model"
     mappers:        #支持包名 或 类名 或 xml（.xml结尾 或 *.xml 结尾）
-        - "demo4021.dso.mapper"
+        - "classpath*:demo4021/*/mapper/*.xml"
     configuration:
         cacheEnabled: false
         mapUnderscoreToCamelCase: true
