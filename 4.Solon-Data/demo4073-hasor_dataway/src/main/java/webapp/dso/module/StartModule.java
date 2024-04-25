@@ -1,58 +1,61 @@
 package webapp.dso.module;
 
-import com.zaxxer.hikari.HikariDataSource;
-import net.hasor.core.ApiBinder;
+import net.hasor.dataql.DimUdf;
+import net.hasor.dataql.DimUdfSource;
+import net.hasor.dataql.Finder;
+import net.hasor.dataql.QueryApiBinder;
+import net.hasor.dataql.fx.db.FxSqlCheckChainSpi;
+import net.hasor.dataway.dal.providers.db.InformationStorage;
 import net.hasor.db.JdbcModule;
 import net.hasor.db.Level;
 import net.hasor.web.WebApiBinder;
 import net.hasor.web.WebModule;
 import org.noear.solon.Solon;
-import org.noear.solon.Utils;
 import org.noear.solon.annotation.Component;
-import org.noear.solon.core.ExtendLoader;
-import org.noear.solon.core.Props;
-import webapp.dso.DsHelper;
+import org.noear.solon.annotation.Inject;
+import webapp.dso.spi.FxSqlCheckChain;
 
 import javax.sql.DataSource;
-import java.util.Properties;
+import java.util.Objects;
 
 @Component
 public class StartModule implements WebModule {
-    @Override
-    public void loadModule(ApiBinder apiBinder) throws Throwable {
-        apiBinder.installModule(buildDs());
-    }
+    @Inject("metadataDs")
+    DataSource metadataDs;
+    @Inject("dataDs1")
+    DataSource dataDs1;
+    @Inject("dataDs2")
+    DataSource dataDs2;
+
 
     @Override
-    public void loadModule(WebApiBinder webApiBinder) throws Throwable {
-        webApiBinder.installModule(buildDs());
-    }
+    public void loadModule(WebApiBinder apiBinder) throws Throwable {
+        apiBinder.setEncodingCharacter("UTF-8", "UTF-8");
+        //
+        // .check dataSource
+        Objects.requireNonNull(this.metadataDs, "metadataDs is null");
+        Objects.requireNonNull(this.dataDs1, "dataDs1 is null");
+        Objects.requireNonNull(this.dataDs2, "dataDs2 is null");
+        //
+        // .isolation meta-tables using InformationStorage
+        apiBinder.bindType(InformationStorage.class).toInstance(() -> this.metadataDs);
 
-    private JdbcModule buildDs() {
-        //for mysql
-        //DataSource ds = Aop.inject(new HikariDataSource(), Solon.cfg().getProp("db1"));
+        //
+        // .add two data sources in to DataWay
+        apiBinder.installModule(new JdbcModule(Level.Full, this.metadataDs));
+        apiBinder.installModule(new JdbcModule(Level.Full, "ds1", this.dataDs1));
+        apiBinder.installModule(new JdbcModule(Level.Full, "ds2", this.dataDs2));
 
-        //for h2
-        DataSource ds = buildH2Ds();
+        // 打印sql日志
+        apiBinder.bindSpiListener(FxSqlCheckChainSpi.class, FxSqlCheckChain.getInstance());
+        // 数据权限参数
+        //apiBinder.bindSpiListener(PreExecuteChainSpi.class, PreExecuteChain.getInstance());
 
-        return new JdbcModule(Level.Full, ds);
-    }
-
-    private DataSource buildH2Ds() {
-        //1.替换H2的持久化路径（路径要变，所以不做自动注入处理）
-        Props props = Solon.cfg().getProp("db1");
-        props.setProperty("jdbcUrl", props.getProperty("jdbcUrl").replace("~/", ExtendLoader.path()));
-
-        //2.生成DataSource
-        DataSource ds = props.getBean(HikariDataSource.class);
-
-        try {
-            //3.需要初始化schame（第一次会成功；之后会失败；不用管...）
-            DsHelper.initData(ds);
-        } catch (Exception ex) {
-
-        }
-
-        return ds;
+        //
+        // udf/udfSource/import 指令 的类型创建委托给 spring
+        QueryApiBinder queryBinder = apiBinder.tryCast(QueryApiBinder.class);
+        queryBinder.bindFinder(Finder.TYPE_SUPPLIER.apply(Solon.cfg()::getBean));
+        queryBinder.loadUdf(queryBinder.findClass(DimUdf.class));
+        queryBinder.loadUdfSource(queryBinder.findClass(DimUdfSource.class));
     }
 }

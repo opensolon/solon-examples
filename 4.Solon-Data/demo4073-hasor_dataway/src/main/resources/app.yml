@@ -1,16 +1,32 @@
 
 #for mysql
+# metadataStore
+#metadata.schema: rock
+metadata.jdbcUrl: jdbc:mysql:/127.0.0.1:3306/rock?useUnicode=true&characterEncoding=utf8&autoReconnect=true&rewriteBatchedStatements=true&allowMultiQueries=true
+metadata.driverClassName: com.mysql.cj.jdbc.Driver
+metadata.username: root
+metadata.password: root
+
+# db-dev
+#数据仓库1
 #db1.schema: rock
-#db1.jdbcUrl: jdbc:mysql://localdb:3306/rock?useUnicode=true&characterEncoding=utf8&autoReconnect=true&rewriteBatchedStatements=true
-#db1.driverClassName: com.mysql.jdbc.Driver
-#db1.username: demo
-#db1.password: UL0hHlg0Ybq60xyb
+db1.jdbcUrl: jdbc:mysql://127.0.0.1:3306/rock?useUnicode=true&characterEncoding=utf8&autoReconnect=true&rewriteBatchedStatements=true&allowMultiQueries=true
+db1.driverClassName: com.mysql.cj.jdbc.Driver
+db1.username: root
+db1.password: root
+
+#数据仓库2
+#db2.schema: rock
+db2.jdbcUrl: jdbc:mysql://127.0.0.1:23306/rock?useUnicode=true&characterEncoding=utf8&autoReconnect=true&rewriteBatchedStatements=true&allowMultiQueries=true
+db2.driverClassName: com.mysql.cj.jdbc.Driver
+db2.username: root
+db2.password: root
 
 #for h2
-db1.jdbcUrl: jdbc:h2:~/localjt;MODE=MYSQL;DB_CLOSE_DELAY=-1;AUTO_RECONNECT=TRUE;DATABASE_TO_LOWER=TRUE;IGNORECASE=TRUE;CASE_INSENSITIVE_IDENTIFIERS=TRUE
-db1.driverClassName: org.h2.Driver
-db1.username: sa
-db1.password: Ca78XJDFawZ5jaOL
+#db1.jdbcUrl: jdbc:h2:~/localjt;MODE=MYSQL;DB_CLOSE_DELAY=-1;AUTO_RECONNECT=TRUE;DATABASE_TO_LOWER=TRUE;IGNORECASE=TRUE;CASE_INSENSITIVE_IDENTIFIERS=TRUE
+#db1.driverClassName: org.h2.Driver
+#db1.username: sa
+#db1.password: Ca78XJDFawZ5jaOL
 
 
 solon.logging:
