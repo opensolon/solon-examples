@@ -29,7 +29,7 @@ public class DsHelper {
 
     private static String[] getSqlFromFile() {
         try {
-            InputStream ins = DsHelper.class.getResourceAsStream("/db/schema.sql");
+            InputStream ins = DsHelper.class.getResourceAsStream("/db/schema-mysql.sql");
             int len = ins.available();
             byte[] bs = new byte[len];
             ins.read(bs);
