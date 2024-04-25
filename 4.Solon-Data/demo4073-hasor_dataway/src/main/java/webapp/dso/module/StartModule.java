@@ -30,7 +30,7 @@ public class StartModule implements WebModule {
 
     private JdbcModule buildDs() {
         //for mysql
-        //DataSource ds = Aop.inject(new HikariDataSource(), Solon.cfg().getProp("db1"));
+        //DataSource ds = Solon.cfg().getProp("db1").getBean(HikariDataSource.class)
 
         //for h2
         DataSource ds = buildH2Ds();
