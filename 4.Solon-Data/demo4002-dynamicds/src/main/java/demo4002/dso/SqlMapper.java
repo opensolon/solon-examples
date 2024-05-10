@@ -24,4 +24,6 @@ public interface SqlMapper{
     Set<Integer> appx_getids2() ;
 
     void appx_add() ;
+
+    void test_add(int val);
 }

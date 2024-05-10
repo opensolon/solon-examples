@@ -1,9 +1,10 @@
 package demo4002.dso;
 
+import demo4002.model.AppxModel;
 import org.noear.solon.annotation.Component;
 import org.noear.solon.annotation.Mapping;
 import org.noear.solon.data.dynamicds.DynamicDs;
-import org.noear.solon.data.dynamicds.DynamicDsHolder;
+import org.noear.solon.data.dynamicds.DynamicDsKey;
 import org.noear.wood.annotation.Db;
 
 /**
@@ -20,26 +21,54 @@ public class DynamicService {
 
     @DynamicDs("db_rock1")
     public String test1() throws Exception {
-        System.out.println("ds===" + DynamicDsHolder.get());
+        System.out.println("ds===" + DynamicDsKey.getCurrent());
         sqlMapper1.appx_get2(1);
-        return DynamicDsHolder.get();
+        return DynamicDsKey.getCurrent();
     }
 
 
     @DynamicDs("db_rock2")
     @Mapping("/test2")
     public String test2() throws Exception {
-        System.out.println("ds===" + DynamicDsHolder.get());
+        System.out.println("ds===" + DynamicDsKey.getCurrent());
         sqlMapper1.appx_get2(2);
-        return DynamicDsHolder.get();
+        return DynamicDsKey.getCurrent();
     }
 
 
     @DynamicDs
     @Mapping("/test3")
     public String test3() throws Exception {
-        System.out.println("ds===" + DynamicDsHolder.get());
+        System.out.println("ds===" + DynamicDsKey.getCurrent());
         sqlMapper1.appx_get2(3);
-        return DynamicDsHolder.get();
+        return DynamicDsKey.getCurrent();
+    }
+
+    @DynamicDs("${dsName}")
+    @Mapping("/test4")
+    public String test4(String dsName) throws Exception {
+        System.out.println("ds===" + DynamicDsKey.getCurrent());
+        return DynamicDsKey.getCurrent();
+    }
+
+    @DynamicDs("${dsName}")
+    @Mapping("/test5")
+    public String test5(String dsName) throws Exception {
+        AppxModel app = sqlMapper1.appx_get2(3);
+        System.out.println("ds===" + DynamicDsKey.getCurrent() + ": " + app.getNote());
+        return app.getNote();
+    }
+
+    @DynamicDs("${dsName}")
+    @Mapping("/test5")
+    public String tran(String dsName) throws Exception {
+        AppxModel app = sqlMapper1.appx_get2(3);
+        System.out.println("ds===" + DynamicDsKey.getCurrent() + ": " + app.getNote());
+        return app.getNote();
+    }
+
+    @DynamicDs("${dsName}")
+    public void test_add(String dsName, int val) {
+        sqlMapper1.test_add(val);
     }
 }

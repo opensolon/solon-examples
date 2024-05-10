@@ -32,4 +32,8 @@
     <sql id="appx_add">
         insert into test (v1) values (1024);
     </sql>
+
+    <sql id="test_add">
+        insert into test (v1) values (@{val:int});
+    </sql>
 </mapper>

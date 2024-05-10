@@ -2,14 +2,18 @@ package features;
 
 import demo4002.DemoApp;
 import demo4002.dso.DynamicService;
+import demo4002.dso.SqlMapper;
 import demo4002.model.AppxModel;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.noear.snack.ONode;
 import org.noear.solon.annotation.Inject;
+import org.noear.solon.data.annotation.Tran;
 import org.noear.solon.test.HttpTester;
 import org.noear.solon.test.SolonJUnit4ClassRunner;
 import org.noear.solon.test.SolonTest;
+import org.noear.solon.test.annotation.Rollback;
+import org.noear.wood.annotation.Db;
 
 @RunWith(SolonJUnit4ClassRunner.class)
 @SolonTest(DemoApp.class)
@@ -17,6 +21,9 @@ public class DynamicTest extends HttpTester {
 
     @Inject
     DynamicService dynamicService;
+
+    @Db("db2")
+    SqlMapper sqlMapper1;
 
     @Test
     public void test() throws Exception {
@@ -39,5 +46,35 @@ public class DynamicTest extends HttpTester {
         assert  "db_rock1".equals(dynamicService.test1());
         assert  "db_rock2".equals(dynamicService.test2());
         assert  "".equals(dynamicService.test3());
+    }
+
+    @Test
+    public void test4() throws Exception{
+        assert  "db_rock1".equals(dynamicService.test4("db_rock1"));
+        assert  "db_rock2".equals(dynamicService.test4("db_rock2"));
+        assert  "".equals(dynamicService.test4(""));
+    }
+
+    @Test
+    public void test5() throws Exception{
+        assert  "111".equals(dynamicService.test5("db_rock1"));
+        assert  "222".equals(dynamicService.test5("db_rock2"));
+        assert  "000".equals(dynamicService.test5("db_rock0"));
+    }
+
+    @Test
+    @Tran
+    public void tran() throws Exception{
+        dynamicService.test_add("db_rock0", 1111);
+        dynamicService.test_add("db_rock1", 2222);
+        dynamicService.test_add("db_rock2", 3333);
+    }
+
+    @Test
+    @Rollback
+    public void tran2() throws Exception{
+        dynamicService.test_add("db_rock0", 111999);
+        dynamicService.test_add("db_rock1", 222999);
+        dynamicService.test_add("db_rock2", 333999);
     }
 }
