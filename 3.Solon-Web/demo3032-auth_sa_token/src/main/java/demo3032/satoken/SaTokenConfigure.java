@@ -4,6 +4,7 @@ package demo3032.satoken;
 import cn.dev33.satoken.context.SaHolder;
 import cn.dev33.satoken.dao.SaTokenDao;
 import cn.dev33.satoken.solon.dao.SaTokenDaoOfRedis;
+import cn.dev33.satoken.solon.dao.SaTokenDaoOfRedisJson;
 import cn.dev33.satoken.solon.integration.SaTokenInterceptor;
 import demo3032.util.AjaxJson;
 import org.noear.solon.annotation.Bean;
@@ -60,7 +61,7 @@ public class SaTokenConfigure {
 	}
 
 	@Bean
-	public SaTokenDao saTokenDaoInit(@Inject("${sa-token-dao.redis}") SaTokenDaoOfRedis saTokenDao) {
+	public SaTokenDao saTokenDaoInit(@Inject("${sa-token-dao.redis}") SaTokenDaoOfRedisJson saTokenDao) {
 		return saTokenDao;
 	}
 }
