@@ -7,3 +7,4 @@ solon.app:
 solon.cloud.rocketmq:
   server: localhost:9876   #rocketmq服务地址
 
+

@@ -7,9 +7,9 @@ import org.noear.solon.annotation.Mapping;
 import org.noear.solon.cloud.CloudClient;
 import org.noear.solon.cloud.model.Event;
 import org.noear.solon.cloud.model.EventTran;
+import org.noear.solon.data.annotation.Tran;
+import org.noear.solon.data.tran.TranUtils;
 
-import java.time.LocalDateTime;
-import java.time.ZoneId;
 import java.util.Date;
 
 /**
@@ -85,5 +85,18 @@ public class TestController {
             eventTran.rollback();
             return true;
         }
+    }
+
+    @Tran
+    @Mapping("/tran3")
+    public Object tran3() {
+        EventTran eventTran = CloudClient.event().newTran();
+        TranUtils.listen(eventTran);
+
+        CloudClient.event().publish(new Event("hello.demo", "test1").tran(eventTran));
+        CloudClient.event().publish(new Event("hello.demo", "test2").tran(eventTran));
+        CloudClient.event().publish(new Event("hello.demo", "test3").tran(eventTran));
+
+        return true;
     }
 }
