@@ -92,8 +92,7 @@ public class TestController {
     @Tran
     @Mapping("/tran3")
     public Object tran3() {
-        EventTran eventTran = CloudClient.event().newTran();
-        TranUtils.listen(eventTran);
+        EventTran eventTran = CloudClient.event().newTranAndJoin();
 
         CloudClient.event().publish(new Event("hello.demo", "test1").tran(eventTran));
         CloudClient.event().publish(new Event("hello.demo", "test2").tran(eventTran));
