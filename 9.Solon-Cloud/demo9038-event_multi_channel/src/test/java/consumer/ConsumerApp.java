@@ -1,10 +1,9 @@
 package consumer;
 
 import org.noear.solon.Solon;
-import org.noear.solon.SolonApp;
 import org.noear.solon.cloud.CloudManager;
 import org.noear.solon.cloud.CloudProps;
-import org.noear.solon.cloud.extend.rabbitmq.service.CloudEventServiceRabbitmqImp;
+import org.noear.solon.cloud.extend.rabbitmq.service.CloudEventServiceRabbitmqImpl;
 import org.noear.solon.core.AppContext;
 import org.noear.solon.core.Plugin;
 
@@ -24,7 +23,7 @@ public class ConsumerApp {
             //获取配置块
             CloudProps cloudProps = new CloudProps(context,"rabbitmq_biz");
             //初始化服务
-            CloudEventServiceRabbitmqImp eventServiceImp = new CloudEventServiceRabbitmqImp(cloudProps);
+            CloudEventServiceRabbitmqImpl eventServiceImp = new CloudEventServiceRabbitmqImpl(cloudProps);
             //注册
             CloudManager.register(eventServiceImp);
             //触发订阅动作
