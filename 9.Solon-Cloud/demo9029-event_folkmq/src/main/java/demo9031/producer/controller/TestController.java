@@ -10,6 +10,7 @@ import org.noear.solon.annotation.Inject;
 import org.noear.solon.annotation.Mapping;
 import org.noear.solon.cloud.CloudClient;
 import org.noear.solon.cloud.model.Event;
+import org.noear.solon.cloud.model.EventTran;
 
 import java.util.Date;
 
@@ -50,6 +51,43 @@ public class TestController {
         HelloEntity entity = new HelloEntity();
         entity.name = "noear";
         return entity.publish();
+    }
+
+
+    @Mapping("/tran")
+    public Object tran() {
+        EventTran eventTran = CloudClient.event().newTran();
+
+        try {
+            CloudClient.event().publish(new Event("hello.demo", "test1").tran(eventTran));
+            CloudClient.event().publish(new Event("hello.demo", "test2").tran(eventTran));
+            CloudClient.event().publish(new Event("hello.demo", "test3").tran(eventTran));
+
+            eventTran.commit();
+            return true;
+        } catch (Throwable e) {
+            e.printStackTrace();
+
+            eventTran.rollback();
+            return false;
+        }
+    }
+
+    @Mapping("/tran2")
+    public Object tran2() {
+        EventTran eventTran = CloudClient.event().newTran();
+
+        try {
+            CloudClient.event().publish(new Event("hello.demo", "test1").tran(eventTran));
+            CloudClient.event().publish(new Event("hello.demo", "test2").tran(eventTran));
+            CloudClient.event().publish(new Event("hello.demo", "test3").tran(eventTran));
+            throw new IllegalStateException("");
+        } catch (Throwable e) {
+            e.printStackTrace();
+
+            eventTran.rollback();
+            return true;
+        }
     }
 
     @Inject
