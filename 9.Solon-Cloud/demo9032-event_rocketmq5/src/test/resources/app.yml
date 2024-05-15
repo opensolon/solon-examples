@@ -5,5 +5,5 @@ solon.app:
   name: helloconsumer    #发现服务使用的应用名
 
 solon.cloud.rocketmq:
-  server: localhost:9876   #rocketmq服务地址
+  server: "124.223.79.144:8081"   #rocketmq服务地址
 

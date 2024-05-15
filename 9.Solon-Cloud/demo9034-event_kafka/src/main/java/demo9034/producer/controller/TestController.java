@@ -15,7 +15,7 @@ import org.noear.solon.data.annotation.Tran;
 public class TestController {
     @Mapping("/test")
     public Object test(String msg) {
-        if(Utils.isEmpty(msg)){
+        if (Utils.isEmpty(msg)) {
             msg = "demo2";
         }
 
@@ -25,7 +25,7 @@ public class TestController {
 
     @Mapping("/test2")
     public Object test2(String msg) {
-        if(Utils.isEmpty(msg)){
+        if (Utils.isEmpty(msg)) {
             msg = "demo2";
         }
 

@@ -45,9 +45,8 @@ public class TestController {
         EventTran eventTran = CloudClient.event().newTran();
 
         try {
+            //只能一条消息
             CloudClient.event().publish(new Event("hello.demo", "test1").tran(eventTran));
-            CloudClient.event().publish(new Event("hello.demo", "test2").tran(eventTran));
-            CloudClient.event().publish(new Event("hello.demo", "test3").tran(eventTran));
 
             eventTran.commit();
             return true;
@@ -64,9 +63,8 @@ public class TestController {
         EventTran eventTran = CloudClient.event().newTran();
 
         try {
+            //只能一条消息
             CloudClient.event().publish(new Event("hello.demo", "test1").tran(eventTran));
-            CloudClient.event().publish(new Event("hello.demo", "test2").tran(eventTran));
-            CloudClient.event().publish(new Event("hello.demo", "test3").tran(eventTran));
             throw new IllegalStateException("");
         } catch (Throwable e) {
             e.printStackTrace();
