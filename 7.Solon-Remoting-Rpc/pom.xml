@@ -44,5 +44,7 @@
         <module>demo7021-feign</module>
         <module>demo7022-forest</module>
         <module>demo7023-nami</module>
+
+        <module>demo7024-rpc_thrift</module>
     </modules>
 </project>
