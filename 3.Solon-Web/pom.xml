@@ -27,6 +27,7 @@
         <module>demo3031-auth</module>
         <module>demo3031-auth2</module>
         <module>demo3032-auth_sa_token</module>
+        <module>demo3032-auth_sa_token_redisson</module>
         <module>demo3033-auth_jap</module>
         <module>demo3034-auth_jap_ids</module>
         <module>demo3035-auth_view_beetl</module>
