@@ -1,15 +1,15 @@
 package features;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
+
 import org.noear.solon.Solon;
 import org.noear.solon.test.HttpTester;
 import org.noear.solon.test.SolonTest;
-import org.noear.solon.test.SolonJUnit4ClassRunner;
+
 import org.noear.wood.DbContext;
 import demo4021.DemoApp;
 
-@RunWith(SolonJUnit4ClassRunner.class)
+
 @SolonTest(DemoApp.class)
 public class TranTest extends HttpTester {
     DbContext db = Solon.cfg().getBean("test.db1", DbContext.class);

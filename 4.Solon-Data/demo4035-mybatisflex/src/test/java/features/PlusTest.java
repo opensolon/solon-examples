@@ -5,10 +5,10 @@ import com.mybatisflex.core.query.QueryWrapper;
 import demo4035.DemoApp;
 import demo4035.dso.mapper.AppxMapper2;
 import demo4035.model.AppxModel;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
+
 import org.noear.solon.annotation.Inject;
-import org.noear.solon.test.SolonJUnit4ClassRunner;
+
 import org.noear.solon.test.SolonTest;
 
 import java.util.HashMap;
@@ -18,7 +18,7 @@ import java.util.Map;
 /**
  * @author noear 2021/9/3 created
  */
-@RunWith(SolonJUnit4ClassRunner.class)
+
 @SolonTest(DemoApp.class)
 public class PlusTest {
 

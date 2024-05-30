@@ -4,18 +4,15 @@ import demo4002.DemoApp;
 import demo4002.dso.DynamicService;
 import demo4002.dso.SqlMapper;
 import demo4002.model.AppxModel;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
 import org.noear.snack.ONode;
 import org.noear.solon.annotation.Inject;
 import org.noear.solon.data.annotation.Tran;
 import org.noear.solon.test.HttpTester;
-import org.noear.solon.test.SolonJUnit4ClassRunner;
 import org.noear.solon.test.SolonTest;
 import org.noear.solon.test.annotation.Rollback;
 import org.noear.wood.annotation.Db;
 
-@RunWith(SolonJUnit4ClassRunner.class)
 @SolonTest(DemoApp.class)
 public class DynamicTest extends HttpTester {
 

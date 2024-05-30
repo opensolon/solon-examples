@@ -1,10 +1,8 @@
 package test;
 
 import client.ClientApp;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
 import org.noear.solon.test.HttpTester;
-import org.noear.solon.test.SolonJUnit4ClassRunner;
 import org.noear.solon.test.SolonTest;
 
 import java.io.IOException;
@@ -12,7 +10,6 @@ import java.io.IOException;
 /**
  * @author luke 2023/5/18 created
  */
-@RunWith(SolonJUnit4ClassRunner.class)
 @SolonTest(ClientApp.class)
 public class ClientTest extends HttpTester {
     @Test

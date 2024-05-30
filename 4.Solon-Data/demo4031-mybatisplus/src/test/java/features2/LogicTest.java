@@ -7,16 +7,16 @@ import demo4031.dso.service.TestService;
 import demo4031.model.AppxModel;
 import demo4031.model.UserModel;
 import org.apache.ibatis.solon.annotation.Db;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
+
 import org.noear.solon.annotation.Inject;
-import org.noear.solon.test.SolonJUnit4ClassRunner;
+
 import org.noear.solon.test.SolonTest;
 
 /**
  * @author noear 2022/4/5 created
  */
-@RunWith(SolonJUnit4ClassRunner.class)
+
 @SolonTest(DemoApp.class)
 public class LogicTest {
     @Db

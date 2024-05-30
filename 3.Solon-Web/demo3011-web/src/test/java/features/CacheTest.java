@@ -1,13 +1,10 @@
 package features;
 
 import demo3011.WebApp;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
 import org.noear.solon.test.HttpTester;
-import org.noear.solon.test.SolonJUnit4ClassRunner;
 import org.noear.solon.test.SolonTest;
 
-@RunWith(SolonJUnit4ClassRunner.class)
 @SolonTest(WebApp.class)
 public class CacheTest extends HttpTester {
     @Test

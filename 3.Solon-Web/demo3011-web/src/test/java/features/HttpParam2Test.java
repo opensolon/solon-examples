@@ -1,10 +1,8 @@
 package features;
 
 import demo3011.WebApp;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
 import org.noear.solon.test.HttpTester;
-import org.noear.solon.test.SolonJUnit4ClassRunner;
 import org.noear.solon.test.SolonTest;
 
 import java.io.IOException;
@@ -12,8 +10,6 @@ import java.io.IOException;
 /**
  * @author noear 2020/12/20 created
  */
-
-@RunWith(SolonJUnit4ClassRunner.class)
 @SolonTest(WebApp.class)
 public class HttpParam2Test extends HttpTester {
     @Override

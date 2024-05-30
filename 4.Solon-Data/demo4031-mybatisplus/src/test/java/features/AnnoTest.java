@@ -3,7 +3,7 @@ package features;
 import org.apache.ibatis.solon.annotation.Db;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.noear.solon.test.SolonJUnit4ClassRunner;
+
 import org.noear.solon.test.SolonJUnit5Extension;
 import org.noear.solon.test.SolonTest;
 import demo4031.DemoApp;

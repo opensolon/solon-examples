@@ -2,16 +2,12 @@ package features;
 
 import demo4012.DemoApp;
 import demo4012.model.AppxModel;
-import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.noear.snack.ONode;
 import org.noear.solon.test.HttpTester;
-import org.noear.solon.test.SolonJUnit4ClassRunner;
 import org.noear.solon.test.SolonTest;
 import org.noear.weed.DbContext;
 import org.noear.weed.annotation.Db;
 
-@RunWith(SolonJUnit4ClassRunner.class)
 @SolonTest(DemoApp.class)
 public class DynamicTest extends HttpTester {
 

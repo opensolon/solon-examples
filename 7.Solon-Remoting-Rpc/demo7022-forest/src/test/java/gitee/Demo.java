@@ -1,11 +1,11 @@
 package gitee;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.noear.solon.annotation.Inject;
-import org.noear.solon.test.SolonJUnit4ClassRunner;
+import org.junit.jupiter.api.Test;
 
-@RunWith(SolonJUnit4ClassRunner.class)
+import org.noear.solon.annotation.Inject;
+
+
+
 public class Demo {
     @Inject
     TestGiteeApi api;

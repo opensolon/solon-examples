@@ -1,11 +1,11 @@
 package demo6014;
 
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
+
 import org.noear.snack.ONode;
 import org.noear.solon.test.HttpTester;
-import org.noear.solon.test.SolonJUnit4ClassRunner;
+
 import org.noear.solon.test.SolonTest;
 
 import java.io.IOException;
@@ -13,25 +13,24 @@ import java.io.IOException;
 /**
  * @author noear 2021/6/11 created
  */
-@RunWith(SolonJUnit4ClassRunner.class)
+
 @SolonTest(ApiApp.class)
 public class ApiTest extends HttpTester {
-    private ONode apiCall(String path) throws IOException {
-        String json = path(path).get();
+    private static ONode apiCall(String path) throws IOException {
+        String json = new HttpTester().path(path).get();
         return ONode.loadStr(json);
     }
 
-    private ONode apiCall(String path, String token) throws IOException {
-        String json = path(path).header("token", token).get();
+    private static ONode apiCall(String path, String token) throws IOException {
+        String json = new HttpTester().path(path).header("token", token).get();
         return ONode.loadStr(json);
     }
 
 
-    String token = null;
+    static String token = null;
 
-    @Before
-    @Test
-    public void api_login() throws IOException {
+    @BeforeAll
+    public static void api_login() throws IOException {
         token = apiCall("/api/test.login").get("data").getString();
         assert token != null;
         assert token.length() > 10;

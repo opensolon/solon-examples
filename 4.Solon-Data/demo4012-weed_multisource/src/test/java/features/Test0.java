@@ -2,9 +2,6 @@ package features;
 
 import demo4012.DemoApp;
 import demo4012.dso.mapper.SqlMapper;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.noear.solon.test.SolonJUnit4ClassRunner;
 import org.noear.solon.test.SolonTest;
 import org.noear.weed.annotation.Db;
 
@@ -14,7 +11,6 @@ import java.util.Set;
 /**
  * @author noear 2021/2/3 created
  */
-@RunWith(SolonJUnit4ClassRunner.class)
 @SolonTest(DemoApp.class)
 public class Test0 {
     @Db

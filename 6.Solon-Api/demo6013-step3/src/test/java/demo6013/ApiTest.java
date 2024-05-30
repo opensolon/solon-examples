@@ -1,10 +1,10 @@
 package demo6013;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
+
 import org.noear.snack.ONode;
 import org.noear.solon.test.HttpTester;
-import org.noear.solon.test.SolonJUnit4ClassRunner;
+
 import org.noear.solon.test.SolonTest;
 
 import java.io.IOException;
@@ -12,7 +12,7 @@ import java.io.IOException;
 /**
  * @author noear 2021/6/11 created
  */
-@RunWith(SolonJUnit4ClassRunner.class)
+
 @SolonTest(ApiApp.class)
 public class ApiTest extends HttpTester {
     private ONode apiCall(String path) throws IOException {

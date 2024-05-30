@@ -1,17 +1,14 @@
 package features;
 
 import demo3011.WebApp;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
 import org.noear.solon.test.HttpTester;
-import org.noear.solon.test.SolonJUnit4ClassRunner;
 import org.noear.solon.test.SolonTest;
 
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-@RunWith(SolonJUnit4ClassRunner.class)
 @SolonTest(WebApp.class)
 public class HttpMethodTest extends HttpTester {
 

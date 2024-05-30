@@ -1,9 +1,9 @@
 package features;
 
 import org.apache.ibatis.solon.annotation.Db;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.noear.solon.test.SolonJUnit4ClassRunner;
+import org.junit.jupiter.api.Test;
+
+
 import org.noear.solon.test.SolonTest;
 import demo4022.DemoApp;
 import demo4022.dso.mapper.AppxMapper;
@@ -11,7 +11,7 @@ import demo4022.dso.mapper.AppxMapper;
 /**
  * @author noear 2021/5/16 created
  */
-@RunWith(SolonJUnit4ClassRunner.class)
+
 @SolonTest(DemoApp.class)
 public class AnnoTest {
 

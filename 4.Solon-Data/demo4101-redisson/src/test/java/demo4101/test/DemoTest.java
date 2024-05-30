@@ -1,17 +1,17 @@
 package demo4101.test;
 
 import demo4101.App;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
+
 import org.noear.solon.annotation.Inject;
-import org.noear.solon.test.SolonJUnit4ClassRunner;
+
 import org.noear.solon.test.SolonTest;
 import org.redisson.api.RedissonClient;
 
 /**
  * @author noear 2023/5/28 created
  */
-@RunWith(SolonJUnit4ClassRunner.class)
+
 @SolonTest(App.class)
 public class DemoTest {
     @Inject

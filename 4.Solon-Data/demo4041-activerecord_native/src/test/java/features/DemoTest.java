@@ -1,16 +1,16 @@
 package features;
 
 import demo4041.DemoApp;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
+
 import org.noear.snack.ONode;
 import org.noear.solon.Utils;
 import org.noear.solon.test.HttpTester;
 import org.noear.solon.test.HttpTester;
-import org.noear.solon.test.SolonJUnit4ClassRunner;
+
 import org.noear.solon.test.SolonTest;
 
-@RunWith(SolonJUnit4ClassRunner.class)
+
 @SolonTest(DemoApp.class)
 public class DemoTest extends HttpTester {
 

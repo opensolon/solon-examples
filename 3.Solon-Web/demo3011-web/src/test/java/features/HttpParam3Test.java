@@ -1,21 +1,18 @@
 package features;
 
 import demo3011.WebApp;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
 import org.noear.nami.Nami;
 import org.noear.nami.annotation.Body;
 import org.noear.nami.annotation.NamiBody;
 import org.noear.nami.annotation.NamiClient;
 import org.noear.nami.coder.snack3.SnackDecoder;
-import org.noear.solon.test.SolonJUnit4ClassRunner;
 import org.noear.solon.test.SolonTest;
 import demo3011.model.UserModel;
 
 /**
  * @author noear 2021/1/5 created
  */
-@RunWith(SolonJUnit4ClassRunner.class)
 @SolonTest(WebApp.class)
 public class HttpParam3Test {
     @Test
