@@ -1,6 +1,6 @@
 
 server.grpc:
-  port: 9081
+  port: 9090
   name: demo-grpc
 
 solon.app:
@@ -10,4 +10,4 @@ solon.cloud.local:
   discovery:
     service:
       demo-grpc:
-        - "grpc://localhost:9081"
+        - "grpc://localhost:9090"

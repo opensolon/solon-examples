@@ -7,16 +7,17 @@ import com.example.demo.user.User;
 import com.example.demo.user.UserService;
 import org.apache.thrift.TException;
 import org.apache.thrift.solon.annotation.ThriftClient;
+import org.noear.solon.annotation.Controller;
 import org.noear.solon.annotation.Mapping;
 import org.noear.solon.annotation.Param;
 
-@org.noear.solon.annotation.Controller
-public class Controller {
+@Controller
+public class DemoController {
 
-    @ThriftClient(serviceName = "UserService")
+    @ThriftClient(name = "demo-thrift", serviceName = "UserService")
     private UserService.Client client;
 
-    @ThriftClient(serviceName = "CalculatorHandler")
+    @ThriftClient(name = "demo-thrift", serviceName = "CalculatorHandler")
     private Calculator.Client client2;
 
     @Mapping("/hello")

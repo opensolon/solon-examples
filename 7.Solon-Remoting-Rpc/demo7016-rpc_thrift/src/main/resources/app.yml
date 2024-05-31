@@ -1,0 +1,15 @@
+server.port: 8080
+
+server.thrift:
+  port: 9090
+  name: "demo-thrift"
+
+solon.app:
+  name: 'demo-app'
+  group: 'demo'
+
+solon.cloud.local:
+  discovery:
+    service:
+      demo-thrift:
+        - "thrift://localhost:9090"

@@ -1,11 +1,9 @@
 package features;
 
-import com.example.demo.DemoApp;
 
+import demo7013.DemoApp;
 import org.junit.jupiter.api.Test;
-
 import org.noear.solon.test.HttpTester;
-
 import org.noear.solon.test.SolonTest;
 
 import java.io.IOException;

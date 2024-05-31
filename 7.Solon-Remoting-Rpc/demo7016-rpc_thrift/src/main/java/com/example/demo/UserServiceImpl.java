@@ -11,7 +11,7 @@ public class UserServiceImpl implements UserService.Iface {
     @Override
     public User getUser(int id) throws TException {
         User user = new User();
-        user.setId(1);
+        user.setId(id);
         user.setName("张三");
         user.setAge(18);
         return user;

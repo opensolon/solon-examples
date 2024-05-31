@@ -28,7 +28,24 @@
 
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>grpc-solon-plugin</artifactId>
+            <artifactId>solon.logging.simple</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.noear</groupId>
+            <artifactId>grpc-solon-cloud-plugin</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.annotation</groupId>
+            <artifactId>javax.annotation-api</artifactId>
+            <version>1.3.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.noear</groupId>
+            <artifactId>solon-test</artifactId>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
@@ -36,7 +53,7 @@
     <build>
         <finalName>${project.name}</finalName>
 
-        <!-- os系统信息插件, protobuf-maven-plugin需要获取系统信息下载相应的protobuf程序 -->
+        <!-- os 系统信息插件, protobuf-maven-plugin 需要获取系统信息下载相应的 protobuf 程序 -->
         <extensions>
             <extension>
                 <groupId>kr.motd.maven</groupId>

@@ -35,16 +35,17 @@
         <module>demo7012-rpc_dubbo_provider</module>
 
 
-<!--        <module>demo7013-rpc_grpc</module>-->
+        <module>demo7013-rpc_grpc</module>
+        <module>demo7016-rpc_thrift</module>
 
 
         <module>demo7014-rpc_dubbo3_sml</module>
         <module>demo7014-rpc_dubbo3_sml_zk</module>
         <module>demo7015-rpc_sml-jmdns</module>
+
         <module>demo7021-feign</module>
         <module>demo7022-forest</module>
         <module>demo7023-nami</module>
 
-        <module>demo7024-rpc_thrift</module>
     </modules>
 </project>
