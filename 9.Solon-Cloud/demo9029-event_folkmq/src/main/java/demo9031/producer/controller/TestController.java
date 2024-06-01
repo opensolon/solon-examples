@@ -41,15 +41,25 @@ public class TestController {
         return CloudClient.event().publish(event);
     }
 
-
     @Mapping("/test3")
     public Object test3(String msg) {
+        if(Utils.isEmpty(msg)){
+            msg = "demo";
+        }
+
+        Event event = new Event("hello.demo3", msg);
+        return CloudClient.event().publish(event);
+    }
+
+
+    @Mapping("/test4")
+    public Object test4(String msg) {
         if (Utils.isEmpty(msg)) {
             msg = "noear";
         }
 
         HelloEntity entity = new HelloEntity();
-        entity.name = "noear";
+        entity.name = msg;
         return entity.publish();
     }
 
