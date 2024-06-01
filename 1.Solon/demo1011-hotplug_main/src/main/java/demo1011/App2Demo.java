@@ -39,11 +39,11 @@ public class App2Demo {
         File file = new File("/Users/noear/Downloads/test/test2/target/test2.jar");
 
         //加载插件，并启动
-        PluginPackage pluginPackage = PluginManager.loadJar(file).start();
+        PluginPackage pluginPackage = PluginPackage.loadJar(file).start();
 
         //移除插件
         Solon.app().get("del", ctx -> {
-            PluginManager.unloadJar(pluginPackage);
+            PluginPackage.unloadJar(pluginPackage);
             ctx.output("OK");
         });
     }
