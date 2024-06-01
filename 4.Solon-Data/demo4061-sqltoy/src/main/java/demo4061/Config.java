@@ -6,6 +6,8 @@ import demo4061.model.User;
 import org.noear.solon.annotation.Bean;
 import org.noear.solon.annotation.Configuration;
 import org.noear.solon.annotation.Inject;
+import org.noear.solon.data.cache.CacheService;
+import org.noear.solon.data.cache.CacheServiceSupplier;
 import org.sagacity.sqltoy.solon.annotation.Db;
 import org.sagacity.sqltoy.dao.SqlToyLazyDao;
 
@@ -18,6 +20,11 @@ import java.util.Map;
  */
 @Configuration
 public class Config {
+    //必须要有缓存
+    @Bean
+    public CacheService cahce1(@Inject("${demo1.cache}") CacheServiceSupplier supplier) {
+        return supplier.get();
+    }
 
     /**
      * 配置数据源
