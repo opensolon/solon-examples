@@ -38,4 +38,14 @@ public class TestController {
         Event event = new Event("hello.demo2", msg).group("test").scheduled(new Date(time));
         return CloudClient.event().publish(event);
     }
+
+    @Mapping("/test3")
+    public Object test3(String msg) {
+        if(Utils.isEmpty(msg)){
+            msg = "demo";
+        }
+
+        Event event = new Event("hello.demo3", msg);
+        return CloudClient.event().publish(event);
+    }
 }

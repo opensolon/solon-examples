@@ -19,7 +19,7 @@ public class TestController {
     @Mapping("/hello")
     public String hello(@Param(defaultValue = "world") String name) {
         HelloHttpRequest request = HelloHttpRequest.newBuilder()
-                .setMsg("name")
+                .setMsg(name)
                 .build();
 
         return helloHttp.sayHello(request).getMsg();

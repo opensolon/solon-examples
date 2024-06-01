@@ -40,4 +40,14 @@ public class TestController {
                 .scheduled(new Date(time));
         return CloudClient.event().publish(event);
     }
+
+    @Mapping("/test3")
+    public Object test3(String msg) {
+        if(Utils.isEmpty(msg)){
+            msg = "demo";
+        }
+
+        Event event = new Event("hello.demo3", msg);
+        return CloudClient.event().publish(event);
+    }
 }
