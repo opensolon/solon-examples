@@ -11,7 +11,7 @@ import java.util.concurrent.CountDownLatch;
 
 public class FolkMQHaTestApp {
     public static void main(String[] args) throws Exception {
-        int count = 10_000;
+        int count = 100_000;
         CountDownLatch countDownLatch = new CountDownLatch(count);
 
         Solon.start(FolkMQHaTestApp.class, args, app -> {
