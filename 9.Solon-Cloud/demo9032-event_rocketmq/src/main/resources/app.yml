@@ -3,4 +3,4 @@ solon.app:
   name: helloproducer    #发现服务使用的应用名
 
 solon.cloud.rocketmq:
-  server: "124.223.79.144:9876"   #rocketmq服务地址
+  server: "127.0.0.1:9876"   #rocketmq服务地址
