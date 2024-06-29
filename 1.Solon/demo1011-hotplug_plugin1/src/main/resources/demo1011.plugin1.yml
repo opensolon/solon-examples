@@ -6,3 +6,12 @@ test.db1:
   driverClassName: com.mysql.jdbc.Driver
   username: root
   password: 123456
+
+test.ch1:
+  driverType: "redis" #驱动类型
+  keyHeader: "demo" #默认为 ${solon.app.name} ，可不配置
+  defSeconds: 30 #默认为 30，可不配置
+  server: "localhost:6379"
+  db: 0 #默认为 0，可不配置
+  password: "123456"
+  maxTotaol: 200 #默认为 200，可不配
