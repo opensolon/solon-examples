@@ -7,6 +7,7 @@ import org.noear.solon.annotation.Configuration;
 import org.noear.solon.annotation.Inject;
 import org.noear.solon.cache.jedis.RedisCacheService;
 import org.noear.solon.data.cache.CacheService;
+import org.noear.solon.data.cache.impl.JsonSerializer;
 import org.noear.wood.WoodConfig;
 
 import javax.sql.DataSource;
@@ -31,6 +32,7 @@ public class Config {
 
     @Bean
     public CacheService ch1(@Inject("${test.ch1}") RedisCacheService cacheService) {
+        cacheService.serializer(JsonSerializer.instance);
         return cacheService;
     }
 }
