@@ -22,7 +22,7 @@ import org.noear.solon.test.SolonTest;
 @SolonTest(DemoApp.class)
 public class PlusServiceTest {
 
-    @Inject
+    @Db
     AppServicePlus appServicePlus;
     @Inject
     AppServicePlus appServicePlus2;

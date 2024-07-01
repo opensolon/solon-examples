@@ -2,6 +2,7 @@ package demo4031.controller;
 
 import demo4031.dso.service.AppServicePlus;
 import demo4031.model.AppxModel;
+import org.apache.ibatis.solon.annotation.Db;
 import org.noear.solon.annotation.Controller;
 import org.noear.solon.annotation.Inject;
 import org.noear.solon.annotation.Mapping;
@@ -12,7 +13,7 @@ import org.noear.solon.annotation.Mapping;
 @Mapping("/plus/")
 @Controller
 public class PlusController {
-    @Inject
+    @Db
     AppServicePlus appServicePlus;
 
     @Mapping("test")
