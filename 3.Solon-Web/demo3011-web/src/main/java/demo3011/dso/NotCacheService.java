@@ -3,6 +3,8 @@ package demo3011.dso;
 
 import org.noear.solon.data.cache.CacheService;
 
+import java.lang.reflect.Type;
+
 public class NotCacheService implements CacheService {
     @Override
     public void store(String key, Object obj, int seconds) {
@@ -15,7 +17,7 @@ public class NotCacheService implements CacheService {
     }
 
     @Override
-    public <T> T get(String key, Class<T> clz) {
+    public <T> T get(String key, Type type) {
         return null;
     }
 }

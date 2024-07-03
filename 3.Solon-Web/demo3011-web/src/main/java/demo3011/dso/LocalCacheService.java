@@ -1,7 +1,10 @@
 package demo3011.dso;
 
+import org.noear.solon.core.util.ClassUtil;
 import org.noear.solon.data.cache.CacheService;
 import org.noear.wood.cache.LocalCache;
+
+import java.lang.reflect.Type;
 
 public class LocalCacheService implements CacheService {
     LocalCache cache;
@@ -22,7 +25,8 @@ public class LocalCacheService implements CacheService {
     }
 
     @Override
-    public <T> T get(String key, Class<T> clz) {
-        return cache.get(key, clz);
+    public <T> T get(String key, Type type) {
+        Class<?> clz = ClassUtil.getTypeClass(type);
+        return (T) cache.get(key, clz);
     }
 }

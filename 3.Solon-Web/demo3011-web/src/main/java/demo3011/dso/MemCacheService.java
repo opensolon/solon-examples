@@ -1,8 +1,10 @@
 package demo3011.dso;
 
+import org.noear.solon.core.util.ClassUtil;
 import org.noear.solon.data.cache.CacheService;
 import org.noear.wood.cache.memcached.MemCache;
 
+import java.lang.reflect.Type;
 import java.util.Properties;
 
 public class MemCacheService implements CacheService {
@@ -24,7 +26,8 @@ public class MemCacheService implements CacheService {
     }
 
     @Override
-    public <T> T get(String key, Class<T> clz) {
-        return cache.get(key, clz);
+    public <T> T get(String key, Type type) {
+        Class<?> clz = ClassUtil.getTypeClass(type);
+        return (T) cache.get(key, clz);
     }
 }
