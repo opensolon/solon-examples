@@ -5,6 +5,6 @@ import org.noear.solon.annotation.Component;
 /**
  * @author noear 2021/12/28 created
  */
-@Component
+@Component("userService")
 public class UserService {
 }
