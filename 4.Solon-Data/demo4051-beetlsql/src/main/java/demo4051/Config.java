@@ -2,7 +2,10 @@ package demo4051;
 
 import com.zaxxer.hikari.HikariDataSource;
 import org.beetl.sql.core.DefaultNameConversion;
+import org.beetl.sql.core.Interceptor;
 import org.beetl.sql.core.SQLManager;
+import org.beetl.sql.core.db.DBStyle;
+import org.beetl.sql.core.db.MySqlStyle;
 import org.beetl.sql.solon.annotation.Db;
 import org.noear.solon.annotation.Bean;
 import org.noear.solon.annotation.Configuration;
@@ -22,5 +25,7 @@ public class Config {
     @Bean
     public void db1m(@Db("db1") SQLManager sqlManager) {
         //sqlManager.setNc(new DefaultNameConversion());
+        //sqlManager.setInters(new Interceptor[]{});
+        //sqlManager.setDbStyle(new MySqlStyle());
     }
 }
