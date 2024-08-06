@@ -19,5 +19,6 @@
     <modules>
         <module>demoA001-smartdoc</module>
         <module>demoA002-openapi2_knife4j</module>
+        <module>demoA003-openapi2_gateway</module>
     </modules>
 </project>

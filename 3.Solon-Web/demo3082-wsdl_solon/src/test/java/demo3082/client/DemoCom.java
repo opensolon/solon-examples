@@ -2,7 +2,7 @@ package demo3082.client;
 
 import org.noear.solon.annotation.Component;
 import org.noear.solon.core.bean.LifecycleBean;
-import org.noear.solonx.webservices.WebServiceReference;
+import org.noear.solonx.web.webservices.WebServiceReference;
 
 @Component
 public  class DemoCom implements LifecycleBean {

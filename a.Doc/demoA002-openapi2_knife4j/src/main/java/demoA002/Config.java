@@ -19,17 +19,15 @@ public class Config {
     OpenApiExtensionResolver openApiExtensionResolver;
 
     /**
-     * 基于配置构建
+     * 基于配置构建（由 solon.docs 自动生成）
      */
-    @Bean("adminApi")
-    public DocDocket adminApi(@Inject("${swagger.adminApi}") DocDocket docket) {
+    @Bean
+    public void adminApi(@Inject("adminApi") DocDocket docket) {
         //docket.globalResult(SwaggerRes.class);
         docket.globalResponseCodes(new HttpCodes());
         //docket.securityDefinitionInHeader("token");
         docket.basicAuth(openApiExtensionResolver.getSetting().getBasic());
         docket.vendorExtensions(openApiExtensionResolver.buildExtensions());
-
-        return docket;
     }
 
     /**

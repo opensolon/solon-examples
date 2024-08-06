@@ -4,34 +4,37 @@ solon.app:
 
 solon.output.meta: 1
 
-# db1 为固定数据源
-test.db1:
-  schema: rock
-  jdbcUrl: jdbc:mysql://localhost:3306/rock?useUnicode=true&characterEncoding=utf8&autoReconnect=true&rewriteBatchedStatements=true&useSSL=false
-  driverClassName: com.mysql.jdbc.Driver
-  username: root
-  password: 123456
 
-# db2 用动态数据源演示
-test.db2:
-  type: "com.zaxxer.hikari.HikariDataSource"
-  default: "db_rock1"
-  strict: true
-  db_rock0:
+solon.dataSources:
+  db1!: # db1 为固定数据源
+    class: "com.zaxxer.hikari.HikariDataSource"
     schema: rock
     jdbcUrl: jdbc:mysql://localhost:3306/rock?useUnicode=true&characterEncoding=utf8&autoReconnect=true&rewriteBatchedStatements=true&useSSL=false
     driverClassName: com.mysql.jdbc.Driver
     username: root
     password: 123456
-  db_rock1:
-    schema: rock1
-    jdbcUrl: jdbc:mysql://localhost:3306/rock1?useUnicode=true&characterEncoding=utf8&autoReconnect=true&rewriteBatchedStatements=true&useSSL=false
-    driverClassName: com.mysql.jdbc.Driver
-    username: root
-    password: 123456
-  db_rock2:
-    schema: rock2
-    jdbcUrl: jdbc:mysql://localhost:3306/rock2?useUnicode=true&characterEncoding=utf8&autoReconnect=true&rewriteBatchedStatements=true&useSSL=false
-    driverClassName: com.mysql.jdbc.Driver
-    username: root
-    password: 123456
+  db2: # db2 用动态数据源演示
+    class: "org.noear.solon.data.dynamicds.DynamicDataSource"
+    default: "db_rock1"
+    strict: true
+    db_rock0:
+      dataSourceClassName: "com.zaxxer.hikari.HikariDataSource"
+      schema: rock
+      jdbcUrl: jdbc:mysql://localhost:3306/rock?useUnicode=true&characterEncoding=utf8&autoReconnect=true&rewriteBatchedStatements=true&useSSL=false
+      driverClassName: com.mysql.jdbc.Driver
+      username: root
+      password: 123456
+    db_rock1:
+      dataSourceClassName: "com.zaxxer.hikari.HikariDataSource"
+      schema: rock1
+      jdbcUrl: jdbc:mysql://localhost:3306/rock1?useUnicode=true&characterEncoding=utf8&autoReconnect=true&rewriteBatchedStatements=true&useSSL=false
+      driverClassName: com.mysql.jdbc.Driver
+      username: root
+      password: 123456
+    db_rock2:
+      dataSourceClassName: "com.zaxxer.hikari.HikariDataSource"
+      schema: rock2
+      jdbcUrl: jdbc:mysql://localhost:3306/rock2?useUnicode=true&characterEncoding=utf8&autoReconnect=true&rewriteBatchedStatements=true&useSSL=false
+      driverClassName: com.mysql.jdbc.Driver
+      username: root
+      password: 123456

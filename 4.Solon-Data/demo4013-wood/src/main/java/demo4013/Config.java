@@ -9,16 +9,17 @@ import org.noear.wood.annotation.Db;
 
 import javax.sql.DataSource;
 
-@Configuration
-public class Config {
-    @Bean
-    public DataSource db1(@Inject("${test.db1}") HikariDataSource ds) throws Exception{
-        return ds;
-    }
-
+// 改用 solon.dataSources 配置后，会自动构建
+//@Configuration
+//public class Config {
 //    @Bean
-//    public void db2Init(@Db DbContext db) throws Exception{
-//        db.exe("insert into user(id) values(1),(2)");
+//    public DataSource db1(@Inject("${test.db1}") HikariDataSource ds) throws Exception{
+//        return ds;
 //    }
-}
+//
+////    @Bean
+////    public void db2Init(@Db DbContext db) throws Exception{
+////        db.exe("insert into user(id) values(1),(2)");
+////    }
+//}
 
