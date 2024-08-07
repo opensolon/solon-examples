@@ -1,10 +1,11 @@
 solon.app:
-  namespace: test
+#  namespace: test  #也可以写在下面
   group: demo       #配置服务使用的默认组
   name: helloapp    #发现服务使用的应用名
 
 solon.cloud.nacos:
   server: 127.0.0.1:8848   #nacos服务地址
+  namespace: test
   username: nacos             #nacos链接账号
   password: nacos             #nacos链接密码
   config:
