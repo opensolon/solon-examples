@@ -21,15 +21,26 @@ solon.cloud.nacos:
 
 solon.docs:
   discover:
-    pathPattern: "swagger/v2?group=adminApi"
+    uriPattern: "swagger/v2?group=adminApi"
     syncStatus: true
     excluded:
       - "user-api"
     included:
       - "demoapi"
-#  routes:
-#    adminApi:
-#      groupName: "admin端接口"
-#      upstream:
-#        service: "demoapi"
-#        path: "swagger/v2?group=adminApi"
+  routes:
+    bizDocApi:
+      groupName: "业务功能BIZ"
+      basicAuth:
+        admin: 123456
+      upstream:
+        service: "http://localhost:82/"
+        contextPath: "/snowy-solon"
+        uri: "swagger/v2?group=bizDocApi"
+    sysDocApi:
+      groupName: "系统功能SYS"
+      basicAuth:
+        admin: 123456
+      upstream:
+        service: "http://localhost:82/"
+        contextPath: "/snowy-solon"
+        uri: "swagger/v2?group=sysDocApi"
