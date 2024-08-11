@@ -14,11 +14,6 @@ public class LifecycleBeanTest implements LifecycleBean {
     DbPro db1;
 
     @Override
-    public void afterInjection() throws Throwable {
-        System.out.println("============ afterInjection");
-    }
-
-    @Override
     public void start() throws Throwable {
         System.out.println("============ start");
     }
