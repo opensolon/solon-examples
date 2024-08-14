@@ -27,7 +27,7 @@ public class ProducerApp {
             //注册
             CloudManager.register(eventServiceImp);
             //触发订阅动作
-            context.beanOnloaded(ctx -> eventServiceImp.subscribe());
+            context.lifecycle(eventServiceImp);
         }
     }
 }
