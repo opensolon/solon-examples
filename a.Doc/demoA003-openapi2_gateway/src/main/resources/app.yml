@@ -33,7 +33,7 @@ solon.docs:
       basicAuth:
         admin: 123456
       upstream:
-        service: "http://localhost:82/"
+        target: "http://localhost:82/"
         contextPath: "/snowy-solon"
         uri: "swagger/v2?group=bizDocApi"
     sysDocApi:
@@ -41,6 +41,6 @@ solon.docs:
       basicAuth:
         admin: 123456
       upstream:
-        service: "http://localhost:82/"
+        target: "http://localhost:82/"
         contextPath: "/snowy-solon"
         uri: "swagger/v2?group=sysDocApi"
