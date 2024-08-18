@@ -18,10 +18,11 @@ import javax.sql.DataSource;
 
 @Configuration
 public class Config {
-    @Bean(value = "db1", typed = true)
-    public DataSource db1(@Inject("${test.db1}") HikariDataSource ds) {
-        return ds;
-    }
+//有 “solon.dataSources” 配置后，不需要手动构建 bean
+//    @Bean(value = "db1", typed = true)
+//    public DataSource db1(@Inject("${test.db1}") HikariDataSource ds) {
+//        return ds;
+//    }
 
     @Bean
     public void db1_cfg(@Db("db1") MybatisConfiguration cfg,

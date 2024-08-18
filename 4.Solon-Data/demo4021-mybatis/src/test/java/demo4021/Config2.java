@@ -13,7 +13,7 @@ public class Config2 {
      * 用于做单元测试清数据用
      * */
     @Bean
-    public DbContext db1w(@Inject("${test.db1}") HikariDataSource dataSource) {
+    public DbContext db1w(@Inject("db1") HikariDataSource dataSource) {
         String schema = dataSource.getSchema();
         return new DbContext(schema, dataSource);
     }
