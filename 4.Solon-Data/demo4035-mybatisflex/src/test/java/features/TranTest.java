@@ -9,10 +9,12 @@ import org.noear.solon.test.SolonTest;
 import org.noear.wood.DbContext;
 import demo4035.DemoApp;
 
+import javax.sql.DataSource;
+
 
 @SolonTest(DemoApp.class)
 public class TranTest extends HttpTester {
-    DbContext db = Solon.cfg().getBean("test.db1", DbContext.class);
+    DbContext db = new DbContext((DataSource) Solon.context().getBean("db1"));
 
     @Test
     public void test() throws Exception {

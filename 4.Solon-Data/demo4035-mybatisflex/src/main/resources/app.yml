@@ -13,12 +13,13 @@ solon.logging.logger:
 
 solon.dataSources:
   db1!:
+    class: "com.zaxxer.hikari.HikariDataSource"
     schema: rock
     jdbcUrl: jdbc:mysql://localhost:3306/rock?useSSL=false&useUnicode=true&characterEncoding=utf8&autoReconnect=true&rewriteBatchedStatements=true
     driverClassName: com.mysql.jdbc.Driver
     username: root
     password: 123456
-    url: ${test.db1.jdbcUrl}
+    url: ${.jdbcUrl}
 
 #默认
 mybatis.db1:
