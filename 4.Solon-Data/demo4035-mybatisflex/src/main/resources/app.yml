@@ -11,7 +11,8 @@ solon.logging.logger:
         level: "WARN"
 
 
-test.db1:
+solon.dataSources:
+  db1!:
     schema: rock
     jdbcUrl: jdbc:mysql://localhost:3306/rock?useSSL=false&useUnicode=true&characterEncoding=utf8&autoReconnect=true&rewriteBatchedStatements=true
     driverClassName: com.mysql.jdbc.Driver

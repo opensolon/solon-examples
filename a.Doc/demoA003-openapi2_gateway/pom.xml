@@ -15,7 +15,7 @@
     <parent>
         <groupId>org.noear</groupId>
         <artifactId>solon-parent</artifactId>
-        <version>2.9.0-M11</version>
+        <version>2.9.0-RC</version>
         <relativePath />
     </parent>
 
@@ -32,6 +32,11 @@
         <dependency>
             <groupId>org.noear</groupId>
             <artifactId>solon-openapi2-knife4j</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.noear</groupId>
+            <artifactId>solon.cloud.gateway</artifactId>
         </dependency>
 
         <dependency>
@@ -60,18 +65,6 @@
     <build>
         <finalName>${project.name}</finalName>
         <plugins>
-            <plugin>
-                <groupId>com.github.shalousun</groupId>
-                <artifactId>smart-doc-maven-plugin</artifactId>
-                <version>2.4.2</version>
-                <configuration>
-                    <!--指定生成文档的使用的配置文件,配置文件放在自己的项目中-->
-                    <configFile>./src/main/resources/smart-doc.json</configFile>
-                    <!--指定项目名称-->
-                    <projectName>测试</projectName>
-                </configuration>
-            </plugin>
-
             <plugin>
                 <groupId>org.noear</groupId>
                 <artifactId>solon-maven-plugin</artifactId>
