@@ -1,15 +1,8 @@
 
 ### 配置示例
 
-```java
-@Configuration
-public class Config {
-    @Bean(name = "db1", typed = true)
-    public DataSource db1(@Inject("${test.db1}") HikariDataSource dataSource) {
-        return dataSource;
-    }
-}
-```
+数据源配置与构建参考：
+ * https://solon.noear.org/article/794
 
 ```yaml
 solon.dataSources.db1!:
