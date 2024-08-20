@@ -12,7 +12,7 @@ public class Config {
 ```
 
 ```yaml
-demo.db1:
+solon.dataSources.db1!:
   schema: rock
   jdbcUrl: jdbc:mysql://localhost:3306/rock?useUnicode=true&characterEncoding=utf8&autoReconnect=true&rewriteBatchedStatements=true
   driverClassName: com.mysql.jdbc.Driver
