@@ -17,10 +17,11 @@ import javax.sql.DataSource;
 
 @Configuration
 public class Config {
-    @Bean(name = "db1", typed = true)
-    public DataSource db1(@Inject("${test.db1}") HikariDataSource dataSource) {
-        return dataSource;
-    }
+//有 “solon.dataSources” 配置后，不需要手动构建 bean
+//    @Bean(name = "db1", typed = true)
+//    public DataSource db1(@Inject("${test.db1}") HikariDataSource dataSource) {
+//        return dataSource;
+//    }
 
     @Bean
     public void db1m(@Db("db1") SQLManager sqlManager) {
