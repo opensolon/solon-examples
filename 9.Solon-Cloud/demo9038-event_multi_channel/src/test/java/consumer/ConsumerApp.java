@@ -27,7 +27,7 @@ public class ConsumerApp {
             //注册
             CloudManager.register(eventServiceImp);
             //触发订阅动作
-            context.lifecycle(() -> eventServiceImp.subscribe());
+            context.lifecycle(eventServiceImp);
         }
     }
 }
