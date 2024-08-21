@@ -21,7 +21,7 @@ solon.cloud.nacos:
 
 solon.docs:
   routes:
-    adminApi:
+    - id: adminApi
       groupName: "admin端接口"
       globalResponseInData: true
       globalResult: "demoA002.model.ResultModel"

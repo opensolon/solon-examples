@@ -22,14 +22,13 @@ solon.cloud.nacos:
 
 solon.docs:
   discover:
+    enabled: true
     uriPattern: "swagger/v2?group=adminApi"
     syncStatus: true
-    excluded:
-      - "user-api"
-    included:
-      - "demoapi"
+    excluded-services:
+      - "docapi"
   routes:
-    bizDocApi:
+    - id: bizDocApi
       groupName: "业务功能BIZ"
       basicAuth:
         admin: 123456
@@ -37,7 +36,7 @@ solon.docs:
         target: "http://localhost:82/"
         contextPath: "/snowy-solon"
         uri: "swagger/v2?group=bizDocApi"
-    sysDocApi:
+    - id: sysDocApi
       groupName: "系统功能SYS"
       basicAuth:
         admin: 123456
@@ -47,9 +46,12 @@ solon.docs:
         uri: "swagger/v2?group=sysDocApi"
 
 solon.cloud.gateway:
+  discover:
+    enabled: true
   routes:
-    - target: "http://localhost:8082" # 或 "lb://user-service"
+    - id: slef
+      target: "http://localhost:8082" # 或 "lb://user-service"
       predicates:
         - "Path=/slef/**"
-      filters:
-        - "StripPrefix=1"
+  default-filters:
+    - "StripPrefix=1"
