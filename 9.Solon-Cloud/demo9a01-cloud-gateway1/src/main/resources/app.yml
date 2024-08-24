@@ -1,0 +1,27 @@
+server.port: 8080
+
+solon:
+  app:
+    name: 'demo-app'
+    group: 'demo'
+  logging.logger:
+    root:
+      level: INFO
+  docs:
+    routes:
+      - id: demo-app
+        groupName: demo-app
+        apis:
+          - basePackage: "com.example.demo"
+
+# 排除网关启动
+solon.plugin.exclude:
+  - "org.noear.solon.cloud.gateway.integration.XPluginImpl"
+
+knife4j.enable: true
+knife4j.basic.enable: false
+knife4j.basic.username: admin
+knife4j.basic.password: 123456
+knife4j.setting.enableOpenApi: false
+knife4j.setting.enableSwaggerModels: false
+knife4j.setting.enableFooter: false

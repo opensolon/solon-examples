@@ -63,5 +63,8 @@
 
         <module>demo9901-cloud_or_single1</module>
         <module>demo9902-cloud_or_single2</module>
+
+        <module>demo9a01-cloud-gateway1</module>
+        <module>demo9a02-cloud-gateway2</module>
     </modules>
 </project>

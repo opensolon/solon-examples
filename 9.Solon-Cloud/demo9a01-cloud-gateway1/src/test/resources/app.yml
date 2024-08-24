@@ -1,0 +1,35 @@
+
+server.port: 8090
+
+solon:
+  app:
+    name: 'demo-gateway'
+    group: 'demo'
+  logging.logger:
+    root:
+      level: INFO
+  docs:
+    routes:
+      - id: demo-app
+        groupName: demo-app
+        upstream:
+          target: "http://localhost:8080"
+          uri: "/swagger/v2?group=demo-app"
+          contextPath: "/demo-app" #knife4j 在调试时，会加上这个地址段（网通可通过它，匹配识别）
+  cloud:
+    gateway:
+      routes:
+        - id: demo-app
+          target: "http://localhost:8080"
+          predicates:
+            - "Path=/demo-app/**"
+          filters:
+            - "StripPrefix=1" #功能模块是没有 /demo-app/ 的，所以要去掉第1段路径
+
+knife4j.enable: true
+knife4j.basic.enable: false
+knife4j.basic.username: admin
+knife4j.basic.password: 123456
+knife4j.setting.enableOpenApi: false
+knife4j.setting.enableSwaggerModels: false
+knife4j.setting.enableFooter: false

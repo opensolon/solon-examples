@@ -1,0 +1,32 @@
+
+server.port: 8090
+
+solon:
+  app:
+    name: 'demo-gateway'
+    group: 'demo'
+  logging.logger:
+    root:
+      level: INFO
+  docs:
+    routes:
+      - id: demo-app
+        groupName: demo-app
+        upstream:
+          target: "http://localhost:8080"
+          uri: "/demo-app/swagger/v2?group=demo-app"
+  cloud:
+    gateway:
+      routes:
+        - id: demo-app
+          target: "http://localhost:8080"
+          predicates:
+            - "Path=/demo-app/**"
+
+knife4j.enable: true
+knife4j.basic.enable: false
+knife4j.basic.username: admin
+knife4j.basic.password: 123456
+knife4j.setting.enableOpenApi: false
+knife4j.setting.enableSwaggerModels: false
+knife4j.setting.enableFooter: false
