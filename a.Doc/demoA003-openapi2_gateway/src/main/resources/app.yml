@@ -17,12 +17,12 @@ knife4j.setting.enableFooter: false
 knife4j.setting.enableFooterCustom: true
 knife4j.setting.footerCustomContent: Apache License 2.0 | Copyright 2022-[SNOWY](https://www.xiaonuo.vip)
 
-solon.cloud.nacos:
-  server: "localhost:8848"           #nacos2 服务地址
+#solon.cloud.nacos:
+#  server: "localhost:8848"           #nacos2 服务地址
 
 solon.docs:
   discover:
-    enabled: true
+    enabled: false
     uriPattern: "swagger/v2?group=adminApi"
     syncStatus: true
     excluded-services:
@@ -47,11 +47,15 @@ solon.docs:
 
 solon.cloud.gateway:
   discover:
-    enabled: true
+    enabled: false
   routes:
     - id: slef
       target: "http://localhost:8082" # 或 "lb://user-service"
       predicates:
         - "Path=/slef/**"
+    - id: snowy-solon
+      target: "http://localhost:82"
+      predicates:
+        - "Path=/snowy-solon/**"
   default-filters:
     - "StripPrefix=1"
