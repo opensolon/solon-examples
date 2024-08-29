@@ -4,8 +4,8 @@ import demo6014.controller.interceptor.TokenHandler;
 import org.noear.snack.ONode;
 import org.noear.solon.annotation.Component;
 import org.noear.solon.annotation.Mapping;
-import org.noear.solon.cloud.utils.http.HttpUtils;
 import org.noear.solon.core.handle.Context;
+import org.noear.solon.net.http.HttpUtils;
 
 
 /**
@@ -36,7 +36,9 @@ public class SevGateway extends ApiGatewayBase {
             }
 
             //转发请求
-            String rstJson = HttpUtils.http(sevName, ctx.path()).data(ctx.paramMap()).post();
+            String rstJson = HttpUtils.http(sevName, ctx.path())
+                    .data(ctx.paramMap())
+                    .post();
 
             //将json数据转为 java object
             return ONode.loadStr(rstJson).toData();

@@ -11,7 +11,7 @@
     <parent>
         <groupId>org.noear</groupId>
         <artifactId>solon-parent</artifactId>
-        <version>2.9.1</version>
+        <version>2.9.2-SNAPSHOT</version>
         <relativePath />
     </parent>
 
@@ -35,25 +35,31 @@
 
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>solon.scheduling.simple</artifactId>
+            <artifactId>solon-scheduling-simple</artifactId>
             <scope>provided</scope>
         </dependency>
 
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>solon.view.thymeleaf</artifactId>
+            <artifactId>solon-view-thymeleaf</artifactId>
             <scope>provided</scope>
         </dependency>
 
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>solon.cache.jedis</artifactId>
+            <artifactId>solon-view-freemarker</artifactId>
             <scope>provided</scope>
         </dependency>
 
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>solon-web</artifactId>
+            <artifactId>solon-cache-jedis</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.noear</groupId>
+            <artifactId>solon-web-shortcuts</artifactId>
             <scope>provided</scope>
         </dependency>
 
@@ -73,7 +79,7 @@
         <!-- 用于插件自动行调试用 -->
 <!--        <dependency>-->
 <!--            <groupId>org.noear</groupId>-->
-<!--            <artifactId>solon-web</artifactId>-->
+<!--            <artifactId>solon-web-shortcuts</artifactId>-->
 <!--            <scope>test</scope>-->
 <!--        </dependency>-->
 

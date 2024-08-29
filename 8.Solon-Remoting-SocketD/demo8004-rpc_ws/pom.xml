@@ -15,53 +15,53 @@
     <parent>
         <groupId>org.noear</groupId>
         <artifactId>solon-parent</artifactId>
-        <version>2.9.1</version>
+        <version>2.9.2-SNAPSHOT</version>
         <relativePath />
     </parent>
 
     <dependencies>
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>solon-lib</artifactId>
+            <artifactId>solon-lib-shortcuts</artifactId>
         </dependency>
 
         <!-- java websocket //ok -->
 <!--        <dependency>-->
 <!--            <groupId>org.noear</groupId>-->
-<!--            <artifactId>solon.boot.websocket</artifactId>-->
+<!--            <artifactId>solon-boot-websocket</artifactId>-->
 <!--        </dependency>-->
 
 
         <!-- jetty websocket //ok -->
 <!--        <dependency>-->
 <!--            <groupId>org.noear</groupId>-->
-<!--            <artifactId>solon.boot.jetty</artifactId>-->
+<!--            <artifactId>solon-boot-jetty</artifactId>-->
 <!--        </dependency>-->
 <!--        <dependency>-->
 <!--            <groupId>org.noear</groupId>-->
-<!--            <artifactId>solon.boot.jetty.add.websocket</artifactId>-->
+<!--            <artifactId>solon-boot-jetty-add-websocket</artifactId>-->
 <!--        </dependency>-->
 
         <!-- undertow websocket //ok -->
 <!--        <dependency>-->
 <!--            <groupId>org.noear</groupId>-->
-<!--            <artifactId>solon.boot.undertow</artifactId>-->
+<!--            <artifactId>solon-boot-undertow</artifactId>-->
 <!--        </dependency>-->
 
         <!-- smarthttp websocket //ok -->
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>solon.boot.smarthttp</artifactId>
+            <artifactId>solon-boot-smarthttp</artifactId>
         </dependency>
 
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>solon.serialization.snack3</artifactId>
+            <artifactId>solon-serialization-snack3</artifactId>
         </dependency>
 
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>nami.channel.socketd</artifactId>
+            <artifactId>nami-channel-socketd</artifactId>
         </dependency>
 
         <dependency>
@@ -72,12 +72,12 @@
 
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>nami.coder.snack3</artifactId>
+            <artifactId>nami-coder-snack3</artifactId>
         </dependency>
 
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>solon.logging.simple</artifactId>
+            <artifactId>solon-logging-simple</artifactId>
         </dependency>
 
         <dependency>

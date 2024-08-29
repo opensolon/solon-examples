@@ -15,7 +15,7 @@
     <parent>
         <groupId>org.noear</groupId>
         <artifactId>solon-parent</artifactId>
-        <version>2.9.1</version>
+        <version>2.9.2-SNAPSHOT</version>
         <relativePath />
     </parent>
 
@@ -40,32 +40,32 @@
         -->
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>solon-web</artifactId>
+            <artifactId>solon-web-shortcuts</artifactId>
         </dependency>
 
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>solon.view.enjoy</artifactId>
+            <artifactId>solon-view-enjoy</artifactId>
         </dependency>
 
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>solon.view.beetl</artifactId>
+            <artifactId>solon-view-beetl</artifactId>
         </dependency>
 
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>solon.view.thymeleaf</artifactId>
+            <artifactId>solon-view-thymeleaf</artifactId>
         </dependency>
 
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>solon.view.velocity</artifactId>
+            <artifactId>solon-view-velocity</artifactId>
         </dependency>
 
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>solon.i18n</artifactId>
+            <artifactId>solon-i18n</artifactId>
         </dependency>
 
         <dependency>

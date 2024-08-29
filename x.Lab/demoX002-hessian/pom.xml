@@ -22,43 +22,43 @@
     <dependencies>
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>solon.boot.jetty</artifactId>
+            <artifactId>solon-boot-jetty</artifactId>
         </dependency>
 
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>nami.coder.jackson</artifactId>
+            <artifactId>nami-coder-jackson</artifactId>
         </dependency>
 
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>nami.coder.hessian</artifactId>
+            <artifactId>nami-coder-hessian</artifactId>
         </dependency>
 
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>nami.coder.protostuff</artifactId>
+            <artifactId>nami-coder-protostuff</artifactId>
         </dependency>
 
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>nami.channel.http.okhttp</artifactId>
+            <artifactId>nami-channel-http-okhttp</artifactId>
         </dependency>
 
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>solon.serialization.hessian</artifactId>
+            <artifactId>solon-serialization-hessian</artifactId>
         </dependency>
 
 
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>solon.serialization.jackson</artifactId>
+            <artifactId>solon-serialization-jackson</artifactId>
         </dependency>
 
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>solon.serialization.protostuff</artifactId>
+            <artifactId>solon-serialization-protostuff</artifactId>
         </dependency>
 
         <dependency>

@@ -16,8 +16,8 @@
 <dependencies>
     <dependency>
         <groupId>org.noear</groupId>
-        <artifactId>solon-web</artifactId>
-        <version>2.9.1</version>
+        <artifactId>solon-web-shortcuts</artifactId>
+        <version>2.9.2-SNAPSHOT</version>
     </dependency>
 </dependencies>
 ```
@@ -115,8 +115,8 @@ public class HelloController {
 <dependencies>
     <dependency>
         <groupId>org.noear</groupId>
-        <artifactId>solon-web</artifactId>
-        <version>2.9.1</version>
+        <artifactId>solon-web-shortcuts</artifactId>
+        <version>2.9.2-SNAPSHOT</version>
     </dependency>
 </dependencies>
 

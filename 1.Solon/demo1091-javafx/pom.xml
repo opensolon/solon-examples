@@ -11,7 +11,7 @@
     <parent>
         <groupId>org.noear</groupId>
         <artifactId>solon-parent</artifactId>
-        <version>2.9.1</version>
+        <version>2.9.2-SNAPSHOT</version>
         <relativePath />
     </parent>
 
@@ -23,12 +23,12 @@
         <!-- 如果不需要 web api，则改成：solon-lib -->
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>solon-api</artifactId>
+            <artifactId>solon-web-shortcuts</artifactId>
         </dependency>
 
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>solon.logging.simple</artifactId>
+            <artifactId>solon-logging-simple</artifactId>
         </dependency>
 
         <!-- 这个版本号，可以与编译的 java 版本号相同 -->
