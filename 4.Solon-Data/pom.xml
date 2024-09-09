@@ -37,7 +37,6 @@
         <module>demo4051-beetlsql</module>
         <module>demo4051-beetlsql_native</module>
         <module>demo4061-sqltoy</module>
-        <module>demo4071-hasordb</module>
         <module>demo4072-dbvisitor</module>
         <module>demo4073-hasor_dataway</module>
         <module>demo4074-hasor_dataway-mds</module>
