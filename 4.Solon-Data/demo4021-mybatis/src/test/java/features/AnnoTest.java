@@ -3,7 +3,6 @@ package features;
 import org.apache.ibatis.solon.annotation.Db;
 import org.junit.jupiter.api.Test;
 
-
 import org.noear.solon.test.SolonTest;
 import demo4021.DemoApp;
 import demo4021.dso.mapper.AppxMapper;

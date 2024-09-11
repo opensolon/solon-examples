@@ -18,7 +18,7 @@ public class ApiGateway extends Gateway {
     protected void register() {
 
         //添加个前置处理
-        before(c -> {
+        filter((c,o) -> {
             //检测有没有token（用 param 替代；方便手浏览器测试）
             if (c.param("t") == null) {
                 //如果没有令牌；直接设定结果
@@ -27,6 +27,7 @@ public class ApiGateway extends Gateway {
                 //设为已处理（主接口就不会进去了）
                 c.setHandled(true);
             }
+            o.doFilter(c);
         });
 
         //添加Bean

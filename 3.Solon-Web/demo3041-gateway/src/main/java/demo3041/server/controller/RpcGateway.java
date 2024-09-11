@@ -15,7 +15,10 @@ import demo3041.server.controller.api.UserServiceImpl;
 public class RpcGateway extends Gateway {
     @Override
     protected void register() {
-        before(c -> c.attrSet("@render", "@type_json"));
+        filter((c,o) -> {
+            c.attrSet("@render", "@type_json");
+            o.doFilter(c);
+        });
 
         //添加服务（不带mapping的函数；需要 remoting = true，才会加载出来）
         add("user", UserServiceImpl.class, true);

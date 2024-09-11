@@ -1,8 +1,7 @@
 package demo4041.dso.mapper;
 
+import com.jfinal.plugin.activerecord.solon.annotation.Sql;
 import demo4041.model.AppxModel;
-import org.noear.solon.extend.activerecord.annotation.Namespace;
-import org.noear.solon.extend.activerecord.annotation.Sql;
 
 /**
  * @author noear 2022/10/11 created

@@ -19,7 +19,7 @@ public class SevGateway extends ApiGatewayBase {
     @Override
     protected void register() {
         //添加个前置处理
-        before(new TokenHandler());
+        filter(new TokenHandler());
 
         //添加缺省处理
         add(Nav.class);

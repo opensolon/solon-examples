@@ -1,8 +1,8 @@
 package test;
 
 import org.noear.solon.Solon;
+import org.noear.solon.annotation.Import;
 import org.noear.solon.test.SolonTest;
-import org.noear.solon.test.annotation.TestPropertySource;
 
 import javax.sql.DataSource;
 import java.sql.Connection;
@@ -12,7 +12,7 @@ import java.sql.Statement;
 /**
  * @author noear 2023/5/29 created
  */
-@TestPropertySource("classpath:app.yml")
+@Import(profiles = "classpath:app.yml")
 @SolonTest
 public class DemoTest2 {
     public static void main(String[] args) throws Exception{

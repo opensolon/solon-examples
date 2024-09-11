@@ -12,7 +12,7 @@ import org.noear.solon.data.tran.TranPolicy;
 public class AppService2 {
 
     //测试注入
-    @org.noear.solon.extend.activerecord.annotation.Db("db2")
+    @com.jfinal.plugin.activerecord.solon.annotation.Db("db2")
     DbPro db2;
 
     public Object getApp(int app_id) throws Exception {

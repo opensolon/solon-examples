@@ -16,7 +16,7 @@ public class ApiGateway extends ApiGatewayBase {
     protected void register() {
 
         //添加个前置处理
-        before(new TokenHandler());
+        filter(new TokenHandler());
 
         //添加Bean
         addBeans(bw -> "api".equals(bw.tag()));

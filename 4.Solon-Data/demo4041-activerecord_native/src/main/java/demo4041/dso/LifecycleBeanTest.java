@@ -1,9 +1,9 @@
 package demo4041.dso;
 
 import com.jfinal.plugin.activerecord.DbPro;
+import com.jfinal.plugin.activerecord.solon.annotation.Db;
 import org.noear.solon.annotation.Component;
 import org.noear.solon.core.bean.LifecycleBean;
-import org.noear.solon.extend.activerecord.annotation.Db;
 
 /**
  * @author noear 2023/3/2 created

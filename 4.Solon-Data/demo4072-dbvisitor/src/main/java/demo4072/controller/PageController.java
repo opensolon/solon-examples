@@ -3,7 +3,7 @@ package demo4072.controller;
 import demo4072.dso.mapper.AppxMapper;
 import net.hasor.dbvisitor.page.Page;
 import net.hasor.dbvisitor.page.PageObject;
-import net.hasor.dbvisitor.solon.Db;
+import net.hasor.dbvisitor.solon.annotation.Db;
 import org.noear.solon.annotation.Controller;
 import org.noear.solon.annotation.Mapping;
 

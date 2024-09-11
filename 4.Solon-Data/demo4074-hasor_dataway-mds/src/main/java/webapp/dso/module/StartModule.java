@@ -54,7 +54,7 @@ public class StartModule implements WebModule {
         //
         // udf/udfSource/import 指令 的类型创建委托给 spring
         QueryApiBinder queryBinder = apiBinder.tryCast(QueryApiBinder.class);
-        queryBinder.bindFinder(Finder.TYPE_SUPPLIER.apply(Solon.cfg()::getBean));
+        queryBinder.bindFinder(Finder.TYPE_SUPPLIER.apply(Solon.cfg()::toBean));
         queryBinder.loadUdf(queryBinder.findClass(DimUdf.class));
         queryBinder.loadUdfSource(queryBinder.findClass(DimUdfSource.class));
     }

@@ -2,6 +2,8 @@ package demo6013.controller.interceptor;
 
 import demo6013.controller.ApiCodes;
 import org.noear.solon.core.handle.Context;
+import org.noear.solon.core.handle.Filter;
+import org.noear.solon.core.handle.FilterChain;
 import org.noear.solon.core.handle.Handler;
 
 /**
@@ -9,14 +11,16 @@ import org.noear.solon.core.handle.Handler;
  *
  * @author noear 2021/6/11 created
  */
-public class TokenHandler implements Handler {
+public class TokenHandler implements Filter {
     @Override
-    public void handle(Context ctx) throws Throwable {
+    public void doFilter(Context ctx, FilterChain chain) throws Throwable {
         //
         //检测有没有token（用 param 替代；方便手浏览器测试）
         //
         if (ctx.param("t") == null) {
             throw ApiCodes.CODE_4001021;
+        } else {
+            chain.doFilter(ctx);
         }
     }
 }

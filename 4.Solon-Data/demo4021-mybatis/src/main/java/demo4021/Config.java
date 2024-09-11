@@ -1,13 +1,8 @@
 package demo4021;
 
-import com.zaxxer.hikari.HikariDataSource;
 import org.apache.ibatis.solon.annotation.Db;
 import org.noear.solon.annotation.Bean;
 import org.noear.solon.annotation.Configuration;
-import org.noear.solon.annotation.Inject;
-
-import javax.sql.DataSource;
-
 
 @Configuration
 public class Config {

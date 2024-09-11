@@ -5,7 +5,6 @@ import demo4037.mapper.UserMapper;
 import org.apache.ibatis.solon.annotation.Db;
 import org.junit.jupiter.api.Test;
 
-
 import org.noear.solon.test.SolonTest;
 import org.noear.solon.test.annotation.Rollback;
 import tk.mybatis.mapper.entity.Example;

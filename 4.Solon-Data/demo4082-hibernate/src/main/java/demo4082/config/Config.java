@@ -1,7 +1,6 @@
 package demo4082.config;
 
 import com.zaxxer.hikari.HikariDataSource;
-import org.hibernate.solon.annotation.Db;
 import org.noear.solon.annotation.Bean;
 import org.noear.solon.annotation.Configuration;
 import org.noear.solon.annotation.Inject;

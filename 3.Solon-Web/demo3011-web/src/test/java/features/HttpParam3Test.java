@@ -3,7 +3,6 @@ package features;
 import demo3011.WebApp;
 import org.junit.jupiter.api.Test;
 import org.noear.nami.Nami;
-import org.noear.nami.annotation.Body;
 import org.noear.nami.annotation.NamiBody;
 import org.noear.nami.annotation.NamiClient;
 import org.noear.nami.coder.snack3.SnackDecoder;

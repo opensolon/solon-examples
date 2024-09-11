@@ -1,10 +1,11 @@
 package demo3011.controller.more;
 
-import org.noear.solon.annotation.Before;
+import org.noear.solon.annotation.Addition;
 import org.noear.solon.annotation.Controller;
 import org.noear.solon.annotation.Mapping;
 import org.noear.solon.core.handle.Context;
-import org.noear.solon.core.handle.Handler;
+import org.noear.solon.core.handle.Filter;
+import org.noear.solon.core.handle.FilterChain;
 
 /**
  * @author noear 2020/12/14 created
@@ -12,16 +13,16 @@ import org.noear.solon.core.handle.Handler;
 @Controller
 public class InterceptController {
 
-    @Before(Before1.class)
+    @Addition(Before1.class)
     @Mapping("/demo2/intercept/demo")
     public String demo() throws Exception{
         return "demo";
     }
 
-    public static class Before1 implements Handler{
+    public static class Before1 implements Filter {
 
         @Override
-        public void handle(Context ctx) throws Throwable {
+        public void doFilter(Context ctx, FilterChain chain) throws Throwable {
             ctx.output("intercept");
         }
     }

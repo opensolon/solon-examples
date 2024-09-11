@@ -8,6 +8,7 @@ import demo3032.util.AjaxJson;
 import org.noear.solon.annotation.Bean;
 import org.noear.solon.annotation.Configuration;
 import org.noear.solon.annotation.Inject;
+import org.redisson.solon.RedissonClientOriginalSupplier;
 import org.redisson.solon.RedissonSupplier;
 
 
@@ -60,7 +61,7 @@ public class SaTokenConfigure {
 	}
 
 	@Bean
-	public SaTokenDaoOfRedissonJackson saTokenDaoInit(@Inject("${sa-token-dao.redis}") RedissonSupplier redissonSupplier) {
+	public SaTokenDaoOfRedissonJackson saTokenDaoInit(@Inject("${sa-token-dao.redis}") RedissonClientOriginalSupplier redissonSupplier) {
 		return new SaTokenDaoOfRedissonJackson(redissonSupplier.get());
 	}
 }

@@ -14,7 +14,7 @@ import org.noear.solon.core.event.EventBus;
 public class OrderController {
     @Mapping("t1")
     public String t1(){
-        EventBus.push(new OrderCreatedEvent("t1"));
+        EventBus.publish(new OrderCreatedEvent("t1"));
         return Solon.cfg().appName();
     }
 }

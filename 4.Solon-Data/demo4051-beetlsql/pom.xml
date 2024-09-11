@@ -15,12 +15,13 @@
     <parent>
         <groupId>org.noear</groupId>
         <artifactId>solon-parent</artifactId>
-        <version>2.9.3</version>
+        <version>3.0.0-M1</version>
         <relativePath />
     </parent>
 
     <properties>
         <java.version>11</java.version>
+        <beetlsql.version>3.30.12-RELEASE</beetlsql.version>
     </properties>
 
     <dependencies>
@@ -31,7 +32,13 @@
 
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>beetlsql-solon-plugin</artifactId>
+            <artifactId>solon-data</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.ibeetl</groupId>
+            <artifactId>sql-solon-plugin</artifactId>
+            <version>${beetlsql.version}</version>
         </dependency>
 
         <dependency>

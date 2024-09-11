@@ -1,17 +1,15 @@
 package features2;
 
 import demo4031.DemoApp;
-import demo4031.dso.mapper.AppxMapper;
 import demo4031.dso.mapper.UserMapper;
 import demo4031.dso.service.TestService;
-import demo4031.model.AppxModel;
 import demo4031.model.UserModel;
-import org.apache.ibatis.solon.annotation.Db;
 import org.junit.jupiter.api.Test;
 
 import org.noear.solon.annotation.Inject;
 
 import org.noear.solon.test.SolonTest;
+import org.noear.wood.annotation.Db;
 
 /**
  * @author noear 2022/4/5 created

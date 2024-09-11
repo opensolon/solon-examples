@@ -2,7 +2,7 @@ package demo4041.model;
 
 import com.jfinal.plugin.activerecord.IBean;
 import com.jfinal.plugin.activerecord.Model;
-import org.noear.solon.extend.activerecord.annotation.Table;
+import com.jfinal.plugin.activerecord.solon.annotation.Table;
 
 @Table(name = "appx", primaryKey = "app_id")
 public class AppxModel extends Model<AppxModel> implements IBean {

@@ -3,12 +3,12 @@ package demo4082.test;
 import demo4082.App;
 import demo4082.model.User;
 import org.hibernate.SessionFactory;
-import org.hibernate.solon.annotation.Db;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.noear.solon.data.annotation.Tran;
 import org.noear.solon.test.SolonJUnit5Extension;
 import org.noear.solon.test.SolonTest;
+import org.noear.wood.annotation.Db;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;

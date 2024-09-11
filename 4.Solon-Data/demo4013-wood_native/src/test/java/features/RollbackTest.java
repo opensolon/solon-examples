@@ -2,9 +2,9 @@ package features;
 
 import demo4013.DemoApp;
 import org.junit.jupiter.api.Test;
-import org.noear.solon.test.annotation.TestRollback;
 import org.noear.solon.test.HttpTester;
 import org.noear.solon.test.SolonTest;
+import org.noear.solon.test.annotation.Rollback;
 import org.noear.wood.DbContext;
 import org.noear.wood.annotation.Db;
 
@@ -19,7 +19,7 @@ public class RollbackTest extends HttpTester {
         clear(db);
     }
 
-    @TestRollback
+    @Rollback
     @Test
     public void test2() throws Exception {
         db.table("test").set("v1", "1111").insert();

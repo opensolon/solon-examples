@@ -12,7 +12,7 @@ import demo4021.DemoApp;
 
 @SolonTest(DemoApp.class)
 public class TranTest extends HttpTester {
-    DbContext db = Solon.cfg().getBean("solon.dataSources.db1!", DbContext.class);
+    DbContext db = Solon.cfg().toBean("solon.dataSources.db1!", DbContext.class);
 
     @Test
     public void test() throws Exception {

@@ -1,10 +1,10 @@
 package demo4041.dso.service;
 
 import com.jfinal.plugin.activerecord.DbPro;
+import com.jfinal.plugin.activerecord.solon.annotation.Db;
 import org.noear.solon.data.annotation.Cache;
 import org.noear.solon.data.annotation.Tran;
 import org.noear.solon.data.tran.TranPolicy;
-import org.noear.solon.extend.activerecord.annotation.Db;
 import org.noear.solon.annotation.Component;
 
 

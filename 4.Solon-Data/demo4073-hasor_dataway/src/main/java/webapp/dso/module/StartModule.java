@@ -44,7 +44,7 @@ public class StartModule implements WebModule {
         props.setProperty("jdbcUrl", props.getProperty("jdbcUrl").replace("~/", ExtendLoader.path()));
 
         //2.生成DataSource
-        DataSource ds = props.getBean(HikariDataSource.class);
+        DataSource ds = props.toBean(HikariDataSource.class);
 
         try {
             //3.需要初始化schame（第一次会成功；之后会失败；不用管...）

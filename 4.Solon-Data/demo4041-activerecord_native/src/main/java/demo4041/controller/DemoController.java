@@ -2,10 +2,10 @@ package demo4041.controller;
 
 import com.jfinal.plugin.activerecord.DbPro;
 import com.jfinal.plugin.activerecord.Record;
+import com.jfinal.plugin.activerecord.solon.annotation.Db;
 import demo4041.model.AppxModel;
 import org.noear.solon.annotation.Controller;
 import org.noear.solon.annotation.Mapping;
-import org.noear.solon.extend.activerecord.annotation.Db;
 
 /**
  * @author noear 2021/5/24 created

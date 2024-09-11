@@ -4,7 +4,6 @@ import demo4014.DemoApp;
 import demo4014.dso.mapper.SqlMapper;
 import org.junit.jupiter.api.Test;
 
-
 import org.noear.solon.test.SolonTest;
 import org.noear.wood.annotation.Db;
 

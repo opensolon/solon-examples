@@ -14,7 +14,7 @@ import org.noear.wood.DbContext;
 public class Tran2Test extends HttpTester {
     @Test
     public void test() throws Exception {
-        DbContext db = Solon.cfg().getBean("test.db1", DbContext.class);
+        DbContext db = Solon.cfg().toBean("test.db1", DbContext.class);
         clear(db);
         path("/tran/test").get();
         path("/tran/test").get();
