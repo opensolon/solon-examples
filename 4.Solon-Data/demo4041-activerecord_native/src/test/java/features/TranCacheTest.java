@@ -2,29 +2,35 @@ package features;
 
 import org.junit.jupiter.api.Test;
 
+import org.noear.solon.Solon;
+import org.noear.solon.data.sqlutils.SqlUtils;
 import org.noear.solon.test.HttpTester;
 
 import org.noear.solon.test.SolonTest;
-import org.noear.wood.DbContext;
-import org.noear.wood.annotation.Db;
 import demo4041.DemoApp;
+
+import javax.sql.DataSource;
+import java.sql.SQLException;
 
 
 @SolonTest(DemoApp.class)
 public class TranCacheTest extends HttpTester {
-    @Db
-    DbContext db;
+    SqlUtils sqlUtils = SqlUtils.of(Solon.context().getBean(DataSource.class));
+
+    private void clear() throws Exception {
+        sqlUtils.execute("TRUNCATE TABLE test");
+    }
+
+    private long count() throws SQLException {
+        return (long) sqlUtils.selectValue("select count(1) from test");
+    }
 
     @Test
     public void test0() throws Exception {
-        clear(db);
+        clear();
         path("/tran/test0").get();
         path("/tran/test0").get();
         path("/tran/test0").get();
-        assert db.table("test").selectCount() == 2;
-    }
-
-    private void clear(DbContext db) throws Exception {
-        db.exe("TRUNCATE TABLE test");
+        assert count() == 2;
     }
 }
