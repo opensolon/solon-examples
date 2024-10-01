@@ -8,7 +8,7 @@ import org.noear.solon.test.SolonJUnit5Extension;
 import org.noear.solon.test.SolonTest;
 
 
-@ExtendWith(SolonJUnit5Extension.class)
+
 @SolonTest(classes = WebApp.class)
 public class UserControllerTest extends HttpTester {
     @Test

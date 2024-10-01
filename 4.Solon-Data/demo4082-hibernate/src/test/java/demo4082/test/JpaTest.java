@@ -18,7 +18,7 @@ import java.util.List;
 /**
  * @author noear 2023/10/4 created
  */
-@ExtendWith(SolonJUnit5Extension.class)
+
 @SolonTest(App.class)
 public class JpaTest {
     @Db("db1")

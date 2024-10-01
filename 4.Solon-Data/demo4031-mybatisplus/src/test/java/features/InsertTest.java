@@ -11,7 +11,7 @@ import demo4031.dso.mapper.AppxMapper;
 /**
  * @author noear 2021/5/16 created
  */
-@ExtendWith(SolonJUnit5Extension.class)
+
 @SolonTest(DemoApp.class)
 public class InsertTest {
 

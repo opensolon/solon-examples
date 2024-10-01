@@ -65,7 +65,6 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-
             <scope>provided</scope>
         </dependency>
 
@@ -77,7 +76,7 @@
 
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>wood-solon-plugin</artifactId>
+            <artifactId>solon-data-sqlutils</artifactId>
             <scope>test</scope>
         </dependency>
     </dependencies>

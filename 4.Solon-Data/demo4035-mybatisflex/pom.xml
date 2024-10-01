@@ -72,8 +72,7 @@
 
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>wood</artifactId>
-            <version>${wood.version}</version>
+            <artifactId>solon-data-sqlutils</artifactId>
             <scope>test</scope>
         </dependency>
 

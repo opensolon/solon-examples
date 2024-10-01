@@ -9,7 +9,7 @@ import org.noear.solon.test.SolonJUnit5Extension;
 import org.noear.solon.test.SolonTest;
 import demo4031.DemoApp;
 
-@ExtendWith(SolonJUnit5Extension.class)
+
 @SolonTest(DemoApp.class)
 public class PageTest extends HttpTester {
     @Test
