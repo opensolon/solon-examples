@@ -2,7 +2,7 @@ package features;
 
 import org.junit.jupiter.api.Test;
 import org.noear.solon.annotation.Inject;
-import org.noear.solon.data.sqlutils.SqlUtils;
+import org.noear.solon.data.sql.SqlUtils;
 import org.noear.solon.test.SolonTest;
 
 import javax.sql.DataSource;

@@ -2,7 +2,7 @@ package github;
 
 
 import org.noear.nami.Nami;
-import org.noear.nami.channel.http.okhttp.HttpChannel;
+import org.noear.nami.channel.http.HttpChannel;
 import org.noear.nami.coder.snack3.SnackDecoder;
 
 import java.util.List;
