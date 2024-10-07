@@ -31,8 +31,7 @@
 
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>solonx-web-webservices</artifactId>
-            <version>1.1.0</version>
+            <artifactId>solon-web-webservices</artifactId>
         </dependency>
 
         <dependency>
