@@ -1,5 +1,6 @@
 package features;
 
+import cn.hutool.core.bean.BeanUtil;
 import org.junit.jupiter.api.Test;
 import org.noear.solon.annotation.Inject;
 import org.noear.solon.data.sql.Row;
@@ -23,29 +24,28 @@ public class SqlTest {
 
     @Test
     public void select1() throws SQLException {
-        Object tmp = sqlUtils.selectValue("select 1");
+        Long tmp = sqlUtils.selectValue("select 1");
         System.out.println(tmp);
         assert "1".equals(tmp.toString());
     }
 
     @Test
     public void select2() throws SQLException {
-        Object tmp = sqlUtils.selectValue("select app_id from appx limit 2");
+        Integer tmp = sqlUtils.selectValue("select app_id from appx limit 2");
         System.out.println(tmp);
-        assert tmp instanceof Integer;
 
-        List<Object> tmpList = sqlUtils.selectValueArray("select app_id from appx limit 2");
+        List<Integer> tmpList = sqlUtils.selectValueArray("select app_id from appx limit 2");
         System.out.println(tmpList);
         assert tmpList.size() == 2;
     }
 
     @Test
     public void select2_2() throws SQLException {
-        Object tmp = sqlUtils.selectValue("select app_id from appx where app_id=? limit 2", 99999);
+        Integer tmp = sqlUtils.selectValue("select app_id from appx where app_id=? limit 2", 99999);
         System.out.println(tmp);
         assert tmp == null;
 
-        List<Object> tmpList = sqlUtils.selectValueArray("select app_id from appx where app_id=? limit 2", 99999);
+        List<Integer> tmpList = sqlUtils.selectValueArray("select app_id from appx where app_id=? limit 2", 99999);
         System.out.println(tmpList);
         assert tmpList == null;
     }
@@ -56,7 +56,7 @@ public class SqlTest {
         System.out.println(tmp);
         assert tmp.size() > 2;
 
-        Appx tmp2 = tmp.toBean(Appx.class);
+        Appx tmp2 = BeanUtil.mapToBean(tmp.toMap(), Appx.class, false);
         System.out.println(tmp2);
         assert tmp2.app_id > 0;
 
