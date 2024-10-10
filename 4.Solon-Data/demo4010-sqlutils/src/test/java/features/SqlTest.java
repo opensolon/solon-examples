@@ -2,16 +2,15 @@ package features;
 
 import cn.hutool.core.bean.BeanUtil;
 import org.junit.jupiter.api.Test;
+import org.noear.solon.annotation.Bean;
+import org.noear.solon.annotation.Configuration;
 import org.noear.solon.annotation.Inject;
-import org.noear.solon.data.sql.Row;
-import org.noear.solon.data.sql.SqlBuilder;
-import org.noear.solon.data.sql.SqlUtils;
+import org.noear.solon.data.sql.*;
 import org.noear.solon.test.SolonTest;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -19,6 +18,15 @@ import java.util.List;
  */
 @SolonTest
 public class SqlTest {
+    @Configuration
+    public static class SqlConfig {
+        //替换默认的转换器
+        @Bean
+        public Row.Converter converter() {
+            return (r, c) -> BeanUtil.toBean(r.toMap(), c);
+        }
+    }
+
     @Inject
     SqlUtils sqlUtils;
 
@@ -56,11 +64,16 @@ public class SqlTest {
         System.out.println(tmp);
         assert tmp.size() > 2;
 
-        Appx tmp2 = BeanUtil.mapToBean(tmp.toMap(), Appx.class, false);
+        Appx tmp2 = tmp.toBean(Appx.class);
         System.out.println(tmp2);
         assert tmp2.app_id > 0;
 
-        List<Row> tmpList = sqlUtils.selectRowList("select * from appx limit 2");
+        RowList tmpList = sqlUtils.selectRowList("select * from appx limit 2");
+        System.out.println(tmpList);
+        assert tmpList.size() == 2;
+
+
+        List<Appx> tmpList2 = tmpList.toBeanList(Appx.class);
         System.out.println(tmpList);
         assert tmpList.size() == 2;
     }
@@ -78,11 +91,11 @@ public class SqlTest {
 
     @Test
     public void select4() throws SQLException {
-        Iterator<Row> tmp = sqlUtils.selectRowStream("select * from appx limit 100", 10);
-        System.out.println(tmp);
+        RowIterator rowIterator = sqlUtils.selectRowIterator("select * from appx limit 100", 10);
+        System.out.println(rowIterator);
 
         int cout = 0;
-        try {
+        try (RowIterator tmp = rowIterator) {
             while (tmp.hasNext()) {
                 System.out.println(tmp.next());
                 cout++;
@@ -90,8 +103,6 @@ public class SqlTest {
                     break;
                 }
             }
-        } finally {
-            tmp.remove();
         }
 
         assert cout == 2;
