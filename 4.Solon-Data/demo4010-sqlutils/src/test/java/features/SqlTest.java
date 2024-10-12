@@ -64,6 +64,8 @@ public class SqlTest {
         System.out.println(tmp);
         assert tmp.size() > 2;
 
+        System.out.println(tmp.toMap());
+
         Appx tmp2 = tmp.toBean(Appx.class);
         System.out.println(tmp2);
         assert tmp2.app_id > 0;
