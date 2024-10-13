@@ -3,6 +3,7 @@ package features;
 import org.junit.jupiter.api.Test;
 
 import org.noear.solon.Solon;
+import org.noear.solon.annotation.Inject;
 import org.noear.solon.data.sql.SqlUtils;
 import org.noear.solon.test.HttpTester;
 
@@ -15,15 +16,15 @@ import java.sql.SQLException;
 
 @SolonTest(DemoApp.class)
 public class TranTest extends HttpTester {
-
-    SqlUtils sqlUtils = SqlUtils.of(Solon.context().getBean(DataSource.class));
+    @Inject
+    SqlUtils sqlUtils;
 
     private void clear() throws Exception {
-        sqlUtils.execute("TRUNCATE TABLE test");
+        sqlUtils.sql("TRUNCATE TABLE test").update();
     }
 
     private long count() throws SQLException {
-        return (long) sqlUtils.selectValue("select count(1) from test");
+        return sqlUtils.sql("select count(1) from test").queryValue();
     }
 
     @Test

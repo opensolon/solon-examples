@@ -118,7 +118,8 @@ public class SqlTest {
     @Test
     public void insert2() throws SQLException {
         sqlUtils.sql("delete from test where id=?", 2).update();
-        assert 2L == sqlUtils.sql("insert test(id,v1,v2) values(?,?,?)", 2, 2, 2).updateReturnKey();
+        long key = sqlUtils.sql("insert test(id,v1,v2) values(?,?,?)", 2, 2, 2).updateReturnKey();
+        assert 2L == key;
     }
 
     @Test
