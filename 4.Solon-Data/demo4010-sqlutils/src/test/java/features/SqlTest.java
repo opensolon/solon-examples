@@ -1,10 +1,10 @@
 package features;
 
-import cn.hutool.core.bean.BeanUtil;
 import org.junit.jupiter.api.Test;
 import org.noear.solon.annotation.Bean;
 import org.noear.solon.annotation.Configuration;
 import org.noear.solon.annotation.Inject;
+import org.noear.solon.core.util.ResourceUtil;
 import org.noear.solon.data.sql.*;
 import org.noear.solon.test.SolonTest;
 
@@ -13,26 +13,24 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-/**
- * @author noear 2024/10/1 created
- */
+@Configuration
 @SolonTest
 public class SqlTest {
-    @Configuration
-    public static class SqlConfig {
-        //替换默认的转换器
-        @Bean
-        public Row.Converter converter() {
-            return (r, c) -> BeanUtil.toBean(r.toMap(), c);
-        }
-    }
-
     @Inject
     SqlUtils sqlUtils;
 
+    @Bean
+    public void init() throws Exception {
+        String sql = ResourceUtil.getResourceAsString("db.sql");
+
+        for (String s1 : sql.split(";")) {
+            sqlUtils.sql(s1).update();
+        }
+    }
+
     @Test
     public void select1() throws SQLException {
-        Long tmp = sqlUtils.sql("select 1").queryValue();
+        Number tmp = sqlUtils.sql("select 1").queryValue();
         System.out.println(tmp);
         assert "1".equals(tmp.toString());
     }
@@ -112,14 +110,14 @@ public class SqlTest {
     @Test
     public void insert1() throws SQLException {
         sqlUtils.sql("delete from test where id=?", 2).update();
-        assert 1 == sqlUtils.sql("insert test(id,v1,v2) values(?,?,?)", 2, 2, 2).update();
+        assert 1 == sqlUtils.sql("insert into test(id,v1,v2) values(?,?,?)", 2, 2, 2).update();
     }
 
     @Test
     public void insert2() throws SQLException {
         sqlUtils.sql("delete from test where id=?", 2).update();
-        long key = sqlUtils.sql("insert test(id,v1,v2) values(?,?,?)", 2, 2, 2).updateReturnKey();
-        assert 2L == key;
+        Number key = sqlUtils.sql("insert into test(id,v1,v2) values(?,?,?)", 2, 2, 2).updateReturnKey();
+        assert 2L == key.longValue();
     }
 
     @Test
@@ -132,7 +130,7 @@ public class SqlTest {
         argsList.add(new Object[]{5, 5, 5});
 
         sqlUtils.sql("delete from test").update();
-        int[] rows = sqlUtils.sql("insert test(id,v1,v2) values(?,?,?)").updateBatch(argsList);
+        int[] rows = sqlUtils.sql("insert into test(id,v1,v2) values(?,?,?)").updateBatch(argsList);
 
         System.out.println(Arrays.toString(rows));
         assert rows.length == 5;
@@ -141,7 +139,7 @@ public class SqlTest {
     @Test
     public void update() throws SQLException {
         sqlUtils.sql("delete from test where id=?", 2).update();
-        assert 1 == sqlUtils.sql("insert test(id,v1,v2) values(?,?,?)", 2, 2, 2).update();
+        assert 1 == sqlUtils.sql("insert into test(id,v1,v2) values(?,?,?)", 2, 2, 2).update();
 
         assert 1 == sqlUtils.sql("update test set v1=? where id=?", 22, 2).update();
 
@@ -158,7 +156,7 @@ public class SqlTest {
         sqlUtils.sql(sqlSpec).update();
 
         sqlSpec.clear();
-        sqlSpec.append("insert test(id,v1,v2) values(?,?,?)", 2, 2, 2);
+        sqlSpec.append("insert into test(id,v1,v2) values(?,?,?)", 2, 2, 2);
         assert 1 == sqlUtils.sql(sqlSpec).update();
 
         sqlSpec.clear();
