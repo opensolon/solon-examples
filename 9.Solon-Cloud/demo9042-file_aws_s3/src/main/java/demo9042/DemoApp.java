@@ -1,6 +1,7 @@
 package demo9042;
 
 import org.noear.snack.ONode;
+import org.noear.solon.Solon;
 import org.noear.solon.Utils;
 import org.noear.solon.cloud.CloudClient;
 import org.noear.solon.cloud.model.Media;
@@ -9,13 +10,19 @@ import org.noear.solon.core.util.ResourceUtil;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.time.Duration;
 
 /**
  * @author noear 2021/4/8 created
  */
 public class DemoApp {
     public static void main(String[] args) throws Exception {
+        Solon.start(DemoApp.class, args);
+
         test();
+
+        System.out.println("------------");
+
         test2();
     }
 
@@ -36,7 +43,13 @@ public class DemoApp {
 
         //获取字符串内容
         String tmp = CloudClient.file().get(key).bodyAsString();
+        System.out.println(tmp);
         assert val.equals(tmp);
+
+
+        String url = CloudClient.file().getTempUrl(key, Duration.ofSeconds(2L));
+        System.out.println(url);
+        assert url.contains("://");
     }
 
 

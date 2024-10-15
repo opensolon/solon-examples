@@ -24,9 +24,16 @@
             <groupId>org.noear</groupId>
             <artifactId>solon-web</artifactId>
         </dependency>
+
         <dependency>
             <groupId>org.noear</groupId>
             <artifactId>aws-s3-solon-cloud-plugin</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>software.amazon.awssdk</groupId>
+            <artifactId>s3</artifactId>
+            <version>${aws.s3.version}</version>
         </dependency>
 
         <dependency>
