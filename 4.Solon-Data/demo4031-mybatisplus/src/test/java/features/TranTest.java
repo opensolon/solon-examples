@@ -1,7 +1,6 @@
 package features;
 
 import org.junit.jupiter.api.Test;
-import org.noear.solon.Solon;
 import org.noear.solon.annotation.Inject;
 import org.noear.solon.data.sql.SqlUtils;
 import org.noear.solon.test.HttpTester;
@@ -17,7 +16,7 @@ public class TranTest extends HttpTester {
     SqlUtils sqlUtils;
 
     private void clear() throws Exception {
-        sqlUtils.sql("TRUNCATE TABLE test").update();
+        sqlUtils.sql("DELETE FROM test").update();
     }
 
     private long count() throws SQLException {

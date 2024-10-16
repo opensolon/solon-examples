@@ -9,6 +9,9 @@ import demo4031.dso.mybatisplus_ext.MyLogicSqlInjector;
 import org.apache.ibatis.solon.annotation.Db;
 import org.noear.solon.annotation.Bean;
 import org.noear.solon.annotation.Configuration;
+import org.noear.solon.annotation.Inject;
+import org.noear.solon.core.util.ResourceUtil;
+import org.noear.solon.data.sql.SqlUtils;
 
 @Configuration
 public class Config {
@@ -19,10 +22,24 @@ public class Config {
 //    }
 
     @Bean
-    public void db1_cfg(@Db("db1") MybatisConfiguration cfg,
-                        @Db("db1") GlobalConfig globalConfig) {
+    public void db1_cfg(
+            @Inject SqlUtils sqlUtils,
+            @Db("db1") MybatisConfiguration cfg,
+            @Db("db1") GlobalConfig globalConfig) throws Exception {
+
+        String sql = ResourceUtil.getResourceAsString("db.sql");
+
+        for (String s1 : sql.split(";")) {
+            if (s1.trim().length() > 10) {
+                sqlUtils.sql(s1).update();
+            }
+        }
+
+        ////
+
+
         MybatisPlusInterceptor plusInterceptor = new MybatisPlusInterceptor();
-        plusInterceptor.addInnerInterceptor(new PaginationInnerInterceptor(DbType.MYSQL));
+        plusInterceptor.addInnerInterceptor(new PaginationInnerInterceptor(DbType.H2));
 
         cfg.setCacheEnabled(false);
         cfg.addInterceptor(plusInterceptor);
