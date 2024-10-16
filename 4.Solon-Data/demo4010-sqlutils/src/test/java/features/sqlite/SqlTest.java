@@ -1,5 +1,6 @@
-package features;
+package features.sqlite;
 
+import features.Appx;
 import org.junit.jupiter.api.Test;
 import org.noear.solon.annotation.Bean;
 import org.noear.solon.annotation.Configuration;
@@ -16,7 +17,7 @@ import java.util.List;
 @Configuration
 @SolonTest
 public class SqlTest {
-    @Inject
+    @Inject("sqlite")
     SqlUtils sqlUtils;
 
     @Bean
@@ -24,7 +25,9 @@ public class SqlTest {
         String sql = ResourceUtil.getResourceAsString("db.sql");
 
         for (String s1 : sql.split(";")) {
-            sqlUtils.sql(s1).update();
+            if(s1.trim().length() > 10) {
+                sqlUtils.sql(s1).update();
+            }
         }
     }
 
@@ -117,7 +120,11 @@ public class SqlTest {
     public void insert2() throws SQLException {
         sqlUtils.sql("delete from test where id=?", 2).update();
         Number key = sqlUtils.sql("insert into test(id,v1,v2) values(?,?,?)", 2, 2, 2).updateReturnKey();
-        assert 2L == key.longValue();
+
+        System.out.println(key);
+
+        //sqlite 是自增值；//h2 是插入值
+        assert 2L == key.longValue() || key.longValue() > 0L;
     }
 
     @Test

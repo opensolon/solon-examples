@@ -5,10 +5,11 @@ solon.app:
 solon.output.meta: 1
 
 solon.dataSources:
-  db1!:
+  sqlite!:
+    class: "com.zaxxer.hikari.HikariDataSource"
+    jdbcUrl: "jdbc:sqlite::memory:"
+    driverClassName: "org.sqlite.JDBC"
+  h2:
     class: "com.zaxxer.hikari.HikariDataSource"
     jdbcUrl: "jdbc:h2:mem:test;DB_CLOSE_ON_EXIT=FALSE;MODE=MYSQL;DATABASE_TO_LOWER=TRUE;IGNORECASE=TRUE;CASE_INSENSITIVE_IDENTIFIERS=TRUE"
     driverClassName: "org.h2.Driver"
-    username: "sa"
-    password: ""
-
