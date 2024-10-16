@@ -6,6 +6,7 @@ import org.noear.solon.annotation.Bean;
 import org.noear.solon.annotation.Configuration;
 import org.noear.solon.annotation.Inject;
 import org.noear.solon.core.util.ResourceUtil;
+import org.noear.solon.data.annotation.Tran;
 import org.noear.solon.data.sql.*;
 import org.noear.solon.test.SolonTest;
 
@@ -158,6 +159,29 @@ public class SqlTest {
 
     @Test
     public void update2() throws SQLException {
+        SqlBuilder sqlSpec = new SqlBuilder();
+        sqlSpec.append("delete from test where id=?", 2);
+        sqlUtils.sql(sqlSpec).update();
+
+        sqlSpec.clear();
+        sqlSpec.append("insert into test(id,v1,v2) values(?,?,?)", 2, 2, 2);
+        assert 1 == sqlUtils.sql(sqlSpec).update();
+
+        sqlSpec.clear();
+        sqlSpec.append("update test set v1=? where id=?", 22, 2);
+        assert 1 == sqlUtils.sql(sqlSpec).update();
+
+        sqlSpec.clear();
+        sqlSpec.append("select v1 from test where id=?", 2);
+        Object val = sqlUtils.sql(sqlSpec).queryValue();
+        System.out.println(val);
+
+        assert 22 == (int) val;
+    }
+
+    @Tran
+    @Test
+    public void update2_tran() throws SQLException {
         SqlBuilder sqlSpec = new SqlBuilder();
         sqlSpec.append("delete from test where id=?", 2);
         sqlUtils.sql(sqlSpec).update();
