@@ -2,7 +2,7 @@ package features;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.baomidou.mybatisplus.solon.plugins.pagination.Page;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import demo4031.DemoApp;
 import demo4031.dso.mapper.AppxMapperPlus;
 import demo4031.dso.mapper.AppxMapperPlusEx;

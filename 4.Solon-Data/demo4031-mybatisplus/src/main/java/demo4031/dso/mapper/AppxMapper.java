@@ -1,6 +1,6 @@
 package demo4031.dso.mapper;
 
-import com.baomidou.mybatisplus.solon.plugins.pagination.Page;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import demo4031.model.AppxModel;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;

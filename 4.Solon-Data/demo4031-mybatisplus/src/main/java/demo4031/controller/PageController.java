@@ -1,6 +1,6 @@
 package demo4031.controller;
 
-import com.baomidou.mybatisplus.solon.plugins.pagination.Page;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import demo4031.dso.mapper.AppxMapper;
 import demo4031.model.AppxModel;
 import org.apache.ibatis.solon.annotation.Db;

@@ -3,8 +3,8 @@ package demo4031;
 import com.baomidou.mybatisplus.annotation.DbType;
 import com.baomidou.mybatisplus.core.MybatisConfiguration;
 import com.baomidou.mybatisplus.core.config.GlobalConfig;
-import com.baomidou.mybatisplus.solon.plugins.MybatisPlusInterceptor;
-import com.baomidou.mybatisplus.solon.plugins.inner.PaginationInnerInterceptor;
+import com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor;
+import com.baomidou.mybatisplus.extension.plugins.inner.PaginationInnerInterceptor;
 import demo4031.dso.mybatisplus_ext.MyLogicSqlInjector;
 import org.apache.ibatis.solon.annotation.Db;
 import org.noear.solon.annotation.Bean;
@@ -36,7 +36,6 @@ public class Config {
         }
 
         ////
-
 
         MybatisPlusInterceptor plusInterceptor = new MybatisPlusInterceptor();
         plusInterceptor.addInnerInterceptor(new PaginationInnerInterceptor(DbType.H2));
