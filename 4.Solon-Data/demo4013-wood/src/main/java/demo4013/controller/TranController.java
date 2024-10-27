@@ -48,6 +48,24 @@ public class TranController {
         throw new RuntimeException("不让你加");
     }
 
+    @Inject
+    TranController self;
+
+    @Tran
+    public void test2_2_do() throws Exception {
+        //添加会失败，因为在事务里出异常了
+        //
+        appService.addApp();
+        appService.addApp();
+
+        throw new RuntimeException("不让你加");
+    }
+
+    @Mapping("test2_2")
+    public void test2_2() throws Exception {
+        self.test2_2_do();
+    }
+
     @Mapping("test11")
     public void test11() throws Exception {
         //添加会成功
