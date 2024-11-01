@@ -1,4 +1,4 @@
-package labs;
+package labs.demo9a01;
 
 import org.noear.solon.Solon;
 

@@ -1,6 +1,6 @@
-package features;
+package features.demo9a01;
 
-import com.example.demo.App;
+import demo9a01.App;
 
 import org.junit.jupiter.api.Test;
 
