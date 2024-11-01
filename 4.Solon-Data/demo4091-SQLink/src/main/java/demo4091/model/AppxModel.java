@@ -2,13 +2,18 @@ package demo4091.model;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.noear.solon.data.sqlink.base.annotation.Column;
 
 @Getter
 @Setter
 public class AppxModel {
-    private int agroup_id;
+    @Column("agroup_id")
+    private int groupId;
     private String note;
-    private String app_key;
-    private int app_id;
-    private int ar_is_examine;
+    @Column("app_key")
+    private String appKey;
+    @Column("app_id")
+    private int appId;
+    @Column("ar_is_examine")
+    private int isExamine;
 }

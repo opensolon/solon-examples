@@ -15,8 +15,8 @@
     <parent>
         <groupId>org.noear</groupId>
         <artifactId>solon-parent</artifactId>
-        <version>3.0.3-M1</version>
-        <relativePath />
+        <version>3.0.3-M2</version>
+        <relativePath/>
     </parent>
 
     <properties>
@@ -33,6 +33,19 @@
             <artifactId>lombok</artifactId>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>org.noear</groupId>
+            <artifactId>solon-data-sqlutils</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.zaxxer</groupId>
+            <artifactId>HikariCP</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <version>2.3.232</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -48,8 +61,8 @@
                     </compilerArgs>
                     <annotationProcessorPaths>
                         <path>
-                            <groupId>io.github.kiryu1223</groupId>
-                            <artifactId>drink-core</artifactId>
+                            <groupId>org.noear</groupId>
+                            <artifactId>solon-data-sqlink</artifactId>
                         </path>
                         <path>
                             <groupId>org.projectlombok</groupId>
