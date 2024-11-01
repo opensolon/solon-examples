@@ -1,7 +1,6 @@
-package features;
+package features.demo9a03;
 
-import com.example.demo.App;
-
+import demo9a03.App;
 import org.junit.jupiter.api.Test;
 
 import org.noear.solon.test.HttpTester;

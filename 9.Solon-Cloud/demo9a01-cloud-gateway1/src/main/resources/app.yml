@@ -12,7 +12,7 @@ solon:
       - id: demo-app
         groupName: demo-app
         apis:
-          - basePackage: "com.example.demo"
+          - basePackage: "demo9a01"
 
 # 排除网关启动
 solon.plugin.exclude:
