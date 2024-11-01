@@ -42,6 +42,11 @@
 
         <dependency>
             <groupId>org.noear</groupId>
+            <artifactId>nacos2-solon-cloud-plugin</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.noear</groupId>
             <artifactId>solon-openapi2-knife4j</artifactId>
         </dependency>
         
