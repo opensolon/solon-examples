@@ -6,6 +6,7 @@ import demo4091.model.Test;
 import org.noear.solon.annotation.Component;
 import org.noear.solon.annotation.Inject;
 import org.noear.solon.data.annotation.Tran;
+import org.noear.solon.data.sql.SqlUtils;
 import org.noear.solon.data.sqlink.core.api.client.Client;
 import org.noear.solon.data.tran.TranPolicy;
 
@@ -17,8 +18,8 @@ public class AppService
     @Inject
     Client client;
 
-//    @Inject
-//    SqlUtils sqlUtils;
+    @Inject
+    SqlUtils sqlUtils;
 
     public List<? extends DbTable> listTables()
     {
