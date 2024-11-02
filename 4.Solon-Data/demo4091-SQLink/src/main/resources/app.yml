@@ -10,15 +10,14 @@ solon.logging.logger:
   "com.zaxxer.hikari.*":
     level: "WARN"
 
-
 solon.dataSources:
-  db1!:
+  h2ds!:
     class: "com.zaxxer.hikari.HikariDataSource"
     jdbcUrl: "jdbc:h2:mem:test;DB_CLOSE_ON_EXIT=FALSE;MODE=MYSQL;DATABASE_TO_LOWER=TRUE;IGNORECASE=TRUE;CASE_INSENSITIVE_IDENTIFIERS=TRUE"
     driverClassName: "org.h2.Driver"
 
 solon.data.SQLink:
-  c1:
+  main:
     dbType: h2
-    dbName: db1
+    dsName: h2ds
     printSql: true

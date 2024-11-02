@@ -6,6 +6,8 @@ import org.noear.solon.annotation.Controller;
 import org.noear.solon.annotation.Inject;
 import org.noear.solon.annotation.Mapping;
 
+import java.util.List;
+
 @Mapping("/demo/")
 @Controller
 public class DemoController {
@@ -21,5 +23,10 @@ public class DemoController {
     @Mapping("test2")
     public AppxModel test2(){
         return appService.getOneById(1);
+    }
+
+    @Mapping("test3")
+    public List<? extends AppxModel> test3(){
+        return appService.getAll();
     }
 }

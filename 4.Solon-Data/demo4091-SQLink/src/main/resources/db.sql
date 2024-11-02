@@ -1,4 +1,3 @@
-
 CREATE TABLE `appx` (
                         `app_id` int NOT NULL AUTO_INCREMENT COMMENT '应用ID',
                         `app_key` varchar(40) DEFAULT NULL COMMENT '应用访问KEY',

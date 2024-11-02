@@ -26,6 +26,19 @@
     <dependencies>
         <dependency>
             <groupId>org.noear</groupId>
+            <artifactId>solon-test</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.noear</groupId>
+            <artifactId>solon-data-sqlutils</artifactId>
+<!--            <scope>test</scope>-->
+        </dependency>
+        <dependency>
+            <groupId>org.noear</groupId>
+            <artifactId>solon-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.noear</groupId>
             <artifactId>solon-data-sqlink</artifactId>
         </dependency>
         <dependency>
@@ -35,7 +48,7 @@
         </dependency>
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>solon-data-sqlutils</artifactId>
+            <artifactId>solon-logging-simple</artifactId>
         </dependency>
         <dependency>
             <groupId>com.zaxxer</groupId>
@@ -63,10 +76,12 @@
                         <path>
                             <groupId>org.noear</groupId>
                             <artifactId>solon-data-sqlink</artifactId>
+                            <version>${solon.version}</version>
                         </path>
                         <path>
                             <groupId>org.projectlombok</groupId>
                             <artifactId>lombok</artifactId>
+                            <version>${lombok.version}</version>
                         </path>
                     </annotationProcessorPaths>
                 </configuration>
