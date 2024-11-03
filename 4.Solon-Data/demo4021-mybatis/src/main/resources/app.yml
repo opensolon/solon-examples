@@ -2,25 +2,28 @@ solon.app:
     name: demoapp
     group: demo
 
-solon.output.meta: 1
-
 solon.logging.logger:
     "org.eclipse.jetty.*":
         level: "WARN"
     "com.zaxxer.hikari.*":
         level: "WARN"
 
-
+#solon.dataSources:
+#    db1!:
+#        class: "com.zaxxer.hikari.HikariDataSource"
+#        schema: rock
+#        jdbcUrl: jdbc:mysql://localhost:3306/rock?useUnicode=true&characterEncoding=utf8&autoReconnect=true&rewriteBatchedStatements=true
+#        driverClassName: com.mysql.jdbc.Driver
+#        username: root
+#        password: 123456
+#        url: ${.jdbcUrl}
 
 solon.dataSources:
     db1!:
         class: "com.zaxxer.hikari.HikariDataSource"
-        schema: rock
-        jdbcUrl: jdbc:mysql://localhost:3306/rock?useUnicode=true&characterEncoding=utf8&autoReconnect=true&rewriteBatchedStatements=true
-        driverClassName: com.mysql.jdbc.Driver
-        username: root
-        password: 123456
-        url: ${.jdbcUrl}
+        jdbcUrl: "jdbc:h2:mem:test;DB_CLOSE_ON_EXIT=FALSE;MODE=MYSQL;DATABASE_TO_LOWER=TRUE;IGNORECASE=TRUE;CASE_INSENSITIVE_IDENTIFIERS=TRUE"
+        driverClassName: "org.h2.Driver"
+
 
 #默认
 mybatis.db1:

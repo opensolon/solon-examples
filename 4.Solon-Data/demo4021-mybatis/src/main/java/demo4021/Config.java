@@ -3,6 +3,9 @@ package demo4021;
 import org.apache.ibatis.solon.annotation.Db;
 import org.noear.solon.annotation.Bean;
 import org.noear.solon.annotation.Configuration;
+import org.noear.solon.annotation.Inject;
+import org.noear.solon.core.util.ResourceUtil;
+import org.noear.solon.data.sql.SqlUtils;
 
 @Configuration
 public class Config {
@@ -17,7 +20,18 @@ public class Config {
 
     //调整 db1 的配置，或添加插件
     @Bean
-    public void db1_cfg(@Db("db1") org.apache.ibatis.session.Configuration cfg) {
+    public void db1_cfg(
+            @Inject SqlUtils sqlUtils,
+            @Db("db1") org.apache.ibatis.session.Configuration cfg) throws Exception {
+
+        String sql = ResourceUtil.getResourceAsString("db.sql");
+
+        for (String s1 : sql.split(";")) {
+            if (s1.trim().length() > 10) {
+                sqlUtils.sql(s1).update();
+            }
+        }
+
         cfg.setCacheEnabled(false);
     }
 
