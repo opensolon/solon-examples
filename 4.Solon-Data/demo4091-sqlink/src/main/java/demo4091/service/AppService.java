@@ -6,7 +6,7 @@ import demo4091.model.Test;
 import org.noear.solon.annotation.Component;
 import org.noear.solon.annotation.Inject;
 import org.noear.solon.data.annotation.Tran;
-import org.noear.solon.data.sqlink.core.api.Client;
+import org.noear.solon.data.sqlink.core.api.client.SQLinkClient;
 import org.noear.solon.data.sqlink.core.api.page.PagedResult;
 import org.noear.solon.data.sqlink.core.dialect.H2Dialect;
 import org.noear.solon.data.sqlink.core.sqlExt.SqlFunctions;
@@ -18,7 +18,7 @@ import java.util.List;
 public class AppService
 {
     @Inject
-    Client client;
+    SQLinkClient client;
 
     public String hello(String name)
     {

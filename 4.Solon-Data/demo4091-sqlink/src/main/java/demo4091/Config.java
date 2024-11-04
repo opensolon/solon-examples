@@ -5,7 +5,6 @@ import org.noear.solon.annotation.Bean;
 import org.noear.solon.annotation.Configuration;
 import org.noear.solon.annotation.Inject;
 import org.noear.solon.core.util.ResourceUtil;
-import org.noear.solon.data.sqlink.core.api.Client;
 import org.noear.solon.data.sqlink.core.dialect.DefaultDialect;
 import org.noear.solon.data.sqlink.core.dialect.H2Dialect;
 
