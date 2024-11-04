@@ -31,7 +31,6 @@
         <dependency>
             <groupId>org.noear</groupId>
             <artifactId>solon-data-sqlutils</artifactId>
-<!--            <scope>test</scope>-->
         </dependency>
         <dependency>
             <groupId>org.noear</groupId>
@@ -68,7 +67,6 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>${maven-compiler.version}</version>
                 <configuration>
-                    <parameters>true</parameters>
                     <compilerArgs>
                         <arg>-Xplugin:ExpressionTree</arg>
                     </compilerArgs>

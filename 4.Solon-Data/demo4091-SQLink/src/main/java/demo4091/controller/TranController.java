@@ -18,7 +18,7 @@ public class TranController
 
     //查看数据
     @Mapping("all")
-    public List<? extends Test> getAll()
+    public List<Test> getAll()
     {
         return appService.getAllTest();
     }

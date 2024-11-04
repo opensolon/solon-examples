@@ -11,12 +11,12 @@ solon.logging.logger:
     level: "WARN"
 
 solon.dataSources:
-  h2ds!:
+  main!:
     class: "com.zaxxer.hikari.HikariDataSource"
     jdbcUrl: "jdbc:h2:mem:test;DB_CLOSE_ON_EXIT=FALSE;MODE=MYSQL;DATABASE_TO_LOWER=TRUE;IGNORECASE=TRUE;CASE_INSENSITIVE_IDENTIFIERS=TRUE"
     driverClassName: "org.h2.Driver"
 
-solon.data.SQLink:
+solon.data.sqlink:
   main:
     dbType: h2
     dsName: h2ds
