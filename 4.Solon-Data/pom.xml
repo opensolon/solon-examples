@@ -44,6 +44,6 @@
         <module>demo4081-eclipselink</module>
         <module>demo4082-hibernate</module>
         <module>demo4101-redisson</module>
-        <module>demo4091-SQLink</module>
+        <module>demo4091-sqlink</module>
     </modules>
 </project>
