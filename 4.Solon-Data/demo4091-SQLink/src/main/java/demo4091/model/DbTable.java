@@ -7,9 +7,6 @@ import lombok.ToString;
 import org.noear.solon.data.sqlink.base.annotation.Column;
 import org.noear.solon.data.sqlink.base.annotation.Table;
 
-/**
- * @author noear 2021/7/5 created
- */
 @Data
 @Table(schema = "INFORMATION_SCHEMA", value = "TABLES")
 public class DbTable

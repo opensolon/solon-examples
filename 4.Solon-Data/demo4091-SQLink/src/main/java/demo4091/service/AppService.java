@@ -6,8 +6,10 @@ import demo4091.model.Test;
 import org.noear.solon.annotation.Component;
 import org.noear.solon.annotation.Inject;
 import org.noear.solon.data.annotation.Tran;
-import org.noear.solon.data.sql.SqlUtils;
-import org.noear.solon.data.sqlink.core.api.client.Client;
+import org.noear.solon.data.sqlink.core.api.Client;
+import org.noear.solon.data.sqlink.core.api.page.PagedResult;
+import org.noear.solon.data.sqlink.core.dialect.H2Dialect;
+import org.noear.solon.data.sqlink.core.sqlExt.SqlFunctions;
 import org.noear.solon.data.tran.TranPolicy;
 
 import java.util.List;
@@ -18,11 +20,27 @@ public class AppService
     @Inject
     Client client;
 
-    @Inject
-    SqlUtils sqlUtils;
-
-    public List<? extends DbTable> listTables()
+    public String hello(String name)
     {
+        return client.queryEmptyTable().endSelect(() ->
+                SqlFunctions.join(" ", "hello", name)).first();
+    }
+
+    public PagedResult<AppxModel> appx_get_page()
+    {
+        return client.query(AppxModel.class).toPagedResult(2, 2);
+    }
+
+    public List<DbTable> listTables()
+    {
+        client.getConfig().setDisambiguation(new H2Dialect()
+        {
+            @Override
+            public String disambiguationTableName(String table)
+            {
+                return table;
+            }
+        });
         return client.query(DbTable.class).toList();
     }
 
@@ -38,12 +56,12 @@ public class AppService
         return client.query(AppxModel.class).where(a -> a.getAppId() == id).first();
     }
 
-    public List<? extends AppxModel> getAll()
+    public List<AppxModel> getAll()
     {
         return client.query(AppxModel.class).toList();
     }
 
-    public List<? extends Test> getAllTest()
+    public List<Test> getAllTest()
     {
         return client.query(Test.class).toList();
     }
@@ -92,4 +110,6 @@ public class AppService
     {
         addApp();
     }
+
+
 }

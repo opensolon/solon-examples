@@ -67,7 +67,6 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>${maven-compiler.version}</version>
                 <configuration>
-                    <parameters>true</parameters>
                     <compilerArgs>
                         <arg>-Xplugin:ExpressionTree</arg>
                     </compilerArgs>

@@ -9,7 +9,6 @@ import org.noear.solon.test.SolonTest;
 
 import java.sql.SQLException;
 
-
 @SolonTest(DemoApp.class)
 public class TranTest extends HttpTester {
     @Inject

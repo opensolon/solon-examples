@@ -6,10 +6,6 @@ import org.junit.jupiter.api.Test;
 import org.noear.solon.annotation.Inject;
 import org.noear.solon.test.SolonTest;
 
-/**
- * @author noear 2021/5/16 created
- */
-
 @SolonTest(DemoApp.class)
 public class InsertTest
 {
