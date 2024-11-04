@@ -21,7 +21,7 @@
 
     <properties>
         <java.version>11</java.version>
-        <mybatis-flex.version>1.9.7</mybatis-flex.version>
+        <mybatis-flex.version>1.9.8</mybatis-flex.version>
     </properties>
 
 
