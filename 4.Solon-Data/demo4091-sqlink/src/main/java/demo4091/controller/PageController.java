@@ -10,14 +10,12 @@ import org.noear.solon.data.sqlink.core.page.PagedResult;
 
 @Mapping("/page/")
 @Controller
-public class PageController
-{
+public class PageController {
     @Inject
     AppService appService;
 
     @Mapping("test")
-    public Object test() throws Throwable
-    {
+    public Object test() throws Throwable {
         PagedResult<AppxModel> pagedResult = appService.appx_get_page();
         return pagedResult.getData();
     }

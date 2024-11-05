@@ -1,8 +1,6 @@
 package demo4091.model;
 
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 import org.noear.solon.data.sqlink.base.annotation.Column;
 import org.noear.solon.data.sqlink.base.annotation.Table;
 
