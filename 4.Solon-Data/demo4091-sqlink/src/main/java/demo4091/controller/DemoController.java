@@ -6,7 +6,7 @@ import demo4091.service.AppService;
 import org.noear.solon.annotation.Controller;
 import org.noear.solon.annotation.Inject;
 import org.noear.solon.annotation.Mapping;
-import org.noear.solon.data.sqlink.core.api.client.SQLinkClient;
+import org.noear.solon.data.sqlink.api.client.SQLinkClient;
 
 import java.util.List;
 
