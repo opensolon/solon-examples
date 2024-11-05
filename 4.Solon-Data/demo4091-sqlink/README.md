@@ -1,4 +1,3 @@
-
 SQLink 配置示例：
 
 ```yaml
@@ -12,7 +11,7 @@ solon.dataSources:
     class: "com.zaxxer.hikari.HikariDataSource"
     jdbcUrl: "jdbc:h2:mem:test;DB_CLOSE_ON_EXIT=FALSE;MODE=MYSQL;DATABASE_TO_LOWER=TRUE;IGNORECASE=TRUE;CASE_INSENSITIVE_IDENTIFIERS=TRUE"
     driverClassName: "org.h2.Driver"
-    
+
 # sqlink配置
 solon.data.sqlink:
   # 用到几个就配几个

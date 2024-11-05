@@ -6,8 +6,7 @@ import org.noear.solon.data.sqlink.base.annotation.Table;
 
 @Table("test")
 @Data
-public class Test
-{
+public class Test {
     @Column(primaryKey = true)
     private int id;
     private int v1;

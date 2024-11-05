@@ -11,22 +11,19 @@ import java.util.List;
 
 @Mapping("/tran/")
 @Controller
-public class TranController
-{
+public class TranController {
     @Inject
     AppService appService;
 
     //查看数据
     @Mapping("all")
-    public List<Test> getAll()
-    {
+    public List<Test> getAll() {
         return appService.getAllTest();
     }
 
     @Tran
     @Mapping("test")
-    public void test() throws Exception
-    {
+    public void test() throws Exception {
         //添加会成功
         //
         appService.addApp();
@@ -35,8 +32,7 @@ public class TranController
 
     @Tran
     @Mapping("test2")
-    public void test2() throws Exception
-    {
+    public void test2() throws Exception {
         //添加会失败，因为在事务里出异常了
         //
         appService.addApp();
@@ -46,16 +42,14 @@ public class TranController
     }
 
     @Mapping("test11")
-    public void test11() throws Exception
-    {
+    public void test11() throws Exception {
         //添加会成功
         //
         appService.addApp2();
     }
 
     @Mapping("test12")
-    public void test12() throws Exception
-    {
+    public void test12() throws Exception {
         //添加会成功（因为异常在事务之外） // addApp2 有事务
         //
         appService.addApp2();
@@ -65,15 +59,13 @@ public class TranController
 
     @Tran
     @Mapping("test21")
-    public void test21() throws Exception
-    {
+    public void test21() throws Exception {
         appService.addApp2();
     }
 
     @Tran
     @Mapping("test22")
-    public void test22() throws Exception
-    {
+    public void test22() throws Exception {
         //添加会失败，因为在事务里出异常了
         //
         appService.addApp2();
@@ -83,8 +75,7 @@ public class TranController
 
     @Tran
     @Mapping("test41")
-    public void test41() throws Exception
-    {
+    public void test41() throws Exception {
         //添加会成功
         //
         appService.addApp3();
@@ -94,8 +85,7 @@ public class TranController
 
     @Tran
     @Mapping("test51")
-    public void test51() throws Exception
-    {
+    public void test51() throws Exception {
         //添加会成功，因为addApp4是独立的新事务
         //
         appService.addApp4();
@@ -105,8 +95,7 @@ public class TranController
 
     @Tran
     @Mapping("test61")
-    public void test61() throws Exception
-    {
+    public void test61() throws Exception {
         //会失败
         //
         appService.addApp5();
@@ -115,8 +104,7 @@ public class TranController
 
 
     @Mapping("test63")
-    public void test63() throws Exception
-    {
+    public void test63() throws Exception {
         //添加会成功
         //
         appService.addApp5();
@@ -124,8 +112,7 @@ public class TranController
 
     @Tran
     @Mapping("test71")
-    public void test71() throws Exception
-    {
+    public void test71() throws Exception {
         //会成功
         //
         appService.addApp6();
@@ -133,8 +120,7 @@ public class TranController
     }
 
     @Mapping("test73")
-    public void test73() throws Exception
-    {
+    public void test73() throws Exception {
         //会失败
         //
         appService.addApp6();

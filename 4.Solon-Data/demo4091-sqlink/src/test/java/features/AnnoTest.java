@@ -8,20 +8,17 @@ import org.noear.solon.test.SolonTest;
 
 
 @SolonTest(DemoApp.class)
-public class AnnoTest
-{
+public class AnnoTest {
     @Inject
     AppService appService;
 
     @Test
-    public void test()
-    {
+    public void test() {
         assert !appService.listTables().isEmpty();
     }
 
     @Test
-    public void test2()
-    {
+    public void test2() {
         assert appService.hello("world").equals("hello world");
     }
 }
