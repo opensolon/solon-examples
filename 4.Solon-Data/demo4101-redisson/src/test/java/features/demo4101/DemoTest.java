@@ -1,10 +1,8 @@
-package demo4101.test;
+package features.demo4101;
 
 import demo4101.App;
 import org.junit.jupiter.api.Test;
-
 import org.noear.solon.annotation.Inject;
-
 import org.noear.solon.test.SolonTest;
 import org.redisson.api.RedissonClient;
 
