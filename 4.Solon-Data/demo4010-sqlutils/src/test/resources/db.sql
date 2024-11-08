@@ -18,6 +18,7 @@ CREATE TABLE `test` (
     `id` int NOT NULL,
     `v1` int DEFAULT NULL,
     `v2` int DEFAULT NULL,
+    `v3` varchar(50) DEFAULT NULL ,
     PRIMARY KEY (`id`)
 );
 

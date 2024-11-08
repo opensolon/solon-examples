@@ -26,7 +26,7 @@ public class SqlTest {
         String sql = ResourceUtil.getResourceAsString("db.sql");
 
         for (String s1 : sql.split(";")) {
-            if(s1.trim().length() > 10) {
+            if (s1.trim().length() > 10) {
                 sqlUtils.sql(s1).update();
             }
         }
@@ -129,6 +129,17 @@ public class SqlTest {
     }
 
     @Test
+    public void insert3() throws SQLException {
+        sqlUtils.sql("delete from test where id=?", 2).update();
+        Number key = sqlUtils.sql("insert into test(id,v1,v2,v3) values(?,?,?,?)", 2, 2, null, null).updateReturnKey();
+
+        System.out.println(key);
+
+        //sqlite 是自增值；//h2 是插入值
+        assert 2L == key.longValue() || key.longValue() > 0L;
+    }
+
+    @Test
     public void executeBatch() throws SQLException {
         List<Object[]> argsList = new ArrayList<>();
         argsList.add(new Object[]{1, 1, 1});
@@ -150,6 +161,19 @@ public class SqlTest {
         assert 1 == sqlUtils.sql("insert into test(id,v1,v2) values(?,?,?)", 2, 2, 2).update();
 
         assert 1 == sqlUtils.sql("update test set v1=? where id=?", 22, 2).update();
+
+        Object val = sqlUtils.sql("select v1 from test where id=?", 2).queryValue();
+        System.out.println(val);
+
+        assert 22 == (int) val;
+    }
+
+    @Test
+    public void update1() throws SQLException {
+        sqlUtils.sql("delete from test where id=?", 2).update();
+        assert 1 == sqlUtils.sql("insert into test(id,v1,v2,v3) values(?,?,?,?)", 2, 2, 2, "a").update();
+
+        assert 1 == sqlUtils.sql("update test set v1=?,v2=?,v3=? where id=?", 22, null, null, 2).update();
 
         Object val = sqlUtils.sql("select v1 from test where id=?", 2).queryValue();
         System.out.println(val);
