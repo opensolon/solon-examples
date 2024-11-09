@@ -7,7 +7,6 @@ import demo4091.service.AppService;
 import org.noear.solon.annotation.Controller;
 import org.noear.solon.annotation.Inject;
 import org.noear.solon.annotation.Mapping;
-import org.noear.solon.data.sqlink.api.client.SQLinkClient;
 
 import java.util.List;
 
@@ -17,9 +16,6 @@ public class DemoController {
 
     @Inject
     AppService appService;
-
-    @Inject
-    SQLinkClient client;
 
     @Mapping("test")
     public AppxModel test() {
@@ -39,5 +35,10 @@ public class DemoController {
     @Mapping("hello")
     public String hello(String name) {
         return appService.hello(name);
+    }
+
+    @Mapping("any")
+    public boolean any() {
+        return appService.any();
     }
 }
