@@ -1,7 +1,6 @@
 package demo4091.service;
 
 import demo4091.model.AppxModel;
-import demo4091.model.DbTable;
 import demo4091.model.Test;
 import org.noear.solon.annotation.Component;
 import org.noear.solon.annotation.Inject;
@@ -30,16 +29,6 @@ public class AppService {
 
     public PagedResult<AppxModel> appx_get_page() {
         return client.query(AppxModel.class).toPagedResult(2, 2);
-    }
-
-    public List<DbTable> listTables() {
-        client.getConfig().setDisambiguation(new H2Dialect() {
-            @Override
-            public String disambiguationTableName(String table) {
-                return table;
-            }
-        });
-        return client.query(DbTable.class).toList();
     }
 
     //select * from appx limit 1;
