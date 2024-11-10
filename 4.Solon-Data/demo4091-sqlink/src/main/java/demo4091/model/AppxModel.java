@@ -1,8 +1,8 @@
 package demo4091.model;
 
 import lombok.Data;
-import org.noear.solon.data.sqlink.base.annotation.Column;
-import org.noear.solon.data.sqlink.base.annotation.Table;
+import org.noear.solon.data.sqlink.annotation.*;
+
 
 @Data
 @Table("appx")

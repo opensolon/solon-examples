@@ -42,3 +42,11 @@ INSERT INTO `appx` (`app_id`, `app_key`, `akey`, `ugroup_id`, `agroup_id`, `name
 INSERT INTO `appx` (`app_id`, `app_key`, `akey`, `ugroup_id`, `agroup_id`, `name`, `note`, `ar_is_setting`, `ar_is_examine`, `ar_examine_ver`, `log_fulltime`) VALUES (20, '20', 'a1', 1, 1, 'Android-b', NULL, 0, 0, 0, '2017-08-04 17:39:09');
 INSERT INTO `appx` (`app_id`, `app_key`, `akey`, `ugroup_id`, `agroup_id`, `name`, `note`, `ar_is_setting`, `ar_is_examine`, `ar_examine_ver`, `log_fulltime`) VALUES (21, '21', 'b1', 1, 1, 'Android-c', NULL, 0, 0, 0, '2017-08-04 17:39:23');
 INSERT INTO `appx` (`app_id`, `app_key`, `akey`, `ugroup_id`, `agroup_id`, `name`, `note`, `ar_is_setting`, `ar_is_examine`, `ar_examine_ver`, `log_fulltime`) VALUES (22, '22', 'c1', 1, 1, 'Android-d', NULL, 1, 0, 0, '2017-08-04 17:39:39');
+
+
+CREATE TABLE `user` (
+                        `id` int NOT NULL AUTO_INCREMENT,
+                        `username` varchar(50) DEFAULT NULL,
+                        `password` varchar(255) DEFAULT NULL,
+                        PRIMARY KEY (`id`)
+);

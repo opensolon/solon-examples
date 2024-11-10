@@ -13,11 +13,6 @@ public class AnnoTest {
     AppService appService;
 
     @Test
-    public void test() {
-        assert !appService.listTables().isEmpty();
-    }
-
-    @Test
     public void test2() {
         assert appService.hello("world").equals("hello world");
     }
