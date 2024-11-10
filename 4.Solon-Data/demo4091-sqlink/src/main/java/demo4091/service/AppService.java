@@ -1,12 +1,11 @@
 package demo4091.service;
 
 import demo4091.model.AppxModel;
-import demo4091.model.DbTable;
 import demo4091.model.Test;
 import org.noear.solon.annotation.Component;
 import org.noear.solon.annotation.Inject;
 import org.noear.solon.data.annotation.Tran;
-import org.noear.solon.data.sqlink.api.client.SQLinkClient;
+import org.noear.solon.data.sqlink.SqLink;
 import org.noear.solon.data.sqlink.core.dialect.H2Dialect;
 import org.noear.solon.data.sqlink.core.page.PagedResult;
 import org.noear.solon.data.sqlink.core.sqlExt.SqlFunctions;
@@ -17,7 +16,11 @@ import java.util.List;
 @Component
 public class AppService {
     @Inject
-    SQLinkClient client;
+    SqLink client;
+
+    public boolean any() {
+        return client.query(AppxModel.class).any();
+    }
 
     public String hello(String name) {
         return client.queryEmptyTable().endSelect(() ->
@@ -26,16 +29,6 @@ public class AppService {
 
     public PagedResult<AppxModel> appx_get_page() {
         return client.query(AppxModel.class).toPagedResult(2, 2);
-    }
-
-    public List<DbTable> listTables() {
-        client.getConfig().setDisambiguation(new H2Dialect() {
-            @Override
-            public String disambiguationTableName(String table) {
-                return table;
-            }
-        });
-        return client.query(DbTable.class).toList();
     }
 
     //select * from appx limit 1;
@@ -67,6 +60,12 @@ public class AppService {
         Test test = new Test();
         test.setV1(v1);
         return client.insert(test).executeRows();
+    }
+
+    public Test getTestByV1(int v1) {
+        return client.query(Test.class)
+                .where(a -> a.getV1() == v1)
+                .first();
     }
 
     @Tran

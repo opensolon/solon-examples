@@ -1,14 +1,15 @@
 package demo4091.model;
 
 import lombok.Data;
-import org.noear.solon.data.sqlink.base.annotation.Column;
-import org.noear.solon.data.sqlink.base.annotation.Table;
+import org.noear.solon.data.sqlink.annotation.*;
+
 
 @Table("test")
 @Data
 public class Test {
     @Column(primaryKey = true)
-    private int id;
-    private int v1;
-    private int v2;
+    private Integer id;
+    private Integer v1;
+    @InsertDefaultValue(strategy = GenerateStrategy.Static, value = "101")
+    private Integer v2;
 }

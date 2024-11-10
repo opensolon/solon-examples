@@ -18,6 +18,3 @@ solon.dataSources:
 
 solon.data.sqlink:
   main:
-    dbType: h2
-    dsName: h2ds
-    printSql: true
