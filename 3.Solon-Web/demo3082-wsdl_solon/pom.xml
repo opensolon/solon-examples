@@ -26,6 +26,11 @@
     <dependencies>
         <dependency>
             <groupId>org.noear</groupId>
+            <artifactId>solon-lib</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.noear</groupId>
             <artifactId>solon-boot-jetty</artifactId>
         </dependency>
 
@@ -36,9 +41,30 @@
 
         <dependency>
             <groupId>org.noear</groupId>
+            <artifactId>solon-logging-simple</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.noear</groupId>
             <artifactId>solon-test</artifactId>
             <scope>test</scope>
         </dependency>
     </dependencies>
+
+    <!-- 主菜是这里： -->
+    <build>
+        <finalName>${project.artifactId}</finalName>
+        <plugins>
+            <!-- 配置打包插件（并打包成胖包） -->
+            <plugin>
+                <groupId>org.noear</groupId>
+                <artifactId>solon-maven-plugin</artifactId>
+                <configuration>
+                    <!-- 指定启动主类 -->
+                    <mainClass>demo3082.server.ServerTest</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

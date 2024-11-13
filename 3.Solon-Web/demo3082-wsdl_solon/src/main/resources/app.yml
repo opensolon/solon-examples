@@ -1,0 +1,7 @@
+
+server.webservices:
+  path: "/ws/" #默认为 ws
+
+solon.logging.appender:
+  console:
+    level: INFO
