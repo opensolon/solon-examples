@@ -26,20 +26,6 @@ public class Config {
         return supplier.get();
     }
 
-    /**
-     * 配置数据源
-     */
-    @Bean
-    public DataSource db1(@Inject("${datasource}") HikariDataSource ds) {
-        return ds;
-    }
-
-    //多数据源
-    @Bean("db2")
-    public DataSource db2(@Inject("${datasource2}") HikariDataSource ds) {
-        return ds;
-    }
-
     @Bean
     public void dbInit(@Db SqlToyLazyDao dao, @Db("db2") SqlToyLazyDao dao2) {
         //初始化数据

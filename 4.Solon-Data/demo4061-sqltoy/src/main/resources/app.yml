@@ -1,18 +1,19 @@
 server:
   port: 6969
 
-datasource:
-  driver-class-name: org.h2.Driver
-  username: sa
-  password:
-  jdbcUrl: jdbc:h2:mem:activiti;DB_CLOSE_DELAY=1000
-
-datasource2:
-  driver-class-name: org.h2.Driver
-  username: sa
-  password:
-  jdbcUrl: jdbc:h2:file:./test.db;DB_CLOSE_DELAY=1000
-
+solon.dataSources:
+  db1!:
+    class: "com.zaxxer.hikari.HikariDataSource"
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+    jdbcUrl: jdbc:h2:mem:activiti;DB_CLOSE_DELAY=1000
+  db2:
+    class: "com.zaxxer.hikari.HikariDataSource"
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+    jdbcUrl: jdbc:h2:file:./test.db;DB_CLOSE_DELAY=1000
 
 demo1.cache:
   driverType: "redis" #驱动类型
