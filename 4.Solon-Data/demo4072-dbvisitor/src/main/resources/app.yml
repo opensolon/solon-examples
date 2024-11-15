@@ -13,7 +13,7 @@ solon.logging.logger:
 
 test.db1:
   schema: rock
-  jdbcUrl: jdbc:mysql://localhost:3306/rock?useUnicode=true&characterEncoding=utf8&autoReconnect=true&rewriteBatchedStatements=true
+  jdbcUrl: jdbc:mysql://localhost:3306/rock?useUnicode=true&characterEncoding=utf8&autoReconnect=true&rewriteBatchedStatements=true&useSSL=false
   driverClassName: com.mysql.jdbc.Driver
   username: root
   password: 123456
