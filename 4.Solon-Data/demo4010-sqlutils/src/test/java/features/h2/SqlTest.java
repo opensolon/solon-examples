@@ -1,6 +1,7 @@
 package features.h2;
 
 import features.Appx;
+import features.TestDo;
 import org.junit.jupiter.api.Test;
 import org.noear.solon.annotation.Bean;
 import org.noear.solon.annotation.Configuration;
@@ -8,12 +9,14 @@ import org.noear.solon.annotation.Inject;
 import org.noear.solon.core.util.ResourceUtil;
 import org.noear.solon.data.annotation.Tran;
 import org.noear.solon.data.sql.*;
+import org.noear.solon.data.sql.bound.RowIterator;
 import org.noear.solon.test.SolonTest;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 @Configuration
 @SolonTest
@@ -84,6 +87,28 @@ public class SqlTest {
     }
 
     @Test
+    public void select3_1() throws SQLException {
+        Map tmp = sqlUtils.sql("select * from appx limit 1").queryRow(Map.class);
+        System.out.println(tmp);
+        assert tmp.size() > 2;
+
+        System.out.println(tmp);
+
+        Appx tmp2 = sqlUtils.sql("select * from appx limit 1").queryRow(Appx.class);
+        System.out.println(tmp2);
+        assert tmp2.app_id > 0;
+
+        List<Map> tmpList = sqlUtils.sql("select * from appx limit 2").queryRowList(Map.class);
+        System.out.println(tmpList);
+        assert tmpList.size() == 2;
+
+
+        List<Appx> tmpList2 = sqlUtils.sql("select * from appx limit 2").queryRowList(Appx.class);
+        System.out.println(tmpList2);
+        assert tmpList2.size() == 2;
+    }
+
+    @Test
     public void select3_2() throws SQLException {
         Row tmp = sqlUtils.sql("select * from appx where app_id=? limit 1", 99999).queryRow();
         System.out.println(tmp);
@@ -96,7 +121,8 @@ public class SqlTest {
 
     @Test
     public void select4() throws SQLException {
-        RowIterator rowIterator = sqlUtils.sql("select * from appx limit ?", 100).queryRowIterator(10);
+        RowIterator<Map> rowIterator = sqlUtils.sql("select * from appx limit ?", 100)
+                .queryRowIterator(10, Map.class);
         System.out.println(rowIterator);
 
         try (rowIterator) {
@@ -118,9 +144,38 @@ public class SqlTest {
     }
 
     @Test
+    public void insert1_2() throws SQLException {
+        TestDo testDo = new TestDo(2);
+
+        sqlUtils.sql("delete from test where id=?", 2).update();
+        assert 1 == sqlUtils.sql("insert into test(id,v1,v2) values(?,?,?)").update(testDo, (ps, d) -> {
+            ps.setInt(1, d.id);
+            ps.setInt(2, d.v1);
+            ps.setInt(3, d.v2);
+        });
+    }
+
+    @Test
     public void insert2() throws SQLException {
         sqlUtils.sql("delete from test where id=?", 2).update();
         Number key = sqlUtils.sql("insert into test(id,v1,v2) values(?,?,?)", 2, 2, 2).updateReturnKey();
+
+        System.out.println(key);
+
+        //sqlite 是自增值；//h2 是插入值
+        assert 2L == key.longValue() || key.longValue() > 0L;
+    }
+
+    @Test
+    public void insert2_2() throws SQLException {
+        TestDo testDo = new TestDo(2);
+
+        sqlUtils.sql("delete from test where id=?", 2).update();
+        Number key = sqlUtils.sql("insert into test(id,v1,v2) values(?,?,?)").updateReturnKey(testDo, (ps, d) -> {
+            ps.setInt(1, d.id);
+            ps.setInt(2, d.v1);
+            ps.setInt(3, d.v2);
+        });
 
         System.out.println(key);
 
@@ -150,6 +205,26 @@ public class SqlTest {
 
         sqlUtils.sql("delete from test").update();
         int[] rows = sqlUtils.sql("insert into test(id,v1,v2) values(?,?,?)").updateBatch(argsList);
+
+        System.out.println(Arrays.toString(rows));
+        assert rows.length == 5;
+    }
+
+    @Test
+    public void executeBatch2() throws SQLException {
+        List<TestDo> argsList = new ArrayList<>();
+        argsList.add(new TestDo(1));
+        argsList.add(new TestDo(2));
+        argsList.add(new TestDo(3));
+        argsList.add(new TestDo(4));
+        argsList.add(new TestDo(5));
+
+        sqlUtils.sql("delete from test").update();
+        int[] rows = sqlUtils.sql("insert into test(id,v1,v2) values(?,?,?)").updateBatch(argsList, (ps,d)->{
+            ps.setInt(1, d.id);
+            ps.setInt(2, d.v1);
+            ps.setInt(3, d.v2);
+        });
 
         System.out.println(Arrays.toString(rows));
         assert rows.length == 5;
