@@ -7,7 +7,6 @@ import demo4035.dso.mapper.AppxMapperPlus;
 import demo4035.dso.mapper.AppxMapperPlusEx;
 import demo4035.dso.service.AppServicePlus;
 import demo4035.model.AppxModel;
-import org.apache.ibatis.solon.annotation.Db;
 import org.junit.jupiter.api.Test;
 
 import org.noear.solon.annotation.Inject;
@@ -29,10 +28,10 @@ public class PlusServiceTest {
     @Inject
     AppServicePlus appServicePlus2;
 
-    @Db
+    @Inject
     AppxMapperPlus appxMapperPlus;
 
-    @Db
+    @Inject
     AppxMapperPlusEx appxMapperPlusEx;
 
     @Test

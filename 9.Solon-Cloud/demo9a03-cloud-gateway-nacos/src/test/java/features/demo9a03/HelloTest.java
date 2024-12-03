@@ -1,6 +1,6 @@
 package features.demo9a03;
 
-import demo9a03.App;
+import labs.demo9a03.GatewayApp;
 import org.junit.jupiter.api.Test;
 
 import org.noear.solon.test.HttpTester;
@@ -8,11 +8,11 @@ import org.noear.solon.test.SolonTest;
 
 import java.io.IOException;
 
-@SolonTest(App.class)
+@SolonTest(GatewayApp.class)
 public class HelloTest extends HttpTester {
     @Test
     public void hello() throws IOException {
-        assert path("/hello?name=world").get().contains("world");
-        assert path("/hello?name=solon").get().contains("solon");
+        assert path("/demo-app/hello?name=world").get().contains("world");
+        assert path("/demo-app/hello?name=solon").get().contains("solon");
     }
 }

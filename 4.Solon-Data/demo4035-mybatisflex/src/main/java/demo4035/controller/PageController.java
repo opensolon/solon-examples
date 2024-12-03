@@ -2,8 +2,8 @@ package demo4035.controller;
 
 import com.jn.sqlhelper.dialect.pagination.SqlPaginations;
 import demo4035.dso.mapper.AppxMapper;
-import org.apache.ibatis.solon.annotation.Db;
 import org.noear.solon.annotation.Controller;
+import org.noear.solon.annotation.Inject;
 import org.noear.solon.annotation.Mapping;
 
 /**
@@ -13,7 +13,7 @@ import org.noear.solon.annotation.Mapping;
 @Mapping("/page/")
 @Controller
 public class PageController {
-    @Db
+    @Inject
     AppxMapper appxMapper;
 
     @Mapping("test")

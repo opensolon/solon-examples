@@ -18,7 +18,7 @@ solon.dataSources:
     driverClassName: "org.h2.Driver"
 
 #默认
-mybatis.db1:
+mybatis-flex:
     typeAliases:    #支持包名 或 类名
         - "demo4035.model"
     mappers:        #支持包名 或 类名 或 xml（.xml结尾 或 *.xml 结尾）

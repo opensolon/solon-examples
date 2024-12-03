@@ -1,8 +1,8 @@
 package features;
 
-import org.apache.ibatis.solon.annotation.Db;
 import org.junit.jupiter.api.Test;
 
+import org.noear.solon.annotation.Inject;
 import org.noear.solon.test.SolonTest;
 import demo4035.DemoApp;
 import demo4035.dso.mapper.AppxMapper;
@@ -14,7 +14,7 @@ import demo4035.dso.mapper.AppxMapper;
 @SolonTest(DemoApp.class)
 public class InsertTest {
 
-    @Db
+    @Inject
     AppxMapper appxMapper;
 
     @Test
