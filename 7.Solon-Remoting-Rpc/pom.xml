@@ -46,6 +46,7 @@
         <module>demo7021-feign</module>
         <module>demo7022-forest</module>
         <module>demo7023-nami</module>
+        <module>demo7031-nami-coder-abc</module>
 
     </modules>
 </project>

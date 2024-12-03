@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.noear.solon.examples</groupId>
-    <artifactId>demo7002-rpc_provider</artifactId>
+    <artifactId>demo7031-nami-coder-abc</artifactId>
     <version>demo</version>
     <packaging>jar</packaging>
 
@@ -23,44 +23,49 @@
         <java.version>11</java.version>
     </properties>
 
+
     <dependencies>
         <dependency>
             <groupId>org.noear</groupId>
             <artifactId>solon-web</artifactId>
         </dependency>
+
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>nami-coder-snack3</artifactId>
+            <artifactId>solon-logging-simple</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>org.noear</groupId>
+            <artifactId>solon-serialization-abc</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.agrona</groupId>
+            <artifactId>agrona</artifactId>
+            <version>${agrona-sbe.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.noear</groupId>
+            <artifactId>nami-coder-abc</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>org.noear</groupId>
             <artifactId>nami-channel-http</artifactId>
         </dependency>
 
         <dependency>
-            <groupId>org.noear.solon.examples</groupId>
-            <artifactId>demo7002-rpc_interface</artifactId>
-            <version>demo</version>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
         </dependency>
 
         <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-
-            <scope>provided</scope>
+            <groupId>org.noear</groupId>
+            <artifactId>solon-test</artifactId>
+            <scope>test</scope>
         </dependency>
     </dependencies>
-
-
-    <build>
-        <finalName>${project.name}</finalName>
-        <plugins>
-
-            <plugin>
-                <groupId>org.noear</groupId>
-                <artifactId>solon-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
-
 </project>
