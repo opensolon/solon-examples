@@ -47,6 +47,7 @@
         <module>demo7022-forest</module>
         <module>demo7023-nami</module>
         <module>demo7031-nami-coder-abc</module>
+        <module>demo7032-nami-coder-protostuff</module>
 
     </modules>
 </project>

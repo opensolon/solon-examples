@@ -12,7 +12,7 @@ import org.noear.solon.test.SolonTest;
  * @author noear 2024/12/3 created
  */
 @SolonTest(App.class)
-public class AbcTest {
+public class RpcTest {
     @NamiClient(url = "http://localhost:8080/rpc/hello", headers = {ContentTypes.ABC, ContentTypes.ABC_ACCEPT})
     HelloService helloService;
 

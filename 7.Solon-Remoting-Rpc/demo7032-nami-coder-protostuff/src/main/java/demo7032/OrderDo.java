@@ -13,19 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package demo7031;
+package demo7032;
 
 
-import org.agrona.sbe.solon.SbeInput;
-import org.agrona.sbe.solon.SbeOutput;
-import org.agrona.sbe.solon.SbeSerializable;
+import io.protostuff.Tag;
 
 /**
  * @author noear 2023/8/16 created
  */
-public class OrderDo implements SbeSerializable {
+public class OrderDo {
+    @Tag(1)
     private long orderId;
-    private String title = "";
+    @Tag(2)
+    private String title;
 
     public void setOrderId(long orderId) {
         this.orderId = orderId;
@@ -41,18 +41,6 @@ public class OrderDo implements SbeSerializable {
 
     public String getTitle() {
         return title;
-    }
-
-    @Override
-    public void serializeRead(SbeInput in) {
-        orderId = in.readLong();
-        title = in.readString();
-    }
-
-    @Override
-    public void serializeWrite(SbeOutput out) {
-        out.writeLong(orderId);
-        out.writeString(title);
     }
 
     @Override
