@@ -17,7 +17,7 @@ import java.io.IOException;
  */
 @SolonTest(App.class)
 public class RpcTest {
-    @NamiClient(url = "http://localhost:8080/rpc/hello", headers = {ContentTypes.PROTOBUF, ContentTypes.PROTOBUF_ACCEPT})
+    @NamiClient(url = "http://localhost:8080/rpc/hello", headers = {ContentTypes.PROTOBUF})
     HelloService helloService;
 
     @Test
