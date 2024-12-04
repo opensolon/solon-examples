@@ -45,6 +45,7 @@ public class RpcTest {
                 .bodyOfBean(orderDo)
                 .postAs(OrderDo.class);
 
+
         System.out.println(orderDo2);
 
         assert orderDo2 != null;
