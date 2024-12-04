@@ -41,7 +41,7 @@ public class RpcTest {
         OrderDo orderDo2 = HttpUtils.http("http://localhost:8080/rpc/hello/hello")
                 .serializer(AbcBytesSerializer.getInstance())
                 .header(ContentTypes.HEADER_CONTENT_TYPE, ContentTypes.ABC_VALUE)
-                .header(ContentTypes.HEADER_SERIALIZATION, ContentTypes.AT_ABC)
+                .header(ContentTypes.HEADER_ACCEPT, ContentTypes.ABC_VALUE)
                 .bodyOfBean(orderDo)
                 .postAs(OrderDo.class);
 
