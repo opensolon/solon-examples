@@ -16,6 +16,9 @@
 package demo7031;
 
 
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 import org.agrona.sbe.solon.SbeInput;
 import org.agrona.sbe.solon.SbeOutput;
 import org.agrona.sbe.solon.SbeSerializable;
@@ -23,43 +26,22 @@ import org.agrona.sbe.solon.SbeSerializable;
 /**
  * @author noear 2023/8/16 created
  */
-public class OrderDo implements SbeSerializable {
-    private long orderId;
+@ToString
+@Setter
+@Getter
+public class MessageDo implements SbeSerializable {
+    private long id;
     private String title = "";
-
-    public void setOrderId(long orderId) {
-        this.orderId = orderId;
-    }
-
-    public long getOrderId() {
-        return orderId;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getTitle() {
-        return title;
-    }
 
     @Override
     public void serializeRead(SbeInput in) {
-        orderId = in.readLong();
+        id = in.readLong();
         title = in.readString();
     }
 
     @Override
     public void serializeWrite(SbeOutput out) {
-        out.writeLong(orderId);
+        out.writeLong(id);
         out.writeString(title);
-    }
-
-    @Override
-    public String toString() {
-        return "OrderDo{" +
-                "orderId=" + orderId +
-                ",title=" + title +
-                '}';
     }
 }

@@ -4,11 +4,11 @@ import org.noear.solon.annotation.Body;
 import org.noear.solon.annotation.Mapping;
 import org.noear.solon.annotation.Remoting;
 
-@Mapping("/rpc/hello")
+@Mapping("/rpc/demo")
 @Remoting
 public class HelloServiceImpl implements HelloService {
     @Override
-    public OrderDo hello(@Body OrderDo order) {
+    public MessageDo hello(@Body MessageDo order) {
         System.out.println(order);
 
         return order;

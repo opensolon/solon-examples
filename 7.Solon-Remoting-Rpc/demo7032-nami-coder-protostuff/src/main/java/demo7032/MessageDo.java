@@ -17,37 +17,19 @@ package demo7032;
 
 
 import io.protostuff.Tag;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
 /**
  * @author noear 2023/8/16 created
  */
-public class OrderDo {
+@ToString
+@Setter
+@Getter
+public class MessageDo {
     @Tag(1)
-    private long orderId;
+    private long id;
     @Tag(2)
     private String title;
-
-    public void setOrderId(long orderId) {
-        this.orderId = orderId;
-    }
-
-    public long getOrderId() {
-        return orderId;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    @Override
-    public String toString() {
-        return "OrderDo{" +
-                "orderId=" + orderId +
-                ",title=" + title +
-                '}';
-    }
 }
