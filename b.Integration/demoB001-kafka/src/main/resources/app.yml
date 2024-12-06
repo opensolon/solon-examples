@@ -1,0 +1,31 @@
+
+solon.app:
+  name: "demo-app"
+  group: "demo"
+
+solon.logging:
+  logger:
+    root:
+      level: INFO
+
+# 配置可以自由定义，与 @Bean 代码对应起来即可（以下为参考）
+solon.kafka:
+  properties:  #公共配置（配置项，参考：ProducerConfig，ConsumerConfig 的公用部分）
+    bootstrap:
+      servers: "127.0.0.1:9092"
+    key:
+      serializer: "org.apache.kafka.common.serialization.StringSerializer"
+      deserializer: "org.apache.kafka.common.serialization.StringDeserializer"
+    value:
+      serializer: "org.apache.kafka.common.serialization.StringSerializer"
+      deserializer: "org.apache.kafka.common.serialization.StringDeserializer"
+  producer: #生产者专属配置（配置项，参考：ProducerConfig）
+    acks: "all"
+  consumer: #消费者专属配置（配置项，参考：ConsumerConfig）
+    enable:
+      auto:
+        commit: "false"
+    isolation:
+      level: "read_committed"
+    group:
+      id: "${solon.app.group}:${solon.app.name}"

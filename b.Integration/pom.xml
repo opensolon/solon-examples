@@ -5,12 +5,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.noear.solon.examples</groupId>
-    <artifactId>solon-examples</artifactId>
+    <artifactId>b.Integration</artifactId>
     <version>demo</version>
     <packaging>pom</packaging>
-
-    <name>_root</name>
-    <description>Java project for solon examples</description>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -20,18 +17,6 @@
     </properties>
 
     <modules>
-        <module>1.Solon</module>
-        <module>2.Solon_Advanced</module>
-        <module>3.Solon-Web</module>
-        <module>4.Solon-Data</module>
-        <module>5.Solon-Job</module>
-        <module>6.Solon-Api</module>
-        <module>7.Solon-Remoting-Rpc</module>
-        <module>8.Solon-Remoting-SocketD</module>
-        <module>9.Solon-Cloud</module>
-        <module>a.Doc</module>
-        <module>b.Integration</module>
-        <module>x.Lab</module>
+        <module>demoB001-kafka</module>
     </modules>
-
 </project>
