@@ -18,5 +18,6 @@
 
     <modules>
         <module>demoB001-kafka</module>
+        <module>demoB002-rocketmq5</module>
     </modules>
 </project>
