@@ -31,8 +31,8 @@ public class DemoJob {
         ConsumerRecords<String, String> records = consumer.poll(Duration.ofSeconds(10));
         for (ConsumerRecord<String, String> record : records) {
             System.out.println(record.value());
+            //确认
+            consumer.commitSync();
         }
-        //确认
-        consumer.commitSync();
     }
 }
