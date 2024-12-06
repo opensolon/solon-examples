@@ -21,6 +21,8 @@ import java.util.Properties;
  */
 @Configuration
 public class RocketmqConfig {
+    private ClientServiceProvider clientProvider = ClientServiceProvider.loadService();
+
     @Bean
     public ClientConfiguration client(@Inject("${solon.rocketmq.properties}") Properties common){
         ClientConfigurationBuilder builder = ClientConfiguration.newBuilder();
@@ -33,8 +35,7 @@ public class RocketmqConfig {
     @Bean
     public Producer producer(@Inject("${solon.rocketmq.producer}") Properties producer,
                              ClientConfiguration clientConfiguration) throws ClientException {
-        ProducerBuilder producerBuilder = ClientServiceProvider.loadService()
-                .newProducerBuilder();
+        ProducerBuilder producerBuilder = clientProvider.newProducerBuilder();
 
         //注入属性
         if (producer.size() > 0) {
@@ -52,8 +53,7 @@ public class RocketmqConfig {
                                  MessageListener messageListener) throws ClientException{
 
         //按需选择 PushConsumerBuilder 或 SimpleConsumerBuilder
-        PushConsumerBuilder consumerBuilder = ClientServiceProvider.loadService()
-                .newPushConsumerBuilder();
+        PushConsumerBuilder consumerBuilder = clientProvider.newPushConsumerBuilder();
 
         //注入属性
         Utils.injectProperties(consumerBuilder, consumer);
