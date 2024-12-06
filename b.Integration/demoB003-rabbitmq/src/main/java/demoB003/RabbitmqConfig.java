@@ -45,7 +45,7 @@ public class RabbitmqConfig {
     @Bean
     public void consumer(@Inject("${solon.rabbitmq.consumer}") Props consumer,
                          Channel channel,
-                         Consumer messageListener) throws Exception {
+                         Consumer messageConsumer) throws Exception {
 
         // for basicQos
         int prefetchCount = consumer.getInt("basicQos.prefetchCount", 10);
@@ -64,6 +64,6 @@ public class RabbitmqConfig {
         channel.queueBind(queue, EXCHANGE_NAME, queue);
 
         //for basicConsume
-        channel.basicConsume(queue, false, messageListener);
+        channel.basicConsume(queue, false, messageConsumer);
     }
 }

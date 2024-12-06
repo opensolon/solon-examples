@@ -9,9 +9,9 @@ import java.io.IOException;
  * @author noear 2024/12/6 created
  */
 @Component
-public class DemoMessageListener extends DefaultConsumer implements Consumer {
+public class DemoMessageConsumer extends DefaultConsumer implements Consumer {
 
-    public DemoMessageListener(Channel channel) {
+    public DemoMessageConsumer(Channel channel) {
         super(channel);
     }
 
