@@ -25,7 +25,7 @@ public class DemoJob {
         consumer.subscribe(Arrays.asList("topic.test"));
     }
 
-    @Scheduled(fixedDelay = 10_000L)
+    @Scheduled(fixedDelay = 10_000L, initialDelay = 10_000L)
     public void job() throws Exception {
         //拉取
         ConsumerRecords<String, String> records = consumer.poll(Duration.ofSeconds(10));
