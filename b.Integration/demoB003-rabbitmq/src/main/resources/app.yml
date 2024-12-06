@@ -1,0 +1,33 @@
+
+solon.app:
+  name: "demo-app"
+  group: "demo"
+
+solon.logging:
+  logger:
+    root:
+      level: INFO
+
+# 配置可以自由定义，与 @Bean 代码对应起来即可（以下为参考）
+solon.rabbitmq:
+  properties:  #公共配置（配置项，参考：ConnectionFactory）
+    host: "127.0.0.1"
+    port: "5672"
+    virtualHost: "/"
+    username: "root"
+    password: "123456"
+    automaticRecovery: true
+    networkRecoveryInterval: 5000
+  producer: #生产者专属配置（配置项，参考：Channel）
+    waitForConfirms: 0
+  consumer: #消费者专属配置（配置项，参考：Channel）
+    basicQos:
+      prefetchCount: 10
+      prefetchSize: 0
+      global: false
+    queueDeclare:
+      queue: "${solon.app.group}_${solon.app.name}"
+      durable: true
+      exclusive: false
+      autoDelete: false
+      arguments: {}
