@@ -18,14 +18,12 @@ public class RabbitmqConfig {
     public static final String EXCHANGE_NAME = "demo-exchange";
 
     @Bean
-    public Channel client(@Inject("${solon.rabbitmq.properties}") Properties common) throws Exception {
+    public Channel client(@Inject("${solon.rabbitmq.properties}") Props common) throws Exception {
         ConnectionFactory connectionFactory = new ConnectionFactory();
-        // 注入属性
-        Utils.injectProperties(connectionFactory, common);
 
-        // 创建连接与通道
-        Connection connection = connectionFactory.newConnection();
-        Channel channel = connection.createChannel();
+        // 绑定属性，并创建链接与通道
+        Channel channel = common.bindTo(connectionFactory).newConnection()
+                .createChannel();
 
         // 配置交换机
         channel.exchangeDeclare(EXCHANGE_NAME, BuiltinExchangeType.DIRECT);

@@ -11,6 +11,7 @@ import org.noear.solon.Utils;
 import org.noear.solon.annotation.Bean;
 import org.noear.solon.annotation.Configuration;
 import org.noear.solon.annotation.Inject;
+import org.noear.solon.core.Props;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -24,23 +25,18 @@ public class RocketmqConfig {
     private ClientServiceProvider clientProvider = ClientServiceProvider.loadService();
 
     @Bean
-    public ClientConfiguration client(@Inject("${solon.rocketmq.properties}") Properties common){
-        ClientConfigurationBuilder builder = ClientConfiguration.newBuilder();
-        //注入属性
-        Utils.injectProperties(builder, common);
-
-        return builder.build();
+    public ClientConfiguration client(@Inject("${solon.rocketmq.properties}") Props common){
+        return common.bindTo(ClientConfiguration.newBuilder())
+                .build();
     }
 
     @Bean
-    public Producer producer(@Inject("${solon.rocketmq.producer}") Properties producer,
+    public Producer producer(@Inject("${solon.rocketmq.producer}") Props producer,
                              ClientConfiguration clientConfiguration) throws ClientException {
         ProducerBuilder producerBuilder = clientProvider.newProducerBuilder();
 
         //注入属性
-        if (producer.size() > 0) {
-            Utils.injectProperties(producerBuilder, producer);
-        }
+        producer.bindTo(producerBuilder);
 
         producerBuilder.setClientConfiguration(clientConfiguration);
 
@@ -48,7 +44,7 @@ public class RocketmqConfig {
     }
 
     @Bean
-    public PushConsumer consumer(@Inject("${solon.rocketmq.consumer}") Properties consumer,
+    public PushConsumer consumer(@Inject("${solon.rocketmq.consumer}") Props consumer,
                                  ClientConfiguration clientConfiguration,
                                  MessageListener messageListener) throws ClientException{
 
@@ -56,7 +52,7 @@ public class RocketmqConfig {
         PushConsumerBuilder consumerBuilder = clientProvider.newPushConsumerBuilder();
 
         //注入属性
-        Utils.injectProperties(consumerBuilder, consumer);
+        consumer.bindTo(consumerBuilder);
 
         Map<String, FilterExpression> subscriptionExpressions = new HashMap<>();
         subscriptionExpressions.put("topic.test",  new FilterExpression("*"));

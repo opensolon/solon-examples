@@ -11,7 +11,7 @@ solon.logging:
 # 配置可以自由定义，与 @Bean 代码对应起来即可（以下为参考）
 solon.rocketmq:
   properties:  #公共配置（配置项，参考：ClientConfigurationBuilder）
-    endpoints: "127.0.0.1:8081"
+    endpoints: "127.0.0.1:9876"
     sessionCredentialsProvider:
       "@type": "demoB002.SessionCredentialsProviderImpl" # solon 支持 "@type" 类型申明当前实例数据
       accessKey: "xxx"

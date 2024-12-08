@@ -5,6 +5,7 @@ import org.apache.kafka.clients.producer.KafkaProducer;
 import org.noear.solon.annotation.Bean;
 import org.noear.solon.annotation.Configuration;
 import org.noear.solon.annotation.Inject;
+import org.noear.solon.core.Props;
 
 import java.util.Properties;
 
@@ -14,23 +15,15 @@ import java.util.Properties;
 @Configuration
 public class KafkaConfig {
     @Bean
-    public KafkaProducer<String, String> producer(@Inject("${solon.kafka.properties}") Properties common,
-                                             @Inject("${solon.kafka.producer}") Properties producer) {
-
-        Properties props = new Properties();
-        props.putAll(common);
-        props.putAll(producer);
-
-        return new KafkaProducer<>(props);
+    public KafkaProducer<String, String> producer(@Inject("${solon.kafka.properties}") Props common,
+                                                  @Inject("${solon.kafka.producer}") Props producer) {
+        return new KafkaProducer<>(producer.addAll(common));
     }
 
     @Bean
-    public KafkaConsumer<String, String> consumer(@Inject("${solon.kafka.properties}") Properties common,
-                                                  @Inject("${solon.kafka.consumer}") Properties consumer) {
-        Properties props = new Properties();
-        props.putAll(common);
-        props.putAll(consumer);
+    public KafkaConsumer<String, String> consumer(@Inject("${solon.kafka.properties}") Props common,
+                                                  @Inject("${solon.kafka.consumer}") Props consumer) {
 
-        return new KafkaConsumer<>(props);
+        return new KafkaConsumer<>(consumer.addAll(common));
     }
 }
