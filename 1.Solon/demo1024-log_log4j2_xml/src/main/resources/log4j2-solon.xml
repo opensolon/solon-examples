@@ -45,7 +45,7 @@
     </Appenders>
     <Loggers>
 <!--        <Root level="${LOGGER_ROOT_LEVEL}">-->
-        <Root level="WRAN">
+        <Root level="WARN">
             <AppenderRef ref="Console" />
             <AppenderRef ref="File" />
             <AppenderRef ref="Solon" />

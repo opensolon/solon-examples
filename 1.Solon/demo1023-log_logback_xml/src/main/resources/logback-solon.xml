@@ -74,7 +74,7 @@
 
     <root>
 <!--        <level value="${LOGGER_ROOT_LEVEL}" />-->
-        <level value="WRAN" />
+        <level value="WARN" />
         <appender-ref ref="Console"/>
         <appender-ref ref="File"/>
         <appender-ref ref="Solon"/>
