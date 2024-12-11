@@ -1,4 +1,4 @@
-package demo1022;
+package demo1024;
 
 import lombok.extern.slf4j.Slf4j;
 import org.noear.solon.Solon;

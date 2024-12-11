@@ -21,6 +21,10 @@ public class App {
 
     @Scheduled(cron = "0/2 * * * * ?")
     public void test() {
+        log.trace("{}", new Date());
+        log.debug("{}", new Date());
         log.info("{}", new Date());
+        log.warn("{}", new Date());
+        log.error("{}", new Date());
     }
 }
