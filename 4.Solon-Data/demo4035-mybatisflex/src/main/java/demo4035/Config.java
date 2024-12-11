@@ -23,6 +23,18 @@ public class Config {
         }
     }
 
+    @Bean
+    public void db2_cfg(@Inject("db2") SqlUtils sqlUtils) throws Exception {
+
+        String sql = ResourceUtil.getResourceAsString("db.sql");
+
+        for (String s1 : sql.split(";")) {
+            if (s1.trim().length() > 10) {
+                sqlUtils.sql(s1).update();
+            }
+        }
+    }
+
     //有 solon.dataSources 配置后，不需要手动构建了
     //
     // 加上 typed = true 的作用：可以直接使用 @Db （不带name）

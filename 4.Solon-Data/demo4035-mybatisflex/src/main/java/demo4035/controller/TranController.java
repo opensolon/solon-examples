@@ -1,5 +1,6 @@
 package demo4035.controller;
 
+import com.mybatisflex.core.datasource.DataSourceKey;
 import demo4035.dso.service.AppService;
 import org.noear.solon.annotation.Controller;
 import org.noear.solon.annotation.Inject;
@@ -19,6 +20,14 @@ public class TranController {
         //
         appService.addApp();
         appService.addApp();
+
+        DataSourceKey.use("db2");
+        try {
+            appService.addApp();
+            appService.addApp();
+        } finally {
+            DataSourceKey.clear();
+        }
     }
 
     @Tran
@@ -28,6 +37,14 @@ public class TranController {
         //
         appService.addApp();
         appService.addApp();
+
+        DataSourceKey.use("db2");
+        try {
+            appService.addApp();
+            appService.addApp();
+        } finally {
+            DataSourceKey.clear();
+        }
 
         throw new RuntimeException("不让你加");
     }

@@ -19,12 +19,20 @@ public class TranTest extends HttpTester {
     @Inject
     SqlUtils sqlUtils;
 
+    @Inject("db2")
+    SqlUtils db2;
+
     private void clear() throws Exception {
         sqlUtils.sql("TRUNCATE TABLE test").update();
+        db2.sql("TRUNCATE TABLE test").update();
     }
 
     private long count() throws SQLException {
         return sqlUtils.sql("select count(1) from test").queryValue();
+    }
+
+    private long countDb2() throws SQLException {
+        return db2.sql("select count(1) from test").queryValue();
     }
 
     @Test
@@ -34,6 +42,7 @@ public class TranTest extends HttpTester {
         path("/tran/test").get();
         path("/tran/test").get();
         assert count() == 6;
+        assert countDb2() == 6;
     }
 
     @Test
@@ -43,6 +52,7 @@ public class TranTest extends HttpTester {
         path("/tran/test2").get();
         path("/tran/test2").get();
         assert count() == 0;
+        assert countDb2() == 0;
     }
 
     @Test
