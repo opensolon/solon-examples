@@ -24,16 +24,13 @@ mybatis-flex.datasource:
 #默认
 mybatis-flex:
   defaultDatasourceKey: db1
-  typeAliases:    #支持包名 或 类名
+  typeAliasesPackage:    #支持包名 或 类名
     - "demo4035.model"
-  mappers:        #支持包名 或 类名 或 xml（.xml结尾 或 *.xml 结尾）
+  mapperLocations:        #支持包名 或 类名 或 xml（.xml结尾 或 *.xml 结尾）
     - "demo4035.dso.mapper"
   configuration:
     cacheEnabled: false
     mapUnderscoreToCamelCase: true
-  plugins:
-    - test:
-        class: "demo4035.dso.TestInterceptorImpl"
 
 #分页组件的配置
 sqlhelper:
