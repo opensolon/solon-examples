@@ -1,0 +1,20 @@
+
+solon.app:
+  name: "demo-app"
+  group: "demo"
+
+solon.logging:
+  logger:
+    root:
+      level: INFO
+
+# 配置可以自由定义，与 @Bean 代码对应起来即可（以下为参考）
+solon.activemq:
+  properties:  #公共配置（配置项，参考：ConnectionFactory）
+    brokerURL: "failover:tcp://localhost:61616"
+    redeliveryPolicy:
+      initialRedeliveryDelay: 5000
+      backOffMultiplier: 2
+      useExponentialBackOff: true
+      maximumRedeliveries: -1
+      maximumRedeliveryDelay: 3600_000
