@@ -32,7 +32,7 @@
         <!-- wood-solon-plugin 相对于 wood；增加了 @Db 的注入支持 -->
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>solon-rx-r2dbc</artifactId>
+            <artifactId>solon-data-rx-sqlutils</artifactId>
         </dependency>
 
         <dependency>

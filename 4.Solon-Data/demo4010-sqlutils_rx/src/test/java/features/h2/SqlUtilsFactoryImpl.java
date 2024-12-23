@@ -2,9 +2,9 @@ package features.h2;
 
 import io.r2dbc.spi.ConnectionFactory;
 import org.noear.solon.annotation.Component;
-import org.noear.solon.rx.r2dbc.RxSqlExecutor;
-import org.noear.solon.rx.r2dbc.RxSqlUtilsFactory;
-import org.noear.solon.rx.r2dbc.impl.SimpleRxSqlExecutor;
+import org.noear.solon.data.rx.sql.RxSqlExecutor;
+import org.noear.solon.data.rx.sql.RxSqlUtilsFactory;
+import org.noear.solon.data.rx.sql.impl.SimpleRxSqlExecutor;
 
 import java.util.Arrays;
 
