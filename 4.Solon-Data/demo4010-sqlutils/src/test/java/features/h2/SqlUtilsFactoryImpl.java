@@ -3,7 +3,6 @@ package features.h2;
 import org.noear.solon.annotation.Component;
 import org.noear.solon.data.sql.SqlExecutor;
 import org.noear.solon.data.sql.SqlUtilsFactory;
-import org.noear.solon.data.sql.impl.SimpleSqlExecutor;
 
 import javax.sql.DataSource;
 import java.util.Arrays;
@@ -19,6 +18,6 @@ public class SqlUtilsFactoryImpl implements SqlUtilsFactory {
         System.out.println("args:" + Arrays.toString(args));
         System.out.println("----------");
 
-        return new SimpleSqlExecutor(ds, sql, args);
+        return SqlUtilsFactory.super.create(ds, sql, args);
     }
 }
