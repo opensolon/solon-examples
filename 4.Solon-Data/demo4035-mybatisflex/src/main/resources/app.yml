@@ -31,6 +31,9 @@ mybatis-flex:
   configuration:
     cacheEnabled: false
     mapUnderscoreToCamelCase: true
+  globalConfig:
+    printBanner: false
+
 
 #分页组件的配置
 sqlhelper:
