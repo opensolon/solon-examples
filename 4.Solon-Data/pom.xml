@@ -21,6 +21,7 @@
         <module>demo4002-dynamicds</module>
         <module>demo4003-shardingds</module>
         <module>demo4010-sqlutils</module>
+        <module>demo4010-sqlutils_rx</module>
         <module>demo4013-wood</module>
         <module>demo4013-wood_native</module>
         <module>demo4014-wood_multisource</module>
