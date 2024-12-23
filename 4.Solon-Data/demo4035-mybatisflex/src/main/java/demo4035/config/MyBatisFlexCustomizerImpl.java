@@ -9,15 +9,15 @@ import org.noear.solon.annotation.Component;
 /**
  * @author noear 2024/12/20 created
  */
-@Component
-public class MyBatisFlexCustomizerImpl implements MyBatisFlexCustomizer, ConfigurationCustomizer {
-    @Override
-    public void customize(FlexGlobalConfig globalConfig) {
-        System.out.println("FlexGlobalConfig customize");
-    }
-
-    @Override
-    public void customize(FlexConfiguration configuration) {
-        System.out.println("FlexConfiguration customize");
-    }
-}
+//@Component
+//public class MyBatisFlexCustomizerImpl implements MyBatisFlexCustomizer, ConfigurationCustomizer {
+//    @Override
+//    public void customize(FlexGlobalConfig globalConfig) {
+//        System.out.println("FlexGlobalConfig customize");
+//    }
+//
+//    @Override
+//    public void customize(FlexConfiguration configuration) {
+//        System.out.println("FlexConfiguration customize");
+//    }
+//}

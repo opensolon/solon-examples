@@ -31,9 +31,8 @@
         </dependency>
 
         <dependency>
-            <groupId>com.mybatis-flex</groupId>
+            <groupId>org.noear</groupId>
             <artifactId>mybatis-flex-solon-plugin</artifactId>
-            <version>${mybatis-flex.version}</version>
         </dependency>
 
         <dependency>
