@@ -5,6 +5,6 @@ solon.app:
 solon.output.meta: 1
 
 solon.dataSources:
-  h2:
+  h2!:
     class: "org.noear.solon.data.datasource.R2dbcConnectionFactory"
     r2dbcUrl: "r2dbc:h2:mem:///test;DB_CLOSE_ON_EXIT=FALSE;MODE=MYSQL;DATABASE_TO_LOWER=TRUE;IGNORECASE=TRUE;CASE_INSENSITIVE_IDENTIFIERS=TRUE"

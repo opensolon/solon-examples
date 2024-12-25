@@ -12,7 +12,7 @@ import org.noear.solon.data.rx.sql.RxSqlUtils;
 @Configuration
 public class Config {
     @Bean
-    public void initDb(@Inject("h2") RxSqlUtils sqlUtils) throws Exception {
+    public void initDb(@Inject RxSqlUtils sqlUtils) throws Exception {
         String sql = ResourceUtil.getResourceAsString("db.sql");
 
         for (String s1 : sql.split(";")) {
