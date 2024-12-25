@@ -26,10 +26,13 @@
     <dependencies>
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>solon-lib</artifactId>
+            <artifactId>solon-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.noear</groupId>
+            <artifactId>solon-web-rx</artifactId>
         </dependency>
 
-        <!-- wood-solon-plugin 相对于 wood；增加了 @Db 的注入支持 -->
         <dependency>
             <groupId>org.noear</groupId>
             <artifactId>solon-data-rx-sqlutils</artifactId>

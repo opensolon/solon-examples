@@ -1,4 +1,4 @@
-package features;
+package demo4010_rx.model;
 
 /**
  * @author noear 2024/10/9 created

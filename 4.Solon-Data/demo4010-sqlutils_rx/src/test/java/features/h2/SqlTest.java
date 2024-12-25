@@ -1,6 +1,6 @@
 package features.h2;
 
-import features.Appx;
+import demo4010_rx.model.Appx;
 import features.TestDo;
 import org.junit.jupiter.api.Test;
 import org.noear.solon.Utils;
