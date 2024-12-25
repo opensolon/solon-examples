@@ -14,7 +14,7 @@ import java.util.List;
  */
 @Controller
 public class DemoController {
-    @Inject("h2")
+    @Inject
     RxSqlUtils sqlUtils;
 
     @Mapping("case1")
