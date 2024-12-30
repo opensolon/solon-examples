@@ -24,10 +24,8 @@ mybatis-flex.datasource:
 #默认
 mybatis-flex:
   defaultDatasourceKey: db1
-  typeAliasesPackage:    #支持包名 或 类名
-    - "demo4035.model"
-  mapperLocations:        #支持包名 或 类名 或 xml（.xml结尾 或 *.xml 结尾）
-    - "demo4035.dso.mapper"
+  typeAliasesPackage: "demo4035.model"
+  mapperLocations: "demo4035.dso.mapper"
   configuration:
     cacheEnabled: false
     mapUnderscoreToCamelCase: true
