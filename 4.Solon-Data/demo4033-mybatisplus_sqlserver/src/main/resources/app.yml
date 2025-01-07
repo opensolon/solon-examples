@@ -1,0 +1,38 @@
+server.port: 8080
+
+
+
+solon.logging.logger:
+    "org.eclipse.jetty.*":
+        level: "WARN"
+    "com.zaxxer.hikari.*":
+        level: "WARN"
+
+
+solon.dataSources:
+    db1!:
+        class: "com.zaxxer.hikari.HikariDataSource"
+        jdbcUrl: jdbc:sqlserver://192.168.33.65:1433;databaseName=nccdbzs;encrypt=false;integratedSecurity=false;characterEncoding=utf8
+        driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+        username: sa
+        password: XYylsql@123.
+        url: ${.jdbcUrl}
+
+
+#默认
+mybatis.db1:
+    typeAliases:    #支持包名 或 类名 //支持 ** 和 *
+            - "com.study.domain.*.**"
+    mappers:        #支持包名 或 类名 或 xml（.xml结尾）//支持 ** 和 *
+            - "classpath:mapper/*.xml"
+    configuration:
+        cacheEnabled: false
+        mapperVerifyEnabled: false
+        mapUnderscoreToCamelCase: true
+        logImpl: org.apache.ibatis.logging.nologging.NoLoggingImpl
+    globalConfig:
+        banner: false
+#        metaObjectHandler: "demo4031.dso.MetaObjectHandlerImpl"
+#        dbConfig:
+#            logicDeleteField: "deleted"
+#            logicDeleteValue: "2"
