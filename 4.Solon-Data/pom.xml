@@ -45,6 +45,7 @@
         <module>demo4081-eclipselink</module>
         <module>demo4082-hibernate</module>
         <module>demo4101-redisson</module>
-<!--        <module>demo4091-sqlink</module>-->
+        <module>demo4033-mybatisplus_sqlserver</module>
+        <!--        <module>demo4091-sqlink</module>-->
     </modules>
 </project>
