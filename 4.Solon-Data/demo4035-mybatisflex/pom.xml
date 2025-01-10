@@ -15,13 +15,13 @@
     <parent>
         <groupId>org.noear</groupId>
         <artifactId>solon-parent</artifactId>
-        <version>3.0.6-RC</version>
+        <version>3.0.6-RC2</version>
         <relativePath />
     </parent>
 
     <properties>
         <java.version>11</java.version>
-        <mybatis-flex.version>1.10.4</mybatis-flex.version>
+        <mybatis-flex.version>1.10.5</mybatis-flex.version>
     </properties>
 
 
