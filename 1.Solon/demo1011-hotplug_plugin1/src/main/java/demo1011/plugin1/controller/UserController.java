@@ -15,7 +15,7 @@ import org.noear.solon.validation.annotation.Valid;
 @Valid
 @Mapping("user")
 @Controller
-public class UserController extends BaseController {
+public class UserController extends BaseControllerEx {
 
     @Inject("${user.name}")
     String userName = "111";
