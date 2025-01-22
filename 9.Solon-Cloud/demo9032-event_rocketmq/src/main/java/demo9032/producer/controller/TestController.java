@@ -23,7 +23,7 @@ public class TestController {
             msg = "demo";
         }
 
-        Event event = new Event("hello.demo", msg);
+        Event event = new Event("hello.demo", msg).metaPut("a","a");
         return CloudClient.event().publish(event);
     }
 
@@ -35,7 +35,7 @@ public class TestController {
 
         long time = System.currentTimeMillis() + 10 * 1000;
 
-        Event event = new Event("hello.demo2", msg).group("test").scheduled(new Date(time));
+        Event event = new Event("hello.demo2", msg).group("test").metaPut("a","a").scheduled(new Date(time));
         return CloudClient.event().publish(event);
     }
 
