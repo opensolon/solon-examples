@@ -19,7 +19,7 @@ public class TestController {
             msg = "demo2";
         }
 
-        Event event = new Event("hello.demo", msg).qos(1).retained(true);
+        Event event = new Event("hello.demo", msg).qos(1).retained(true).metaPut("a","a");
         return CloudClient.event().publish(event);
     }
 
@@ -29,7 +29,7 @@ public class TestController {
             msg = "demo2";
         }
 
-        Event event = new Event("hello.demo2", msg);
+        Event event = new Event("hello.demo2", msg).metaPut("a","a");
         return CloudClient.event().publish(event);
     }
 
@@ -39,7 +39,7 @@ public class TestController {
             msg = "demo";
         }
 
-        Event event = new Event("hello.demo3", msg);
+        Event event = new Event("hello.demo3", msg).metaPut("a","a");
         return CloudClient.event().publish(event);
     }
 
