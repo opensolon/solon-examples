@@ -33,6 +33,13 @@ public class AppService {
         sqlMapper1.appx_add();
     }
 
+    @Tran(policy = TranPolicy.nested)
+    public void addApp32(){
+        sqlMapper1.appx_add();
+
+        throw new RuntimeException("不让你加");
+    }
+
     @Tran(policy = TranPolicy.requires_new)
     public void addApp4(){
         sqlMapper1.appx_add();
