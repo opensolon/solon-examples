@@ -105,6 +105,18 @@ public class TranTest extends HttpTester {
     }
 
     @Test
+    public void test42() throws Exception {
+        clear();
+        path("/tran/test42").get();
+        path("/tran/test42").get();
+        path("/tran/test42").get();
+
+        long count = count();
+        System.out.println(count);
+        assert count == 3;
+    }
+
+    @Test
     public void test51() throws Exception {
         clear();
         path("/tran/test51").get();

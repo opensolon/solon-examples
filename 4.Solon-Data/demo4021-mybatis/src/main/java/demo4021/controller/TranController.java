@@ -85,11 +85,24 @@ public class TranController {
     @Tran
     @Mapping("test41")
     public void test41() throws Exception {
-        //添加会成功
+        //会失败（因为事务内嵌受父级托管理）
         //
         appService.addApp3();
 
         throw new RuntimeException("不让你加");
+    }
+
+    @Tran
+    @Mapping("test42")
+    public void test42() throws Exception {
+        //添加会成功
+        appService.addApp();
+
+        try {
+            appService.addApp32();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Tran
