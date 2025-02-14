@@ -40,11 +40,6 @@
         </dependency>
 
         <dependency>
-            <groupId>org.noear</groupId>
-            <artifactId>nacos2-solon-cloud-plugin</artifactId>
-        </dependency>
-
-        <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <scope>provided</scope>
