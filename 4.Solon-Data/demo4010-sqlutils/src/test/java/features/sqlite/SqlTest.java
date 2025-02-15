@@ -65,25 +65,15 @@ public class SqlTest {
 
     @Test
     public void select3() throws SQLException {
-        Row tmp = sqlUtils.sql("select * from appx limit 1").queryRow();
+        Map tmp = sqlUtils.sql("select * from appx limit 1").queryRow(Map.class);
         System.out.println(tmp);
         assert tmp.size() > 2;
 
-        System.out.println(tmp.data());
-        System.out.println(tmp.toMap());
+        System.out.println(tmp);
 
-        Appx tmp2 = tmp.toBean(Appx.class);
-        System.out.println(tmp2);
-        assert tmp2.app_id > 0;
-
-        RowList tmpList = sqlUtils.sql("select * from appx limit 2").queryRowList();
+        List<Map> tmpList = sqlUtils.sql("select * from appx limit 2").queryRowList(Map.class);
         System.out.println(tmpList);
         assert tmpList.size() == 2;
-
-
-        List<Appx> tmpList2 = tmpList.toBeanList(Appx.class);
-        System.out.println(tmpList2);
-        assert tmpList2.size() == 2;
     }
 
     @Test
@@ -110,11 +100,11 @@ public class SqlTest {
 
     @Test
     public void select3_2() throws SQLException {
-        Row tmp = sqlUtils.sql("select * from appx where app_id=? limit 1", 99999).queryRow();
+        Map tmp = sqlUtils.sql("select * from appx where app_id=? limit 1", 99999).queryRow(Map.class);
         System.out.println(tmp);
         assert tmp == null;
 
-        List<Row> tmpList = sqlUtils.sql("select * from appx where app_id=? limit 2", 99999).queryRowList();
+        List<Map> tmpList = sqlUtils.sql("select * from appx where app_id=? limit 2", 99999).queryRowList(Map.class);
         System.out.println(tmpList);
         assert tmpList == null;
     }

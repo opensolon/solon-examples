@@ -65,25 +65,15 @@ public class SqlTest {
 
     @Test
     public void select3() throws SQLException {
-        Row tmp = sqlUtils.sql("select * from appx limit 1").queryRow();
+        Map tmp = sqlUtils.sql("select * from appx limit 1").queryRow(Map.class);
         System.out.println(tmp);
         assert tmp.size() > 2;
 
-        System.out.println(tmp.data());
-        System.out.println(tmp.toMap());
+        System.out.println(tmp);
 
-        Appx tmp2 = tmp.toBean(Appx.class);
-        System.out.println(tmp2);
-        assert tmp2.app_id > 0;
-
-        RowList tmpList = sqlUtils.sql("select * from appx limit 2").queryRowList();
+        List<Appx> tmpList = sqlUtils.sql("select * from appx limit 2").queryRowList(Appx.class);
         System.out.println(tmpList);
         assert tmpList.size() == 2;
-
-
-        List<Appx> tmpList2 = tmpList.toBeanList(Appx.class);
-        System.out.println(tmpList2);
-        assert tmpList2.size() == 2;
     }
 
     @Test
@@ -110,11 +100,11 @@ public class SqlTest {
 
     @Test
     public void select3_2() throws SQLException {
-        Row tmp = sqlUtils.sql("select * from appx where app_id=? limit 1", 99999).queryRow();
+        Map tmp = sqlUtils.sql("select * from appx where app_id=? limit 1", 99999).queryRow(Map.class);
         System.out.println(tmp);
         assert tmp == null;
 
-        List<Row> tmpList = sqlUtils.sql("select * from appx where app_id=? limit 2", 99999).queryRowList();
+        List<Map> tmpList = sqlUtils.sql("select * from appx where app_id=? limit 2", 99999).queryRowList(Map.class);
         System.out.println(tmpList);
         assert tmpList == null;
     }
@@ -193,6 +183,45 @@ public class SqlTest {
         //sqlite 是自增值；//h2 是插入值
         assert 2L == key.longValue() || key.longValue() > 0L;
     }
+
+    @Test
+    public void insertBatch() throws SQLException {
+        List<Object[]> argsList = new ArrayList<>();
+        argsList.add(new Object[]{11, 1, 1});
+        argsList.add(new Object[]{12, 2, 2});
+        argsList.add(new Object[]{13, 3, 3});
+        argsList.add(new Object[]{14, 4, 4});
+        argsList.add(new Object[]{15, 5, 5});
+
+        sqlUtils.sql("delete from test").update();
+        List<Number> rows = sqlUtils.sql("insert into test(id,v1,v2) values(?,?,?)").updateBatchReturnKeys(argsList);
+
+        System.out.println(rows);
+        assert rows.size() == 5;
+        assert rows.get(0).intValue() == 11;
+    }
+
+    @Test
+    public void insertBatch2() throws SQLException {
+        List<TestDo> argsList = new ArrayList<>();
+        argsList.add(new TestDo(1));
+        argsList.add(new TestDo(2));
+        argsList.add(new TestDo(3));
+        argsList.add(new TestDo(4));
+        argsList.add(new TestDo(5));
+
+        sqlUtils.sql("delete from test").update();
+        List<Number> rows = sqlUtils.sql("insert into test(id,v1,v2) values(?,?,?)").updateBatchReturnKeys(argsList, (ps,d)->{
+            ps.setInt(1, d.id);
+            ps.setInt(2, d.v1);
+            ps.setInt(3, d.v2);
+        });
+
+        System.out.println(rows);
+        assert rows.size() == 5;
+        assert rows.get(0).intValue() == 1;
+    }
+
 
     @Test
     public void executeBatch() throws SQLException {
