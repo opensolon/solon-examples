@@ -54,11 +54,13 @@ public class SqlTest {
 
     @Test
     public void select2_2() throws SQLException {
-        Integer tmp = sqlUtils.sql("select app_id from appx where app_id=? limit 2", 99999).queryValue();
+        Integer tmp = sqlUtils.sql("select app_id from appx where app_id=? limit 2", 99999)
+                .queryValue();
         System.out.println(tmp);
         assert tmp == null;
 
-        List<Integer> tmpList = sqlUtils.sql("select app_id from appx where app_id=? limit 2", 99999).queryValueList();
+        List<Integer> tmpList = sqlUtils.sql("select app_id from appx where app_id=? limit 2", 99999)
+                .queryValueList();
         System.out.println(tmpList);
         assert tmpList == null;
     }
@@ -100,11 +102,13 @@ public class SqlTest {
 
     @Test
     public void select3_2() throws SQLException {
-        Map tmp = sqlUtils.sql("select * from appx where app_id=? limit 1", 99999).queryRow(Map.class);
+        Map tmp = sqlUtils.sql("select * from appx where app_id=? limit 1", 99999)
+                .queryRow(Map.class);
         System.out.println(tmp);
         assert tmp == null;
 
-        List<Map> tmpList = sqlUtils.sql("select * from appx where app_id=? limit 2", 99999).queryRowList(Map.class);
+        List<Map> tmpList = sqlUtils.sql("select * from appx where app_id=? limit 2", 99999)
+                .queryRowList(Map.class);
         System.out.println(tmpList);
         assert tmpList == null;
     }
@@ -130,7 +134,8 @@ public class SqlTest {
     @Test
     public void insert1() throws SQLException {
         sqlUtils.sql("delete from test where id=?", 2).update();
-        assert 1 == sqlUtils.sql("insert into test(id,v1,v2) values(?,?,?)", 2, 2, 2).update();
+        assert 1 == sqlUtils.sql("insert into test(id,v1,v2) values(?,?,?)", 2, 2, 2)
+                .update();
     }
 
     @Test
@@ -138,17 +143,17 @@ public class SqlTest {
         TestDo testDo = new TestDo(2);
 
         sqlUtils.sql("delete from test where id=?", 2).update();
-        assert 1 == sqlUtils.sql("insert into test(id,v1,v2) values(?,?,?)").update(testDo, (ps, d) -> {
+        assert 1 == sqlUtils.sql("insert into test(id,v1,v2) values(?,?,?)").params(testDo, (ps, d) -> {
             ps.setInt(1, d.id);
             ps.setInt(2, d.v1);
             ps.setInt(3, d.v2);
-        });
+        }).update();
     }
 
     @Test
     public void insert2() throws SQLException {
         sqlUtils.sql("delete from test where id=?", 2).update();
-        Number key = sqlUtils.sql("insert into test(id,v1,v2) values(?,?,?)", 2, 2, 2).updateReturnKey();
+        Number key = sqlUtils.sql("insert into test(id,v1,v2) values(?,?,?)").params(2, 2, 2).updateReturnKey();
 
         System.out.println(key);
 
@@ -160,12 +165,13 @@ public class SqlTest {
     public void insert2_2() throws SQLException {
         TestDo testDo = new TestDo(2);
 
-        sqlUtils.sql("delete from test where id=?", 2).update();
-        Number key = sqlUtils.sql("insert into test(id,v1,v2) values(?,?,?)").updateReturnKey(testDo, (ps, d) -> {
-            ps.setInt(1, d.id);
-            ps.setInt(2, d.v1);
-            ps.setInt(3, d.v2);
-        });
+        sqlUtils.sql("delete from test where id=?").params(2).update();
+        Number key = sqlUtils.sql("insert into test(id,v1,v2) values(?,?,?)")
+                .params(testDo, (ps, d) -> {
+                    ps.setInt(1, d.id);
+                    ps.setInt(2, d.v1);
+                    ps.setInt(3, d.v2);
+                }).updateReturnKey();
 
         System.out.println(key);
 
@@ -175,8 +181,12 @@ public class SqlTest {
 
     @Test
     public void insert3() throws SQLException {
-        sqlUtils.sql("delete from test where id=?", 2).update();
-        Number key = sqlUtils.sql("insert into test(id,v1,v2,v3) values(?,?,?,?)", 2, 2, null, null).updateReturnKey();
+        sqlUtils.sql("delete from test where id=?")
+                .params(2)
+                .update();
+        Number key = sqlUtils.sql("insert into test(id,v1,v2,v3) values(?,?,?,?)")
+                .params(2, 2, null, null)
+                .updateReturnKey();
 
         System.out.println(key);
 
@@ -194,7 +204,9 @@ public class SqlTest {
         argsList.add(new Object[]{15, 5, 5});
 
         sqlUtils.sql("delete from test").update();
-        List<Number> rows = sqlUtils.sql("insert into test(id,v1,v2) values(?,?,?)").updateBatchReturnKeys(argsList);
+        List<Number> rows = sqlUtils.sql("insert into test(id,v1,v2) values(?,?,?)")
+                .params(argsList)
+                .updateBatchReturnKeys();
 
         System.out.println(rows);
         assert rows.size() == 5;
@@ -211,11 +223,12 @@ public class SqlTest {
         argsList.add(new TestDo(5));
 
         sqlUtils.sql("delete from test").update();
-        List<Number> rows = sqlUtils.sql("insert into test(id,v1,v2) values(?,?,?)").updateBatchReturnKeys(argsList, (ps,d)->{
-            ps.setInt(1, d.id);
-            ps.setInt(2, d.v1);
-            ps.setInt(3, d.v2);
-        });
+        List<Number> rows = sqlUtils.sql("insert into test(id,v1,v2) values(?,?,?)")
+                .params(argsList, () -> (ps, d) -> {
+                    ps.setInt(1, d.id);
+                    ps.setInt(2, d.v1);
+                    ps.setInt(3, d.v2);
+                }).updateBatchReturnKeys();
 
         System.out.println(rows);
         assert rows.size() == 5;
@@ -233,7 +246,9 @@ public class SqlTest {
         argsList.add(new Object[]{5, 5, 5});
 
         sqlUtils.sql("delete from test").update();
-        int[] rows = sqlUtils.sql("insert into test(id,v1,v2) values(?,?,?)").updateBatch(argsList);
+        int[] rows = sqlUtils.sql("insert into test(id,v1,v2) values(?,?,?)")
+                .params(argsList)
+                .updateBatch();
 
         System.out.println(Arrays.toString(rows));
         assert rows.length == 5;
@@ -249,11 +264,12 @@ public class SqlTest {
         argsList.add(new TestDo(5));
 
         sqlUtils.sql("delete from test").update();
-        int[] rows = sqlUtils.sql("insert into test(id,v1,v2) values(?,?,?)").updateBatch(argsList, (ps,d)->{
-            ps.setInt(1, d.id);
-            ps.setInt(2, d.v1);
-            ps.setInt(3, d.v2);
-        });
+        int[] rows = sqlUtils.sql("insert into test(id,v1,v2) values(?,?,?)")
+                .params(argsList, () -> (ps, d) -> {
+                    ps.setInt(1, d.id);
+                    ps.setInt(2, d.v1);
+                    ps.setInt(3, d.v2);
+                }).updateBatch();
 
         System.out.println(Arrays.toString(rows));
         assert rows.length == 5;

@@ -108,9 +108,11 @@ public class SqlTest {
         sqlUtils.sql("delete from test where id=?", 2).update().block();
 
         TestDo testDo = new TestDo(2);
-        assert 1L == sqlUtils.sql("insert into test(id,v1,v2) values(?,?,?)").update(testDo, (ps, d) -> {
-            return ps.bind(0, d.id).bind(1, d.v1).bind(2, d.v2);
-        }).block();
+        assert 1L == sqlUtils.sql("insert into test(id,v1,v2) values(?,?,?)")
+                .params(testDo, (ps, d) -> {
+                    return ps.bind(0, d.id).bind(1, d.v1).bind(2, d.v2);
+                })
+                .update().block();
     }
 
     @Test
@@ -133,9 +135,10 @@ public class SqlTest {
 
         TestDo testDo = new TestDo(2);
         Number key = sqlUtils.sql("insert into test(id,v1,v2) values(?,?,?)")
-                .updateReturnKey(Number.class, testDo, (ps, d) -> {
+                .params(testDo, (ps, d) -> {
                     return ps.bind(0, d.id).bind(1, d.v1).bind(2, d.v2);
-                }).block();
+                })
+                .updateReturnKey(Number.class).block();
 
         System.out.println(key);
 
@@ -166,7 +169,8 @@ public class SqlTest {
 
         sqlUtils.sql("delete from test").update().block();
         List<Long> rows = sqlUtils.sql("insert into test(id,v1,v2) values(?,?,?)")
-                .updateBatch(argsList)
+                .params(argsList)
+                .updateBatch()
                 .collectList().block();
 
         System.out.println(rows);
@@ -184,9 +188,10 @@ public class SqlTest {
 
         sqlUtils.sql("delete from test").update().block();
         List<Long> rows = sqlUtils.sql("insert into test(id,v1,v2) values(?,?,?)")
-                .updateBatch(argsList, (ps, d) -> {
+                .params(argsList, () -> (ps, d) -> {
                     return ps.bind(0, d.id).bind(1, d.v1).bind(2, d.v2);
-                }).collectList().block();
+                })
+                .updateBatch().collectList().block();
 
         System.out.println(rows);
         assert rows.size() == 5;

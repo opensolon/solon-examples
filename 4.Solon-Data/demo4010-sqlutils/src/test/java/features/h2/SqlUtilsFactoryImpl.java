@@ -6,7 +6,6 @@ import org.noear.solon.data.sql.SqlUtilsFactory;
 import org.noear.solon.data.sql.impl.SimpleSqlExecutor;
 
 import javax.sql.DataSource;
-import java.util.Arrays;
 
 /**
  * @author noear 2024/11/6 created
@@ -14,11 +13,15 @@ import java.util.Arrays;
 @Component
 public class SqlUtilsFactoryImpl implements SqlUtilsFactory {
     @Override
-    public SqlExecutor create(DataSource ds, String sql, Object... args) {
-        System.out.println("sql:" + sql);
-        System.out.println("args:" + Arrays.toString(args));
-        System.out.println("----------");
-
-        return new SimpleSqlExecutor(ds, sql, args);
+    public SqlExecutor create(DataSource ds, String sql) {
+        return new SimpleSqlExecutor(ds, sql).onCommandPost(cmd -> {
+            System.out.println("sql:" + cmd.getSql());
+            if (cmd.isBatch()) {
+                System.out.println("args:" + cmd.getArgsColl());
+            } else {
+                System.out.println("args:" + cmd.getArgs());
+            }
+            System.out.println("----------");
+        });
     }
 }

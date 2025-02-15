@@ -14,11 +14,15 @@ import java.util.Arrays;
 @Component
 public class SqlUtilsFactoryImpl implements RxSqlUtilsFactory {
     @Override
-    public RxSqlExecutor create(ConnectionFactory ds, String sql, Object... args) {
-        System.out.println("sql:" + sql);
-        System.out.println("args:" + Arrays.toString(args));
-        System.out.println("----------");
-
-        return new SimpleRxSqlExecutor(ds, sql, args);
+    public RxSqlExecutor create(ConnectionFactory ds, String sql) {
+        return new SimpleRxSqlExecutor(ds, sql).onCommandPost(cmd -> {
+            System.out.println("sql:" + cmd.getSql());
+            if (cmd.isBatch()) {
+                System.out.println("args:" + cmd.getArgsColl());
+            } else {
+                System.out.println("args:" + cmd.getArgs());
+            }
+            System.out.println("----------");
+        });
     }
 }

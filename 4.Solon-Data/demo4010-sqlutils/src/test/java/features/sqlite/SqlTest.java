@@ -139,11 +139,11 @@ public class SqlTest {
         TestDo testDo = new TestDo(2);
 
         sqlUtils.sql("delete from test where id=?", 2).update();
-        assert 1 == sqlUtils.sql("insert into test(id,v1,v2) values(?,?,?)").update(testDo, (ps, d) -> {
+        assert 1 == sqlUtils.sql("insert into test(id,v1,v2) values(?,?,?)").params(testDo, (ps, d) -> {
             ps.setInt(1, d.id);
             ps.setInt(2, d.v1);
             ps.setInt(3, d.v2);
-        });
+        }).update();
     }
 
     @Test
@@ -162,11 +162,11 @@ public class SqlTest {
         TestDo testDo = new TestDo(2);
 
         sqlUtils.sql("delete from test where id=?", 2).update();
-        Number key = sqlUtils.sql("insert into test(id,v1,v2) values(?,?,?)").updateReturnKey(testDo, (ps, d) -> {
+        Number key = sqlUtils.sql("insert into test(id,v1,v2) values(?,?,?)").params(testDo, (ps, d) -> {
             ps.setInt(1, d.id);
             ps.setInt(2, d.v1);
             ps.setInt(3, d.v2);
-        });
+        }).updateReturnKey();
 
         System.out.println(key);
 
@@ -195,7 +195,9 @@ public class SqlTest {
         argsList.add(new Object[]{5, 5, 5});
 
         sqlUtils.sql("delete from test").update();
-        int[] rows = sqlUtils.sql("insert into test(id,v1,v2) values(?,?,?)").updateBatch(argsList);
+        int[] rows = sqlUtils.sql("insert into test(id,v1,v2) values(?,?,?)")
+                .params(argsList)
+                .updateBatch();
 
         System.out.println(Arrays.toString(rows));
         assert rows.length == 5;
@@ -211,11 +213,12 @@ public class SqlTest {
         argsList.add(new TestDo(5));
 
         sqlUtils.sql("delete from test").update();
-        int[] rows = sqlUtils.sql("insert into test(id,v1,v2) values(?,?,?)").updateBatch(argsList, (ps,d)->{
-            ps.setInt(1, d.id);
-            ps.setInt(2, d.v1);
-            ps.setInt(3, d.v2);
-        });
+        int[] rows = sqlUtils.sql("insert into test(id,v1,v2) values(?,?,?)")
+                .params(argsList, () -> (ps, d) -> {
+                    ps.setInt(1, d.id);
+                    ps.setInt(2, d.v1);
+                    ps.setInt(3, d.v2);
+                }).updateBatch();
 
         System.out.println(Arrays.toString(rows));
         assert rows.length == 5;
