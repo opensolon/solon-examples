@@ -26,13 +26,7 @@ public class SqlTest {
 
     @Bean
     public void init() throws Exception {
-        String sql = ResourceUtil.getResourceAsString("db.sql");
-
-        for (String s1 : sql.split(";")) {
-            if (s1.trim().length() > 10) {
-                sqlUtils.sql(s1).update();
-            }
-        }
+        sqlUtils.initDatabase("classpath:db.sql");
     }
 
     @Test
