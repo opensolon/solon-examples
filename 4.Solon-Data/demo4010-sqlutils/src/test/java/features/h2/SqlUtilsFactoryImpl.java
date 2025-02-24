@@ -14,7 +14,7 @@ import javax.sql.DataSource;
 public class SqlUtilsFactoryImpl implements SqlUtilsFactory {
     @Override
     public SqlExecutor create(DataSource ds, String sql) {
-        return new SimpleSqlExecutor(ds, sql).onCommandPost(cmd -> {
+        return new SimpleSqlExecutor(ds, sql).onExecuteBefore(cmd -> {
             System.out.println("sql:" + cmd.getSql());
             if (cmd.isBatch()) {
                 System.out.println("args:" + cmd.getArgsColl());
