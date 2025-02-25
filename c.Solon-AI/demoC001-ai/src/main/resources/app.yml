@@ -1,0 +1,20 @@
+solon.logging.logger:
+  root:
+    level: INFO
+
+solon.ai.chat:
+  deepseek:
+    apiUrl: "https://api.deepseek.com/v1/chat/completions" # 使用完整地址（而不是 api_base）
+    apiKey: "sk-9f4415ddc570496581897c22e3d41a54"  # 填写自己申明的 apiKey
+    model: "deepseek-chat"
+
+solon.ai.repo:
+  websearch:
+    apiUrl: "https://api.bochaai.com/v1/web-search" # 使用完整地址（而不是 api_base）
+    apiKey: "sk-5d36eae2c4a54e2596c7625d9888a9d8"
+
+solon.ai.embed:
+  bgem3:
+    apiUrl: "http://127.0.0.1:11434/api/embed" # 使用完整地址（而不是 api_base）
+    provider: "ollama" # 使用 ollama 服务时，需要配置 provider
+    model: "bge-m3:latest"

@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.noear.solon.examples</groupId>
-    <artifactId>b.Integration</artifactId>
+    <artifactId>b.Solon-Integration</artifactId>
     <version>demo</version>
     <packaging>pom</packaging>
 

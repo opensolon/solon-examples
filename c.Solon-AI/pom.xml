@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.noear.solon.examples</groupId>
-    <artifactId>a.Doc</artifactId>
+    <artifactId>c.Solon-AI</artifactId>
     <version>demo</version>
     <packaging>pom</packaging>
 
@@ -17,8 +17,6 @@
     </properties>
 
     <modules>
-        <module>demoA001-smartdoc</module>
-        <module>demoA002-openapi2_knife4j</module>
-        <module>demoA003-openapi2_gateway</module>
+        <module>demoC001-ai</module>
     </modules>
 </project>
