@@ -2,7 +2,6 @@ package demoC001.controller;
 
 import org.noear.solon.ai.chat.ChatModel;
 import org.noear.solon.ai.chat.message.ChatMessage;
-import org.noear.solon.ai.chat.message.UserMessage;
 import org.noear.solon.ai.rag.Document;
 import org.noear.solon.ai.rag.Repository;
 import org.noear.solon.ai.rag.util.QueryCondition;
@@ -33,7 +32,7 @@ public class RagController {
         List<Document> context = repository.search(new QueryCondition(message).limit(4));
 
         //消息增强
-        ChatMessage chatMessage = UserMessage.augment(message, context);
+        ChatMessage chatMessage = ChatMessage.augment(message, context);
 
         //提交大模型并简单返回（不然，截图不好截）
         return chatModel.prompt(chatMessage).call().getMessage().getContent();
@@ -46,7 +45,7 @@ public class RagController {
         List<Document> context = localRepository.search(new QueryCondition(message).limit(4));
 
         //消息增强
-        ChatMessage chatMessage = UserMessage.augment(message, context);
+        ChatMessage chatMessage = ChatMessage.augment(message, context);
 
         //提交大模型并简单返回（不然，截图不好截）
         return chatModel.prompt(chatMessage).call().getMessage().getContent();

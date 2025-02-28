@@ -2,7 +2,7 @@ package demoC001.controller;
 
 import org.noear.solon.ai.chat.ChatModel;
 import org.noear.solon.annotation.*;
-import org.noear.solon.web.util.MimeType;
+import org.noear.solon.core.util.MimeType;
 import reactor.core.publisher.Flux;
 
 import java.io.IOException;

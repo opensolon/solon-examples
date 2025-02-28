@@ -41,6 +41,6 @@ public class RagConfig {
                 ::body);
 
         //存入知识库
-        localRepository.store(loader.load());
+        localRepository.insert(loader.load());
     }
 }
