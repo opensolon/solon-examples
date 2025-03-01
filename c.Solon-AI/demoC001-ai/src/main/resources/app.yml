@@ -4,9 +4,10 @@ solon.logging.logger:
 
 solon.ai.chat:
   deepseek:
-    apiUrl: "https://api.deepseek.com/v1/chat/completions" # 使用完整地址（而不是 api_base）
-    apiKey: "sk-9f4415ddc570496581897c22e3d41a54"  # 填写自己申明的 apiKey
-    model: "deepseek-chat"
+    apiUrl: "http://127.0.0.1:11434/api/chat" # 使用完整地址（而不是 api_base）
+    provider: "ollama"
+    model: "deepseek-r1:7b"
+    timeout: "300s"
 
 solon.ai.repo:
   websearch:
