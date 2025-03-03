@@ -5,6 +5,7 @@ import org.noear.solon.core.handle.Context;
 import org.noear.solon.core.handle.Filter;
 import org.noear.solon.core.handle.FilterChain;
 import org.noear.solon.rx.Completable;
+import org.noear.solon.rx.handle.RxContext;
 import org.noear.solon.rx.handle.RxFilter;
 import org.noear.solon.rx.handle.RxFilterChain;
 
@@ -12,7 +13,7 @@ import org.noear.solon.rx.handle.RxFilterChain;
  * @author noear 2025/3/1 created
  */
 @Component
-public class FilterImpl implements Filter, RxFilter<Context> {
+public class FilterImpl implements Filter, RxFilter {
     @Override
     public void doFilter(Context ctx, FilterChain chain) throws Throwable {
         try {
@@ -23,7 +24,7 @@ public class FilterImpl implements Filter, RxFilter<Context> {
     }
 
     @Override
-    public Completable doFilter(Context context, RxFilterChain<Context> chain) {
+    public Completable doFilter(RxContext context, RxFilterChain chain) {
         return chain.doFilter(context)
                 .doOnError(err -> {
                     err.printStackTrace();
