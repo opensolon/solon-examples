@@ -11,8 +11,6 @@ import java.sql.SQLException;
  */
 @Component
 public class SqlCommandInterceptorImpl implements SqlCommandInterceptor {
-
-
     @Override
     public Object doIntercept(SqlCommandInvocation inv) throws SQLException {
         System.out.println("sql:" + inv.getCommand().getSql());
