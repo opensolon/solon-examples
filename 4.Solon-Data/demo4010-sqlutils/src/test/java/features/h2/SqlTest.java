@@ -108,6 +108,15 @@ public class SqlTest {
     }
 
     @Test
+    public void select3_3() throws SQLException {
+        Map tmp = sqlUtils.sql("select app_id appId from appx limit 1").queryRow(Map.class);
+        System.out.println(tmp);
+        assert tmp.size() == 1;
+
+        assert tmp.get("appId") != null;
+    }
+
+    @Test
     public void select4() throws SQLException {
         RowIterator<Map> rowIterator = sqlUtils.sql("select * from appx limit ?", 100)
                 .queryRowIterator(10, Map.class);

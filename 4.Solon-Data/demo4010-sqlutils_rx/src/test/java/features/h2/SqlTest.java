@@ -90,6 +90,15 @@ public class SqlTest {
     }
 
     @Test
+    public void select3_2() {
+        Map tmp = sqlUtils.sql("select app_id as appid from appx limit 1").queryRow(Map.class).block();
+        System.out.println(tmp);
+        assert tmp.size() == 1;
+
+        assert tmp.get("appid") != null;
+    }
+
+    @Test
     public void insert1() {
         sqlUtils.sql("delete from test where id=?", 2).update().block();
         assert 1L == sqlUtils.sql("insert into test(id,v1,v2) values(?,?,?)", 2, 2, 2)
