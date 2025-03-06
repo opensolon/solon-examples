@@ -109,11 +109,11 @@ public class SqlTest {
 
     @Test
     public void select3_3() throws SQLException {
-        Map tmp = sqlUtils.sql("select app_id appId from appx limit 1").queryRow(Map.class);
+        Map tmp = sqlUtils.sql("select app_id appid from appx limit 1").queryRow(Map.class);
         System.out.println(tmp);
         assert tmp.size() == 1;
 
-        assert tmp.get("appId") != null;
+        assert tmp.get("appid") != null;
     }
 
     @Test
