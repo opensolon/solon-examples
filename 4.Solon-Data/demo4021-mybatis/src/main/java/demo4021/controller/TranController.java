@@ -4,7 +4,7 @@ import demo4021.dso.service.AppService;
 import org.noear.solon.annotation.Controller;
 import org.noear.solon.annotation.Inject;
 import org.noear.solon.annotation.Mapping;
-import org.noear.solon.data.annotation.Tran;
+import org.noear.solon.data.annotation.Transaction;
 
 @Mapping("/tran/")
 @Controller
@@ -12,7 +12,7 @@ public class TranController {
     @Inject
     AppService appService;
 
-    @Tran
+    @Transaction
     @Mapping("test")
     public void test() throws Exception {
         //添加会成功
@@ -21,7 +21,7 @@ public class TranController {
         appService.addApp();
     }
 
-    @Tran
+    @Transaction
     @Mapping("test2")
     public void test2() throws Exception {
         //添加会失败，因为在事务里出异常了
@@ -35,7 +35,7 @@ public class TranController {
     @Inject
     TranController self;
 
-    @Tran
+    @Transaction
     public void test2_2_do() throws Exception {
         //添加会失败，因为在事务里出异常了
         //
@@ -66,13 +66,13 @@ public class TranController {
         throw new RuntimeException("不让你加；但还是加了:(");
     }
 
-    @Tran
+    @Transaction
     @Mapping("test21")
     public void test21() throws Exception {
         appService.addApp2();
     }
 
-    @Tran
+    @Transaction
     @Mapping("test22")
     public void test22() throws Exception {
         //添加会失败，因为在事务里出异常了
@@ -82,7 +82,7 @@ public class TranController {
         throw new RuntimeException("不让你加");
     }
 
-    @Tran
+    @Transaction
     @Mapping("test41")
     public void test41() throws Exception {
         //会失败（因为事务内嵌受父级托管理）
@@ -92,7 +92,7 @@ public class TranController {
         throw new RuntimeException("不让你加");
     }
 
-    @Tran
+    @Transaction
     @Mapping("test42")
     public void test42() throws Exception {
         //添加会成功
@@ -105,7 +105,7 @@ public class TranController {
         }
     }
 
-    @Tran
+    @Transaction
     @Mapping("test51")
     public void test51() throws Exception {
         //添加会成功，因为addApp4是独立的新事务
@@ -115,7 +115,7 @@ public class TranController {
         throw new RuntimeException("不让你加，但还是成功了：（");
     }
 
-    @Tran
+    @Transaction
     @Mapping("test61")
     public void test61() throws Exception {
         //会失败
@@ -132,7 +132,7 @@ public class TranController {
         appService.addApp5();
     }
 
-    @Tran
+    @Transaction
     @Mapping("test71")
     public void test71() throws Exception {
         //会成功

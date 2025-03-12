@@ -6,8 +6,7 @@ import org.junit.jupiter.api.Test;
 import org.noear.solon.annotation.Bean;
 import org.noear.solon.annotation.Configuration;
 import org.noear.solon.annotation.Inject;
-import org.noear.solon.core.util.ResourceUtil;
-import org.noear.solon.data.annotation.Tran;
+import org.noear.solon.data.annotation.Transaction;
 import org.noear.solon.data.sql.*;
 import org.noear.solon.data.sql.bound.RowIterator;
 import org.noear.solon.test.SolonTest;
@@ -326,7 +325,7 @@ public class SqlTest {
         assert 22 == (int) val;
     }
 
-    @Tran
+    @Transaction
     @Test
     public void update2_tran() throws SQLException {
         SqlBuilder sqlSpec = new SqlBuilder();
