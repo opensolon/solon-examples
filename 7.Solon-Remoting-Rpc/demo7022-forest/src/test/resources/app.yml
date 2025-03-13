@@ -4,10 +4,3 @@ server.port: 8080
 solon.app:
   group: demo
   name: demoapp
-
-#如果没有配置服务，用本地发现配置
-solon.cloud.local:
-  discovery:
-    service:
-      gitee:
-        - "https://gitee.com"

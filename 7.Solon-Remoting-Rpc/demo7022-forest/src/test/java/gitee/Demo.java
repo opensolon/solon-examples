@@ -3,9 +3,10 @@ package gitee;
 import org.junit.jupiter.api.Test;
 
 import org.noear.solon.annotation.Inject;
+import org.noear.solon.test.SolonTest;
 
 
-
+@SolonTest
 public class Demo {
     @Inject
     TestGiteeApi api;
