@@ -15,7 +15,7 @@
     <parent>
         <groupId>org.noear</groupId>
         <artifactId>solon-parent</artifactId>
-        <version>3.1.1-M5</version>
+        <version>3.1.1</version>
         <relativePath />
     </parent>
 
@@ -37,13 +37,13 @@
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-solon-plugin</artifactId>
-            <version>3.5.9</version>
+            <version>3.5.10.1</version>
         </dependency>
 
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-jsqlparser-4.9</artifactId>
-            <version>3.5.9</version>
+            <version>3.5.10.1</version>
         </dependency>
 
         <dependency>
