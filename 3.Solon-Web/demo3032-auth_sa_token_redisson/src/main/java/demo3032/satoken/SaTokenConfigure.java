@@ -2,14 +2,13 @@ package demo3032.satoken;
 
 
 import cn.dev33.satoken.context.SaHolder;
-import cn.dev33.satoken.solon.dao.SaTokenDaoOfRedissonJackson;
+import cn.dev33.satoken.dao.SaTokenDaoForRedisson;
 import cn.dev33.satoken.solon.integration.SaTokenInterceptor;
 import demo3032.util.AjaxJson;
 import org.noear.solon.annotation.Bean;
 import org.noear.solon.annotation.Configuration;
 import org.noear.solon.annotation.Inject;
 import org.redisson.solon.RedissonClientOriginalSupplier;
-import org.redisson.solon.RedissonSupplier;
 
 
 /**
@@ -61,7 +60,7 @@ public class SaTokenConfigure {
 	}
 
 	@Bean
-	public SaTokenDaoOfRedissonJackson saTokenDaoInit(@Inject("${sa-token-dao.redis}") RedissonClientOriginalSupplier redissonSupplier) {
-		return new SaTokenDaoOfRedissonJackson(redissonSupplier.get());
+	public SaTokenDaoForRedisson saTokenDaoInit(@Inject("${sa-token-dao.redis}") RedissonClientOriginalSupplier redissonSupplier) {
+		return new SaTokenDaoForRedisson(redissonSupplier.get());
 	}
 }
