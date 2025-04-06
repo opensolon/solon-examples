@@ -1,7 +1,7 @@
 package demo4072.dso.service;
 
 import demo4072.dso.mapper.AppxMapper;
-import net.hasor.dbvisitor.solon.annotation.Db;
+import net.hasor.dbvisitor.solon.Db;
 import org.noear.solon.data.annotation.Tran;
 import org.noear.solon.data.tran.TranPolicy;
 import org.noear.solon.annotation.Component;

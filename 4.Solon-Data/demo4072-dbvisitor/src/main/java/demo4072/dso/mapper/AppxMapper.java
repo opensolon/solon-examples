@@ -2,9 +2,9 @@ package demo4072.dso.mapper;
 
 import demo4072.model.Appx;
 import demo4072.model.DbTable;
-import net.hasor.dbvisitor.dal.repository.Query;
-import net.hasor.dbvisitor.dal.repository.RefMapper;
-import net.hasor.dbvisitor.page.Page;
+import net.hasor.dbvisitor.dialect.Page;
+import net.hasor.dbvisitor.mapper.Query;
+import net.hasor.dbvisitor.mapper.RefMapper;
 
 import java.util.List;
 

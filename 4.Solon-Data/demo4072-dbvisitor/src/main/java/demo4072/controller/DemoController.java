@@ -3,8 +3,7 @@ package demo4072.controller;
 import demo4072.dso.mapper.AppxMapper;
 import demo4072.model.Appx;
 import net.hasor.dbvisitor.jdbc.core.JdbcTemplate;
-import net.hasor.dbvisitor.lambda.LambdaTemplate;
-import net.hasor.dbvisitor.solon.annotation.Db;
+import net.hasor.dbvisitor.solon.Db;
 import org.noear.solon.annotation.Controller;
 import org.noear.solon.annotation.Mapping;
 
@@ -19,9 +18,6 @@ public class DemoController {
 
     @Db
     JdbcTemplate jdbcTemplate;
-
-    @Db
-    LambdaTemplate lambdaTemplate;
 
     @Mapping("test")
     public Appx test(){

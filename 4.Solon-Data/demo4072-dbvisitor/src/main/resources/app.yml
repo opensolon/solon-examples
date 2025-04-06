@@ -11,9 +11,17 @@ solon.logging.logger:
     level: "WARN"
 
 
-test.db1:
-  schema: rock
-  jdbcUrl: jdbc:mysql://localhost:3306/rock?useUnicode=true&characterEncoding=utf8&autoReconnect=true&rewriteBatchedStatements=true&useSSL=false
-  driverClassName: com.mysql.jdbc.Driver
-  username: root
-  password: 123456
+solon.dataSources:
+  db1!:
+    class: "com.zaxxer.hikari.HikariDataSource"
+    schema: rock
+    jdbcUrl: jdbc:mysql://localhost:3306/rock?useUnicode=true&characterEncoding=utf8&autoReconnect=true&rewriteBatchedStatements=true&useSSL=false
+    driverClassName: com.mysql.jdbc.Driver
+    username: root
+    password: 123456
+
+dbvisitor:
+  db1:   # 对应的数据源名称
+    mapperLocations: classpath:demo4072/dso/mapper/*.xml
+    mapperPackages: demo4072.dso.mapper.*
+    dialect: mysql

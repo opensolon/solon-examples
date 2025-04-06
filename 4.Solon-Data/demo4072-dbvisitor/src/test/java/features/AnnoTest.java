@@ -2,7 +2,7 @@ package features;
 
 import demo4072.DemoApp;
 import demo4072.dso.mapper.AppxMapper;
-import net.hasor.dbvisitor.solon.annotation.Db;
+import net.hasor.dbvisitor.solon.Db;
 import org.junit.jupiter.api.Test;
 
 import org.noear.solon.test.SolonTest;
