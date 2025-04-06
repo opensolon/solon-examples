@@ -1,0 +1,56 @@
+solon.app:
+  #  namespace: test  #也可以写在下面
+  group: SEATA_GROUP       #配置服务使用的默认组
+  name: client    #发现服务使用的应用名
+
+solon.dataSources:
+  db1!:
+    class: "com.alibaba.druid.pool.DruidDataSource"
+    jdbcUrl: jdbc:mysql://localhost:3306/solon-seata-test?useUnicode=true&characterEncoding=utf8&autoReconnect=true&rewriteBatchedStatements=true
+    driverClassName: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123456
+
+solon.logging.appender:
+  console:
+    level: TRACE
+
+# 记录器级别的配置示例
+solon.logging.logger:
+  "root": #默认记录器配置
+    level: TRACE
+  "org.apache.seata.config.FileConfiguration":
+    level: INFO
+  "org.apache.seata.core.rpc.processor.client.ClientHeartbeatProcessor":
+    level: INFO
+  "org.apache.seata.core.rpc.netty.AbstractNettyRemoting":
+    level: INFO
+  "com.alibaba.nacos":
+    level: INFO
+
+seata:
+  applicationId: client
+  txServiceGroup: default_tx_group
+  dataSourceProxyMode: xa
+  enableAutoDataSourceProxy: true  # 确保自动代理数据源
+  service:
+    vgroupMapping:
+      default_tx_group: default
+    grouplist:
+      default: localhost:8091  # Seata TC 服务器地址
+  config:
+    type: file
+  registry:
+    type: file
+  client:
+    rm:
+      reportSuccessEnable: true  # 报告成功结果
+      asyncCommitBufferLimit: 10000
+      tableMetaCheckEnable: false
+      sagaBranchRegisterEnable: false
+      xaTransactiontimeout: 300000  # XA 事务超时时间
+      xaBranchExecutionTimeout: 60000  # XA 分支执行超时时间
+    tm:
+      commitRetryCount: 5
+      rollbackRetryCount: 5
+      defaultGlobalTransactionTimeout: 60000  # 增加默认超时时间

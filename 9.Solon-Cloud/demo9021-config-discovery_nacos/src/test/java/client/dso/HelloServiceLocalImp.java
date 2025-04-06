@@ -1,6 +1,6 @@
 package client.dso;
 
-import demo9021.protocol.HelloService;
+import demo9903.protocol.HelloService;
 import org.noear.solon.annotation.Component;
 
 /**

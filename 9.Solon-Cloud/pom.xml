@@ -67,5 +67,7 @@
         <module>demo9a01-cloud-gateway1</module>
         <module>demo9a02-cloud-gateway2</module>
         <module>demo9a03-cloud-gateway-nacos</module>
+
+        <module>demo9903-seata-xa</module>
     </modules>
 </project>
