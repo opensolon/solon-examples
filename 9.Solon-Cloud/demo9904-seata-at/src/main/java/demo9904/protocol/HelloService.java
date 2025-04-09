@@ -1,16 +1,16 @@
-package demo9903.protocol;
+package demo9904.protocol;
 
 import org.noear.nami.annotation.NamiClient;
 
 /**
  * 在接口上添加NamiClient申明，主要是为了在使用时，不需要到处写配置
- *
+ * <p>
  * ::helloapi  表示后端服务名
  * ::/rpc/ 表示资源路径
  *
  * @author noear 2020/12/29 created
  */
-@NamiClient(name = "helloapi",path = "/rpc/")
+@NamiClient(name = "remote", url = "http://127.0.0.1:9904/rpc")
 public interface HelloService {
-    String hello();
+    void insertData(String code) throws Exception;
 }

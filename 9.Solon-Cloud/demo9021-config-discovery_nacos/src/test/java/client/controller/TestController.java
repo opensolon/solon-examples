@@ -1,6 +1,6 @@
 package client.controller;
 
-import demo9903.protocol.HelloService;
+import demo9021.protocol.HelloService;
 import org.noear.nami.annotation.NamiClient;
 import org.noear.solon.Solon;
 import org.noear.solon.annotation.Controller;
