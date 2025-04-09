@@ -27,3 +27,5 @@ CREATE TABLE `demo`
 - `http://127.0.0.1:8080/insert?code=local` local报错应该全回滚
 - `http://127.0.0.1:8080/insert?code=test` 全回滚
 - `http://127.0.0.1:8080/insert?code=xxx` 正常插入
+
+亦或直接运行单测`test.ClientTest`

@@ -26,19 +26,11 @@ public class TestController {
 
     @Mapping("/insert")
     public String insert(String code) throws Exception {
-        this.demoService.insertData(code);
-        return code;
-    }
-
-    @Mapping("/local-insert")
-    public String localInsert(String code) throws Exception {
-        this.localService.insertData(code);
-        return code;
-    }
-
-    @Mapping("/remote-insert")
-    public String remoteInsert(String code) throws Exception {
-        this.remoteService.insertData(code);
+        try {
+            this.demoService.insertData(code);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
         return code;
     }
 }

@@ -1,6 +1,5 @@
 package client;
 
-import demo9903.support.SysInitUtil;
 import org.noear.solon.Solon;
 
 /**
@@ -8,7 +7,7 @@ import org.noear.solon.Solon;
  */
 public class ClientApp {
     public static void main(String[] args) {
-        SysInitUtil.init();
+        // SysInitUtil.init();
 
         Solon.start(ClientApp.class, args);
     }

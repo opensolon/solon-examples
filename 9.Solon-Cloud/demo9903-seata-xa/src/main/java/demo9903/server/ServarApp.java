@@ -1,6 +1,5 @@
 package demo9903.server;
 
-import demo9903.support.SysInitUtil;
 import org.noear.solon.Solon;
 
 /**
@@ -8,7 +7,7 @@ import org.noear.solon.Solon;
  */
 public class ServarApp {
     public static void main(String[] args) {
-        SysInitUtil.init();
+        // SysInitUtil.init();
 
         Solon.start(ServarApp.class, args);
     }
