@@ -2,6 +2,7 @@ package demo3032.satoken;
 
 
 import cn.dev33.satoken.context.SaHolder;
+import cn.dev33.satoken.dao.SaTokenDao;
 import cn.dev33.satoken.dao.SaTokenDaoForRedisson;
 import cn.dev33.satoken.solon.integration.SaTokenInterceptor;
 import demo3032.util.AjaxJson;
@@ -60,7 +61,7 @@ public class SaTokenConfigure {
 	}
 
 	@Bean
-	public SaTokenDaoForRedisson saTokenDaoInit(@Inject("${sa-token-dao.redis}") RedissonClientOriginalSupplier redissonSupplier) {
+	public SaTokenDao saTokenDaoInit(@Inject("${sa-token-dao.redis}") RedissonClientOriginalSupplier redissonSupplier) {
 		return new SaTokenDaoForRedisson(redissonSupplier.get());
 	}
 }
