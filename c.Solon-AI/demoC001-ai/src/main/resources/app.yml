@@ -6,7 +6,7 @@ solon.ai.chat:
   deepseek:
     apiUrl: "http://127.0.0.1:11434/api/chat" # 使用完整地址（而不是 api_base）
     provider: "ollama"
-    model: "deepseek-r1:7b"
+    model: "qwen2.5:1.5b"
     timeout: "300s"
 
 solon.ai.repo:
