@@ -1,6 +1,6 @@
 ## 本示例演示内容包括：
 
-* seata at 模式使用
+* seata tcc 模式使用
 
 #### 演示配置初始化
 
@@ -17,7 +17,7 @@ CREATE TABLE `demo`
 );
 ```
 
-3. 启动`demo9904.server.ServarApp`remote
+3. 启动`demo9903.server.ServarApp`remote
 4. 启动`client.ClientApp`client
 5. 请求地址
 

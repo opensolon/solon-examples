@@ -5,7 +5,6 @@ import demo9905.protocol.HelloService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.noear.nami.annotation.NamiClient;
-import org.noear.solon.annotation.Bean;
 import org.noear.solon.annotation.Inject;
 import org.noear.solon.data.sql.SqlUtils;
 import org.noear.solon.test.HttpTester;
@@ -30,13 +29,9 @@ public class ClientTest extends HttpTester {
     @Inject
     private SqlUtils sqlUtils;
 
-    @Bean
-    public void init() throws SQLException, IOException {
-        this.sqlUtils.initDatabase("classpath:db.sql");
-    }
-
     @BeforeEach
-    public void before() throws SQLException {
+    public void before() throws SQLException, IOException {
+        this.sqlUtils.initDatabase("classpath:db.sql");
         this.sqlUtils.sql("delete from demo").update();
         this.localService.init();
         this.remoteService.init();

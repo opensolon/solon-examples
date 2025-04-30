@@ -71,5 +71,6 @@
         <module>demo9903-seata-xa</module>
         <module>demo9904-seata-at</module>
         <module>demo9905-seata-tcc</module>
+        <module>demo9906-seata-saga</module>
     </modules>
 </project>
