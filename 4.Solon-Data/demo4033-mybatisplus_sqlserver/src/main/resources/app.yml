@@ -22,7 +22,7 @@ solon.dataSources:
 #默认
 mybatis.db1:
     typeAliases:    #支持包名 或 类名 //支持 ** 和 *
-            - "com.study.domain.*.**"
+            - "demo4033.model.*.**"
     mappers:        #支持包名 或 类名 或 xml（.xml结尾）//支持 ** 和 *
             - "classpath:mapper/*.xml"
     configuration:
@@ -32,7 +32,3 @@ mybatis.db1:
         logImpl: org.apache.ibatis.logging.nologging.NoLoggingImpl
     globalConfig:
         banner: false
-#        metaObjectHandler: "demo4031.dso.MetaObjectHandlerImpl"
-#        dbConfig:
-#            logicDeleteField: "deleted"
-#            logicDeleteValue: "2"
