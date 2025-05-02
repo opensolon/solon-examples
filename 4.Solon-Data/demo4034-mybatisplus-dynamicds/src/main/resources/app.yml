@@ -1,0 +1,53 @@
+
+server:
+  port: 8011
+
+
+
+
+solon.dataSources:
+  db1!:  # db1 用动态数据源演示
+    class: "org.noear.solon.data.dynamicds.DynamicDataSource"
+    strict: true #是否严格的
+    default: db2 #指定默认的内部数据源 NCC 默认NCC的sqlserver
+    db_user_r: #内部数据源1
+      type: "com.zaxxer.hikari.HikariDataSource"
+      schema: demand
+      jdbcUrl: jdbc:mysql://127.0.0.1:3306/one?useUnicode=true&characterEncoding=utf8&autoReconnect=true&rewriteBatchedStatements=true&useSSL=false
+      driverClassName: com.mysql.cj.jdbc.Driver
+      username: root
+      password: 123456
+    db2:
+      type: "com.zaxxer.hikari.HikariDataSource"
+      driverClassName: com.mysql.cj.jdbc.Driver
+      jdbcUrl: jdbc:mysql://127.0.0.1:3306/two?useUnicode=true&characterEncoding=utf8&autoReconnect=true&rewriteBatchedStatements=true&useSSL=false
+      username: root
+      password: 123456
+
+
+
+
+
+
+#默认
+mybatis.db1:
+  typeAliases:    #支持包名 或 类名 //支持 ** 和 *
+    - "demo4034.model.*.**"
+  mappers:        #支持包名 或 类名 或 xml（.xml结尾）//支持 ** 和 *
+    - "demo4034.dso.mapper"
+    #        - "classpath:demo4034/dso/mapper/*.xml"
+  configuration:
+    cacheEnabled: false
+    mapperVerifyEnabled: false
+    mapUnderscoreToCamelCase: true
+    #  org.apache.ibatis.logging.nologging.NoLoggingImpl
+    logImpl: org.apache.ibatis.logging.stdout.StdOutImpl
+  globalConfig:
+    banner: false
+
+
+
+
+
+
+

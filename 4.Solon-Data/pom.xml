@@ -46,6 +46,7 @@
         <module>demo4082-hibernate</module>
         <module>demo4101-redisson</module>
         <module>demo4033-mybatisplus_sqlserver</module>
+        <module>demo4034-mybatisplus-dynamicds</module>
         <!--        <module>demo4091-sqlink</module>-->
     </modules>
 </project>
