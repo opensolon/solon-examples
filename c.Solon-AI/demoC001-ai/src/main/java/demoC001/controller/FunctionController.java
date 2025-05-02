@@ -1,8 +1,7 @@
 package demoC001.controller;
 
 import org.noear.solon.ai.chat.ChatModel;
-import org.noear.solon.ai.chat.annotation.ToolMapping;
-import org.noear.solon.ai.chat.annotation.ToolParam;
+import org.noear.solon.ai.annotation.ToolMapping;
 import org.noear.solon.annotation.Controller;
 import org.noear.solon.annotation.Inject;
 import org.noear.solon.annotation.Mapping;
@@ -32,7 +31,7 @@ public class FunctionController {
 
         //天气查询
         @ToolMapping(description = "获取指定城市的天气情况")
-        public String get_weather(@ToolParam(description = "根据用户提到的地点推测城市") String location) {
+        public String get_weather(@Param(description = "根据用户提到的地点推测城市") String location) {
             if (location == null) {
                 throw new IllegalStateException("arguments location is null (Assistant recognition failure)");
             }
