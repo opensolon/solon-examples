@@ -11,8 +11,8 @@
       "CompensateState": "CompensateReduceInventory",
       "Next": "ChoiceState",
       "Input": [
-        "$.[businessKey]",
-        "$.[count]"
+        "$.businessKey",
+        "$.count"
       ],
       "Output": {
         "reduceInventoryResult": "$.#root"
@@ -27,7 +27,7 @@
       "Type": "Choice",
       "Choices": [
         {
-          "Expression": "[reduceInventoryResult] == true",
+          "Expression": "reduceInventoryResult == true",
           "Next": "ReduceBalance"
         }
       ],
@@ -39,10 +39,10 @@
       "ServiceMethod": "reduce",
       "CompensateState": "CompensateReduceBalance",
       "Input": [
-        "$.[businessKey]",
-        "$.[amount]",
+        "$.businessKey",
+        "$.amount",
         {
-          "throwException": "$.[mockReduceBalanceFail]"
+          "throwException": "$.mockReduceBalanceFail"
         }
       ],
       "Output": {
@@ -68,7 +68,7 @@
       "ServiceName": "inventoryAction",
       "ServiceMethod": "compensateReduce",
       "Input": [
-        "$.[businessKey]"
+        "$.businessKey"
       ]
     },
     "CompensateReduceBalance": {
@@ -76,7 +76,7 @@
       "ServiceName": "balanceAction",
       "ServiceMethod": "compensateReduce",
       "Input": [
-        "$.[businessKey]"
+        "$.businessKey"
       ]
     },
     "CompensationTrigger": {
