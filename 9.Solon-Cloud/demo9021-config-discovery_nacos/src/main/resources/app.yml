@@ -7,7 +7,7 @@ solon.app:
 
 
 solon.cloud.nacos:
-  server: 127.0.0.1:8848   #nacos服务地址
+  server: localhost:8848   #nacos服务地址
   namespace: test
 
 

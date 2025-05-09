@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
@@ -67,5 +67,10 @@
         <module>demo9a01-cloud-gateway1</module>
         <module>demo9a02-cloud-gateway2</module>
         <module>demo9a03-cloud-gateway-nacos</module>
+
+        <module>demo9903-seata-xa</module>
+        <module>demo9904-seata-at</module>
+        <module>demo9905-seata-tcc</module>
+        <module>demo9906-seata-saga</module>
     </modules>
 </project>

@@ -1,4 +1,4 @@
-package demo9021.protocol;
+package demo9903.protocol;
 
 import org.noear.nami.annotation.NamiClient;
 
@@ -10,7 +10,7 @@ import org.noear.nami.annotation.NamiClient;
  *
  * @author noear 2020/12/29 created
  */
-@NamiClient(name = "helloapi", path = "/rpc/")
+@NamiClient(name = "remote", url = "http://127.0.0.1:9903/rpc")
 public interface HelloService {
-    String hello();
+    void insertData(String code) throws Exception;
 }
