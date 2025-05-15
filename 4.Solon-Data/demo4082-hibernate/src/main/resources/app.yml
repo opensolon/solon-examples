@@ -22,10 +22,10 @@ server:
 
 #solon 支持的多数据源
 datasource.db1:
-  schema: rock
-  jdbcUrl: jdbc:mysql://121.40.62.167:3306/test?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8&autoReconnect=true&rewriteBatchedStatements=true
+  schema: test
+  jdbcUrl: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8&autoReconnect=true&rewriteBatchedStatements=true
   driverClassName: com.mysql.cj.jdbc.Driver
-  username: bai
+  username: 123456
   password: root
 
 #db datasource的hibernate配置
