@@ -15,7 +15,7 @@
     <parent>
         <groupId>org.noear</groupId>
         <artifactId>solon-parent</artifactId>
-        <version>3.3.2-SNAPSHOT</version>
+        <version>3.3.2-M2</version>
         <relativePath />
     </parent>
 
@@ -82,7 +82,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.3.2-SNAPSHOT</version>
+                <version>3.3.2-M2</version>
                 <configuration>
                     <skip>true</skip>
                 </configuration>
@@ -92,7 +92,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
-                <version>3.3.2-SNAPSHOT</version>
+                <version>3.3.2-M2</version>
                 <configuration>
                     <encoding>${project.build.sourceEncoding}</encoding>
                 </configuration>
@@ -139,7 +139,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
-                <version>3.3.2-SNAPSHOT</version>
+                <version>3.3.2-M2</version>
                 <executions>
                     <execution>
                         <id>attach-sources</id>

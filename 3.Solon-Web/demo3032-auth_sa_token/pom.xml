@@ -12,13 +12,12 @@
     <parent>
         <groupId>org.noear</groupId>
         <artifactId>solon-parent</artifactId>
-        <version>3.3.2-SNAPSHOT</version>
+        <version>3.3.2-M2</version>
         <relativePath />
     </parent>
 
     <properties>
         <java.version>11</java.version>
-        <sa-token.version>1.41.0</sa-token.version>
     </properties>
 
     <dependencies>
