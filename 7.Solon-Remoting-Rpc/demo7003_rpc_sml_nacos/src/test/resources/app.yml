@@ -1,4 +1,4 @@
-server.port: 8081
+server.port: 8080
 
 solon.app:
   name: democlient
