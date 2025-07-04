@@ -14,9 +14,9 @@ import java.io.Serializable;
 @Table(name="user")
 public class User implements Serializable {
     @Id
-    @Column(name = "USER_NAME")
+    @Column(name = "user_name")
     private String username;
-    @Column(name = "GENDER")
+    @Column(name = "gender")
     private Integer gender;
 
     public String getUsername() {
