@@ -2,23 +2,23 @@ package demo4082.test;
 
 import demo4082.App;
 import demo4082.model.User;
+import org.hibernate.SessionFactory;
+import org.hibernate.solon.annotation.Db;
 import org.junit.jupiter.api.Test;
 import org.noear.solon.data.annotation.Transaction;
 import org.noear.solon.test.SolonTest;
 
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
-import javax.persistence.PersistenceContext;
 import java.util.List;
 
 /**
  * @author noear 2023/10/4 created
  */
 @SolonTest(App.class)
-public class JpaEntityManagerFactoryTest {
-    @PersistenceContext(unitName="db1")
-    EntityManagerFactory factory;
+public class SessionFactoryTest {
+    @Db
+    SessionFactory sessionFactory;
 
     @Test
     @Transaction // 必须开启，由于hibernate默认开启事务，必须添加@Tran，让solon进行管理
@@ -26,7 +26,7 @@ public class JpaEntityManagerFactoryTest {
         User user = new User();
         user.setUsername("test");
         user.setGender(1);
-        EntityManager entityManager = factory.createEntityManager();
+        EntityManager entityManager = sessionFactory.createEntityManager();
         entityManager.persist(user);
 
         User user2 = entityManager.find(User.class, "test");
@@ -41,11 +41,11 @@ public class JpaEntityManagerFactoryTest {
     /**
      * 函数测试
      */
-    public void functionTest(){
+    public void functionTest() {
         User user = new User();
         user.setUsername("functionTest");
         user.setGender(2);
-        factory.createEntityManager().persist(user);
+        sessionFactory.getCurrentSession().save(user);
         //        int i = 1/0;
     }
 
@@ -54,12 +54,12 @@ public class JpaEntityManagerFactoryTest {
      * 事务失效
      */
     public void threadTest() throws InterruptedException {
-        Thread thread = new Thread(()->{
+        Thread thread = new Thread(() -> {
             User user = new User();
             user.setUsername("threadTest");
             user.setGender(3);
-            factory.createEntityManager().persist(user);
-            int i = 1/0;
+            sessionFactory.getCurrentSession().save(user);
+            int i = 1 / 0;
         });
         thread.start();
         thread.join();
@@ -71,12 +71,12 @@ public class JpaEntityManagerFactoryTest {
      */
     @Transaction
     public void threadTest2() throws InterruptedException {
-        Thread thread = new Thread(()->{
+        Thread thread = new Thread(() -> {
             User user = new User();
             user.setUsername("threadTest2");
             user.setGender(3);
-            factory.createEntityManager().persist(user);
-            int i = 1/0;
+            sessionFactory.getCurrentSession().save(user);
+            int i = 1 / 0;
         });
         thread.start();
         thread.join();
@@ -88,14 +88,14 @@ public class JpaEntityManagerFactoryTest {
      */
     @Transaction
     public void threadTest3(EntityManager entityManager) throws InterruptedException {
-        Thread thread = new Thread(()->{
+        Thread thread = new Thread(() -> {
             User user = new User();
             try {
                 user.setUsername("threadTest3");
                 user.setGender(3);
                 entityManager.persist(user);
-                int i = 1/0;
-            } catch (Exception e){
+                int i = 1 / 0;
+            } catch (Exception e) {
                 EntityTransaction entityTransaction = entityManager.getTransaction();
                 entityTransaction.rollback();
             }
@@ -105,7 +105,7 @@ public class JpaEntityManagerFactoryTest {
     }
 
     /**
-     *  使用对象管理器测试事务
+     * 使用对象管理器测试事务
      */
     @Transaction
     @Test
@@ -113,18 +113,19 @@ public class JpaEntityManagerFactoryTest {
         User user = new User();
         user.setUsername("test" + System.currentTimeMillis());
         user.setGender(1);
-        factory.createEntityManager().persist(user);
+        sessionFactory.getCurrentSession().persist(user);
 //        int i = 1/0;
     }
 
     /**
      * 已读事务
+     *
      * @return {@link Object}
      */
     @Transaction(readOnly = true)
     @Test
     public void readList() {
-        List<User> list =   factory.createEntityManager()
+        List<User> list = sessionFactory.getCurrentSession()
                 .createQuery("select e from user e", User.class)
                 .getResultList();
         System.out.println(list);
@@ -135,11 +136,11 @@ public class JpaEntityManagerFactoryTest {
      */
     @Test
     @Transaction
-    public void save(){
+    public void save() {
         User user = new User();
         user.setUsername("save");
         user.setGender(1);
-        EntityManager session = factory.createEntityManager();
+        EntityManager session = sessionFactory.getCurrentSession();
         session.persist(user);
     }
 }

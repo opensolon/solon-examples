@@ -2,22 +2,24 @@ package demo4082.test;
 
 import demo4082.App;
 import demo4082.model.User;
+import org.hibernate.SessionFactory;
+import org.hibernate.solon.annotation.Db;
 import org.junit.jupiter.api.Test;
+import org.noear.solon.data.annotation.Ds;
 import org.noear.solon.data.annotation.Transaction;
 import org.noear.solon.test.SolonTest;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
-import javax.persistence.PersistenceContext;
 import java.util.List;
 
 /**
  * @author noear 2023/10/4 created
  */
 @SolonTest(App.class)
-public class JpaEntityManagerTest {
-    @PersistenceContext(unitName = "db1")
-    EntityManager entityManager;
+public class SessionFactoryTest2 {
+    @Ds
+    SessionFactory sessionFactory;
 
     @Test
     @Transaction // 必须开启，由于hibernate默认开启事务，必须添加@Tran，让solon进行管理
@@ -25,6 +27,7 @@ public class JpaEntityManagerTest {
         User user = new User();
         user.setUsername("test");
         user.setGender(1);
+        EntityManager entityManager = sessionFactory.createEntityManager();
         entityManager.persist(user);
 
         User user2 = entityManager.find(User.class, "test");
@@ -43,7 +46,7 @@ public class JpaEntityManagerTest {
         User user = new User();
         user.setUsername("functionTest");
         user.setGender(2);
-        entityManager.persist(user);
+        sessionFactory.getCurrentSession().save(user);
         //        int i = 1/0;
     }
 
@@ -56,7 +59,7 @@ public class JpaEntityManagerTest {
             User user = new User();
             user.setUsername("threadTest");
             user.setGender(3);
-            entityManager.persist(user);
+            sessionFactory.getCurrentSession().save(user);
             int i = 1 / 0;
         });
         thread.start();
@@ -73,7 +76,7 @@ public class JpaEntityManagerTest {
             User user = new User();
             user.setUsername("threadTest2");
             user.setGender(3);
-            entityManager.persist(user);
+            sessionFactory.getCurrentSession().save(user);
             int i = 1 / 0;
         });
         thread.start();
@@ -111,7 +114,7 @@ public class JpaEntityManagerTest {
         User user = new User();
         user.setUsername("test" + System.currentTimeMillis());
         user.setGender(1);
-        entityManager.persist(user);
+        sessionFactory.getCurrentSession().persist(user);
 //        int i = 1/0;
     }
 
@@ -123,7 +126,7 @@ public class JpaEntityManagerTest {
     @Transaction(readOnly = true)
     @Test
     public void readList() {
-        List<User> list = entityManager
+        List<User> list = sessionFactory.getCurrentSession()
                 .createQuery("select e from user e", User.class)
                 .getResultList();
         System.out.println(list);
@@ -138,7 +141,7 @@ public class JpaEntityManagerTest {
         User user = new User();
         user.setUsername("save");
         user.setGender(1);
-        EntityManager session = entityManager;
+        EntityManager session = sessionFactory.getCurrentSession();
         session.persist(user);
     }
 }
