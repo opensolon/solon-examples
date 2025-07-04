@@ -1,9 +1,8 @@
-package demo4082.test;
+package features.jpa;
 
 import demo4082.App;
 import demo4082.model.User;
 import org.junit.jupiter.api.Test;
-import org.noear.solon.data.annotation.Ds;
 import org.noear.solon.data.annotation.Transaction;
 import org.noear.solon.test.SolonTest;
 
@@ -17,8 +16,8 @@ import java.util.List;
  * @author noear 2023/10/4 created
  */
 @SolonTest(App.class)
-public class EntityManagerFactoryTest2 {
-    @Ds("db1")
+public class EntityManagerFactoryTest {
+    @PersistenceContext(unitName="db1")
     EntityManagerFactory factory;
 
     @Test
