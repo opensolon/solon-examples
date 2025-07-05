@@ -1,12 +1,10 @@
-package features;
+package features.mybatis;
 
+import demo4021.DemoApp;
 import org.junit.jupiter.api.Test;
-
 import org.noear.snack.ONode;
 import org.noear.solon.test.HttpTester;
-
 import org.noear.solon.test.SolonTest;
-import demo4021.DemoApp;
 
 
 @SolonTest(DemoApp.class)

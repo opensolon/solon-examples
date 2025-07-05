@@ -1,11 +1,11 @@
-package features;
+package features.mybatis;
 
-import org.apache.ibatis.solon.annotation.Db;
-import org.junit.jupiter.api.Test;
-
-import org.noear.solon.test.SolonTest;
 import demo4021.DemoApp;
 import demo4021.dso.mapper.AppxMapper;
+import org.apache.ibatis.solon.annotation.Db;
+import org.junit.jupiter.api.Test;
+import org.noear.solon.data.annotation.Ds;
+import org.noear.solon.test.SolonTest;
 
 /**
  * @author noear 2021/5/16 created
@@ -14,7 +14,7 @@ import demo4021.dso.mapper.AppxMapper;
 @SolonTest(DemoApp.class)
 public class InsertTest {
 
-    @Db
+    @Ds
     AppxMapper appxMapper;
 
     @Test

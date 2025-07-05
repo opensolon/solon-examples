@@ -1,14 +1,11 @@
-package features;
+package features.mybatis;
 
+import demo4021.DemoApp;
 import org.junit.jupiter.api.Test;
-
-import org.noear.solon.Solon;
 import org.noear.solon.annotation.Inject;
 import org.noear.solon.data.sql.SqlUtils;
 import org.noear.solon.test.HttpTester;
 import org.noear.solon.test.SolonTest;
-
-import demo4021.DemoApp;
 
 import java.sql.SQLException;
 

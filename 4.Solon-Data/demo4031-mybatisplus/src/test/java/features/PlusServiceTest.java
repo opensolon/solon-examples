@@ -12,6 +12,7 @@ import demo4031.model.AppxModel;
 import org.apache.ibatis.solon.annotation.Db;
 import org.junit.jupiter.api.Test;
 import org.noear.solon.annotation.Inject;
+import org.noear.solon.data.annotation.Ds;
 import org.noear.solon.test.SolonTest;
 
 /**
@@ -20,19 +21,19 @@ import org.noear.solon.test.SolonTest;
 @SolonTest(DemoApp.class)
 public class PlusServiceTest {
 
-    @Db
+    @Ds
     AppServicePlus appServicePlus;
     @Inject
     AppServicePlus appServicePlus2;
 
-    @Db
+    @Ds
     AppxMapperPlus appxMapperPlus;
-    @Db
+    @Ds
     AppxMapperPlus appxMapperPlus2;
 
-    @Db
+    @Ds
     AppxMapperPlusEx appxMapperPlusEx;
-    @Db
+    @Ds
     AppxMapperPlusEx appxMapperPlusEx2;
 
     @Test
