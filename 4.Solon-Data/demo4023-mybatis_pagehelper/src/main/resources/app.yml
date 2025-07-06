@@ -20,6 +20,15 @@ mybatis.db1:
     configuration:
         cacheEnabled: false
         mapUnderscoreToCamelCase: true
+    plugins:
+        - class: com.github.pagehelper.PageInterceptor
+          offsetAsPageNum: true
+          rowBoundsWithCount: true
+          pageSizeZero: true
+          reasonable: false
+          params: pageNum=pageHelperStart;pageSize=pageHelperRows;
+          supportMethodsArguments: false
+
 
 
 #mybatis.plugin:
