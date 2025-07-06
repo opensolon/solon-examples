@@ -21,17 +21,18 @@ mybatis.db1:
         cacheEnabled: false
         mapUnderscoreToCamelCase: true
     plugins:
-        - class: com.github.pagehelper.PageInterceptor
-          offsetAsPageNum: true
-          rowBoundsWithCount: true
-          pageSizeZero: true
-          reasonable: false
-          params: pageNum=pageHelperStart;pageSize=pageHelperRows;
-          supportMethodsArguments: false
+        - pagehelper:
+            class: com.github.pagehelper.PageInterceptor
+            offsetAsPageNum: true
+            rowBoundsWithCount: true
+            pageSizeZero: true
+            reasonable: false
+            params: pageNum=pageHelperStart;pageSize=pageHelperRows;
+            supportMethodsArguments: false
 
 
 
-#mybatis.plugin:
+#mybatis.plugins:
 #    - pagehelper:
 #        class: com.github.pagehelper.PageHelper
 #        dialect: mysql
