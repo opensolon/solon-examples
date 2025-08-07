@@ -4,5 +4,6 @@ dubbo:
   application:
     name: hello
     owner: noear
+    logger: slf4j
   registry:
     address: nacos://localhost:8848

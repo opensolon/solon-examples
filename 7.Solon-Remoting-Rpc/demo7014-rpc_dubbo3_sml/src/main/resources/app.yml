@@ -4,13 +4,17 @@ dubbo:
   application:
     name: hello
     owner: noear
+    logger: slf4j
   registry:
     address: nacos://localhost:8848
 
 
+
 # 记录器级别的配置示例
-solon.logging.logger:
-  "root": #默认记录器配置
-    level: INFO
-  "com.alibaba": #包名
-    level: WARN
+solon.logging:
+  appender:
+    file:
+      enable: false
+  logger:
+    "root": #默认记录器配置
+      level: INFO
