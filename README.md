@@ -12,6 +12,7 @@ Solon
 	<a href="https://solon.noear.org/">https://solon.noear.org</a>
 </p>
 
+
 <p align="center">
     <a target="_blank" href="https://central.sonatype.com/search?q=org.noear%3Asolon-parent">
         <img src="https://img.shields.io/maven-central/v/org.noear/solon.svg?label=Maven%20Central" alt="Maven" />
