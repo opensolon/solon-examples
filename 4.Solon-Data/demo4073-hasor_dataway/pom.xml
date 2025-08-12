@@ -32,7 +32,7 @@
 
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>solon-boot-jetty</artifactId>
+            <artifactId>solon-server-jetty</artifactId>
         </dependency>
 
         <dependency>

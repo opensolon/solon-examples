@@ -22,7 +22,7 @@
     <dependencies>
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>solon-boot-socketd</artifactId>
+            <artifactId>solon-server-socketd</artifactId>
         </dependency>
 
         <dependency>

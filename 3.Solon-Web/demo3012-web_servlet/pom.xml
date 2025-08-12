@@ -32,7 +32,7 @@
         <!-- undertow 启动器（也可以换成 jetty 相关插件） -->
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>solon-boot-undertow</artifactId>
+            <artifactId>solon-server-undertow</artifactId>
         </dependency>
 
         <dependency>

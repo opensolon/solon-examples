@@ -32,7 +32,7 @@
         <!-- 添加 undertow 插件；同时支持 http 与 websocket 服务（或者换成 jetty 相关的插件） -->
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>solon-boot-smarthttp</artifactId>
+            <artifactId>solon-server-smarthttp</artifactId>
         </dependency>
 
         <!-- for client -->
