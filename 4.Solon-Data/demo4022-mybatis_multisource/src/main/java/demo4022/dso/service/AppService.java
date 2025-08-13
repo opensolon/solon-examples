@@ -3,10 +3,10 @@ package demo4022.dso.service;
 import demo4022.dso.mapper.AppxMapper;
 import org.noear.solon.annotation.Inject;
 import org.noear.solon.data.annotation.Tran;
-import org.noear.solon.annotation.Component;
+import org.noear.solon.annotation.Managed;
 import org.noear.solon.data.tran.TranPolicy;
 
-@Component
+@Managed
 public class AppService {
     @Inject
     AppxMapper sqlMapper1;

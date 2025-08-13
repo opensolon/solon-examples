@@ -4,7 +4,7 @@ import demo9904.protocol.HelloService;
 import org.apache.seata.core.context.RootContext;
 import org.apache.seata.spring.annotation.GlobalTransactional;
 import org.noear.nami.annotation.NamiClient;
-import org.noear.solon.annotation.Component;
+import org.noear.solon.annotation.Managed;
 import org.noear.solon.annotation.Inject;
 
 import java.util.Objects;
@@ -12,7 +12,7 @@ import java.util.Objects;
 /**
  * @author noear 2020/12/29 created
  */
-@Component
+@Managed
 public class DemoService {
     //这是本地的
     @Inject

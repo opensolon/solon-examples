@@ -1,7 +1,7 @@
 package demo3032.satoken;
 
 import cn.dev33.satoken.stp.StpInterface;
-import org.noear.solon.annotation.Component;
+import org.noear.solon.annotation.Managed;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * 自定义权限验证接口扩展 
  */
-@Component    // 打开此注解，保证此类被 solon 扫描，即可完成 sa-token 的自定义权限验证扩展
+@Managed    // 打开此注解，保证此类被 solon 扫描，即可完成 sa-token 的自定义权限验证扩展
 public class StpInterfaceImpl implements StpInterface {
 
 	/**

@@ -1,6 +1,6 @@
 package demoa001.controller;
 
-import org.noear.solon.annotation.Component;
+import org.noear.solon.annotation.Managed;
 import org.noear.solon.annotation.Mapping;
 
 /**
@@ -8,7 +8,7 @@ import org.noear.solon.annotation.Mapping;
  *
  * @author noear 2022/4/1 created
  */
-@Component(tag = "api")
+@Managed(tag = "api")
 public class ApiComponent {
     /**
      * hello

@@ -3,13 +3,13 @@ package demo1092;
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.http.HttpServer;
 import io.vertx.core.http.HttpServerResponse;
-import org.noear.solon.annotation.Component;
+import org.noear.solon.annotation.Managed;
 import org.noear.solon.annotation.Inject;
 
 /**
  * @author noear 2024/3/25 created
  */
-@Component
+@Managed
 public class VertxHttpVerticle extends AbstractVerticle {
     HttpServer server;
 

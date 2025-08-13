@@ -1,6 +1,6 @@
 package demo5031.controller;
 
-import org.noear.solon.annotation.Component;
+import org.noear.solon.annotation.Managed;
 import org.noear.solon.extend.quartz.Quartz;
 import org.quartz.JobExecutionContext;
 
@@ -9,7 +9,7 @@ import java.util.Date;
 /**
  * @author noear 2022/12/1 created
  */
-@Component
+@Managed
 public class MethodJob {
     @Quartz(cron7x = "* * * * * ?")
     public void job4(){

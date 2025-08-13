@@ -1,7 +1,7 @@
 package demo4013.dso.service;
 
 import demo4013.dso.mapper.SqlMapper;
-import org.noear.solon.annotation.Component;
+import org.noear.solon.annotation.Managed;
 import org.noear.solon.data.annotation.Cache;
 import org.noear.solon.data.annotation.Tran;
 import org.noear.solon.data.tran.TranListener;
@@ -9,7 +9,7 @@ import org.noear.solon.data.tran.TranPolicy;
 import org.noear.solon.data.tran.TranUtils;
 import org.noear.wood.annotation.Db;
 
-@Component
+@Managed
 public class AppServiceImpl implements AppService {
     @Db
     SqlMapper sqlMapper1;

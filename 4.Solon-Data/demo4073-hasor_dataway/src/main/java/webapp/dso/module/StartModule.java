@@ -8,7 +8,7 @@ import net.hasor.web.WebApiBinder;
 import net.hasor.web.WebModule;
 import org.noear.solon.Solon;
 import org.noear.solon.Utils;
-import org.noear.solon.annotation.Component;
+import org.noear.solon.annotation.Managed;
 import org.noear.solon.core.ExtendLoader;
 import org.noear.solon.core.Props;
 import webapp.dso.DsHelper;
@@ -16,7 +16,7 @@ import webapp.dso.DsHelper;
 import javax.sql.DataSource;
 import java.util.Properties;
 
-@Component
+@Managed
 public class StartModule implements WebModule {
     @Override
     public void loadModule(ApiBinder apiBinder) throws Throwable {

@@ -4,7 +4,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import demo4033.dso.mapper.AppxMapper;
 import demo4033.dso.service.AppServicePlus;
 import demo4033.model.AppxModel;
-import org.noear.solon.annotation.Component;
+import org.noear.solon.annotation.Managed;
 
 
 /**
@@ -13,7 +13,7 @@ import org.noear.solon.annotation.Component;
  * @create 2025/1/6 15:58
  * @Descriotion: 业务实现类
  */
-@Component
+@Managed
 public class AppServicePlusImpl extends ServiceImpl<AppxMapper, AppxModel> implements AppServicePlus {
 
 

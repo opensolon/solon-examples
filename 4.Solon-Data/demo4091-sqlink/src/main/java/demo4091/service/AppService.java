@@ -2,7 +2,7 @@ package demo4091.service;
 
 import demo4091.model.AppxModel;
 import demo4091.model.Test;
-import org.noear.solon.annotation.Component;
+import org.noear.solon.annotation.Managed;
 import org.noear.solon.annotation.Inject;
 import org.noear.solon.data.annotation.Tran;
 import org.noear.solon.data.sqlink.SqLink;
@@ -13,7 +13,7 @@ import org.noear.solon.data.tran.TranPolicy;
 
 import java.util.List;
 
-@Component
+@Managed
 public class AppService {
     @Inject
     SqLink client;

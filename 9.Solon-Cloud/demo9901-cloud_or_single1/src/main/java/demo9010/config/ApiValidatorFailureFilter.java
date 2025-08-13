@@ -1,6 +1,6 @@
 package demo9010.config;
 
-import org.noear.solon.annotation.Component;
+import org.noear.solon.annotation.Managed;
 import org.noear.solon.core.handle.Context;
 import org.noear.solon.core.handle.Filter;
 import org.noear.solon.core.handle.FilterChain;
@@ -10,7 +10,7 @@ import org.noear.solon.validation.ValidatorException;
 /**
  * 提供验证出错的处理
  */
-@Component
+@Managed
 public class ApiValidatorFailureFilter implements Filter {
     @Override
     public void doFilter(Context ctx, FilterChain chain) throws Throwable {

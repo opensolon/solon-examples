@@ -2,7 +2,7 @@ package demo6014.controller.apis;
 
 import demo6014.controller.ApiBase;
 import demo6014.model.AppxModel;
-import org.noear.solon.annotation.Component;
+import org.noear.solon.annotation.Managed;
 import org.noear.solon.annotation.Mapping;
 import org.noear.solon.data.annotation.Cache;
 import org.noear.solon.validation.annotation.Logined;
@@ -15,7 +15,7 @@ import java.util.List;
  *
  * @author noear 2021/6/11 created
  */
-@Component(tag = "api")
+@Managed(tag = "api")
 public class API_test_cache extends ApiBase {
 
     @Logined //登录用户才可用

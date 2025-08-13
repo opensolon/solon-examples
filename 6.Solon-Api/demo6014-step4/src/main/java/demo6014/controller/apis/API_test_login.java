@@ -1,14 +1,14 @@
 package demo6014.controller.apis;
 
 import demo6014.controller.ApiBase;
-import org.noear.solon.annotation.Component;
+import org.noear.solon.annotation.Managed;
 import org.noear.solon.annotation.Mapping;
 import org.noear.solon.core.handle.Context;
 
 /**
  * @author noear 2021/6/17 created
  */
-@Component(tag = "api")
+@Managed(tag = "api")
 public class API_test_login extends ApiBase {
     @Mapping("test.login")
     public String exec(Context ctx) {

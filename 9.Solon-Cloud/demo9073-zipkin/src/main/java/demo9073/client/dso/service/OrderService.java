@@ -1,13 +1,13 @@
 package demo9073.client.dso.service;
 
-import org.noear.solon.annotation.Component;
+import org.noear.solon.annotation.Managed;
 import org.noear.solon.cloud.tracing.Spans;
 import org.noear.solon.cloud.tracing.annotation.Tracing;
 
 /**
  * @author noear 2022/5/7 created
  */
-@Component
+@Managed
 public class OrderService {
     @Tracing(name = "创建订单", tags = "订单=${orderId}")
     public void orderCreate(String orderId) {

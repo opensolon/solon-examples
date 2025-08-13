@@ -1,13 +1,13 @@
 package demo4014.dso.service;
 
 import demo4014.dso.mapper.SqlMapper;
-import org.noear.solon.annotation.Component;
+import org.noear.solon.annotation.Managed;
 import org.noear.solon.data.annotation.Cache;
 import org.noear.solon.data.annotation.Tran;
 import org.noear.solon.data.tran.TranPolicy;
 import org.noear.wood.annotation.Db;
 
-@Component
+@Managed
 public class AppService2 {
     @Db("db2")
     SqlMapper sqlMapper1;

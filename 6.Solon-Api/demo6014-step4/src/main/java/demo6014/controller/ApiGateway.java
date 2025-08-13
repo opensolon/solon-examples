@@ -1,7 +1,7 @@
 package demo6014.controller;
 
 import demo6014.controller.interceptor.TokenHandler;
-import org.noear.solon.annotation.Component;
+import org.noear.solon.annotation.Managed;
 import org.noear.solon.annotation.Mapping;
 
 /**
@@ -10,7 +10,7 @@ import org.noear.solon.annotation.Mapping;
  * @author noear 2021/6/11 created
  */
 @Mapping("/api/**")
-@Component
+@Managed
 public class ApiGateway extends ApiGatewayBase {
     @Override
     protected void register() {

@@ -2,7 +2,7 @@ package demo6014.controller;
 
 import demo6014.controller.interceptor.TokenHandler;
 import org.noear.snack.ONode;
-import org.noear.solon.annotation.Component;
+import org.noear.solon.annotation.Managed;
 import org.noear.solon.annotation.Mapping;
 import org.noear.solon.core.handle.Context;
 import org.noear.solon.net.http.HttpUtils;
@@ -14,7 +14,7 @@ import org.noear.solon.net.http.HttpUtils;
  * @author noear 2022/4/1 created
  */
 @Mapping("/sev/**")
-@Component
+@Managed
 public class SevGateway extends ApiGatewayBase {
     @Override
     protected void register() {

@@ -1,6 +1,6 @@
 package demo9061.controller;
 
-import org.noear.solon.annotation.Component;
+import org.noear.solon.annotation.Managed;
 import org.noear.solon.cloud.annotation.CloudJob;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -9,7 +9,7 @@ import org.slf4j.LoggerFactory;
  * @author noear 2021/5/25 created
  */
 
-@Component
+@Managed
 public class JobBeanDemo2 {
     static final Logger log = LoggerFactory.getLogger(JobBeanDemo2.class);
 

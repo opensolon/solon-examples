@@ -2,7 +2,7 @@ package demo6013.controller.apis;
 
 import demo6013.controller.ApiBase;
 import demo6013.model.AppxModel;
-import org.noear.solon.annotation.Component;
+import org.noear.solon.annotation.Managed;
 import org.noear.solon.annotation.Mapping;
 import org.noear.solon.data.annotation.Cache;
 
@@ -14,7 +14,7 @@ import java.util.List;
  *
  * @author noear 2021/6/11 created
  */
-@Component(tag = "api")
+@Managed(tag = "api")
 public class API_cache extends ApiBase {
     @Cache(seconds = 12)
     @Mapping("cache")

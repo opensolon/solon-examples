@@ -3,7 +3,7 @@ package demo6014.controller.apis;
 import demo6014.controller.ApiBase;
 import demo6014.dso.service.AppxService;
 import demo6014.model.AppxModel;
-import org.noear.solon.annotation.Component;
+import org.noear.solon.annotation.Managed;
 import org.noear.solon.annotation.Inject;
 import org.noear.solon.annotation.Mapping;
 import org.noear.solon.validation.annotation.Logined;
@@ -17,7 +17,7 @@ import java.sql.SQLException;
  *
  * @author noear 2021/6/11 created
  */
-@Component(tag = "api")
+@Managed(tag = "api")
 public class API_test_db extends ApiBase {
 
     @Inject

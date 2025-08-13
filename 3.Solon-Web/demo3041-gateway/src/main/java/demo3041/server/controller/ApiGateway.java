@@ -1,6 +1,6 @@
 package demo3041.server.controller;
 
-import org.noear.solon.annotation.Component;
+import org.noear.solon.annotation.Managed;
 import org.noear.solon.annotation.Mapping;
 import org.noear.solon.core.handle.Context;
 import org.noear.solon.core.handle.Gateway;
@@ -13,7 +13,7 @@ import org.noear.solon.core.handle.Result;
  * @author noear 2021/4/22 created
  */
 @Mapping("/api/v1/**")
-@Component
+@Managed
 public class ApiGateway extends Gateway {
     @Override
     protected void register() {

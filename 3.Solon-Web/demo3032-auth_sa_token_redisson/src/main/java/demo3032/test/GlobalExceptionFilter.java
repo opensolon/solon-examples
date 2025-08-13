@@ -2,7 +2,7 @@ package demo3032.test;
 
 import cn.dev33.satoken.exception.*;
 import demo3032.util.AjaxJson;
-import org.noear.solon.annotation.Component;
+import org.noear.solon.annotation.Managed;
 import org.noear.solon.core.handle.Context;
 import org.noear.solon.core.handle.Filter;
 import org.noear.solon.core.handle.FilterChain;
@@ -13,7 +13,7 @@ import org.noear.solon.core.handle.FilterChain;
  *
  * @author noear
  */
-@Component
+@Managed
 public class GlobalExceptionFilter implements Filter {
 	@Override
 	public void doFilter(Context ctx, FilterChain chain) throws Throwable {

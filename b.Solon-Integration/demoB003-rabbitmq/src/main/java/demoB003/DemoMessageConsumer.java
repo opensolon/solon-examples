@@ -1,14 +1,14 @@
 package demoB003;
 
 import com.rabbitmq.client.*;
-import org.noear.solon.annotation.Component;
+import org.noear.solon.annotation.Managed;
 
 import java.io.IOException;
 
 /**
  * @author noear 2024/12/6 created
  */
-@Component
+@Managed
 public class DemoMessageConsumer extends DefaultConsumer implements Consumer {
 
     public DemoMessageConsumer(Channel channel) {

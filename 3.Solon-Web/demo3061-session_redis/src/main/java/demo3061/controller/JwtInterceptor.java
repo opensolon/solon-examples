@@ -10,7 +10,7 @@ import org.noear.solon.core.route.RouterInterceptorChain;
 /**
  * @author noear 2021/8/6 created
  */
-@Component
+@Managed
 public class JwtInterceptor implements RouterInterceptor {
     @Override
     public void doIntercept(Context ctx, Handler mainHandler, RouterInterceptorChain chain) throws Throwable {

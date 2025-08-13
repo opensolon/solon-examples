@@ -3,7 +3,7 @@ package demo1001.demo1.dso;
 import com.zaxxer.hikari.HikariDataSource;
 import org.noear.solon.annotation.Init;
 import org.noear.solon.annotation.Inject;
-import org.noear.solon.annotation.Component;
+import org.noear.solon.annotation.Managed;
 
 import java.util.Properties;
 
@@ -12,7 +12,7 @@ import java.util.Properties;
  *
  * @author noear 2021/12/28 created
  */
-@Component
+@Managed
 public class DemoService {
     //注入值（带默认值：demoApi），并开启自动更新（注意：如果不是单例，请不要开启自动刷新）
     @Inject(value="${track.name:demoApi}", autoRefreshed=true)

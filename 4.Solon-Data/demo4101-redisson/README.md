@@ -71,7 +71,7 @@ public class Config {
     }
 }
 
-@Component
+@Managed
 public class DemoService {
     
     @Inject("demo1")

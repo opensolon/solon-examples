@@ -17,7 +17,7 @@
 package demo9906.action.impl;
 
 import demo9906.action.BalanceAction;
-import org.noear.solon.annotation.Component;
+import org.noear.solon.annotation.Managed;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -27,7 +27,7 @@ import java.util.Map;
 /**
  * @author lorne.cl
  */
-@Component("balanceAction")
+@Managed("balanceAction")
 public class BalanceActionImpl implements BalanceAction {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(BalanceActionImpl.class);

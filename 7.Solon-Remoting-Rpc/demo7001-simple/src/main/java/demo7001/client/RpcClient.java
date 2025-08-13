@@ -2,11 +2,11 @@ package demo7001.client;
 
 import org.noear.nami.annotation.NamiClient;
 import org.noear.solon.Solon;
-import org.noear.solon.annotation.Component;
+import org.noear.solon.annotation.Managed;
 import demo7001.protocol.UserModel;
 import demo7001.protocol.UserService;
 
-@Component
+@Managed
 public class RpcClient {
     public static void main(String[] args) {
         //开启ioc服务，并关掉http端口（免得冲突）

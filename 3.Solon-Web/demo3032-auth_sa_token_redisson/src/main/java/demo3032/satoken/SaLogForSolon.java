@@ -13,7 +13,7 @@ import org.noear.solon.core.util.LogUtil;
  * @author kong
  * @since 2022-11-2
  */
-//@Component
+//@Managed
 public class SaLogForSolon extends SaLogForConsole implements SaLog {
 
 	/**

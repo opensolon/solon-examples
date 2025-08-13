@@ -4,9 +4,9 @@ import demo4072.dso.mapper.AppxMapper;
 import net.hasor.dbvisitor.solon.Db;
 import org.noear.solon.data.annotation.Tran;
 import org.noear.solon.data.tran.TranPolicy;
-import org.noear.solon.annotation.Component;
+import org.noear.solon.annotation.Managed;
 
-@Component
+@Managed
 public class AppService {
     @Db
     AppxMapper sqlMapper1;

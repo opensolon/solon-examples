@@ -1,7 +1,7 @@
 package demo4002.dso;
 
 import demo4002.model.AppxModel;
-import org.noear.solon.annotation.Component;
+import org.noear.solon.annotation.Managed;
 import org.noear.solon.annotation.Mapping;
 import org.noear.solon.data.dynamicds.DynamicDs;
 import org.noear.solon.data.dynamicds.DynamicDsKey;
@@ -10,7 +10,7 @@ import org.noear.wood.annotation.Db;
 /**
  * @author noear 2023/9/1 created
  */
-@Component
+@Managed
 public class DynamicService {
     /**
      * 使用SqlMapper默认的数据库注入

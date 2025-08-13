@@ -13,7 +13,7 @@ import org.slf4j.LoggerFactory;
  *
  * @author noear 2022/11/14 created
  */
-//@Component
+//@Managed
 public class SaLogForSlf4j extends SaLogForConsole implements SaLog {
     static final Logger log = LoggerFactory.getLogger(SaLogForSlf4j.class);
 

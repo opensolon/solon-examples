@@ -1,6 +1,6 @@
 package demo1091.disk;
 
-import org.noear.solon.annotation.Component;
+import org.noear.solon.annotation.Managed;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -9,7 +9,7 @@ import org.noear.solon.core.event.AppBeanLoadEndEvent;
 import org.noear.solon.core.event.EventListener;
 import org.noear.solon.core.util.ResourceUtil;
 
-@Component
+@Managed
 public class LicenseApp extends Application implements EventListener<AppBeanLoadEndEvent> {
 
     @Override

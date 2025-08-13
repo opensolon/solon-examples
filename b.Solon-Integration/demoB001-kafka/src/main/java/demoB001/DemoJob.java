@@ -3,7 +3,7 @@ package demoB001;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
-import org.noear.solon.annotation.Component;
+import org.noear.solon.annotation.Managed;
 import org.noear.solon.annotation.Init;
 import org.noear.solon.annotation.Inject;
 import org.noear.solon.scheduling.annotation.Scheduled;
@@ -14,7 +14,7 @@ import java.util.Arrays;
 /**
  * @author noear 2024/12/6 created
  */
-@Component
+@Managed
 public class DemoJob {
     @Inject
     private KafkaConsumer<String, String> consumer;

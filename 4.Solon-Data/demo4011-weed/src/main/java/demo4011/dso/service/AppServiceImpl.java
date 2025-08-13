@@ -4,10 +4,10 @@ import demo4011.dso.mapper.SqlMapper;
 import org.noear.solon.data.annotation.Cache;
 import org.noear.solon.data.annotation.Tran;
 import org.noear.solon.data.tran.TranPolicy;
-import org.noear.solon.annotation.Component;
+import org.noear.solon.annotation.Managed;
 import org.noear.weed.annotation.Db;
 
-@Component
+@Managed
 public class AppServiceImpl implements AppService {
     @Db
     SqlMapper sqlMapper1;

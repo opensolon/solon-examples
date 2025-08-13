@@ -1,6 +1,6 @@
 package demo9a03;
 
-import org.noear.solon.annotation.Component;
+import org.noear.solon.annotation.Managed;
 import org.noear.solon.core.handle.Context;
 import org.noear.solon.core.handle.Filter;
 import org.noear.solon.core.handle.FilterChain;
@@ -10,7 +10,7 @@ import org.slf4j.LoggerFactory;
 /**
  * @author noear 2024/11/3 created
  */
-@Component
+@Managed
 public class FilterImpl implements Filter {
     static Logger log = LoggerFactory.getLogger(FilterImpl.class);
 

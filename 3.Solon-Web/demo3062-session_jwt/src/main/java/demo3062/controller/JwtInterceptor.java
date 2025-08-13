@@ -1,7 +1,7 @@
 package demo3062.controller;
 
 import org.noear.solon.Utils;
-import org.noear.solon.annotation.Component;
+import org.noear.solon.annotation.Managed;
 import org.noear.solon.core.handle.Context;
 import org.noear.solon.core.handle.Handler;
 import org.noear.solon.core.route.RouterInterceptor;
@@ -10,7 +10,7 @@ import org.noear.solon.core.route.RouterInterceptorChain;
 /**
  * @author noear 2021/8/6 created
  */
-@Component
+@Managed
 public class JwtInterceptor implements RouterInterceptor {
 
     @Override

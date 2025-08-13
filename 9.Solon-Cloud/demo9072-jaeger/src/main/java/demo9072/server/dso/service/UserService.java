@@ -1,12 +1,12 @@
 package demo9072.server.dso.service;
 
 import org.noear.solon.cloud.tracing.annotation.Tracing;
-import org.noear.solon.annotation.Component;
+import org.noear.solon.annotation.Managed;
 
 /**
  * @author noear 2022/5/7 created
  */
-@Component
+@Managed
 public class UserService extends BaseService{
     @Tracing(name = "获取用户", tags = "用户=${name}")
     public String getUser(String name) {

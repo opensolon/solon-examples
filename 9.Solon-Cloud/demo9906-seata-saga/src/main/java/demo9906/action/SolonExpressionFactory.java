@@ -6,7 +6,7 @@ import org.apache.seata.saga.engine.expression.ExpressionFactory;
 /**
  * 暴漏为bean,支持自定义表达式解析
  */
-//@Component
+//@Managed
 public class SolonExpressionFactory implements ExpressionFactory {
     @Override
     public Expression createExpression(String expression) {

@@ -1,7 +1,7 @@
 package demo6014.dso.valid;
 
 import demo6014.controller.ApiCodes;
-import org.noear.solon.annotation.Component;
+import org.noear.solon.annotation.Managed;
 import org.noear.solon.core.handle.Context;
 import org.noear.solon.core.handle.Result;
 import org.noear.solon.validation.ValidatorFailureHandler;
@@ -16,7 +16,7 @@ import java.lang.annotation.Annotation;
  *
  * @author noear 2021/6/11 created
  */
-@Component
+@Managed
 public class ValidatorFailureHandlerImpl implements ValidatorFailureHandler {
 
     @Override

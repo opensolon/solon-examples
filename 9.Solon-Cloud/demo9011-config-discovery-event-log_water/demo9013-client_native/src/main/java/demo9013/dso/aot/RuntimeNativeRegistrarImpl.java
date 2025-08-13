@@ -1,6 +1,6 @@
 package demo9013.dso.aot;
 
-import org.noear.solon.annotation.Component;
+import org.noear.solon.annotation.Managed;
 import org.noear.solon.aot.RuntimeNativeMetadata;
 import org.noear.solon.aot.RuntimeNativeRegistrar;
 import org.noear.solon.core.AppContext;
@@ -8,7 +8,7 @@ import org.noear.solon.core.AppContext;
 /**
  * @author noear 2023/4/27 created
  */
-@Component
+@Managed
 public class RuntimeNativeRegistrarImpl implements RuntimeNativeRegistrar {
     @Override
     public void register(AppContext context, RuntimeNativeMetadata nativeMetadata) {

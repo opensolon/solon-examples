@@ -4,7 +4,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import demo1091.disk.dso.service.LicenseService;
-import org.noear.solon.annotation.Component;
+import org.noear.solon.annotation.Managed;
 import org.noear.solon.annotation.Inject;
 
 import javafx.fxml.FXML;
@@ -12,7 +12,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.TextArea;
 
 
-@Component
+@Managed
 public class LicenseController implements Initializable {
     @FXML
     private TextArea license;

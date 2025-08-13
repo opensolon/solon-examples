@@ -1,13 +1,13 @@
 package demo4091.service;
 
 import demo4091.model.User;
-import org.noear.solon.annotation.Component;
+import org.noear.solon.annotation.Managed;
 import org.noear.solon.annotation.Inject;
 import org.noear.solon.data.sqlink.SqLink;
 
 import java.util.List;
 
-@Component
+@Managed
 public class UserService {
 
     @Inject

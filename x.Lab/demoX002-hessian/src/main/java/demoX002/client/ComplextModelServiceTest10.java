@@ -4,7 +4,7 @@ import demoX002.client.dso.FairyConfigurationImp;
 import org.noear.nami.NamiConfigurationDefault;
 import org.noear.nami.annotation.NamiClient;
 import org.noear.solon.Solon;
-import org.noear.solon.annotation.Component;
+import org.noear.solon.annotation.Managed;
 import demoX002.server.dso.IComplexModelService;
 import demoX002.server.model.ComplexModel;
 import demoX002.server.model.Person;
@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-@Component
+@Managed
 public class ComplextModelServiceTest10 {
 
     public static void main(String[] args) throws Exception {

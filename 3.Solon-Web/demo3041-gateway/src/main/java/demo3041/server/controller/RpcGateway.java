@@ -1,6 +1,6 @@
 package demo3041.server.controller;
 
-import org.noear.solon.annotation.Component;
+import org.noear.solon.annotation.Managed;
 import org.noear.solon.annotation.Mapping;
 import org.noear.solon.core.handle.Gateway;
 import demo3041.server.controller.api.UserServiceImpl;
@@ -11,7 +11,7 @@ import demo3041.server.controller.api.UserServiceImpl;
  * @author noear 2021/4/22 created
  */
 @Mapping("/rpc/v1/**")
-@Component
+@Managed
 public class RpcGateway extends Gateway {
     @Override
     protected void register() {

@@ -1,6 +1,6 @@
 package demo5012.controller;
 
-import org.noear.solon.annotation.Component;
+import org.noear.solon.annotation.Managed;
 import org.noear.solon.extend.schedule.IJob;
 
 import java.time.LocalDateTime;
@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 /**
  * @author noear 2022/3/17 created
  */
-@Component
+@Managed
 public class Job1 implements IJob {
     @Override
     public int getInterval() {

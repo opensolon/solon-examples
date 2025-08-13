@@ -17,14 +17,14 @@
 package demo9906.action.impl;
 
 import demo9906.action.InventoryAction;
-import org.noear.solon.annotation.Component;
+import org.noear.solon.annotation.Managed;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
  * @author lorne.cl
  */
-@Component("inventoryAction")
+@Managed("inventoryAction")
 public class InventoryActionImpl implements InventoryAction {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(InventoryActionImpl.class);

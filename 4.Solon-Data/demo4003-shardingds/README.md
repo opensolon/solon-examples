@@ -81,7 +81,7 @@ props:
 注入示例：
 
 ```java
-import org.noear.solon.annotation.Component;
+import org.noear.solon.annotation.Managed;
 
 @Configuration
 public class Config {
@@ -98,7 +98,7 @@ public class Config {
     
 }
 
-@Component
+@Managed
 public class UserService {
     @Db("db1")
     OrderMapper orderMapper;

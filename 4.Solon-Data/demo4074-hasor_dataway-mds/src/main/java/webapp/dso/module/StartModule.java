@@ -11,14 +11,14 @@ import net.hasor.db.Level;
 import net.hasor.web.WebApiBinder;
 import net.hasor.web.WebModule;
 import org.noear.solon.Solon;
-import org.noear.solon.annotation.Component;
+import org.noear.solon.annotation.Managed;
 import org.noear.solon.annotation.Inject;
 import webapp.dso.spi.FxSqlCheckChain;
 
 import javax.sql.DataSource;
 import java.util.Objects;
 
-@Component
+@Managed
 public class StartModule implements WebModule {
     @Inject("metadataDs")
     DataSource metadataDs;

@@ -6,7 +6,7 @@ import org.apache.seata.core.context.RootContext;
 import org.apache.seata.rm.tcc.api.BusinessActionContext;
 import org.apache.seata.rm.tcc.api.LocalTCC;
 import org.apache.seata.rm.tcc.api.TwoPhaseBusinessAction;
-import org.noear.solon.annotation.Component;
+import org.noear.solon.annotation.Managed;
 import org.noear.solon.annotation.Inject;
 import org.noear.solon.data.annotation.Tran;
 import org.noear.solon.data.sql.SqlUtils;
@@ -17,7 +17,7 @@ import java.util.Objects;
  * @author noear 2020/12/29 created
  */
 @LocalTCC
-@Component
+@Managed
 public class HelloServiceLocalImp implements HelloService {
     @Inject
     private SqlUtils sqlUtils;

@@ -24,7 +24,7 @@
 * 定义 JavaFX 应用： LicenseApp.java
 
 ```java
-@Component
+@Managed
 public class LicenseApp extends Application implements EventListener<AppBeanLoadEndEvent> {
 
     @Override
@@ -64,7 +64,7 @@ public class ControllerFactory implements Callback<Class<?>, Object> {
 * 控制器：LicenseController.java
 
 ```java
-@Component
+@Managed
 public class LicenseController implements Initializable {
     @FXML
     private TextArea license;

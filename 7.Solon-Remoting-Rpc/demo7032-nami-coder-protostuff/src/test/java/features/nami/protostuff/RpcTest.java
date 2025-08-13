@@ -6,7 +6,7 @@ import demo7032.MessageDo;
 import org.junit.jupiter.api.Test;
 import org.noear.nami.annotation.NamiClient;
 import org.noear.nami.common.ContentTypes;
-import org.noear.solon.annotation.Component;
+import org.noear.solon.annotation.Managed;
 import org.noear.solon.net.http.HttpUtils;
 import org.noear.solon.serialization.protostuff.ProtostuffBytesSerializer;
 import org.noear.solon.test.SolonTest;
@@ -16,7 +16,7 @@ import java.io.IOException;
 /**
  * @author noear 2024/12/3 created
  */
-@Component
+@Managed
 @SolonTest(App.class)
 public class RpcTest {
     @NamiClient(url = "http://localhost:8080/rpc/demo", headers = {ContentTypes.PROTOBUF, ContentTypes.PROTOBUF_ACCEPT})

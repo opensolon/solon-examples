@@ -1,10 +1,10 @@
 package demo1091.disk.dso.service;
 
 import lombok.extern.slf4j.Slf4j;
-import org.noear.solon.annotation.Component;
+import org.noear.solon.annotation.Managed;
 
 @Slf4j
-@Component
+@Managed
 public class LicenseService {
 
     public void hello(){

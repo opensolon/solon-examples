@@ -1,7 +1,7 @@
 package demo9062.controller;
 
 import com.xxl.job.core.context.XxlJobHelper;
-import org.noear.solon.annotation.Component;
+import org.noear.solon.annotation.Managed;
 import org.noear.solon.cloud.annotation.CloudJob;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,7 +27,7 @@ import java.util.concurrent.TimeUnit;
  * @author xuxueli 2019-12-11 21:52:51
  * @author noear 2021-05025
  */
-@Component
+@Managed
 public class SampleXxlJob2 {
     private static Logger logger = LoggerFactory.getLogger(SampleXxlJob2.class);
 
