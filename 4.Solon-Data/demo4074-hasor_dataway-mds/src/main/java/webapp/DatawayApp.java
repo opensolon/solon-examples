@@ -1,7 +1,7 @@
 package webapp;
 
-import net.hasor.solon.boot.EnableHasor;
-import net.hasor.solon.boot.EnableHasorWeb;
+import net.hasor.solon.annotation.EnableHasor;
+import net.hasor.solon.annotation.EnableHasorWeb;
 import org.noear.solon.Solon;
 import webapp.dso.module.StartModule;
 
