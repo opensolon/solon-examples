@@ -1,0 +1,15 @@
+solon.app:
+  name: demoapp
+  group: demo
+
+solon.output.meta: 1
+
+solon.dataSources:
+  sqlite!:
+    class: "com.alibaba.druid.pool.DruidDataSource"
+    jdbcUrl: "jdbc:sqlite::memory:"
+    driverClassName: "org.sqlite.JDBC"
+  h2:
+    class: "com.alibaba.druid.pool.DruidDataSource"
+    jdbcUrl: "jdbc:h2:mem:test;DB_CLOSE_ON_EXIT=FALSE;MODE=MYSQL;DATABASE_TO_LOWER=TRUE;IGNORECASE=TRUE;CASE_INSENSITIVE_IDENTIFIERS=TRUE"
+    driverClassName: "org.h2.Driver"
