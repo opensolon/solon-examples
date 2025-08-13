@@ -4,7 +4,7 @@ import org.apache.dubbo.config.annotation.Reference;
 import org.noear.solon.Solon;
 import org.noear.solon.annotation.Controller;
 import org.noear.solon.annotation.Mapping;
-import org.noear.solon.extend.dubbo.EnableDubbo;
+import org.apache.dubbo.solon.annotation.EnableDubbo;
 import demo7011.protocol.HelloService;
 
 @EnableDubbo
