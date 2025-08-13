@@ -1,7 +1,7 @@
 package demo7011.server;
 
+import org.apache.dubbo.solon.annotation.EnableDubbo;
 import org.noear.solon.Solon;
-import org.noear.solon.extend.dubbo.EnableDubbo;
 
 @EnableDubbo
 public class DubboProviderApp {
