@@ -1,5 +1,6 @@
 package features.h2;
 
+import com.alibaba.druid.pool.DruidDataSource;
 import features.Appx;
 import features.TestDo;
 import org.junit.jupiter.api.Test;
@@ -26,6 +27,9 @@ public class SqlTest {
     @Bean
     public void init() throws Exception {
         sqlUtils.initDatabase("classpath:db.sql");
+
+        DruidDataSource ds = new DruidDataSource();
+        ds.addFilters("stat,wall");
     }
 
     @Test
