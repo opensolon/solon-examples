@@ -1,7 +1,7 @@
 package demo4037.entity;
 
 import lombok.Data;
-import org.noear.snack.core.utils.DateUtil;
+import org.noear.snack4.codec.util.DateUtil;
 import tk.mybatis.mapper.annotation.LogicDelete;
 
 import javax.persistence.Column;

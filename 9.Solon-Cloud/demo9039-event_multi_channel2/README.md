@@ -24,7 +24,7 @@ solon.cloud.rabbitmq:
 public class EVENT_hello_demo2 implements CloudEventHandler {
     @Override
     public boolean handle(Event event) throws Throwable {
-        System.out.println(LocalDateTime.now() + ONode.stringify(event));
+        System.out.println(LocalDateTime.now() + ONode.serialize(event));
 
         return event.times() > 2;
     }
@@ -35,7 +35,7 @@ public class EVENT_hello_demo2 implements CloudEventHandler {
 public class EVENT_hello_demo2 implements CloudEventHandler {
     @Override
     public boolean handle(Event event) throws Throwable {
-        System.out.println(LocalDateTime.now() + ONode.stringify(event));
+        System.out.println(LocalDateTime.now() + ONode.serialize(event));
 
         return event.times() > 2;
     }

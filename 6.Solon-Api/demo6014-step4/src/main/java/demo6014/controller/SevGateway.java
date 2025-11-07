@@ -1,7 +1,7 @@
 package demo6014.controller;
 
 import demo6014.controller.interceptor.TokenHandler;
-import org.noear.snack.ONode;
+import org.noear.snack4.ONode;
 import org.noear.solon.annotation.Managed;
 import org.noear.solon.annotation.Mapping;
 import org.noear.solon.core.handle.Context;
@@ -41,7 +41,7 @@ public class SevGateway extends ApiGatewayBase {
                     .post();
 
             //将json数据转为 java object
-            return ONode.loadStr(rstJson).toData();
+            return ONode.ofJson(rstJson).toData();
         }
     }
 }

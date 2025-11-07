@@ -3,7 +3,7 @@ package features;
 import demo4041.DemoApp;
 import org.junit.jupiter.api.Test;
 
-import org.noear.snack.ONode;
+import org.noear.snack4.ONode;
 import org.noear.solon.Utils;
 import org.noear.solon.test.HttpTester;
 
@@ -19,7 +19,7 @@ public class MapperTest extends HttpTester {
 
         assert Utils.isNotEmpty(json);
 
-        assert  ONode.load(json).isObject();
+        assert  ONode.ofJson(json).isObject();
     }
 
     @Test
@@ -28,6 +28,6 @@ public class MapperTest extends HttpTester {
 
         assert Utils.isNotEmpty(json2);
 
-        assert  ONode.load(json2).isObject();
+        assert  ONode.ofJson(json2).isObject();
     }
 }

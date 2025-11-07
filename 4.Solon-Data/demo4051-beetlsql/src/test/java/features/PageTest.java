@@ -2,7 +2,7 @@ package features;
 
 import org.junit.jupiter.api.Test;
 
-import org.noear.snack.ONode;
+import org.noear.snack4.ONode;
 import org.noear.solon.test.HttpTester;
 import org.noear.solon.test.SolonTest;
 
@@ -15,6 +15,6 @@ public class PageTest extends HttpTester {
     public void test() throws Exception {
         String json = path("/page/list").get();
         System.out.println(json);
-        assert ONode.loadStr(json).get("list").count() == 2;
+        assert ONode.ofJson(json).get("list").size() == 2;
     }
 }

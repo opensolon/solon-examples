@@ -1,6 +1,6 @@
 package demo6014.controller;
 
-import org.noear.snack.ONode;
+import org.noear.snack4.ONode;
 import org.noear.solon.core.handle.Context;
 import org.noear.solon.core.handle.Gateway;
 import org.noear.solon.core.handle.ModelAndView;

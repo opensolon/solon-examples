@@ -1,7 +1,7 @@
 package demo4011;
 
 import com.zaxxer.hikari.HikariDataSource;
-import org.noear.snack.ONode;
+import org.noear.snack4.ONode;
 import org.noear.solon.Solon;
 import org.noear.solon.annotation.Bean;
 import org.noear.solon.annotation.Configuration;

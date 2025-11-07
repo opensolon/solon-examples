@@ -2,7 +2,7 @@ package features;
 
 import demo4012.DemoApp;
 import demo4012.model.AppxModel;
-import org.noear.snack.ONode;
+import org.noear.snack4.ONode;
 import org.noear.solon.test.HttpTester;
 import org.noear.solon.test.SolonTest;
 import org.noear.weed.DbContext;

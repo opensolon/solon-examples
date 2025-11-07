@@ -9,7 +9,7 @@ import cn.dev33.satoken.stp.SaTokenInfo;
 import cn.dev33.satoken.stp.StpUtil;
 import demo3032.util.AjaxJson;
 import demo3032.util.Ttime;
-import org.noear.snack.ONode;
+import org.noear.snack4.ONode;
 import org.noear.solon.annotation.Controller;
 import org.noear.solon.annotation.Mapping;
 import org.noear.solon.annotation.Param;
@@ -109,7 +109,7 @@ public class TestController {
 		System.out.println("测试取值name：" + StpUtil.getSession().get("name"));
 		StpUtil.getSession().set("name", new Date());	// 写入一个值 
 		System.out.println("测试取值name：" + StpUtil.getSession().get("name"));
-		System.out.println( ONode.stringify(StpUtil.getSession()));
+		System.out.println( ONode.serialize(StpUtil.getSession()));
 		return AjaxJson.getSuccess();
 	}
 	

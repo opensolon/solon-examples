@@ -3,7 +3,7 @@ package demo9031.producer.controller;
 import demo9031.producer.controller.event.HelloEntity;
 import org.noear.folkmq.client.MqClient;
 import org.noear.folkmq.client.MqMessage;
-import org.noear.snack.ONode;
+import org.noear.snack4.ONode;
 import org.noear.solon.Utils;
 import org.noear.solon.annotation.Controller;
 import org.noear.solon.annotation.Inject;

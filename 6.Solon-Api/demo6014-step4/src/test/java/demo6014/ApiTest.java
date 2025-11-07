@@ -3,7 +3,7 @@ package demo6014;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import org.noear.snack.ONode;
+import org.noear.snack4.ONode;
 import org.noear.solon.test.HttpTester;
 
 import org.noear.solon.test.SolonTest;
@@ -18,12 +18,12 @@ import java.io.IOException;
 public class ApiTest extends HttpTester {
     private static ONode apiCall(String path) throws IOException {
         String json = new HttpTester().path(path).get();
-        return ONode.loadStr(json);
+        return ONode.ofJson(json);
     }
 
     private static ONode apiCall(String path, String token) throws IOException {
         String json = new HttpTester().path(path).header("token", token).get();
-        return ONode.loadStr(json);
+        return ONode.ofJson(json);
     }
 
 

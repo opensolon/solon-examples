@@ -1,6 +1,6 @@
 package demo4011;
 
-import org.noear.snack.ONode;
+import org.noear.snack4.ONode;
 import org.noear.solon.Solon;
 import org.noear.weed.WeedConfig;
 
@@ -30,11 +30,11 @@ public class DemoApp {
             if (Solon.cfg().isDebugMode()) {
                 //执行后打印下sql
                 WeedConfig.onExecuteAft(cmd -> {
-                    System.out.println(cmd.text + "\r\n" + ONode.stringify(cmd.paramMap()));
+                    System.out.println(cmd.text + "\r\n" + ONode.serialize(cmd.paramMap()));
                 });
 
                 WeedConfig.onException((cmd,err)->{
-                    System.out.println(cmd.text + "\r\n" + ONode.stringify(cmd.paramMap()));
+                    System.out.println(cmd.text + "\r\n" + ONode.serialize(cmd.paramMap()));
                 });
             }
         });

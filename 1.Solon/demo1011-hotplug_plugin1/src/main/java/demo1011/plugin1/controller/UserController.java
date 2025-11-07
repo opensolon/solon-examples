@@ -2,7 +2,7 @@ package demo1011.plugin1.controller;
 
 import demo1011.plugin1.dso.service.AppxService;
 import demo1011.plugin1.model.UserDo;
-import org.noear.snack.ONode;
+import org.noear.snack4.ONode;
 import org.noear.solon.annotation.Controller;
 import org.noear.solon.annotation.Inject;
 import org.noear.solon.annotation.Mapping;
@@ -39,7 +39,7 @@ public class UserController extends BaseControllerEx {
     public String t() throws Exception {
         Object tmp = appxService.findAppx();
 
-        return userName + "-" + ONode.stringify(tmp);
+        return userName + "-" + ONode.serialize(tmp);
     }
 
     @Mapping("/v")

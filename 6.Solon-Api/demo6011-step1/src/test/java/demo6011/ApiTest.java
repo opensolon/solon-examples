@@ -2,7 +2,7 @@ package demo6011;
 
 import org.junit.jupiter.api.Test;
 
-import org.noear.snack.ONode;
+import org.noear.snack4.ONode;
 import org.noear.solon.test.HttpTester;
 
 import org.noear.solon.test.SolonTest;
@@ -17,7 +17,7 @@ import java.io.IOException;
 public class ApiTest extends HttpTester {
     private ONode apiCall(String path) throws IOException {
         String json = path(path).get();
-        return ONode.loadStr(json);
+        return ONode.ofJson(json);
     }
 
     @Test

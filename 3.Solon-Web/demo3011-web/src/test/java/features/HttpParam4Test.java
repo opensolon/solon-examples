@@ -2,7 +2,7 @@ package features;
 
 import demo3011.WebApp;
 import org.junit.jupiter.api.Test;
-import org.noear.snack.ONode;
+import org.noear.snack4.ONode;
 import org.noear.solon.test.HttpTester;
 import org.noear.solon.test.SolonTest;
 import demo3011.utils.Datetime;
@@ -21,7 +21,7 @@ public class HttpParam4Test extends HttpTester {
 
         String json2 =  path("/demo2/param4/json").bodyJson(json).post();
 
-        ONode oNode2 = ONode.loadStr(json2);
+        ONode oNode2 = ONode.ofJson(json2);
 
         assert oNode2.get("id").getInt() == 1;
         assert new Datetime(oNode2.get("date").getDate() ).getYear() > 2000;
@@ -34,7 +34,7 @@ public class HttpParam4Test extends HttpTester {
 
         String json2 =  path("/demo2/param4/json").bodyJson(json).post();
 
-        ONode oNode2 = ONode.loadStr(json2);
+        ONode oNode2 = ONode.ofJson(json2);
 
         assert oNode2.get("id").getInt() == 1;
         assert new Datetime(oNode2.get("date").getDate() ).getYear() > 2000;
@@ -49,7 +49,7 @@ public class HttpParam4Test extends HttpTester {
                 .data("date", "2021-12-12")
                 .post();
 
-        ONode oNode2 = ONode.loadStr(json2);
+        ONode oNode2 = ONode.ofJson(json2);
 
         assert oNode2.get("id").getInt() == 1;
         assert new Datetime(oNode2.get("date").getDate() ).getYear() > 2000;
@@ -64,7 +64,7 @@ public class HttpParam4Test extends HttpTester {
                 .data("date", "2021-12-12 12:12:12")
                 .post();
 
-        ONode oNode2 = ONode.loadStr(json2);
+        ONode oNode2 = ONode.ofJson(json2);
 
         assert oNode2.get("id").getInt() == 1;
         assert new Datetime(oNode2.get("date").getDate() ).getYear() > 2000;

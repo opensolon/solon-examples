@@ -5,7 +5,7 @@ import demo4002.dso.DynamicService;
 import demo4002.dso.SqlMapper;
 import demo4002.model.AppxModel;
 import org.junit.jupiter.api.Test;
-import org.noear.snack.ONode;
+import org.noear.snack4.ONode;
 import org.noear.solon.annotation.Inject;
 import org.noear.solon.data.annotation.Tran;
 import org.noear.solon.test.HttpTester;

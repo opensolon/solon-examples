@@ -3,7 +3,7 @@ package features;
 import demo4014.DemoApp;
 import demo4014.model.AppxModel;
 import org.junit.jupiter.api.Test;
-import org.noear.snack.ONode;
+import org.noear.snack4.ONode;
 import org.noear.solon.test.HttpTester;
 import org.noear.solon.test.SolonTest;
 

@@ -1,7 +1,7 @@
 package demo3073.manage;
 
 import lombok.extern.slf4j.Slf4j;
-import org.noear.snack.ONode;
+import org.noear.snack4.ONode;
 import org.noear.solon.annotation.Component;
 import org.noear.solon.annotation.Destroy;
 import org.noear.solon.web.sse.SseEmitter;
@@ -70,7 +70,7 @@ public class SseDemoManager {
         }
 
         try {
-            String jsonData = ONode.stringify(data);
+            String jsonData = ONode.serialize(data);
 
             // 1. 创建 SseEvent 对象
             SseEvent event = new SseEvent()

@@ -1,6 +1,6 @@
 package demo9042;
 
-import org.noear.snack.ONode;
+import org.noear.snack4.ONode;
 import org.noear.solon.Solon;
 import org.noear.solon.Utils;
 import org.noear.solon.cloud.CloudClient;
@@ -37,7 +37,7 @@ public class DemoApp {
 
         //上传字符串内容
         Result result = CloudClient.file().put(key, new Media(val));
-        System.out.println(ONode.stringify(result));
+        System.out.println(ONode.serialize(result));
         assert result.getCode() == Result.SUCCEED_CODE;
 
 
@@ -67,7 +67,7 @@ public class DemoApp {
 
         //上传文件
         Result result = CloudClient.file().put(key, new Media(new FileInputStream(val), Utils.mime(val.getName())));
-        System.out.println(ONode.stringify(result));
+        System.out.println(ONode.serialize(result));
         assert result.getCode() == Result.SUCCEED_CODE;
     }
 }

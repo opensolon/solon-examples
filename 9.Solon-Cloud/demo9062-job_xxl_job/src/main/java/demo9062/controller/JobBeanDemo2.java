@@ -2,7 +2,7 @@ package demo9062.controller;
 
 import com.xxl.job.core.context.XxlJobContext;
 import com.xxl.job.core.handler.annotation.XxlJob;
-import org.noear.snack.ONode;
+import org.noear.snack4.ONode;
 import org.noear.solon.annotation.Managed;
 import org.noear.solon.cloud.annotation.CloudJob;
 
@@ -13,7 +13,7 @@ import org.noear.solon.cloud.annotation.CloudJob;
 public class JobBeanDemo2 {
     @CloudJob("JobBeanDemo2-1")
     public void test(XxlJobContext xxlJobContext){
-        System.out.println(ONode.stringify(xxlJobContext));
+        System.out.println(ONode.serialize(xxlJobContext));
         System.out.println("JobBeanDemo2-1");
     }
 

@@ -1,6 +1,6 @@
 package consumer.event;
 
-import org.noear.snack.ONode;
+import org.noear.snack4.ONode;
 import org.noear.solon.cloud.CloudEventHandler;
 import org.noear.solon.cloud.annotation.CloudEvent;
 import org.noear.solon.cloud.model.Event;
@@ -17,7 +17,7 @@ public class EVENT_hello_demo implements CloudEventHandler {
         //
         //学示处理成功效果
         //
-        System.out.println("aaa: " + LocalDateTime.now() + ONode.stringify(event));
+        System.out.println("aaa: " + LocalDateTime.now() + ONode.serialize(event));
         return true;
     }
 }
