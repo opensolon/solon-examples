@@ -37,13 +37,13 @@
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-solon-plugin</artifactId>
-            <version>3.5.11</version>
+            <version>3.5.12</version>
         </dependency>
 
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-jsqlparser-4.9</artifactId>
-            <version>3.5.11</version>
+            <version>3.5.12</version>
         </dependency>
 
         <dependency>
