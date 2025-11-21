@@ -13,10 +13,9 @@
     <groupId>demo7015</groupId>
     <artifactId>demo7015-rpc_sml-jmdns</artifactId>
 
+
     <properties>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>11</java.version>
     </properties>
 
     <dependencies>
