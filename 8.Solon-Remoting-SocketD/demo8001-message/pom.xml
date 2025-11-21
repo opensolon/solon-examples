@@ -20,6 +20,10 @@
     </parent>
 
 
+    <properties>
+        <java.version>11</java.version>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.noear</groupId>
