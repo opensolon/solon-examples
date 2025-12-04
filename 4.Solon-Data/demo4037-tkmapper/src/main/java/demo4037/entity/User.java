@@ -35,6 +35,6 @@ public class User {
     public String toString() {
 
         return String.format("id:%d, name:%s, age:%d, createTime:%s", id, name, age,
-                createTime != null ? DateUtil.format(createTime, DateUtil.FORMAT_19_b) : null);
+                createTime != null ? DateUtil.format(createTime, "yyyy-MM-dd HH:mm:ss") : null);
     }
 }

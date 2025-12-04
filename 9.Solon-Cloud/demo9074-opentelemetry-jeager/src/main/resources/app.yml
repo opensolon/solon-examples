@@ -1,0 +1,19 @@
+
+server.port: 8081
+
+solon.app:
+  name: demoapp
+  group: demo
+
+solon.cloud.local:
+  discovery:
+    service:
+      hellorpc:
+        - tcp://localhost:28081
+
+solon.cloud.opentelemetry:
+  server: "http://localhost:4317"
+  trace:
+    enable: true                    #是否启用（默认：true）
+    exclude: "/healthz,/_run/check/" #排除路径
+
