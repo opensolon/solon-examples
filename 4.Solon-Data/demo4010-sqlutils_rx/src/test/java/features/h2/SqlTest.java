@@ -50,6 +50,15 @@ public class SqlTest {
     }
 
     @Test
+    public void select2_1() {
+        Integer tmp = sqlUtils.sql("select app_id from appx where app_id=?")
+                .params(1)
+                .queryValue(Integer.class).block();
+        System.out.println(tmp);
+        assert 1 == tmp;
+    }
+
+    @Test
     public void select2_2() {
         Integer tmp = sqlUtils.sql("select app_id from appx where app_id=? limit 2", 99999)
                 .queryValue(Integer.class).blockOptional().orElse(null);

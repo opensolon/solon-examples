@@ -46,6 +46,16 @@ public class SqlTest {
     }
 
     @Test
+    public void select2_1() throws SQLException {
+        Integer tmp = sqlUtils.sql("select app_id from appx where app_id=?")
+                .params(1)
+                .queryValue();
+
+        System.out.println(tmp);
+        assert 1 == tmp;
+    }
+
+    @Test
     public void select2_2() throws SQLException {
         Integer tmp = sqlUtils.sql("select app_id from appx where app_id=? limit 2", 99999)
                 .queryValue();
