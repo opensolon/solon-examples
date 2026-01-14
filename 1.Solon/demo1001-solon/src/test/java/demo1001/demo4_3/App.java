@@ -12,7 +12,7 @@ public class App {
         Solon.start(App.class, args, app -> {
 
             //此时会增加 org.example.demo2 包的扫描（手动模式，在开发插件时会带来便利）
-            Solon.context().beanScan("org.example.demo2");
+            app.context().beanScan("org.example.demo2");
 
 
             //相对来说，只导入一个类性能要好很多（随需而定）
