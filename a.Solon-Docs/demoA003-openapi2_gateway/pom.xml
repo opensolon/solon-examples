@@ -15,7 +15,7 @@
     <parent>
         <groupId>org.noear</groupId>
         <artifactId>solon-parent</artifactId>
-        <version>3.9.5</version>
+        <version>3.9.6</version>
         <relativePath />
     </parent>
 
@@ -31,7 +31,7 @@
 
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>solon-openapi2-knife4j</artifactId>
+            <artifactId>solon-openapi3-knife4j</artifactId>
         </dependency>
 
         <dependency>
