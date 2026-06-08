@@ -10,8 +10,8 @@ import org.noear.solon.web.cors.CrossHandler;
 public class App {
     public static void main(String[] args) {
         Solon.start(App.class, args, app -> {
-            app.filter(-1, new CrossFilter());
-            app.get("/", c -> c.redirect("/index.html"));
+            app.router().filter(-1, new CrossFilter());
+            app.router().get("/", c -> c.redirect("/index.html"));
         });
     }
 }

@@ -16,6 +16,6 @@ import javax.sql.DataSource;
 public class Config {
     @Bean
     public DataSource db1() {
-        return Solon.cfg().getBean("track.db1", HikariDataSource.class);
+        return Solon.cfg().toBean("track.db1", HikariDataSource.class);
     }
 }

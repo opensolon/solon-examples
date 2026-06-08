@@ -5,7 +5,7 @@ import org.noear.solon.ai.embedding.EmbeddingConfig;
 import org.noear.solon.ai.embedding.EmbeddingModel;
 import org.noear.solon.ai.rag.loader.MarkdownLoader;
 import org.noear.solon.ai.rag.repository.InMemoryRepository;
-import org.noear.solon.ai.rag.repository.WebSearchRepository;
+import org.noear.solon.ai.rag.search.BochaWebSearchRepository;
 import org.noear.solon.annotation.Bean;
 import org.noear.solon.annotation.Configuration;
 import org.noear.solon.annotation.Inject;
@@ -23,8 +23,8 @@ public class RagConfig {
 
     //作为默认知识库
     @Bean(name = "searchRepository", typed = true)
-    public WebSearchRepository searchRepository(@Inject("${solon.ai.repo.websearch}") AiConfig config) {
-        return new WebSearchRepository(null, config);
+    public BochaWebSearchRepository searchRepository(@Inject("${solon.ai.repo.websearch}") AiConfig config) {
+        return new BochaWebSearchRepository(null, config);
     }
 
     @Bean("localRepository")
@@ -41,6 +41,6 @@ public class RagConfig {
                 ::body);
 
         //存入知识库
-        localRepository.insert(loader.load());
+        localRepository.save(loader.load());
     }
 }

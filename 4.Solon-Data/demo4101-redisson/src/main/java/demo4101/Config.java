@@ -5,7 +5,6 @@ import org.noear.solon.annotation.Configuration;
 import org.noear.solon.annotation.Inject;
 import org.redisson.api.RedissonClient;
 import org.redisson.solon.RedissonClientOriginalSupplier;
-import org.redisson.solon.RedissonSupplier;
 
 @Configuration
 public class Config {

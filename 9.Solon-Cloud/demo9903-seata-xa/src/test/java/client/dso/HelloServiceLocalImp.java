@@ -4,7 +4,7 @@ import demo9903.protocol.HelloService;
 import org.apache.seata.core.context.RootContext;
 import org.noear.solon.annotation.Managed;
 import org.noear.solon.annotation.Inject;
-import org.noear.solon.data.annotation.Tran;
+import org.noear.solon.data.annotation.Transaction;
 import org.noear.solon.data.sql.SqlUtils;
 
 import java.util.Objects;

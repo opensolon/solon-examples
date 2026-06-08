@@ -5,7 +5,8 @@ import cn.dev33.satoken.config.SaTokenConfig;
 import cn.dev33.satoken.log.SaLog;
 import cn.dev33.satoken.log.SaLogForConsole;
 import cn.dev33.satoken.util.StrFormatter;
-import org.noear.solon.core.util.LogUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * 将 Sa-Token log 信息转接到 Solon  
@@ -15,6 +16,7 @@ import org.noear.solon.core.util.LogUtil;
  */
 //@Managed
 public class SaLogForSolon extends SaLogForConsole implements SaLog {
+	static final Logger LOG = LoggerFactory.getLogger(SaLogForSolon.class);
 
 	/**
 	 * 打印日志到控制台
@@ -29,20 +31,20 @@ public class SaLogForSolon extends SaLogForConsole implements SaLog {
 		if (config.getIsLog() && level >= config.getLogLevelInt()) {
 			switch (level) {
 				case trace:
-					LogUtil.global().trace(LOG_PREFIX + StrFormatter.format(str, args));
+					LOG.trace(LOG_PREFIX + StrFormatter.format(str, args));
 					break;
 				case debug:
-					LogUtil.global().debug(LOG_PREFIX + StrFormatter.format(str, args));
+					LOG.debug(LOG_PREFIX + StrFormatter.format(str, args));
 					break;
 				case info:
-					LogUtil.global().info(LOG_PREFIX + StrFormatter.format(str, args));
+					LOG.info(LOG_PREFIX + StrFormatter.format(str, args));
 					break;
 				case warn:
-					LogUtil.global().warn(LOG_PREFIX + StrFormatter.format(str, args));
+					LOG.warn(LOG_PREFIX + StrFormatter.format(str, args));
 					break;
 				case error:
 				case fatal:
-					LogUtil.global().error(LOG_PREFIX + StrFormatter.format(str, args));
+					LOG.error(LOG_PREFIX + StrFormatter.format(str, args));
 					break;
 			}
 		}

@@ -8,7 +8,7 @@ import org.apache.seata.rm.tcc.api.LocalTCC;
 import org.apache.seata.rm.tcc.api.TwoPhaseBusinessAction;
 import org.noear.solon.annotation.Managed;
 import org.noear.solon.annotation.Inject;
-import org.noear.solon.data.annotation.Tran;
+import org.noear.solon.data.annotation.Transaction;
 import org.noear.solon.data.sql.SqlUtils;
 
 import java.util.Objects;

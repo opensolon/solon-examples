@@ -2,7 +2,7 @@ package demo4071.dso.service;
 
 import demo4071.dso.mapper.AppxMapper;
 import net.hasor.db.solon.Db;
-import org.noear.solon.data.annotation.Tran;
+import org.noear.solon.data.annotation.Transaction;
 import org.noear.solon.data.tran.TranPolicy;
 import org.noear.solon.annotation.Managed;
 
@@ -28,22 +28,22 @@ public class AppService {
         sqlMapper1.appx_add();
     }
 
-    @Tran(policy = TranPolicy.nested)
+    @Transaction(policy = TranPolicy.nested)
     public void addApp3(){
         sqlMapper1.appx_add();
     }
 
-    @Tran(policy = TranPolicy.requires_new)
+    @Transaction(policy = TranPolicy.requires_new)
     public void addApp4(){
         sqlMapper1.appx_add();
     }
 
-    @Tran(policy = TranPolicy.never)
+    @Transaction(policy = TranPolicy.never)
     public void addApp5(){
         sqlMapper1.appx_add();
     }
 
-    @Tran(policy = TranPolicy.mandatory)
+    @Transaction(policy = TranPolicy.mandatory)
     public void addApp6(){
         sqlMapper1.appx_add();
     }

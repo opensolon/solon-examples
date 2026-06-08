@@ -6,7 +6,7 @@ import org.noear.solon.annotation.Mapping;
 import org.noear.solon.cloud.CloudClient;
 import org.noear.solon.cloud.model.Event;
 import org.noear.solon.cloud.model.EventTran;
-import org.noear.solon.data.annotation.Tran;
+import org.noear.solon.data.annotation.Transaction;
 
 /**
  * @author noear 2021/1/27 created
@@ -79,7 +79,7 @@ public class TestController {
         }
     }
 
-    @Tran
+    @Transaction
     @Mapping("/tran3")
     public Object tran3() {
         EventTran eventTran = CloudClient.event().newTranAndJoin();

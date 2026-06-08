@@ -2,8 +2,8 @@ package demoC001.controller;
 
 import org.noear.solon.ai.chat.ChatModel;
 import org.noear.solon.ai.chat.ChatSession;
-import org.noear.solon.ai.chat.ChatSessionDefault;
 import org.noear.solon.ai.chat.message.ChatMessage;
+import org.noear.solon.ai.chat.session.InMemoryChatSession;
 import org.noear.solon.annotation.Controller;
 import org.noear.solon.annotation.Inject;
 import org.noear.solon.annotation.Mapping;
@@ -26,14 +26,11 @@ public class SessionController {
 
     @Mapping("chat")
     public String chat(Context ctx, String message) throws IOException {
-        ChatSession session = chatSessionMap.computeIfAbsent(ctx.sessionId(), k -> new ChatSessionDefault(k));
+        ChatSession session = chatSessionMap.computeIfAbsent(ctx.sessionId(), k -> new InMemoryChatSession(k));
 
-        session.addMessage(ChatMessage.ofUser(message));
-
-        ChatMessage message2 = chatModel.prompt(session).call().getMessage();
-
-        session.addMessage(message2);
-
-        return message2.getContent();
+        return chatModel.prompt(message)
+                .session(session)
+                .call()
+                .getContent();
     }
 }

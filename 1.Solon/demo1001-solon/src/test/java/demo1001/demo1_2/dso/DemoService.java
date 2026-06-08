@@ -18,5 +18,5 @@ public class DemoService {
     //获取配置集合
     Properties trackDbCfg = Solon.cfg().getProp("track.db1");
     //获取bean（根据配置集合自动生成）
-    HikariDataSource trackDs = Solon.cfg().getBean("track.db1", HikariDataSource.class);
+    HikariDataSource trackDs = Solon.cfg().toBean("track.db1", HikariDataSource.class);
 }

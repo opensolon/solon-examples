@@ -9,19 +9,19 @@ public class App {
     public static void main(String[] args) {
         Solon.start(App.class, args, app -> {
             //启动插件
-            app.get("start", ctx -> {
+            app.router().get("start", ctx -> {
                 PluginManager.start("add1");
                 ctx.output("OK");
             });
 
             //停止插件
-            app.get("stop", ctx -> {
+            app.router().get("stop", ctx -> {
                 PluginManager.stop("add1");
                 ctx.output("OK");
             });
 
             //卸载插件
-            app.get("unload", ctx -> {
+            app.router().get("unload", ctx -> {
                 PluginManager.unload("add1");
                 ctx.output("OK");
             });

@@ -2,6 +2,7 @@ package demoC001.controller;
 
 import org.noear.solon.ai.chat.ChatModel;
 import org.noear.solon.ai.annotation.ToolMapping;
+import org.noear.solon.ai.chat.tool.AbsToolProvider;
 import org.noear.solon.annotation.Controller;
 import org.noear.solon.annotation.Inject;
 import org.noear.solon.annotation.Mapping;
@@ -22,11 +23,11 @@ public class FunctionController {
     @Mapping("weather")
     public String weather(@Param(defaultValue = "今天杭州的天气如何？") String message) throws IOException {
         return chatModel.prompt(message)
-                .options(o -> o.toolsAdd(Tools.instance))
+                .options(o -> o.toolAdd(Tools.instance))
                 .call().getMessage().getContent();
     }
 
-    public static class Tools {
+    public static class Tools extends AbsToolProvider {
         static final Tools instance = new Tools();
 
         //天气查询

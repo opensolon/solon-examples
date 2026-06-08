@@ -19,7 +19,7 @@ public class App2Demo {
 
         Solon.start(App.class, args, app->{
             //移除插件
-            app.get("del", ctx -> {
+            app.router().get("del", ctx -> {
                 PluginManager.unload("add1");
                 ctx.output("OK");
             });
@@ -42,7 +42,7 @@ public class App2Demo {
         PluginPackage pluginPackage = PluginPackage.loadJar(file).start();
 
         //移除插件
-        Solon.app().get("del", ctx -> {
+        Solon.app().router().get("del", ctx -> {
             PluginPackage.unloadJar(pluginPackage);
             ctx.output("OK");
         });

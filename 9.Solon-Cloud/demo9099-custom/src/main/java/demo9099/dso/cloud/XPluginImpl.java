@@ -11,7 +11,7 @@ import org.noear.wood.DbContext;
 public class XPluginImpl implements Plugin {
     @Override
     public void start(AppContext context) throws Throwable {
-        DbContext db = context.cfg().getBean("demo.db1", DbContext.class);
+        DbContext db = context.cfg().toBean("demo.db1", DbContext.class);
 
         //完成 solon cloud 规范注册
         CloudConfigServiceOfDbImpl configService = new CloudConfigServiceOfDbImpl(db);

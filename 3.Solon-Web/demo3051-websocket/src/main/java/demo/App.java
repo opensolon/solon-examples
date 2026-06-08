@@ -10,8 +10,12 @@ public class App {
         //
         // 启动Solon，并开启WebSocket监听；同时添加/路径跳转
         //
-        Solon.start(App.class, args, app -> app.enableWebSocket(true)).get("/", c -> {
-            c.redirect("/debug.htm");
+        Solon.start(App.class, args, app -> {
+            app.enableWebSocket(true);
+
+            app.router().get("/", c -> {
+                c.redirect("/debug.htm");
+            });
         });
     }
 }

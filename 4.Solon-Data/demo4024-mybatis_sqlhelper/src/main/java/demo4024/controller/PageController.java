@@ -1,6 +1,6 @@
 package demo4024.controller;
 
-import com.jn.sqlhelper.dialect.pagination.SqlPaginations;
+import com.github.pagehelper.PageHelper;
 import demo4024.dso.mapper.AppxMapper;
 import org.apache.ibatis.solon.annotation.Db;
 import org.noear.solon.annotation.Controller;
@@ -18,7 +18,7 @@ public class PageController {
 
     @Mapping("test")
     public Object test() throws Throwable {
-        SqlPaginations.preparePagination(2, 2);
+        PageHelper.offsetPage(2, 2);
 
         return appxMapper.appx_get_page();
     }

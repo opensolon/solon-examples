@@ -4,7 +4,7 @@ import demo4071.dso.service.AppService;
 import org.noear.solon.annotation.Controller;
 import org.noear.solon.annotation.Inject;
 import org.noear.solon.annotation.Mapping;
-import org.noear.solon.data.annotation.Tran;
+import org.noear.solon.data.annotation.Transaction;
 
 @Mapping("/tran/")
 @Controller

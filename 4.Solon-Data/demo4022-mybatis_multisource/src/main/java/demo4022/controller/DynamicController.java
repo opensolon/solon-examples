@@ -25,7 +25,7 @@ public class DynamicController {
     @DynamicDs("db_rock1")
     @Mapping("/test1")
     public AppxModel test1() throws Exception{
-        System.out.println("ds===" + DynamicDsKey.getCurrent());
+        System.out.println("ds===" + DynamicDsKey.current());
 
         return sqlMapper1.appx_get2(1);
     }
@@ -34,7 +34,7 @@ public class DynamicController {
     @DynamicDs("db_rock2")
     @Mapping("/test2")
     public AppxModel test2() throws Exception{
-        System.out.println("ds===" + DynamicDsKey.getCurrent());
+        System.out.println("ds===" + DynamicDsKey.current());
 
         return sqlMapper1.appx_get2(2);
     }
@@ -43,7 +43,7 @@ public class DynamicController {
     @DynamicDs
     @Mapping("/test3")
     public AppxModel test3() throws Exception{
-        System.out.println("ds===" + DynamicDsKey.getCurrent());
+        System.out.println("ds===" + DynamicDsKey.current());
 
         return sqlMapper1.appx_get2(3);
     }

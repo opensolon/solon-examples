@@ -32,7 +32,7 @@ public class RagController {
         List<Document> context = repository.search(new QueryCondition(message).limit(4));
 
         //消息增强
-        ChatMessage chatMessage = ChatMessage.augment(message, context);
+        ChatMessage chatMessage = ChatMessage.ofUserAugment(message, context);
 
         //提交大模型并简单返回（不然，截图不好截）
         return chatModel.prompt(chatMessage).call().getMessage().getContent();
@@ -45,7 +45,7 @@ public class RagController {
         List<Document> context = localRepository.search(new QueryCondition(message).limit(4));
 
         //消息增强
-        ChatMessage chatMessage = ChatMessage.augment(message, context);
+        ChatMessage chatMessage = ChatMessage.ofUserAugment(message, context);
 
         //提交大模型并简单返回（不然，截图不好截）
         return chatModel.prompt(chatMessage).call().getMessage().getContent();

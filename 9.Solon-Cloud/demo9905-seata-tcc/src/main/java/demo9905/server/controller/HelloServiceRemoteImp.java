@@ -9,7 +9,7 @@ import org.apache.seata.rm.tcc.api.TwoPhaseBusinessAction;
 import org.noear.solon.annotation.Inject;
 import org.noear.solon.annotation.Mapping;
 import org.noear.solon.annotation.Remoting;
-import org.noear.solon.data.annotation.Tran;
+import org.noear.solon.data.annotation.Transaction;
 import org.noear.solon.data.sql.SqlUtils;
 
 import java.util.Objects;
@@ -23,7 +23,7 @@ public class HelloServiceRemoteImp implements HelloService {
     @Inject
     private SqlUtils sqlUtils;
 
-    @Tran
+    @Transaction
     @Override
     @TwoPhaseBusinessAction(name = "RemoteTccActionTwo", commitMethod = "commit", rollbackMethod = "rollback")
     public boolean prepare(BusinessActionContext actionContext, @BusinessActionContextParameter(paramName = "code") String code) throws Exception {

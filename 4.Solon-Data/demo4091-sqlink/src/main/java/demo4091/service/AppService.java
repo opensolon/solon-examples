@@ -4,7 +4,7 @@ import demo4091.model.AppxModel;
 import demo4091.model.Test;
 import org.noear.solon.annotation.Managed;
 import org.noear.solon.annotation.Inject;
-import org.noear.solon.data.annotation.Tran;
+import org.noear.solon.data.annotation.Transaction;
 import org.noear.solon.data.sqlink.SqLink;
 import org.noear.solon.data.sqlink.core.dialect.H2Dialect;
 import org.noear.solon.data.sqlink.core.page.PagedResult;
@@ -73,22 +73,22 @@ public class AppService {
         addApp();
     }
 
-    @Tran(policy = TranPolicy.nested)
+    @Transaction(policy = TranPolicy.nested)
     public void addApp3() {
         addApp();
     }
 
-    @Tran(policy = TranPolicy.requires_new)
+    @Transaction(policy = TranPolicy.requires_new)
     public void addApp4() {
         addApp();
     }
 
-    @Tran(policy = TranPolicy.never)
+    @Transaction(policy = TranPolicy.never)
     public void addApp5() {
         addApp();
     }
 
-    @Tran(policy = TranPolicy.mandatory)
+    @Transaction(policy = TranPolicy.mandatory)
     public void addApp6() {
         addApp();
     }

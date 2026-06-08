@@ -15,7 +15,7 @@
     <parent>
         <groupId>org.noear</groupId>
         <artifactId>solon-parent</artifactId>
-        <version>3.10.7</version>
+        <version>4.0.0</version>
         <relativePath />
     </parent>
 
@@ -30,13 +30,21 @@
         </dependency>
 
         <dependency>
-            <groupId>org.noear</groupId>
-            <artifactId>mybatis-tkmapper-solon-plugin</artifactId>
+            <groupId>tk.mybatis</groupId>
+            <artifactId>mapper-solon-plugin</artifactId>
+            <version>5.0.0</version>
         </dependency>
 
         <dependency>
-            <groupId>org.noear</groupId>
-            <artifactId>mybatis-pagehelper-solon-plugin</artifactId>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper</artifactId>
+            <version>6.1.1</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.mybatis</groupId>
+                    <artifactId>mybatis</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
         <dependency>

@@ -7,7 +7,7 @@ import demo4002.model.AppxModel;
 import org.junit.jupiter.api.Test;
 import org.noear.snack4.ONode;
 import org.noear.solon.annotation.Inject;
-import org.noear.solon.data.annotation.Tran;
+import org.noear.solon.data.annotation.Transaction;
 import org.noear.solon.test.HttpTester;
 import org.noear.solon.test.SolonTest;
 import org.noear.solon.test.annotation.Rollback;

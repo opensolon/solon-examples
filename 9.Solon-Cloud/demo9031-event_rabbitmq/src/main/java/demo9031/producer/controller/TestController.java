@@ -7,7 +7,7 @@ import org.noear.solon.annotation.Mapping;
 import org.noear.solon.cloud.CloudClient;
 import org.noear.solon.cloud.model.Event;
 import org.noear.solon.cloud.model.EventTran;
-import org.noear.solon.data.annotation.Tran;
+import org.noear.solon.data.annotation.Transaction;
 import org.noear.solon.data.tran.TranUtils;
 
 import java.util.Date;
@@ -87,7 +87,7 @@ public class TestController {
         }
     }
 
-    @Tran
+    @Transaction
     @Mapping("/tran3")
     public Object tran3() {
         EventTran eventTran = CloudClient.event().newTranAndJoin();

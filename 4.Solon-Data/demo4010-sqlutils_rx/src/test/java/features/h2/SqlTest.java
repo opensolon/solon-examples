@@ -8,7 +8,7 @@ import org.noear.solon.annotation.Bean;
 import org.noear.solon.annotation.Configuration;
 import org.noear.solon.annotation.Inject;
 import org.noear.solon.core.util.ResourceUtil;
-import org.noear.solon.data.annotation.Tran;
+import org.noear.solon.data.annotation.Transaction;
 import org.noear.solon.data.rx.sql.RxSqlUtils;
 import org.noear.solon.data.rx.sql.SqlBuilder;
 import org.noear.solon.test.SolonTest;

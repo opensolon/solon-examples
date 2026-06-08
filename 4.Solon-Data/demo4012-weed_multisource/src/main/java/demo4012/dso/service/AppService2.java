@@ -3,7 +3,7 @@ package demo4012.dso.service;
 import demo4012.dso.mapper.SqlMapper;
 import org.noear.solon.annotation.Managed;
 import org.noear.solon.data.annotation.Cache;
-import org.noear.solon.data.annotation.Tran;
+import org.noear.solon.data.annotation.Transaction;
 import org.noear.solon.data.tran.TranPolicy;
 import org.noear.weed.annotation.Db;
 
@@ -35,37 +35,37 @@ public class AppService2 {
         throw new RuntimeException("不让加");
     }
 
-    @Tran(policy = TranPolicy.nested)
+    @Transaction(policy = TranPolicy.nested)
     public void addApp3(){
         sqlMapper1.appx_add();
     }
 
-    @Tran(policy = TranPolicy.requires_new)
+    @Transaction(policy = TranPolicy.requires_new)
     public boolean addApp4(){
         sqlMapper1.appx_add();
         return true;
     }
 
     @Cache(seconds = 10)
-    @Tran(policy = TranPolicy.requires_new)
+    @Transaction(policy = TranPolicy.requires_new)
     public boolean addApp52(){
         sqlMapper1.appx_add();
         return true;
     }
 
     @Cache(seconds = 10)
-    @Tran(policy = TranPolicy.requires_new)
+    @Transaction(policy = TranPolicy.requires_new)
     public boolean addApp75(){
         sqlMapper1.appx_add();
         return true;
     }
 
-    @Tran(policy = TranPolicy.never)
+    @Transaction(policy = TranPolicy.never)
     public void addApp5(){
         sqlMapper1.appx_add();
     }
 
-    @Tran(policy = TranPolicy.mandatory)
+    @Transaction(policy = TranPolicy.mandatory)
     public void addApp6(){
         sqlMapper1.appx_add();
     }

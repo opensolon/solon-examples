@@ -20,6 +20,15 @@ mybatis.db1:
     configuration:
         cacheEnabled: false
         mapUnderscoreToCamelCase: true
+    plugins:
+        - pagehelper:
+              class: com.github.pagehelper.PageInterceptor #分页组件的配置（配置荐参考 PageHelperStandardProperties；配置前缀名随意，注入时使用此名即可）
+              offsetAsPageNum: true
+              rowBoundsWithCount: true
+              pageSizeZero: true
+              reasonable: false
+              params: pageNum=pageHelperStart;pageSize=pageHelperRows;
+              supportMethodsArguments: false
 
 #mybatis.plugin:
 #    - pagehelper:
