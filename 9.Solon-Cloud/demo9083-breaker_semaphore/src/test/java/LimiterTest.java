@@ -1,6 +1,6 @@
 import demo9083.DemoApp;
 import org.junit.jupiter.api.Test;
-import org.noear.solon.Utils;
+import org.noear.solon.core.util.RunUtil;
 import org.noear.solon.test.HttpTester;
 import org.noear.solon.test.SolonTest;
 
@@ -15,7 +15,7 @@ public class LimiterTest extends HttpTester {
     public void test() throws Exception{
         CountDownLatch  count = new CountDownLatch(1);
         for (int i = 0; i < 100; i++) {
-            Utils.async(()->{
+            RunUtil.async(()->{
                 try{
                     path("/").get();
                 }catch (Exception e){
